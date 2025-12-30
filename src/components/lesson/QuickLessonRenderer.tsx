@@ -2,10 +2,10 @@ import { useState, useEffect } from 'react';
 import { QuickLessonContent } from '@/types/lesson';
 import { Button } from '@/components/ui/button';
 import { Progress } from '@/components/ui/progress';
-import { 
-  BookOpen, 
-  Lightbulb, 
-  Sparkles, 
+import {
+  BookOpen,
+  Lightbulb,
+  Sparkles,
   ChevronRight,
   Star,
   Trophy,
@@ -16,6 +16,8 @@ import {
   Award
 } from 'lucide-react';
 import { cn } from '@/lib/utils';
+import { useGamification } from '@/hooks/useGamification';
+import { useAchievements } from '@/hooks/useAchievements';
 
 interface LessonProgress {
   completed: boolean;
@@ -61,6 +63,10 @@ export function QuickLessonRenderer({ content, onComplete, lessonTitle = 'Bài h
   const [correctCount, setCorrectCount] = useState(0);
   const [animationState, setAnimationState] = useState<'idle' | 'correct' | 'incorrect'>('idle');
   const [previousProgress, setPreviousProgress] = useState<LessonProgress | null>(null);
+
+  // Gamification hooks
+  const { awardLessonXP } = useGamification();
+  const { checkAchievements } = useAchievements();
 
   // Load previous progress on mount
   useEffect(() => {
@@ -122,10 +128,10 @@ export function QuickLessonRenderer({ content, onComplete, lessonTitle = 'Bài h
   const handleCheckAnswer = () => {
     if (selectedAnswer === null) return;
     const isCorrect = selectedAnswer === currentQuestion.correctIndex;
-    
+
     setAnimationState(isCorrect ? 'correct' : 'incorrect');
     setShowResult(true);
-    
+
     if (isCorrect) {
       setCorrectCount((prev) => prev + 1);
     }
@@ -133,7 +139,7 @@ export function QuickLessonRenderer({ content, onComplete, lessonTitle = 'Bài h
     setTimeout(() => setAnimationState('idle'), 600);
   };
 
-  const handleNextQuiz = () => {
+  const handleNextQuiz = async () => {
     if (currentQuizIndex < content.quickQuiz.length - 1) {
       setCurrentQuizIndex((prev) => prev + 1);
       setSelectedAnswer(null);
@@ -147,6 +153,17 @@ export function QuickLessonRenderer({ content, onComplete, lessonTitle = 'Bài h
         if (!existing || stars > existing.stars) {
           saveProgress(lessonId, stars);
           setPreviousProgress({ completed: true, stars, completedAt: new Date().toISOString() });
+
+          // Award XP and update streak (gamification)
+          try {
+            awardLessonXP(lessonId, stars, lessonTitle);
+
+            // Check for new achievements
+            await checkAchievements();
+          } catch (error) {
+            console.error('Gamification error:', error);
+            // Don't block lesson completion if gamification fails
+          }
         }
       }
       setStep('result');
@@ -168,12 +185,25 @@ export function QuickLessonRenderer({ content, onComplete, lessonTitle = 'Bài h
     setStep('intro');
   };
 
-  const handleNextExample = () => {
+  const handleNextExample = async () => {
     if (currentExampleIndex < content.examples.length - 1) {
       setCurrentExampleIndex((prev) => prev + 1);
     } else if (hasQuiz) {
       setStep('quiz');
     } else {
+      // No quiz - award XP for completing lesson
+      if (lessonId) {
+        const stars = 3; // Full stars if no quiz
+        saveProgress(lessonId, stars);
+
+        // Award XP and update streak
+        try {
+          awardLessonXP(lessonId, stars, lessonTitle);
+          await checkAchievements();
+        } catch (error) {
+          console.error('Gamification error:', error);
+        }
+      }
       setStep('result');
       onComplete?.();
     }
@@ -213,28 +243,28 @@ export function QuickLessonRenderer({ content, onComplete, lessonTitle = 'Bài h
           <div className="w-20 h-20 rounded-full bg-green-500/10 flex items-center justify-center mb-6">
             <Award className="h-10 w-10 text-green-500" />
           </div>
-          
+
           <h2 className="text-2xl font-bold mb-3">Bạn đã hoàn thành bài này!</h2>
-          
+
           <div className="flex gap-2 mb-4">
             {[1, 2, 3].map((i) => (
               <Star
                 key={i}
                 className={cn(
                   "h-8 w-8",
-                  i <= previousProgress.stars 
-                    ? "fill-amber-400 text-amber-400" 
+                  i <= previousProgress.stars
+                    ? "fill-amber-400 text-amber-400"
                     : "fill-muted text-muted"
                 )}
               />
             ))}
           </div>
-          
+
           <p className="text-muted-foreground mb-8">
             Hoàn thành lúc: {new Date(previousProgress.completedAt).toLocaleDateString('vi-VN')}
           </p>
-          
-          <Button 
+
+          <Button
             size="lg"
             className="h-14 px-8 text-lg font-bold rounded-2xl gap-2"
             onClick={handleStartLearning}
@@ -263,7 +293,7 @@ export function QuickLessonRenderer({ content, onComplete, lessonTitle = 'Bài h
 
       {/* Game Screen Container */}
       <div className="flex-1 flex flex-col">
-        
+
         {/* INTRO SCREEN */}
         {step === 'intro' && (
           <div className="flex-1 flex flex-col items-center justify-center text-center px-6 py-8 animate-fade-in">
@@ -275,10 +305,10 @@ export function QuickLessonRenderer({ content, onComplete, lessonTitle = 'Bài h
                 <Sparkles className="h-5 w-5 text-amber-900" />
               </div>
             </div>
-            
+
             <h1 className="text-2xl md:text-3xl font-bold mb-3">{lessonTitle}</h1>
             <p className="text-muted-foreground text-lg mb-2">Sẵn sàng học chưa? 🚀</p>
-            
+
             {/* Lesson stats */}
             <div className="flex gap-4 mt-6 mb-8">
               {hasExamples && (
@@ -294,8 +324,8 @@ export function QuickLessonRenderer({ content, onComplete, lessonTitle = 'Bài h
                 </div>
               )}
             </div>
-            
-            <Button 
+
+            <Button
               size="lg"
               className="h-16 px-12 text-xl font-bold rounded-2xl gap-3 shadow-lg hover:scale-105 transition-transform"
               onClick={() => setStep('summary')}
@@ -333,7 +363,7 @@ export function QuickLessonRenderer({ content, onComplete, lessonTitle = 'Bài h
             </div>
 
             <div className="p-4 border-t bg-background/80 backdrop-blur-sm">
-              <Button 
+              <Button
                 className="w-full h-14 text-lg font-bold rounded-2xl gap-2"
                 onClick={goToNextFromSummary}
               >
@@ -358,12 +388,12 @@ export function QuickLessonRenderer({ content, onComplete, lessonTitle = 'Bài h
                     <h2 className="text-xl font-bold">{currentExample.title}</h2>
                   </div>
                 </div>
-                
+
                 {/* Example counter */}
                 <div className="flex gap-1.5">
                   {content.examples.map((_, i) => (
-                    <div 
-                      key={i} 
+                    <div
+                      key={i}
                       className={cn(
                         "w-3 h-3 rounded-full transition-all",
                         i <= currentExampleIndex ? "bg-amber-500" : "bg-muted"
@@ -386,7 +416,7 @@ export function QuickLessonRenderer({ content, onComplete, lessonTitle = 'Bài h
             </div>
 
             <div className="p-4 border-t bg-background/80 backdrop-blur-sm">
-              <Button 
+              <Button
                 className="w-full h-14 text-lg font-bold rounded-2xl gap-2"
                 onClick={handleNextExample}
               >
@@ -399,7 +429,7 @@ export function QuickLessonRenderer({ content, onComplete, lessonTitle = 'Bài h
 
         {/* QUIZ SCREEN */}
         {step === 'quiz' && currentQuestion && (
-          <div 
+          <div
             className={cn(
               "flex-1 flex flex-col transition-colors duration-300",
               animationState === 'correct' && "bg-green-500/10",
@@ -428,7 +458,7 @@ export function QuickLessonRenderer({ content, onComplete, lessonTitle = 'Bài h
                     <p className="text-xl font-bold">{currentQuizIndex + 1} / {content.quickQuiz.length}</p>
                   </div>
                 </div>
-                
+
                 {/* Score indicator */}
                 <div className="flex items-center gap-1.5 bg-primary/10 text-primary px-3 py-1.5 rounded-full text-sm font-bold">
                   <Star className="h-4 w-4 fill-current" />
@@ -449,7 +479,7 @@ export function QuickLessonRenderer({ content, onComplete, lessonTitle = 'Bài h
                   const isSelected = selectedAnswer === index;
                   const isCorrect = index === currentQuestion.correctIndex;
                   const letter = String.fromCharCode(65 + index);
-                  
+
                   return (
                     <button
                       key={index}
@@ -481,7 +511,7 @@ export function QuickLessonRenderer({ content, onComplete, lessonTitle = 'Bài h
                         {letter}
                       </span>
                       <span className="text-base md:text-lg flex-1">{option}</span>
-                      
+
                       {showResult && isCorrect && (
                         <CheckCircle2 className="h-7 w-7 text-green-500 shrink-0 animate-scale-in" />
                       )}
@@ -508,7 +538,7 @@ export function QuickLessonRenderer({ content, onComplete, lessonTitle = 'Bài h
             {/* Quiz Actions */}
             <div className="p-4 border-t bg-background/80 backdrop-blur-sm">
               {!showResult ? (
-                <Button 
+                <Button
                   className="w-full h-14 text-lg font-bold rounded-2xl"
                   onClick={handleCheckAnswer}
                   disabled={selectedAnswer === null}
@@ -516,7 +546,7 @@ export function QuickLessonRenderer({ content, onComplete, lessonTitle = 'Bài h
                   Kiểm tra
                 </Button>
               ) : (
-                <Button 
+                <Button
                   className={cn(
                     "w-full h-14 text-lg font-bold rounded-2xl gap-2 transition-colors",
                     animationState === 'correct' && "bg-green-500 hover:bg-green-600"
@@ -552,7 +582,7 @@ export function QuickLessonRenderer({ content, onComplete, lessonTitle = 'Bài h
                 Hoàn thành!
               </div>
             </div>
-            
+
             {hasQuiz ? (
               <>
                 {/* Score */}
@@ -569,13 +599,13 @@ export function QuickLessonRenderer({ content, onComplete, lessonTitle = 'Bài h
                       className="animate-scale-in"
                       style={{ animationDelay: `${starNum * 200}ms` }}
                     >
-                      <Star 
+                      <Star
                         className={cn(
                           "h-14 w-14 transition-all",
-                          starNum <= getStars() 
-                            ? "fill-amber-400 text-amber-400 drop-shadow-lg" 
+                          starNum <= getStars()
+                            ? "fill-amber-400 text-amber-400 drop-shadow-lg"
                             : "fill-muted text-muted"
-                        )} 
+                        )}
                       />
                     </div>
                   ))}
@@ -595,8 +625,8 @@ export function QuickLessonRenderer({ content, onComplete, lessonTitle = 'Bài h
             )}
 
             {/* Restart Button */}
-            <Button 
-              variant="outline" 
+            <Button
+              variant="outline"
               size="lg"
               className="h-14 px-8 text-lg font-bold rounded-2xl gap-2"
               onClick={handleRestart}
