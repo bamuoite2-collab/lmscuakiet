@@ -159,7 +159,7 @@ export function PracticeLessonRenderer({
         <CardContent>
           <div
             className="prose prose-sm dark:prose-invert max-w-none"
-            dangerouslySetInnerHTML={{ __html: content.theory }}
+            dangerouslySetInnerHTML={{ __html: sanitizeEducationalContent(content.theory) }}
           />
         </CardContent>
       </Card>
