@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { PracticeLessonContent, PracticeExercise, ExerciseDifficulty } from '@/types/lesson';
+import { sanitizeEducationalContent } from '@/lib/sanitize';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
@@ -74,9 +75,8 @@ function ExerciseCard({
               <Button
                 key={optIndex}
                 variant={buttonVariant}
-                className={`w-full justify-start text-left h-auto py-2 px-3 ${
-                  isSelected && !showResult ? 'ring-2 ring-primary' : ''
-                }`}
+                className={`w-full justify-start text-left h-auto py-2 px-3 ${isSelected && !showResult ? 'ring-2 ring-primary' : ''
+                  }`}
                 onClick={() => !showResult && setSelectedAnswer(optIndex)}
                 disabled={showResult}
               >
@@ -157,7 +157,7 @@ export function PracticeLessonRenderer({
           </CardTitle>
         </CardHeader>
         <CardContent>
-          <div 
+          <div
             className="prose prose-sm dark:prose-invert max-w-none"
             dangerouslySetInnerHTML={{ __html: content.theory }}
           />
