@@ -23,9 +23,9 @@ export function THCSDashboard({ userId, userName }: THCSDashboardProps) {
         .select('lesson_id')
         .eq('user_id', userId)
         .eq('completed', true);
-      
+
       const completedIds = progress?.map(p => p.lesson_id) || [];
-      
+
       // Get first 2 incomplete published lessons
       let query = supabase
         .from('lessons')
@@ -36,11 +36,11 @@ export function THCSDashboard({ userId, userName }: THCSDashboardProps) {
         .eq('is_published', true)
         .order('order_index', { ascending: true })
         .limit(2);
-      
+
       if (completedIds.length > 0) {
         query = query.not('id', 'in', `(${completedIds.join(',')})`);
       }
-      
+
       const { data } = await query;
       return data || [];
     }
@@ -56,25 +56,25 @@ export function THCSDashboard({ userId, userName }: THCSDashboardProps) {
         .eq('user_id', userId)
         .eq('completed', true)
         .order('completed_at', { ascending: false });
-      
+
       if (!data || data.length === 0) return 0;
-      
+
       let streak = 0;
       const today = new Date();
       today.setHours(0, 0, 0, 0);
-      
+
       // Group by date
       const dates = [...new Set(data.map(d => {
         const date = new Date(d.completed_at!);
         date.setHours(0, 0, 0, 0);
         return date.getTime();
       }))].sort((a, b) => b - a);
-      
+
       for (let i = 0; i < dates.length; i++) {
         const expectedDate = new Date(today);
         expectedDate.setDate(expectedDate.getDate() - i);
         expectedDate.setHours(0, 0, 0, 0);
-        
+
         if (dates[i] === expectedDate.getTime()) {
           streak++;
         } else if (i === 0 && dates[i] === expectedDate.getTime() - 86400000) {
@@ -84,7 +84,7 @@ export function THCSDashboard({ userId, userName }: THCSDashboardProps) {
           break;
         }
       }
-      
+
       return streak;
     }
   });
@@ -95,14 +95,14 @@ export function THCSDashboard({ userId, userName }: THCSDashboardProps) {
     queryFn: async () => {
       const weekAgo = new Date();
       weekAgo.setDate(weekAgo.getDate() - 7);
-      
+
       const { data } = await supabase
         .from('student_progress')
         .select('id')
         .eq('user_id', userId)
         .eq('completed', true)
         .gte('completed_at', weekAgo.toISOString());
-      
+
       return data?.length || 0;
     }
   });
@@ -115,13 +115,13 @@ export function THCSDashboard({ userId, userName }: THCSDashboardProps) {
         .from('lessons')
         .select('*', { count: 'exact', head: true })
         .eq('is_published', true);
-      
+
       const { count: completed } = await supabase
         .from('student_progress')
         .select('*', { count: 'exact', head: true })
         .eq('user_id', userId)
         .eq('completed', true);
-      
+
       return {
         total: total || 0,
         completed: completed || 0,
@@ -158,7 +158,7 @@ export function THCSDashboard({ userId, userName }: THCSDashboardProps) {
             <div className="text-sm opacity-90">ngày streak</div>
           </CardContent>
         </Card>
-        
+
         <Card className="bg-gradient-to-br from-emerald-500 to-teal-600 text-white border-0">
           <CardContent className="p-4">
             <CheckCircle2 className="h-6 w-6 mb-2 opacity-90" />
@@ -166,7 +166,7 @@ export function THCSDashboard({ userId, userName }: THCSDashboardProps) {
             <div className="text-sm opacity-90">bài tuần này</div>
           </CardContent>
         </Card>
-        
+
         <Card className="bg-gradient-to-br from-blue-500 to-indigo-600 text-white border-0">
           <CardContent className="p-4">
             <BookOpen className="h-6 w-6 mb-2 opacity-90" />
@@ -174,7 +174,7 @@ export function THCSDashboard({ userId, userName }: THCSDashboardProps) {
             <div className="text-sm opacity-90">bài đã học</div>
           </CardContent>
         </Card>
-        
+
         <Card className="bg-gradient-to-br from-purple-500 to-pink-600 text-white border-0">
           <CardContent className="p-4">
             <Trophy className="h-6 w-6 mb-2 opacity-90" />
@@ -211,9 +211,9 @@ export function THCSDashboard({ userId, userName }: THCSDashboardProps) {
             </>
           ) : todayLessons && todayLessons.length > 0 ? (
             todayLessons.map((lesson: any) => (
-              <Link 
+              <Link
                 key={lesson.id}
-                to={`/lesson/${lesson.id}`}
+                to={`/courses/${lesson.course_id}/lessons/${lesson.id}`}
                 className="flex items-center gap-4 p-4 rounded-xl bg-muted/50 hover:bg-muted transition-colors group"
               >
                 <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center shrink-0 group-hover:bg-primary group-hover:text-primary-foreground transition-colors">
@@ -264,7 +264,7 @@ export function THCSDashboard({ userId, userName }: THCSDashboardProps) {
           <p className="opacity-90 mb-4">Chỉ cần 10 phút mỗi ngày!</p>
           {todayLessons && todayLessons.length > 0 ? (
             <Button asChild variant="secondary" size="lg">
-              <Link to={`/lesson/${todayLessons[0].id}`}>
+              <Link to={`/courses/${todayLessons[0].course_id}/lessons/${todayLessons[0].id}`}>
                 <Play className="h-5 w-5 mr-2" />
                 Học ngay
               </Link>
