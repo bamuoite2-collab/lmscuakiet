@@ -1,0 +1,10 @@
+project_id = "yeejyrodzhboyfslzbeh"
+
+[functions.validate-quiz]
+verify_jwt = true
+
+[functions.update-simulation-time]
+verify_jwt = true
+
+[functions.parse-quiz-text]
+verify_jwt = true
