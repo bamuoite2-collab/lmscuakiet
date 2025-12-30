@@ -35,7 +35,7 @@ export default function LessonPlayerPage() {
         .select('*')
         .eq('id', lessonId)
         .single();
-      
+
       if (error) throw error;
       return data as Lesson;
     },
@@ -51,7 +51,7 @@ export default function LessonPlayerPage() {
         .eq('course_id', courseId)
         .eq('is_published', true)
         .order('order_index', { ascending: true });
-      
+
       if (error) throw error;
       return data as Lesson[];
     },
@@ -66,7 +66,7 @@ export default function LessonPlayerPage() {
         .select('*')
         .eq('lesson_id', lessonId)
         .maybeSingle();
-      
+
       if (error) throw error;
       return data as Quiz | null;
     },
@@ -74,22 +74,27 @@ export default function LessonPlayerPage() {
   });
 
   const { data: quizQuestions } = useQuery({
-    queryKey: ['quiz-questions', quiz?.id],
+    queryKey: ['quiz-questions', quiz?.id, lessonId],
     queryFn: async () => {
+      // Security: Only fetch quiz questions if lesson is loaded and published
+      if (!lesson || !lesson.is_published) {
+        throw new Error('Lesson not available');
+      }
+
       // Use secure view that doesn't expose correct_answer or explanation
       const { data, error } = await supabase
         .from('public_quiz_questions')
         .select('*')
         .eq('quiz_id', quiz!.id)
         .order('order_index', { ascending: true });
-      
+
       if (error) throw error;
       return (data || []).map((q) => ({
         ...q,
         options: q.options as string[]
       })) as QuizQuestionPublic[];
     },
-    enabled: !!quiz?.id,
+    enabled: !!quiz?.id && !!lesson?.is_published,
   });
 
   const { data: progress } = useQuery({
@@ -101,7 +106,7 @@ export default function LessonPlayerPage() {
         .eq('lesson_id', lessonId)
         .eq('user_id', user!.id)
         .maybeSingle();
-      
+
       if (error) throw error;
       return data;
     },
@@ -118,7 +123,7 @@ export default function LessonPlayerPage() {
           completed: true,
           completed_at: new Date().toISOString(),
         });
-      
+
       if (error) throw error;
     },
     onSuccess: () => {
@@ -179,7 +184,7 @@ export default function LessonPlayerPage() {
   return (
     <div className="min-h-screen bg-background">
       <Navbar />
-      
+
       <div className="pt-16 flex">
         {/* Sidebar */}
         <aside
@@ -312,8 +317,8 @@ export default function LessonPlayerPage() {
             {/* Simulation Lab */}
             {lesson.simulation_url && (
               <div className="mb-8">
-                <SimulationEmbed 
-                  simulationUrl={lesson.simulation_url} 
+                <SimulationEmbed
+                  simulationUrl={lesson.simulation_url}
                   lessonId={lessonId!}
                   title={lesson.title}
                 />
@@ -344,10 +349,10 @@ export default function LessonPlayerPage() {
                     </Button>
                   )}
                 </div>
-                
+
                 {/* Quiz PDF files */}
                 <QuizPdfViewer quizId={quiz.id} />
-                
+
                 {showQuiz && (
                   <QuizPlayer
                     quizId={quiz.id}
