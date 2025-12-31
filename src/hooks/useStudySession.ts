@@ -83,27 +83,16 @@ export function useStudySession() {
     // Auto-save session on page unload
     useEffect(() => {
         const handleBeforeUnload = () => {
-            if (currentSession) {
-                // Use sendBeacon for reliability
-                const endTime = new Date();
-                const durationMinutes = sessionStart
-                    ? Math.round((endTime.getTime() - sessionStart.getTime()) / 60000)
-                    : 0;
-
-                navigator.sendBeacon(
-                    `${supabase.supabaseUrl}/rest/v1/study_sessions?id=eq.${currentSession}`,
-                    JSON.stringify({
-                        ended_at: endTime.toISOString(),
-                        duration_minutes: durationMinutes,
-                        completed: false
-                    })
-                );
+            if (currentSession && sessionStart) {
+                // Use sendBeacon for reliability - note: cannot update via REST easily
+                // Just end session normally when user navigates away
+                endSession(currentSession, false);
             }
         };
 
         window.addEventListener('beforeunload', handleBeforeUnload);
         return () => window.removeEventListener('beforeunload', handleBeforeUnload);
-    }, [currentSession, sessionStart]);
+    }, [currentSession, sessionStart, endSession]);
 
     return {
         startSession,

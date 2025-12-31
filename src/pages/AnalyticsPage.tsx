@@ -13,7 +13,6 @@ export default function AnalyticsPage() {
     const {
         weeklyStats,
         monthlyStats,
-        subjectPerformance,
         streakData,
         dailyAnalytics,
         isLoading
@@ -157,56 +156,37 @@ export default function AnalyticsPage() {
                 </motion.div>
             </div>
 
-            {/* Subject Performance */}
+            {/* Monthly Summary */}
             <Card>
                 <CardHeader>
                     <CardTitle className="flex items-center gap-2">
                         <Award className="h-5 w-5 text-yellow-500" />
-                        Hiệu Suất Theo Môn Học
+                        Tổng Kết Tháng
                     </CardTitle>
                 </CardHeader>
                 <CardContent>
-                    {!subjectPerformance || subjectPerformance.length === 0 ? (
+                    {!monthlyStats ? (
                         <p className="text-muted-foreground text-center py-8">
                             Chưa có dữ liệu. Hoàn thành bài học để xem phân tích!
                         </p>
                     ) : (
-                        <div className="space-y-4">
-                            {subjectPerformance.map((subject, index) => (
-                                <motion.div
-                                    key={subject.subject}
-                                    initial={{ opacity: 0, x: -20 }}
-                                    animate={{ opacity: 1, x: 0 }}
-                                    transition={{ delay: index * 0.1 }}
-                                    className="p-4 rounded-lg border bg-muted/30"
-                                >
-                                    <div className="flex items-center justify-between mb-2">
-                                        <h3 className="font-semibold text-lg">{subject.subject}</h3>
-                                        <div className="flex items-center gap-4 text-sm">
-                                            <span className="text-muted-foreground">
-                                                {subject.lessons_completed} bài
-                                            </span>
-                                            <span className="font-bold text-amber-600">
-                                                {subject.avg_stars.toFixed(1)} ⭐
-                                            </span>
-                                        </div>
-                                    </div>
-                                    <div className="grid grid-cols-3 gap-4 text-sm">
-                                        <div>
-                                            <p className="text-muted-foreground">Độ chính xác</p>
-                                            <p className="font-bold text-lg">{subject.accuracy.toFixed(1)}%</p>
-                                        </div>
-                                        <div>
-                                            <p className="text-muted-foreground">Thời gian học</p>
-                                            <p className="font-bold text-lg">{formatTime(Number(subject.total_time_minutes))}</p>
-                                        </div>
-                                        <div>
-                                            <p className="text-muted-foreground">Trung bình sao</p>
-                                            <p className="font-bold text-lg">{subject.avg_stars.toFixed(1)}/3</p>
-                                        </div>
-                                    </div>
-                                </motion.div>
-                            ))}
+                        <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+                            <div className="text-center p-4 bg-muted/30 rounded-lg">
+                                <p className="text-2xl font-bold">{formatTime(monthlyStats.total_study_minutes || 0)}</p>
+                                <p className="text-sm text-muted-foreground">Tổng thời gian học</p>
+                            </div>
+                            <div className="text-center p-4 bg-muted/30 rounded-lg">
+                                <p className="text-2xl font-bold">{monthlyStats.total_lessons || 0}</p>
+                                <p className="text-sm text-muted-foreground">Bài học hoàn thành</p>
+                            </div>
+                            <div className="text-center p-4 bg-muted/30 rounded-lg">
+                                <p className="text-2xl font-bold">{monthlyStats.total_xp || 0}</p>
+                                <p className="text-sm text-muted-foreground">XP kiếm được</p>
+                            </div>
+                            <div className="text-center p-4 bg-muted/30 rounded-lg">
+                                <p className="text-2xl font-bold">{monthlyStats.days_active || 0}</p>
+                                <p className="text-sm text-muted-foreground">Ngày hoạt động</p>
+                            </div>
                         </div>
                     )}
                 </CardContent>

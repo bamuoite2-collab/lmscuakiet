@@ -95,6 +95,51 @@ export type Database = {
         }
         Relationships: []
       }
+      daily_analytics: {
+        Row: {
+          correct_answers: number | null
+          created_at: string | null
+          date: string
+          id: string
+          lessons_completed: number | null
+          quizzes_attempted: number | null
+          stars_earned: number | null
+          total_answers: number | null
+          total_study_minutes: number | null
+          updated_at: string | null
+          user_id: string
+          xp_earned: number | null
+        }
+        Insert: {
+          correct_answers?: number | null
+          created_at?: string | null
+          date: string
+          id?: string
+          lessons_completed?: number | null
+          quizzes_attempted?: number | null
+          stars_earned?: number | null
+          total_answers?: number | null
+          total_study_minutes?: number | null
+          updated_at?: string | null
+          user_id: string
+          xp_earned?: number | null
+        }
+        Update: {
+          correct_answers?: number | null
+          created_at?: string | null
+          date?: string
+          id?: string
+          lessons_completed?: number | null
+          quizzes_attempted?: number | null
+          stars_earned?: number | null
+          total_answers?: number | null
+          total_study_minutes?: number | null
+          updated_at?: string | null
+          user_id?: string
+          xp_earned?: number | null
+        }
+        Relationships: []
+      }
       daily_quests: {
         Row: {
           code: string
@@ -139,6 +184,103 @@ export type Database = {
           xp_reward?: number
         }
         Relationships: []
+      }
+      event_achievements: {
+        Row: {
+          code: string
+          created_at: string | null
+          criteria: Json
+          description: string | null
+          event_id: string
+          icon: string | null
+          id: string
+          title: string
+          xp_reward: number | null
+        }
+        Insert: {
+          code: string
+          created_at?: string | null
+          criteria: Json
+          description?: string | null
+          event_id: string
+          icon?: string | null
+          id?: string
+          title: string
+          xp_reward?: number | null
+        }
+        Update: {
+          code?: string
+          created_at?: string | null
+          criteria?: Json
+          description?: string | null
+          event_id?: string
+          icon?: string | null
+          id?: string
+          title?: string
+          xp_reward?: number | null
+        }
+        Relationships: [
+          {
+            foreignKeyName: "event_achievements_event_id_fkey"
+            columns: ["event_id"]
+            isOneToOne: false
+            referencedRelation: "seasonal_events"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      event_quests: {
+        Row: {
+          bonus_reward: Json | null
+          created_at: string | null
+          description: string | null
+          difficulty: string | null
+          event_id: string
+          icon: string | null
+          id: string
+          order_index: number | null
+          quest_type: string | null
+          target_value: number
+          title: string
+          xp_reward: number | null
+        }
+        Insert: {
+          bonus_reward?: Json | null
+          created_at?: string | null
+          description?: string | null
+          difficulty?: string | null
+          event_id: string
+          icon?: string | null
+          id?: string
+          order_index?: number | null
+          quest_type?: string | null
+          target_value: number
+          title: string
+          xp_reward?: number | null
+        }
+        Update: {
+          bonus_reward?: Json | null
+          created_at?: string | null
+          description?: string | null
+          difficulty?: string | null
+          event_id?: string
+          icon?: string | null
+          id?: string
+          order_index?: number | null
+          quest_type?: string | null
+          target_value?: number
+          title?: string
+          xp_reward?: number | null
+        }
+        Relationships: [
+          {
+            foreignKeyName: "event_quests_event_id_fkey"
+            columns: ["event_id"]
+            isOneToOne: false
+            referencedRelation: "seasonal_events"
+            referencedColumns: ["id"]
+          },
+        ]
       }
       lesson_comments: {
         Row: {
@@ -491,6 +633,54 @@ export type Database = {
           },
         ]
       }
+      seasonal_events: {
+        Row: {
+          banner_image: string | null
+          bonus_xp_multiplier: number | null
+          created_at: string | null
+          description: string | null
+          end_date: string
+          event_type: string | null
+          icon: string | null
+          id: string
+          is_active: boolean | null
+          name: string
+          start_date: string
+          theme_config: Json | null
+          updated_at: string | null
+        }
+        Insert: {
+          banner_image?: string | null
+          bonus_xp_multiplier?: number | null
+          created_at?: string | null
+          description?: string | null
+          end_date: string
+          event_type?: string | null
+          icon?: string | null
+          id?: string
+          is_active?: boolean | null
+          name: string
+          start_date: string
+          theme_config?: Json | null
+          updated_at?: string | null
+        }
+        Update: {
+          banner_image?: string | null
+          bonus_xp_multiplier?: number | null
+          created_at?: string | null
+          description?: string | null
+          end_date?: string
+          event_type?: string | null
+          icon?: string | null
+          id?: string
+          is_active?: boolean | null
+          name?: string
+          start_date?: string
+          theme_config?: Json | null
+          updated_at?: string | null
+        }
+        Relationships: []
+      }
       simulation_interactions: {
         Row: {
           first_opened_at: string
@@ -688,6 +878,133 @@ export type Database = {
           },
         ]
       }
+      study_sessions: {
+        Row: {
+          activity_type: string | null
+          completed: boolean | null
+          created_at: string | null
+          duration_minutes: number | null
+          ended_at: string | null
+          id: string
+          lesson_id: string | null
+          started_at: string
+          user_id: string
+        }
+        Insert: {
+          activity_type?: string | null
+          completed?: boolean | null
+          created_at?: string | null
+          duration_minutes?: number | null
+          ended_at?: string | null
+          id?: string
+          lesson_id?: string | null
+          started_at?: string
+          user_id: string
+        }
+        Update: {
+          activity_type?: string | null
+          completed?: boolean | null
+          created_at?: string | null
+          duration_minutes?: number | null
+          ended_at?: string | null
+          id?: string
+          lesson_id?: string | null
+          started_at?: string
+          user_id?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "study_sessions_lesson_id_fkey"
+            columns: ["lesson_id"]
+            isOneToOne: false
+            referencedRelation: "lessons"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      user_event_achievements: {
+        Row: {
+          event_achievement_id: string
+          id: string
+          unlocked_at: string | null
+          user_id: string
+        }
+        Insert: {
+          event_achievement_id: string
+          id?: string
+          unlocked_at?: string | null
+          user_id: string
+        }
+        Update: {
+          event_achievement_id?: string
+          id?: string
+          unlocked_at?: string | null
+          user_id?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "user_event_achievements_event_achievement_id_fkey"
+            columns: ["event_achievement_id"]
+            isOneToOne: false
+            referencedRelation: "event_achievements"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      user_event_progress: {
+        Row: {
+          completed: boolean | null
+          completed_at: string | null
+          created_at: string | null
+          current_progress: number | null
+          event_id: string
+          event_quest_id: string | null
+          id: string
+          target_value: number
+          updated_at: string | null
+          user_id: string
+        }
+        Insert: {
+          completed?: boolean | null
+          completed_at?: string | null
+          created_at?: string | null
+          current_progress?: number | null
+          event_id: string
+          event_quest_id?: string | null
+          id?: string
+          target_value: number
+          updated_at?: string | null
+          user_id: string
+        }
+        Update: {
+          completed?: boolean | null
+          completed_at?: string | null
+          created_at?: string | null
+          current_progress?: number | null
+          event_id?: string
+          event_quest_id?: string | null
+          id?: string
+          target_value?: number
+          updated_at?: string | null
+          user_id?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "user_event_progress_event_id_fkey"
+            columns: ["event_id"]
+            isOneToOne: false
+            referencedRelation: "seasonal_events"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "user_event_progress_event_quest_id_fkey"
+            columns: ["event_quest_id"]
+            isOneToOne: false
+            referencedRelation: "event_quests"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
       user_roles: {
         Row: {
           created_at: string
@@ -773,7 +1090,49 @@ export type Database = {
         }
         Returns: Json
       }
+      calculate_weekly_stats: {
+        Args: { p_user_id: string; p_week_start?: string }
+        Returns: Json
+      }
       check_achievements: { Args: { _user_id: string }; Returns: Json }
+      complete_event_quest: {
+        Args: { p_quest_id: string; p_user_id: string }
+        Returns: Json
+      }
+      get_active_events: {
+        Args: never
+        Returns: {
+          banner_image: string | null
+          bonus_xp_multiplier: number | null
+          created_at: string | null
+          description: string | null
+          end_date: string
+          event_type: string | null
+          icon: string | null
+          id: string
+          is_active: boolean | null
+          name: string
+          start_date: string
+          theme_config: Json | null
+          updated_at: string | null
+        }[]
+        SetofOptions: {
+          from: "*"
+          to: "seasonal_events"
+          isOneToOne: false
+          isSetofReturn: true
+        }
+      }
+      get_event_leaderboard: {
+        Args: { p_event_id: string; p_limit?: number }
+        Returns: {
+          full_name: string
+          quests_completed: number
+          rank: number
+          total_xp: number
+          user_id: string
+        }[]
+      }
       get_quiz_questions_for_student: {
         Args: { p_quiz_id: string }
         Returns: {
@@ -782,6 +1141,31 @@ export type Database = {
           order_index: number
           question: string
           quiz_id: string
+        }[]
+      }
+      get_streak_heatmap: {
+        Args: { p_user_id: string }
+        Returns: {
+          date: string
+          intensity: number
+          lessons_completed: number
+          study_minutes: number
+        }[]
+      }
+      get_user_event_progress: {
+        Args: { p_event_id: string; p_user_id: string }
+        Returns: {
+          completed: boolean
+          completed_at: string
+          current_progress: number
+          difficulty: string
+          quest_description: string
+          quest_icon: string
+          quest_id: string
+          quest_title: string
+          quest_type: string
+          target_value: number
+          xp_reward: number
         }[]
       }
       has_any_admin: { Args: never; Returns: boolean }
@@ -793,6 +1177,14 @@ export type Database = {
         Returns: boolean
       }
       promote_to_admin: { Args: { _user_email: string }; Returns: undefined }
+      update_daily_analytics_for_date: {
+        Args: { p_date?: string; p_user_id: string }
+        Returns: undefined
+      }
+      update_event_quest_progress: {
+        Args: { p_increment?: number; p_quest_type: string; p_user_id: string }
+        Returns: undefined
+      }
       update_streak: { Args: { _user_id: string }; Returns: Json }
     }
     Enums: {

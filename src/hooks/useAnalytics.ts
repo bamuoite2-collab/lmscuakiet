@@ -47,7 +47,7 @@ export function useAnalytics() {
                 });
 
             if (error) throw error;
-            return data as WeeklyStats;
+            return data as unknown as WeeklyStats;
         },
         enabled: !!user,
         staleTime: 1000 * 60 * 5 // 5 minutes
@@ -69,28 +69,10 @@ export function useAnalytics() {
                 });
 
             if (error) throw error;
-            return data as WeeklyStats;
+            return data as unknown as WeeklyStats;
         },
         enabled: !!user,
         staleTime: 1000 * 60 * 5
-    });
-
-    // Get subject performance
-    const { data: subjectPerformance, isLoading: loadingSubjects } = useQuery<SubjectPerformance[]>({
-        queryKey: ['analytics', 'subjects', user?.id],
-        queryFn: async () => {
-            if (!user) return [];
-
-            const { data, error } = await supabase
-                .rpc('get_subject_performance', {
-                    p_user_id: user.id
-                });
-
-            if (error) throw error;
-            return (data || []) as SubjectPerformance[];
-        },
-        enabled: !!user,
-        staleTime: 1000 * 60 * 10 // 10 minutes
     });
 
     // Get streak heatmap data
@@ -137,9 +119,8 @@ export function useAnalytics() {
     return {
         weeklyStats,
         monthlyStats,
-        subjectPerformance,
         streakData,
         dailyAnalytics,
-        isLoading: loadingWeekly || loadingMonthly || loadingSubjects || loadingStreak || loadingDaily
+        isLoading: loadingWeekly || loadingMonthly || loadingStreak || loadingDaily
     };
 }
