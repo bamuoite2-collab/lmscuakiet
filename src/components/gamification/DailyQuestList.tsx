@@ -3,27 +3,9 @@ import { Progress } from '@/components/ui/progress';
 import { Badge } from '@/components/ui/badge';
 import { CheckCircle2, Circle } from 'lucide-react';
 import { cn } from '@/lib/utils';
+import { DailyQuest, StudentDailyQuest } from '@/hooks/useDailyQuests';
 
-export interface DailyQuest {
-    id: string;
-    code: string;
-    title: string;
-    description: string;
-    icon: string;
-    quest_type: string;
-    target_value: number;
-    xp_reward: number;
-    difficulty: 'easy' | 'medium' | 'hard';
-}
-
-export interface StudentDailyQuest {
-    id: string;
-    daily_quest_id: string;
-    current_progress: number;
-    target_value: number;
-    is_completed: boolean;
-    completed_at?: string;
-}
+export type { DailyQuest, StudentDailyQuest };
 
 interface DailyQuestItemProps {
     quest: DailyQuest;

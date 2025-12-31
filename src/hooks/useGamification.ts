@@ -20,12 +20,29 @@ export interface GamificationProfile {
     updated_at: string;
 }
 
+interface AwardXPResult {
+    success: boolean;
+    xp_awarded: number;
+    total_xp: number;
+    old_level: number;
+    new_level: number;
+    leveled_up: boolean;
+}
+
+interface UpdateStreakResult {
+    success: boolean;
+    streak: number;
+    streak_continued: boolean;
+    streak_broken: boolean;
+    streak_bonus_xp: number;
+}
+
 export function useGamification() {
     const { user } = useAuth();
     const queryClient = useQueryClient();
 
     // Fetch gamification profile
-    const { data: profile, isLoading } = useQuery<GamificationProfile>({
+    const { data: profile, isLoading } = useQuery<GamificationProfile | null>({
         queryKey: ['gamification', user?.id],
         queryFn: async () => {
             if (!user) throw new Error('Not authenticated');
@@ -34,9 +51,11 @@ export function useGamification() {
                 .from('student_gamification')
                 .select('*')
                 .eq('user_id', user.id)
-                .single();
+                .maybeSingle();
 
-            if (error) {
+            if (error) throw error;
+
+            if (!data) {
                 // Create profile if it doesn't exist
                 const { data: newProfile, error: createError } = await supabase
                     .from('student_gamification')
@@ -45,10 +64,10 @@ export function useGamification() {
                     .single();
 
                 if (createError) throw createError;
-                return newProfile;
+                return newProfile as GamificationProfile;
             }
 
-            return data;
+            return data as GamificationProfile;
         },
         enabled: !!user,
         staleTime: 30000, // 30 seconds
@@ -78,19 +97,19 @@ export function useGamification() {
             });
 
             if (error) throw error;
-            return data;
+            return data as unknown as AwardXPResult;
         },
         onSuccess: (data) => {
             // Invalidate gamification query to refetch
             queryClient.invalidateQueries({ queryKey: ['gamification', user?.id] });
 
             // Show XP notification
-            if (data.leveled_up) {
+            if (data?.leveled_up) {
                 toast.success(`🎉 Chúc mừng! Bạn đã lên cấp ${data.new_level}!`, {
                     description: `Nhận được +${data.xp_awarded} XP`,
                     duration: 5000,
                 });
-            } else {
+            } else if (data) {
                 toast.success(`+${data.xp_awarded} XP`, {
                     description: `Tổng XP: ${data.total_xp}`,
                 });
@@ -112,16 +131,16 @@ export function useGamification() {
             });
 
             if (error) throw error;
-            return data;
+            return data as unknown as UpdateStreakResult;
         },
         onSuccess: (data) => {
             queryClient.invalidateQueries({ queryKey: ['gamification', user?.id] });
 
-            if (data.streak_broken) {
+            if (data?.streak_broken) {
                 toast.warning('Chuỗi ngày học đã reset', {
                     description: 'Hãy học tiếp để xây dựng chuỗi mới!',
                 });
-            } else if (data.streak_continued) {
+            } else if (data?.streak_continued) {
                 toast.success(`🔥 Chuỗi ${data.streak} ngày!`, {
                     description: data.streak_bonus_xp > 0
                         ? `+${data.streak_bonus_xp} XP thưởng`
