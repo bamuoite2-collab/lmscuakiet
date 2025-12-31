@@ -178,16 +178,13 @@ export function QuickLessonRenderer({ content, onComplete, lessonTitle = 'Bài h
 
             // Check for new achievements
             const achievementResult = await checkAchievements();
-            if (achievementResult?.data) {
-              const unlocked = achievementResult.data as any;
-              if (unlocked.unlocked_count > 0 && unlocked.achievements) {
-                // Show achievement toasts
-                unlocked.achievements.forEach((achievement: any, index: number) => {
-                  setTimeout(() => {
-                    triggerAchievement(achievement);
-                  }, 1500 + (index * 500)); // Stagger achievements
-                });
-              }
+            if (achievementResult && achievementResult.unlocked_count > 0 && achievementResult.achievements) {
+              // Show achievement toasts
+              achievementResult.achievements.forEach((achievement: any, index: number) => {
+                setTimeout(() => {
+                  triggerAchievement(achievement);
+                }, 1500 + (index * 500)); // Stagger achievements
+              });
             }
           } catch (error) {
             console.error('Gamification error:', error);
@@ -243,15 +240,12 @@ export function QuickLessonRenderer({ content, onComplete, lessonTitle = 'Bài h
 
           // Check achievements
           const achievementResult = await checkAchievements();
-          if (achievementResult?.data) {
-            const unlocked = achievementResult.data as any;
-            if (unlocked.unlocked_count > 0 && unlocked.achievements) {
-              unlocked.achievements.forEach((achievement: any, index: number) => {
-                setTimeout(() => {
-                  triggerAchievement(achievement);
-                }, 1500 + (index * 500));
-              });
-            }
+          if (achievementResult && achievementResult.unlocked_count > 0 && achievementResult.achievements) {
+            achievementResult.achievements.forEach((achievement: any, index: number) => {
+              setTimeout(() => {
+                triggerAchievement(achievement);
+              }, 1500 + (index * 500));
+            });
           }
         } catch (error) {
           console.error('Gamification error:', error);

@@ -38,7 +38,13 @@ export function useSeasonalEvents() {
     const { data: activeEvents, isLoading: loadingEvents } = useQuery<SeasonalEvent[]>({
         queryKey: ['seasonal-events', 'active'],
         queryFn: async () => {
-            const { data, error } = await supabase.rpc('get_active_events');
+            const { data, error } = await supabase
+                .from('seasonal_events')
+                .select('*')
+                .eq('is_active', true)
+                .lte('start_date', new Date().toISOString())
+                .gte('end_date', new Date().toISOString())
+                .order('start_date', { ascending: false });
             if (error) throw error;
             return (data || []) as SeasonalEvent[];
         },
@@ -52,13 +58,40 @@ export function useSeasonalEvents() {
             queryFn: async () => {
                 if (!user) return [];
 
-                const { data, error } = await supabase.rpc('get_user_event_progress', {
-                    p_user_id: user.id,
-                    p_event_id: eventId
-                });
+                // Fetch quests with user progress
+                const { data: quests, error: questsError } = await supabase
+                    .from('event_quests')
+                    .select('*')
+                    .eq('event_id', eventId)
+                    .order('order_index');
 
-                if (error) throw error;
-                return (data || []) as EventQuest[];
+                if (questsError) throw questsError;
+
+                const { data: progress, error: progressError } = await supabase
+                    .from('user_event_progress')
+                    .select('*')
+                    .eq('user_id', user.id)
+                    .eq('event_id', eventId);
+
+                if (progressError) throw progressError;
+
+                // Map quests with progress
+                return (quests || []).map(quest => {
+                    const userProgress = progress?.find(p => p.event_quest_id === quest.id);
+                    return {
+                        quest_id: quest.id,
+                        quest_title: quest.title,
+                        quest_description: quest.description || '',
+                        quest_icon: quest.icon,
+                        quest_type: quest.quest_type || '',
+                        target_value: quest.target_value,
+                        current_progress: userProgress?.current_progress || 0,
+                        xp_reward: quest.xp_reward || 0,
+                        difficulty: quest.difficulty || 'medium',
+                        completed: userProgress?.completed || false,
+                        completed_at: userProgress?.completed_at || undefined
+                    } as EventQuest;
+                });
             },
             enabled: !!user && !!eventId,
             staleTime: 1000 * 30 // 30 seconds
@@ -70,13 +103,51 @@ export function useSeasonalEvents() {
         return useQuery({
             queryKey: ['event-leaderboard', eventId],
             queryFn: async () => {
-                const { data, error } = await supabase.rpc('get_event_leaderboard', {
-                    p_event_id: eventId,
-                    p_limit: 50
-                });
+                // Fetch user progress and aggregate
+                const { data, error } = await supabase
+                    .from('user_event_progress')
+                    .select(`
+                        user_id,
+                        completed,
+                        event_quests!inner(xp_reward)
+                    `)
+                    .eq('event_id', eventId)
+                    .eq('completed', true);
 
                 if (error) throw error;
-                return data || [];
+
+                // Aggregate by user
+                const userStats: Record<string, { quests_completed: number; total_xp: number }> = {};
+                (data || []).forEach((entry: any) => {
+                    if (!userStats[entry.user_id]) {
+                        userStats[entry.user_id] = { quests_completed: 0, total_xp: 0 };
+                    }
+                    userStats[entry.user_id].quests_completed += 1;
+                    userStats[entry.user_id].total_xp += entry.event_quests?.xp_reward || 0;
+                });
+
+                // Get user names
+                const userIds = Object.keys(userStats);
+                if (userIds.length === 0) return [];
+
+                const { data: profiles } = await supabase
+                    .from('profiles')
+                    .select('user_id, full_name')
+                    .in('user_id', userIds);
+
+                // Build leaderboard
+                const leaderboard = userIds
+                    .map(userId => ({
+                        user_id: userId,
+                        full_name: profiles?.find(p => p.user_id === userId)?.full_name || 'Anonymous',
+                        quests_completed: userStats[userId].quests_completed,
+                        total_xp: userStats[userId].total_xp
+                    }))
+                    .sort((a, b) => b.total_xp - a.total_xp || b.quests_completed - a.quests_completed)
+                    .slice(0, 50)
+                    .map((entry, index) => ({ ...entry, rank: index + 1 }));
+
+                return leaderboard;
             },
             enabled: !!eventId,
             staleTime: 1000 * 60 // 1 minute
@@ -88,15 +159,35 @@ export function useSeasonalEvents() {
         mutationFn: async (questId: string) => {
             if (!user) throw new Error('Not authenticated');
 
-            const { data, error } = await supabase.rpc('complete_event_quest', {
-                p_user_id: user.id,
-                p_quest_id: questId
-            });
+            // Get quest info
+            const { data: quest, error: questError } = await supabase
+                .from('event_quests')
+                .select('*, seasonal_events!inner(id)')
+                .eq('id', questId)
+                .single();
 
-            if (error) throw error;
-            return data;
+            if (questError) throw questError;
+
+            // Upsert progress as completed
+            const { error: progressError } = await supabase
+                .from('user_event_progress')
+                .upsert({
+                    user_id: user.id,
+                    event_id: quest.event_id,
+                    event_quest_id: questId,
+                    target_value: quest.target_value,
+                    current_progress: quest.target_value,
+                    completed: true,
+                    completed_at: new Date().toISOString()
+                }, {
+                    onConflict: 'user_id,event_quest_id'
+                });
+
+            if (progressError) throw progressError;
+
+            return { success: true, xp_awarded: quest.xp_reward };
         },
-        onSuccess: (data, questId) => {
+        onSuccess: () => {
             // Invalidate queries
             queryClient.invalidateQueries({ queryKey: ['event-progress'] });
             queryClient.invalidateQueries({ queryKey: ['event-leaderboard'] });

@@ -215,13 +215,13 @@ export default function EventDetailsPage() {
                         <div className="space-y-2">
                             {[...Array(5)].map((_, i) => <Skeleton key={i} className="h-16" />)}
                         </div>
-                    ) : !leaderboard || leaderboard.length === 0 ? (
+                    ) : !leaderboard || (leaderboard as any[]).length === 0 ? (
                         <p className="text-center py-8 text-muted-foreground">
                             Chưa có người tham gia
                         </p>
                     ) : (
                         <div className="space-y-2">
-                            {leaderboard.map((entry: any, index: number) => {
+                            {(leaderboard as any[]).map((entry: any, index: number) => {
                                 const getRankIcon = () => {
                                     if (entry.rank === 1) return <Crown className="h-5 w-5 text-yellow-500" />;
                                     if (entry.rank === 2) return <Medal className="h-5 w-5 text-gray-400" />;
