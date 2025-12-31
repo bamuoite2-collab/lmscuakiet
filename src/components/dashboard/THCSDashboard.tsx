@@ -9,6 +9,7 @@ import { Skeleton } from '@/components/ui/skeleton';
 import { useGamification } from '@/hooks/useGamification';
 import { Zap, Award, Target } from 'lucide-react';
 import { DailyQuestsWidget } from '@/components/gamification/DailyQuestsWidget';
+import { EventBanner } from '@/components/events/EventBanner';
 
 interface THCSDashboardProps {
   userId: string;
@@ -189,6 +190,9 @@ export function THCSDashboard({ userId, userName }: THCSDashboardProps) {
           </CardContent>
         </Card>
       )}
+
+      {/* Event Banner */}
+      <EventBanner />
 
       {/* Daily Quests */}
       <DailyQuestsWidget />

@@ -22,6 +22,7 @@ import GamificationTestPage from "./pages/GamificationTestPage";
 import AchievementsPage from "./pages/AchievementsPage";
 import LeaderboardPage from "./pages/LeaderboardPage";
 import AnalyticsPage from "./pages/AnalyticsPage";
+import EventDetailsPage from "./pages/EventDetailsPage";
 
 const queryClient = new QueryClient();
 
@@ -47,6 +48,7 @@ const App = () => (
               <Route path="/achievements" element={<AchievementsPage />} />
               <Route path="/leaderboard" element={<LeaderboardPage />} />
               <Route path="/analytics" element={<AnalyticsPage />} />
+              <Route path="/events/:eventId" element={<EventDetailsPage />} />
               <Route path="/test/gamification" element={<GamificationTestPage />} />
               <Route path="*" element={<NotFound />} />
             </Routes>
