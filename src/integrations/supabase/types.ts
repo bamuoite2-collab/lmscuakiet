@@ -14,6 +14,48 @@ export type Database = {
   }
   public: {
     Tables: {
+      achievements: {
+        Row: {
+          category: string
+          code: string
+          created_at: string
+          criteria: Json
+          description: string
+          icon: string
+          id: string
+          is_active: boolean
+          order_index: number
+          title: string
+          xp_reward: number
+        }
+        Insert: {
+          category: string
+          code: string
+          created_at?: string
+          criteria: Json
+          description: string
+          icon: string
+          id?: string
+          is_active?: boolean
+          order_index?: number
+          title: string
+          xp_reward?: number
+        }
+        Update: {
+          category?: string
+          code?: string
+          created_at?: string
+          criteria?: Json
+          description?: string
+          icon?: string
+          id?: string
+          is_active?: boolean
+          order_index?: number
+          title?: string
+          xp_reward?: number
+        }
+        Relationships: []
+      }
       courses: {
         Row: {
           category: string | null
@@ -50,6 +92,51 @@ export type Database = {
           thumbnail_url?: string | null
           title?: string
           updated_at?: string
+        }
+        Relationships: []
+      }
+      daily_quests: {
+        Row: {
+          code: string
+          created_at: string
+          description: string
+          difficulty: string
+          icon: string
+          id: string
+          is_active: boolean
+          quest_type: string
+          target_value: number
+          title: string
+          weight: number
+          xp_reward: number
+        }
+        Insert: {
+          code: string
+          created_at?: string
+          description: string
+          difficulty?: string
+          icon: string
+          id?: string
+          is_active?: boolean
+          quest_type: string
+          target_value: number
+          title: string
+          weight?: number
+          xp_reward: number
+        }
+        Update: {
+          code?: string
+          created_at?: string
+          description?: string
+          difficulty?: string
+          icon?: string
+          id?: string
+          is_active?: boolean
+          quest_type?: string
+          target_value?: number
+          title?: string
+          weight?: number
+          xp_reward?: number
         }
         Relationships: []
       }
@@ -442,6 +529,130 @@ export type Database = {
           },
         ]
       }
+      student_achievements: {
+        Row: {
+          achievement_id: string
+          id: string
+          notified: boolean
+          unlocked_at: string
+          user_id: string
+        }
+        Insert: {
+          achievement_id: string
+          id?: string
+          notified?: boolean
+          unlocked_at?: string
+          user_id: string
+        }
+        Update: {
+          achievement_id?: string
+          id?: string
+          notified?: boolean
+          unlocked_at?: string
+          user_id?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "student_achievements_achievement_id_fkey"
+            columns: ["achievement_id"]
+            isOneToOne: false
+            referencedRelation: "achievements"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      student_daily_quests: {
+        Row: {
+          assigned_date: string
+          completed_at: string | null
+          current_progress: number
+          daily_quest_id: string
+          id: string
+          is_completed: boolean
+          target_value: number
+          user_id: string
+        }
+        Insert: {
+          assigned_date?: string
+          completed_at?: string | null
+          current_progress?: number
+          daily_quest_id: string
+          id?: string
+          is_completed?: boolean
+          target_value: number
+          user_id: string
+        }
+        Update: {
+          assigned_date?: string
+          completed_at?: string | null
+          current_progress?: number
+          daily_quest_id?: string
+          id?: string
+          is_completed?: boolean
+          target_value?: number
+          user_id?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "student_daily_quests_daily_quest_id_fkey"
+            columns: ["daily_quest_id"]
+            isOneToOne: false
+            referencedRelation: "daily_quests"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      student_gamification: {
+        Row: {
+          created_at: string
+          current_level: number
+          current_streak: number
+          id: string
+          last_activity_date: string | null
+          longest_streak: number
+          streak_freeze_count: number
+          total_lessons_completed: number
+          total_quizzes_completed: number
+          total_stars_earned: number
+          total_xp: number
+          updated_at: string
+          user_id: string
+          xp_to_next_level: number
+        }
+        Insert: {
+          created_at?: string
+          current_level?: number
+          current_streak?: number
+          id?: string
+          last_activity_date?: string | null
+          longest_streak?: number
+          streak_freeze_count?: number
+          total_lessons_completed?: number
+          total_quizzes_completed?: number
+          total_stars_earned?: number
+          total_xp?: number
+          updated_at?: string
+          user_id: string
+          xp_to_next_level?: number
+        }
+        Update: {
+          created_at?: string
+          current_level?: number
+          current_streak?: number
+          id?: string
+          last_activity_date?: string | null
+          longest_streak?: number
+          streak_freeze_count?: number
+          total_lessons_completed?: number
+          total_quizzes_completed?: number
+          total_stars_earned?: number
+          total_xp?: number
+          updated_at?: string
+          user_id?: string
+          xp_to_next_level?: number
+        }
+        Relationships: []
+      }
       student_progress: {
         Row: {
           completed: boolean | null
@@ -498,6 +709,36 @@ export type Database = {
         }
         Relationships: []
       }
+      xp_transactions: {
+        Row: {
+          created_at: string
+          description: string | null
+          id: string
+          source_id: string | null
+          source_type: string
+          user_id: string
+          xp_amount: number
+        }
+        Insert: {
+          created_at?: string
+          description?: string | null
+          id?: string
+          source_id?: string | null
+          source_type: string
+          user_id: string
+          xp_amount: number
+        }
+        Update: {
+          created_at?: string
+          description?: string | null
+          id?: string
+          source_id?: string | null
+          source_type?: string
+          user_id?: string
+          xp_amount?: number
+        }
+        Relationships: []
+      }
     }
     Views: {
       public_quiz_questions: {
@@ -522,6 +763,17 @@ export type Database = {
       }
     }
     Functions: {
+      award_xp: {
+        Args: {
+          _description?: string
+          _source_id?: string
+          _source_type: string
+          _user_id: string
+          _xp_amount: number
+        }
+        Returns: Json
+      }
+      check_achievements: { Args: { _user_id: string }; Returns: Json }
       get_quiz_questions_for_student: {
         Args: { p_quiz_id: string }
         Returns: {
@@ -532,6 +784,7 @@ export type Database = {
           quiz_id: string
         }[]
       }
+      has_any_admin: { Args: never; Returns: boolean }
       has_role: {
         Args: {
           _role: Database["public"]["Enums"]["app_role"]
@@ -539,6 +792,8 @@ export type Database = {
         }
         Returns: boolean
       }
+      promote_to_admin: { Args: { _user_email: string }; Returns: undefined }
+      update_streak: { Args: { _user_id: string }; Returns: Json }
     }
     Enums: {
       app_role: "admin" | "student"

@@ -1,7 +1,40 @@
 import { useQuery } from '@tanstack/react-query';
 import { supabase } from '@/integrations/supabase/client';
 import { useAuth } from '@/hooks/useAuth';
-import { Achievement, StudentAchievement } from '@/components/gamification/AchievementGrid';
+
+export interface Achievement {
+    id: string;
+    code: string;
+    title: string;
+    description: string;
+    icon: string;
+    category: string;
+    xp_reward: number;
+    is_active: boolean;
+    order_index?: number;
+    criteria?: Record<string, unknown>;
+    created_at?: string;
+}
+
+export interface StudentAchievement {
+    id?: string;
+    achievement_id: string;
+    unlocked_at: string;
+    user_id?: string;
+    notified?: boolean;
+}
+
+interface CheckAchievementsResult {
+    success: boolean;
+    unlocked_count: number;
+    achievements: Array<{
+        id: string;
+        code: string;
+        title: string;
+        icon: string;
+        xp_reward: number;
+    }>;
+}
 
 export function useAchievements() {
     const { user } = useAuth();
@@ -17,7 +50,7 @@ export function useAchievements() {
                 .order('order_index');
 
             if (error) throw error;
-            return data || [];
+            return (data || []) as Achievement[];
         },
     });
 
@@ -34,14 +67,14 @@ export function useAchievements() {
                 .order('unlocked_at', { ascending: false });
 
             if (error) throw error;
-            return data || [];
+            return (data || []) as StudentAchievement[];
         },
         enabled: !!user,
     });
 
     // Check for new achievements
-    const checkAchievements = async () => {
-        if (!user) return;
+    const checkAchievements = async (): Promise<CheckAchievementsResult | null> => {
+        if (!user) return null;
 
         try {
             const { data, error } = await supabase.rpc('check_achievements', {
@@ -49,9 +82,10 @@ export function useAchievements() {
             });
 
             if (error) throw error;
-            return data;
+            return data as unknown as CheckAchievementsResult;
         } catch (error) {
             console.error('Error checking achievements:', error);
+            return null;
         }
     };
 

@@ -2,22 +2,9 @@ import { Badge } from '@/components/ui/badge';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Lock, Check } from 'lucide-react';
 import { cn } from '@/lib/utils';
+import { Achievement, StudentAchievement } from '@/hooks/useAchievements';
 
-export interface Achievement {
-    id: string;
-    code: string;
-    title: string;
-    description: string;
-    icon: string;
-    category: string;
-    xp_reward: number;
-    is_active: boolean;
-}
-
-export interface StudentAchievement {
-    achievement_id: string;
-    unlocked_at: string;
-}
+export type { Achievement, StudentAchievement };
 
 interface AchievementBadgeProps {
     achievement: Achievement;
