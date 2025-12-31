@@ -21,6 +21,7 @@ import ChemistryCalculator from "./components/ChemistryCalculator";
 import GamificationTestPage from "./pages/GamificationTestPage";
 import AchievementsPage from "./pages/AchievementsPage";
 import LeaderboardPage from "./pages/LeaderboardPage";
+import AnalyticsPage from "./pages/AnalyticsPage";
 
 const queryClient = new QueryClient();
 
@@ -45,6 +46,7 @@ const App = () => (
               <Route path="/periodic-table" element={<PeriodicTable />} />
               <Route path="/achievements" element={<AchievementsPage />} />
               <Route path="/leaderboard" element={<LeaderboardPage />} />
+              <Route path="/analytics" element={<AnalyticsPage />} />
               <Route path="/test/gamification" element={<GamificationTestPage />} />
               <Route path="*" element={<NotFound />} />
             </Routes>
