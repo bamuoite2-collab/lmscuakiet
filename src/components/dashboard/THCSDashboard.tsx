@@ -6,6 +6,9 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/com
 import { Progress } from '@/components/ui/progress';
 import { supabase } from '@/integrations/supabase/client';
 import { Skeleton } from '@/components/ui/skeleton';
+import { useGamification } from '@/hooks/useGamification';
+import { Zap, Award, Target } from 'lucide-react';
+import { DailyQuestsWidget } from '@/components/gamification/DailyQuestsWidget';
 
 interface THCSDashboardProps {
   userId: string;
@@ -46,48 +49,8 @@ export function THCSDashboard({ userId, userName }: THCSDashboardProps) {
     }
   });
 
-  // Calculate streak (consecutive days with completed lessons)
-  const { data: streakData } = useQuery({
-    queryKey: ['streak', userId],
-    queryFn: async () => {
-      const { data } = await supabase
-        .from('student_progress')
-        .select('completed_at')
-        .eq('user_id', userId)
-        .eq('completed', true)
-        .order('completed_at', { ascending: false });
-
-      if (!data || data.length === 0) return 0;
-
-      let streak = 0;
-      const today = new Date();
-      today.setHours(0, 0, 0, 0);
-
-      // Group by date
-      const dates = [...new Set(data.map(d => {
-        const date = new Date(d.completed_at!);
-        date.setHours(0, 0, 0, 0);
-        return date.getTime();
-      }))].sort((a, b) => b - a);
-
-      for (let i = 0; i < dates.length; i++) {
-        const expectedDate = new Date(today);
-        expectedDate.setDate(expectedDate.getDate() - i);
-        expectedDate.setHours(0, 0, 0, 0);
-
-        if (dates[i] === expectedDate.getTime()) {
-          streak++;
-        } else if (i === 0 && dates[i] === expectedDate.getTime() - 86400000) {
-          // Yesterday counts too for continuing streak
-          streak++;
-        } else {
-          break;
-        }
-      }
-
-      return streak;
-    }
-  });
+  // Gamification stats
+  const { profile: gamificationProfile, isLoading: loadingGamification } = useGamification();
 
   // Weekly progress
   const { data: weeklyProgress } = useQuery({
@@ -150,39 +113,85 @@ export function THCSDashboard({ userId, userName }: THCSDashboardProps) {
       </div>
 
       {/* Stats Cards */}
-      <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+      <div className="grid grid-cols-2 md:grid-cols-5 gap-4">
+        {/* Level Card */}
+        <Card className="bg-gradient-to-br from-amber-500 to-orange-600 text-white border-0">
+          <CardContent className="p-4">
+            <Trophy className="h-6 w-6 mb-2 opacity-90" />
+            <div className="text-2xl font-bold">{gamificationProfile?.current_level || 1}</div>
+            <div className="text-sm opacity-90">Cấp độ</div>
+          </CardContent>
+        </Card>
+
+        {/* XP Card */}
+        <Card className="bg-gradient-to-br from-blue-500 to-indigo-600 text-white border-0">
+          <CardContent className="p-4">
+            <Zap className="h-6 w-6 mb-2 opacity-90" />
+            <div className="text-2xl font-bold">{gamificationProfile?.total_xp || 0}</div>
+            <div className="text-sm opacity-90">XP tổng</div>
+          </CardContent>
+        </Card>
+
+        {/* Streak Card */}
         <Card className="bg-gradient-to-br from-orange-500 to-red-500 text-white border-0">
           <CardContent className="p-4">
             <Flame className="h-6 w-6 mb-2 opacity-90" />
-            <div className="text-2xl font-bold">{streakData || 0}</div>
+            <div className="text-2xl font-bold">{gamificationProfile?.current_streak || 0}</div>
             <div className="text-sm opacity-90">ngày streak</div>
           </CardContent>
         </Card>
 
+        {/* Lessons Completed Card */}
         <Card className="bg-gradient-to-br from-emerald-500 to-teal-600 text-white border-0">
           <CardContent className="p-4">
-            <CheckCircle2 className="h-6 w-6 mb-2 opacity-90" />
-            <div className="text-2xl font-bold">{weeklyProgress || 0}</div>
-            <div className="text-sm opacity-90">bài tuần này</div>
-          </CardContent>
-        </Card>
-
-        <Card className="bg-gradient-to-br from-blue-500 to-indigo-600 text-white border-0">
-          <CardContent className="p-4">
             <BookOpen className="h-6 w-6 mb-2 opacity-90" />
-            <div className="text-2xl font-bold">{totalProgress?.completed || 0}</div>
+            <div className="text-2xl font-bold">{gamificationProfile?.total_lessons_completed || 0}</div>
             <div className="text-sm opacity-90">bài đã học</div>
           </CardContent>
         </Card>
 
+        {/* Achievements Card */}
         <Card className="bg-gradient-to-br from-purple-500 to-pink-600 text-white border-0">
           <CardContent className="p-4">
-            <Trophy className="h-6 w-6 mb-2 opacity-90" />
-            <div className="text-2xl font-bold">{totalProgress?.percentage || 0}%</div>
-            <div className="text-sm opacity-90">hoàn thành</div>
+            <Award className="h-6 w-6 mb-2 opacity-90" />
+            <div className="text-2xl font-bold">{gamificationProfile?.total_stars_earned || 0}</div>
+            <div className="text-sm opacity-90">sao đạt được</div>
           </CardContent>
         </Card>
       </div>
+
+      {/* XP Progress to Next Level */}
+      {gamificationProfile && (
+        <Card>
+          <CardHeader className="pb-2">
+            <CardTitle className="text-lg flex items-center gap-2">
+              <Target className="h-5 w-5 text-primary" />
+              Tiến độ lên cấp
+            </CardTitle>
+            <CardDescription>
+              Còn {gamificationProfile.xp_to_next_level} XP nữa để đạt cấp {gamificationProfile.current_level + 1}
+            </CardDescription>
+          </CardHeader>
+          <CardContent>
+            <div className="space-y-2">
+              <Progress
+                value={
+                  ((gamificationProfile.total_xp - Math.pow(gamificationProfile.current_level - 1, 2) * 50) /
+                    (Math.pow(gamificationProfile.current_level, 2) * 50 - Math.pow(gamificationProfile.current_level - 1, 2) * 50)) * 100
+                }
+                className="h-3"
+              />
+              <div className="flex justify-between text-sm text-muted-foreground">
+                <span>Cấp {gamificationProfile.current_level}</span>
+                <span>Cấp {gamificationProfile.current_level + 1}</span>
+              </div>
+            </div>
+          </CardContent>
+        </Card>
+      )}
+
+      {/* Daily Quests */}
+      <DailyQuestsWidget />
 
       {/* Today's Lessons */}
       <Card>
