@@ -174,10 +174,12 @@
   }
 
   @keyframes shine {
+
     0%,
     100% {
       transform: translateX(-100%);
     }
+
     50% {
       transform: translateX(100%);
     }
@@ -205,6 +207,7 @@
     from {
       opacity: 0;
     }
+
     to {
       opacity: 1;
     }
@@ -215,6 +218,7 @@
       opacity: 0;
       transform: translateY(20px);
     }
+
     to {
       opacity: 1;
       transform: translateY(0);
@@ -226,6 +230,7 @@
       opacity: 0;
       transform: translateX(-20px);
     }
+
     to {
       opacity: 1;
       transform: translateX(0);
@@ -233,10 +238,12 @@
   }
 
   @keyframes float {
+
     0%,
     100% {
       transform: translateY(0);
     }
+
     50% {
       transform: translateY(-10px);
     }
@@ -277,7 +284,7 @@
 
 /* Inline formulas - không xuống dòng */
 .katex-inline,
-span > .katex,
+span>.katex,
 p .katex {
   display: inline !important;
   vertical-align: baseline !important;
@@ -315,5 +322,53 @@ article .katex,
 @media (max-width: 640px) {
   .katex {
     font-size: 0.95em !important;
+  }
+}
+
+/* =====================================================
+   GLOBAL SCROLLBAR STYLING - Hide but keep functional
+   ===================================================== */
+
+/* Hide scrollbars but keep scrolling functional */
+* {
+  scrollbar-width: none;
+  /* Firefox */
+  -ms-overflow-style: none;
+  /* IE and Edge */
+}
+
+*::-webkit-scrollbar {
+  display: none;
+  /* Chrome, Safari, Opera */
+  width: 0;
+  height: 0;
+}
+
+/* For specific containers that need scrolling */
+.overflow-auto,
+.overflow-x-auto,
+.overflow-y-auto,
+.overflow-scroll {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.overflow-auto::-webkit-scrollbar,
+.overflow-x-auto::-webkit-scrollbar,
+.overflow-y-auto::-webkit-scrollbar,
+.overflow-scroll::-webkit-scrollbar {
+  display: none;
+}
+
+/* Mobile touch-friendly padding */
+@media (max-width: 768px) {
+  .container {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  /* Ensure cards don't overflow */
+  .card {
+    max-width: 100%;
   }
 }

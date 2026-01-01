@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Menu, X, BookOpen, FlaskConical, LogOut, LayoutDashboard, BarChart3, TrendingUp, Atom } from 'lucide-react';
+import { Menu, X, BookOpen, FlaskConical, LogOut, LayoutDashboard, BarChart3, TrendingUp, Atom, ShoppingBag } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { useAuth } from '@/hooks/useAuth';
 import { ThemeToggle } from '@/components/ui/ThemeToggle';
@@ -13,6 +13,7 @@ export function Navbar() {
   const navLinks = [
     { href: '/', label: 'Home' },
     { href: '/courses', label: 'Courses' },
+    { href: '/shop', label: 'Shop XP', icon: ShoppingBag },
     { href: '/periodic-table', label: 'Bảng tuần hoàn', icon: Atom },
   ];
 
@@ -39,8 +40,8 @@ export function Navbar() {
                 key={link.href}
                 to={link.href}
                 className={`px-4 py-2 rounded-lg text-sm font-medium transition-colors ${isActive(link.href)
-                    ? 'bg-primary text-primary-foreground'
-                    : 'text-muted-foreground hover:text-foreground hover:bg-muted'
+                  ? 'bg-primary text-primary-foreground'
+                  : 'text-muted-foreground hover:text-foreground hover:bg-muted'
                   }`}
               >
                 {link.label}
@@ -51,8 +52,8 @@ export function Navbar() {
                 <Link
                   to="/admin"
                   className={`px-4 py-2 rounded-lg text-sm font-medium transition-colors flex items-center gap-2 ${isActive('/admin')
-                      ? 'bg-primary text-primary-foreground'
-                      : 'text-muted-foreground hover:text-foreground hover:bg-muted'
+                    ? 'bg-primary text-primary-foreground'
+                    : 'text-muted-foreground hover:text-foreground hover:bg-muted'
                     }`}
                 >
                   <LayoutDashboard className="h-4 w-4" />
@@ -61,8 +62,8 @@ export function Navbar() {
                 <Link
                   to="/admin/analytics"
                   className={`px-4 py-2 rounded-lg text-sm font-medium transition-colors flex items-center gap-2 ${isActive('/admin/analytics')
-                      ? 'bg-primary text-primary-foreground'
-                      : 'text-muted-foreground hover:text-foreground hover:bg-muted'
+                    ? 'bg-primary text-primary-foreground'
+                    : 'text-muted-foreground hover:text-foreground hover:bg-muted'
                     }`}
                 >
                   <BarChart3 className="h-4 w-4" />
@@ -74,8 +75,8 @@ export function Navbar() {
               <Link
                 to="/my-progress"
                 className={`px-4 py-2 rounded-lg text-sm font-medium transition-colors flex items-center gap-2 ${isActive('/my-progress')
-                    ? 'bg-primary text-primary-foreground'
-                    : 'text-muted-foreground hover:text-foreground hover:bg-muted'
+                  ? 'bg-primary text-primary-foreground'
+                  : 'text-muted-foreground hover:text-foreground hover:bg-muted'
                   }`}
               >
                 <TrendingUp className="h-4 w-4" />
@@ -126,8 +127,8 @@ export function Navbar() {
                   to={link.href}
                   onClick={() => setIsOpen(false)}
                   className={`px-4 py-3 rounded-lg text-sm font-medium transition-colors ${isActive(link.href)
-                      ? 'bg-primary text-primary-foreground'
-                      : 'text-muted-foreground hover:text-foreground hover:bg-muted'
+                    ? 'bg-primary text-primary-foreground'
+                    : 'text-muted-foreground hover:text-foreground hover:bg-muted'
                     }`}
                 >
                   {link.label}
@@ -139,8 +140,8 @@ export function Navbar() {
                     to="/admin"
                     onClick={() => setIsOpen(false)}
                     className={`px-4 py-3 rounded-lg text-sm font-medium transition-colors flex items-center gap-2 ${isActive('/admin')
-                        ? 'bg-primary text-primary-foreground'
-                        : 'text-muted-foreground hover:text-foreground hover:bg-muted'
+                      ? 'bg-primary text-primary-foreground'
+                      : 'text-muted-foreground hover:text-foreground hover:bg-muted'
                       }`}
                   >
                     <LayoutDashboard className="h-4 w-4" />
@@ -150,8 +151,8 @@ export function Navbar() {
                     to="/admin/analytics"
                     onClick={() => setIsOpen(false)}
                     className={`px-4 py-3 rounded-lg text-sm font-medium transition-colors flex items-center gap-2 ${isActive('/admin/analytics')
-                        ? 'bg-primary text-primary-foreground'
-                        : 'text-muted-foreground hover:text-foreground hover:bg-muted'
+                      ? 'bg-primary text-primary-foreground'
+                      : 'text-muted-foreground hover:text-foreground hover:bg-muted'
                       }`}
                   >
                     <BarChart3 className="h-4 w-4" />
@@ -164,8 +165,8 @@ export function Navbar() {
                   to="/my-progress"
                   onClick={() => setIsOpen(false)}
                   className={`px-4 py-3 rounded-lg text-sm font-medium transition-colors flex items-center gap-2 ${isActive('/my-progress')
-                      ? 'bg-primary text-primary-foreground'
-                      : 'text-muted-foreground hover:text-foreground hover:bg-muted'
+                    ? 'bg-primary text-primary-foreground'
+                    : 'text-muted-foreground hover:text-foreground hover:bg-muted'
                     }`}
                 >
                   <TrendingUp className="h-4 w-4" />
