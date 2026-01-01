@@ -8,6 +8,7 @@ import {
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
+import { StreakHeatmap } from '@/components/analytics/StreakHeatmap';
 
 export default function AnalyticsPage() {
     const {
@@ -192,33 +193,8 @@ export default function AnalyticsPage() {
                 </CardContent>
             </Card>
 
-            {/* Streak Heatmap Preview */}
-            <Card>
-                <CardHeader>
-                    <CardTitle className="flex items-center gap-2">
-                        <Calendar className="h-5 w-5 text-orange-500" />
-                        Lịch Học Tập
-                    </CardTitle>
-                </CardHeader>
-                <CardContent>
-                    <p className="text-sm text-muted-foreground mb-4">
-                        Heatmap hiển thị hoạt động học tập của bạn trong 365 ngày qua
-                    </p>
-                    {streakData && streakData.length > 0 ? (
-                        <div className="bg-muted rounded p-4">
-                            <p className="text-center text-muted-foreground">
-                                📊 Chart library đang được cài đặt...
-                                <br />
-                                <span className="text-xs">Sau khi cài xong, sẽ hiển thị GitHub-style heatmap tại đây</span>
-                            </p>
-                        </div>
-                    ) : (
-                        <p className="text-center text-muted-foreground py-8">
-                            Chưa có dữ liệu streak
-                        </p>
-                    )}
-                </CardContent>
-            </Card>
+            {/* Streak Heatmap */}
+            <StreakHeatmap />
 
             {/* Insights */}
             <Card className="bg-gradient-to-r from-blue-50 to-purple-50 dark:from-blue-950 dark:to-purple-950 border-blue-200">

@@ -3,6 +3,7 @@ import { Link, useLocation } from 'react-router-dom';
 import { Menu, X, BookOpen, FlaskConical, LogOut, LayoutDashboard, BarChart3, TrendingUp, Atom } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { useAuth } from '@/hooks/useAuth';
+import { ThemeToggle } from '@/components/ui/ThemeToggle';
 
 export function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -37,11 +38,10 @@ export function Navbar() {
               <Link
                 key={link.href}
                 to={link.href}
-                className={`px-4 py-2 rounded-lg text-sm font-medium transition-colors ${
-                  isActive(link.href)
+                className={`px-4 py-2 rounded-lg text-sm font-medium transition-colors ${isActive(link.href)
                     ? 'bg-primary text-primary-foreground'
                     : 'text-muted-foreground hover:text-foreground hover:bg-muted'
-                }`}
+                  }`}
               >
                 {link.label}
               </Link>
@@ -50,22 +50,20 @@ export function Navbar() {
               <>
                 <Link
                   to="/admin"
-                  className={`px-4 py-2 rounded-lg text-sm font-medium transition-colors flex items-center gap-2 ${
-                    isActive('/admin')
+                  className={`px-4 py-2 rounded-lg text-sm font-medium transition-colors flex items-center gap-2 ${isActive('/admin')
                       ? 'bg-primary text-primary-foreground'
                       : 'text-muted-foreground hover:text-foreground hover:bg-muted'
-                  }`}
+                    }`}
                 >
                   <LayoutDashboard className="h-4 w-4" />
                   Quản Trị
                 </Link>
                 <Link
                   to="/admin/analytics"
-                  className={`px-4 py-2 rounded-lg text-sm font-medium transition-colors flex items-center gap-2 ${
-                    isActive('/admin/analytics')
+                  className={`px-4 py-2 rounded-lg text-sm font-medium transition-colors flex items-center gap-2 ${isActive('/admin/analytics')
                       ? 'bg-primary text-primary-foreground'
                       : 'text-muted-foreground hover:text-foreground hover:bg-muted'
-                  }`}
+                    }`}
                 >
                   <BarChart3 className="h-4 w-4" />
                   Thống kê
@@ -75,11 +73,10 @@ export function Navbar() {
             {user && !isAdmin && (
               <Link
                 to="/my-progress"
-                className={`px-4 py-2 rounded-lg text-sm font-medium transition-colors flex items-center gap-2 ${
-                  isActive('/my-progress')
+                className={`px-4 py-2 rounded-lg text-sm font-medium transition-colors flex items-center gap-2 ${isActive('/my-progress')
                     ? 'bg-primary text-primary-foreground'
                     : 'text-muted-foreground hover:text-foreground hover:bg-muted'
-                }`}
+                  }`}
               >
                 <TrendingUp className="h-4 w-4" />
                 Tiến độ
@@ -89,6 +86,7 @@ export function Navbar() {
 
           {/* Auth Buttons */}
           <div className="hidden md:flex items-center gap-3">
+            <ThemeToggle />
             {user ? (
               <Button variant="ghost" size="sm" onClick={signOut}>
                 <LogOut className="h-4 w-4 mr-2" />
@@ -127,11 +125,10 @@ export function Navbar() {
                   key={link.href}
                   to={link.href}
                   onClick={() => setIsOpen(false)}
-                  className={`px-4 py-3 rounded-lg text-sm font-medium transition-colors ${
-                    isActive(link.href)
+                  className={`px-4 py-3 rounded-lg text-sm font-medium transition-colors ${isActive(link.href)
                       ? 'bg-primary text-primary-foreground'
                       : 'text-muted-foreground hover:text-foreground hover:bg-muted'
-                  }`}
+                    }`}
                 >
                   {link.label}
                 </Link>
@@ -141,11 +138,10 @@ export function Navbar() {
                   <Link
                     to="/admin"
                     onClick={() => setIsOpen(false)}
-                    className={`px-4 py-3 rounded-lg text-sm font-medium transition-colors flex items-center gap-2 ${
-                      isActive('/admin')
+                    className={`px-4 py-3 rounded-lg text-sm font-medium transition-colors flex items-center gap-2 ${isActive('/admin')
                         ? 'bg-primary text-primary-foreground'
                         : 'text-muted-foreground hover:text-foreground hover:bg-muted'
-                    }`}
+                      }`}
                   >
                     <LayoutDashboard className="h-4 w-4" />
                     Quản Trị
@@ -153,11 +149,10 @@ export function Navbar() {
                   <Link
                     to="/admin/analytics"
                     onClick={() => setIsOpen(false)}
-                    className={`px-4 py-3 rounded-lg text-sm font-medium transition-colors flex items-center gap-2 ${
-                      isActive('/admin/analytics')
+                    className={`px-4 py-3 rounded-lg text-sm font-medium transition-colors flex items-center gap-2 ${isActive('/admin/analytics')
                         ? 'bg-primary text-primary-foreground'
                         : 'text-muted-foreground hover:text-foreground hover:bg-muted'
-                    }`}
+                      }`}
                   >
                     <BarChart3 className="h-4 w-4" />
                     Thống kê
@@ -168,16 +163,19 @@ export function Navbar() {
                 <Link
                   to="/my-progress"
                   onClick={() => setIsOpen(false)}
-                  className={`px-4 py-3 rounded-lg text-sm font-medium transition-colors flex items-center gap-2 ${
-                    isActive('/my-progress')
+                  className={`px-4 py-3 rounded-lg text-sm font-medium transition-colors flex items-center gap-2 ${isActive('/my-progress')
                       ? 'bg-primary text-primary-foreground'
                       : 'text-muted-foreground hover:text-foreground hover:bg-muted'
-                  }`}
+                    }`}
                 >
                   <TrendingUp className="h-4 w-4" />
                   Tiến độ
                 </Link>
               )}
+              <div className="border-t border-border my-2" />
+              <div className="px-4 py-2">
+                <ThemeToggle />
+              </div>
               <div className="border-t border-border my-2" />
               {user ? (
                 <button
