@@ -6,12 +6,12 @@ import { toast } from 'sonner';
 export interface ShopItem {
     id: string;
     name: string;
-    description: string;
+    description: string | null;
     category: 'avatar' | 'theme' | 'powerup' | 'badge' | 'other';
     xp_cost: number;
-    icon: string;
-    image_url?: string;
-    metadata: any;
+    icon: string | null;
+    image_url?: string | null;
+    metadata: Record<string, unknown>;
     is_available: boolean;
 }
 
@@ -22,6 +22,18 @@ export interface InventoryItem {
     purchased_at: string;
     is_equipped: boolean;
     shop_item: ShopItem;
+}
+
+interface PurchaseResult {
+    success: boolean;
+    item_name?: string;
+    xp_spent?: number;
+    error?: string;
+}
+
+interface EquipResult {
+    success: boolean;
+    error?: string;
 }
 
 export function useShop() {
@@ -39,7 +51,7 @@ export function useShop() {
                 .order('xp_cost');
 
             if (error) throw error;
-            return data as ShopItem[];
+            return (data || []) as unknown as ShopItem[];
         },
         staleTime: 1000 * 60 * 10 // 10 minutes
     });
@@ -53,13 +65,13 @@ export function useShop() {
             const { data, error } = await supabase
                 .from('user_inventory')
                 .select(`
-          *,
-          shop_item:shop_items(*)
-        `)
+                    *,
+                    shop_item:shop_items(*)
+                `)
                 .eq('user_id', user.id);
 
             if (error) throw error;
-            return data as any[];
+            return (data || []) as unknown as InventoryItem[];
         },
         enabled: !!user,
         staleTime: 1000 * 30 // 30 seconds
@@ -77,20 +89,21 @@ export function useShop() {
 
             if (error) throw error;
 
-            if (!data.success) {
-                throw new Error(data.error);
+            const result = data as unknown as PurchaseResult;
+            if (!result?.success) {
+                throw new Error(result?.error || 'Unknown error');
             }
 
-            return data;
+            return result;
         },
         onSuccess: (data) => {
-            toast.success(`Đã mua ${data.item_name}!`, {
-                description: `-${data.xp_spent} XP`
+            toast.success(`Đã mua ${data.item_name || 'vật phẩm'}!`, {
+                description: `-${data.xp_spent || 0} XP`
             });
             queryClient.invalidateQueries({ queryKey: ['user-inventory'] });
             queryClient.invalidateQueries({ queryKey: ['gamification'] });
         },
-        onError: (error: any) => {
+        onError: (error: Error) => {
             const errorMessages: Record<string, string> = {
                 'Item not available': 'Vật phẩm không khả dụng',
                 'Already owned': 'Bạn đã sở hữu vật phẩm này',
@@ -115,17 +128,18 @@ export function useShop() {
 
             if (error) throw error;
 
-            if (!data.success) {
-                throw new Error(data.error);
+            const result = data as unknown as EquipResult;
+            if (!result?.success) {
+                throw new Error(result?.error || 'Unknown error');
             }
 
-            return data;
+            return result;
         },
         onSuccess: () => {
             toast.success('Đã trang bị!');
             queryClient.invalidateQueries({ queryKey: ['user-inventory'] });
         },
-        onError: (error: any) => {
+        onError: (error: Error) => {
             toast.error('Trang bị thất bại', {
                 description: error.message
             });

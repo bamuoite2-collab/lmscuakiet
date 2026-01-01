@@ -463,6 +463,38 @@ export type Database = {
         }
         Relationships: []
       }
+      purchase_transactions: {
+        Row: {
+          id: string
+          purchased_at: string | null
+          shop_item_id: string | null
+          user_id: string
+          xp_spent: number
+        }
+        Insert: {
+          id?: string
+          purchased_at?: string | null
+          shop_item_id?: string | null
+          user_id: string
+          xp_spent: number
+        }
+        Update: {
+          id?: string
+          purchased_at?: string | null
+          shop_item_id?: string | null
+          user_id?: string
+          xp_spent?: number
+        }
+        Relationships: [
+          {
+            foreignKeyName: "purchase_transactions_shop_item_id_fkey"
+            columns: ["shop_item_id"]
+            isOneToOne: false
+            referencedRelation: "shop_items"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
       quiz_attempts: {
         Row: {
           completed_at: string
@@ -678,6 +710,48 @@ export type Database = {
           start_date?: string
           theme_config?: Json | null
           updated_at?: string | null
+        }
+        Relationships: []
+      }
+      shop_items: {
+        Row: {
+          category: string | null
+          created_at: string | null
+          description: string | null
+          icon: string | null
+          id: string
+          image_url: string | null
+          is_available: boolean | null
+          metadata: Json | null
+          name: string
+          stock_limit: number | null
+          xp_cost: number
+        }
+        Insert: {
+          category?: string | null
+          created_at?: string | null
+          description?: string | null
+          icon?: string | null
+          id?: string
+          image_url?: string | null
+          is_available?: boolean | null
+          metadata?: Json | null
+          name: string
+          stock_limit?: number | null
+          xp_cost: number
+        }
+        Update: {
+          category?: string | null
+          created_at?: string | null
+          description?: string | null
+          icon?: string | null
+          id?: string
+          image_url?: string | null
+          is_available?: boolean | null
+          metadata?: Json | null
+          name?: string
+          stock_limit?: number | null
+          xp_cost?: number
         }
         Relationships: []
       }
@@ -1005,6 +1079,38 @@ export type Database = {
           },
         ]
       }
+      user_inventory: {
+        Row: {
+          id: string
+          is_equipped: boolean | null
+          purchased_at: string | null
+          shop_item_id: string
+          user_id: string
+        }
+        Insert: {
+          id?: string
+          is_equipped?: boolean | null
+          purchased_at?: string | null
+          shop_item_id: string
+          user_id: string
+        }
+        Update: {
+          id?: string
+          is_equipped?: boolean | null
+          purchased_at?: string | null
+          shop_item_id?: string
+          user_id?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "user_inventory_shop_item_id_fkey"
+            columns: ["shop_item_id"]
+            isOneToOne: false
+            referencedRelation: "shop_items"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
       user_roles: {
         Row: {
           created_at: string
@@ -1099,6 +1205,10 @@ export type Database = {
         Args: { p_quest_id: string; p_user_id: string }
         Returns: Json
       }
+      equip_shop_item: {
+        Args: { p_item_id: string; p_user_id: string }
+        Returns: Json
+      }
       get_active_events: {
         Args: never
         Returns: {
@@ -1177,6 +1287,10 @@ export type Database = {
         Returns: boolean
       }
       promote_to_admin: { Args: { _user_email: string }; Returns: undefined }
+      purchase_shop_item: {
+        Args: { p_item_id: string; p_user_id: string }
+        Returns: Json
+      }
       update_daily_analytics_for_date: {
         Args: { p_date?: string; p_user_id: string }
         Returns: undefined
