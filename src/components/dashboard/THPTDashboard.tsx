@@ -23,38 +23,38 @@ export function THPTDashboard({ userId, userName }: THPTDashboardProps) {
         .eq('user_id', userId)
         .order('completed_at', { ascending: false })
         .limit(20);
-      
+
       if (!data || data.length === 0) {
-        return { 
-          avgScore: 0, 
-          totalAttempts: 0, 
+        return {
+          avgScore: 0,
+          totalAttempts: 0,
           totalWrong: 0,
           recentScores: [],
           trend: 0
         };
       }
-      
+
       const totalScore = data.reduce((acc, d) => acc + d.score, 0);
       const totalQuestions = data.reduce((acc, d) => acc + d.total_questions, 0);
       const totalWrong = totalQuestions - totalScore;
       const avgScore = totalQuestions > 0 ? Math.round((totalScore / totalQuestions) * 100) : 0;
-      
+
       // Calculate trend (compare last 5 vs previous 5)
       const recent5 = data.slice(0, 5);
       const previous5 = data.slice(5, 10);
-      
-      const recentAvg = recent5.length > 0 
-        ? recent5.reduce((acc, d) => acc + (d.score / d.total_questions * 100), 0) / recent5.length 
+
+      const recentAvg = recent5.length > 0
+        ? recent5.reduce((acc, d) => acc + (d.score / d.total_questions * 100), 0) / recent5.length
         : 0;
-      const previousAvg = previous5.length > 0 
-        ? previous5.reduce((acc, d) => acc + (d.score / d.total_questions * 100), 0) / previous5.length 
+      const previousAvg = previous5.length > 0
+        ? previous5.reduce((acc, d) => acc + (d.score / d.total_questions * 100), 0) / previous5.length
         : recentAvg;
-      
+
       const trend = recentAvg - previousAvg;
-      
-      return { 
-        avgScore, 
-        totalAttempts: data.length, 
+
+      return {
+        avgScore,
+        totalAttempts: data.length,
         totalWrong,
         recentScores: data.slice(0, 5).map(d => ({
           score: Math.round((d.score / d.total_questions) * 100),
@@ -77,7 +77,7 @@ export function THPTDashboard({ userId, userName }: THPTDashboardProps) {
         `)
         .eq('lessons.is_published', true)
         .limit(5);
-      
+
       return data || [];
     }
   });
@@ -95,7 +95,7 @@ export function THPTDashboard({ userId, userName }: THPTDashboardProps) {
         .eq('user_id', userId)
         .order('completed_at', { ascending: false })
         .limit(5);
-      
+
       return data || [];
     }
   });
@@ -120,38 +120,38 @@ export function THPTDashboard({ userId, userName }: THPTDashboardProps) {
       </div>
 
       {/* Stats Cards */}
-      <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+      <div className="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4">
         <Card className="bg-gradient-to-br from-blue-600 to-indigo-700 text-white border-0">
-          <CardContent className="p-4">
-            <Target className="h-6 w-6 mb-2 opacity-90" />
-            <div className="text-2xl font-bold">{quizStats?.avgScore || 0}%</div>
-            <div className="text-sm opacity-90">điểm trung bình</div>
+          <CardContent className="p-3 md:p-4">
+            <Target className="h-5 w-5 md:h-6 md:w-6 mb-1 md:mb-2 opacity-90" />
+            <div className="text-xl md:text-2xl font-bold">{quizStats?.avgScore || 0}%</div>
+            <div className="text-xs md:text-sm opacity-90 truncate">điểm TB</div>
           </CardContent>
         </Card>
-        
+
         <Card className="bg-gradient-to-br from-emerald-500 to-teal-600 text-white border-0">
-          <CardContent className="p-4">
-            <FileText className="h-6 w-6 mb-2 opacity-90" />
-            <div className="text-2xl font-bold">{quizStats?.totalAttempts || 0}</div>
-            <div className="text-sm opacity-90">đề đã làm</div>
+          <CardContent className="p-3 md:p-4">
+            <FileText className="h-5 w-5 md:h-6 md:w-6 mb-1 md:mb-2 opacity-90" />
+            <div className="text-xl md:text-2xl font-bold">{quizStats?.totalAttempts || 0}</div>
+            <div className="text-xs md:text-sm opacity-90 truncate">đề đã làm</div>
           </CardContent>
         </Card>
-        
+
         <Card className="bg-gradient-to-br from-red-500 to-orange-600 text-white border-0">
-          <CardContent className="p-4">
-            <XCircle className="h-6 w-6 mb-2 opacity-90" />
-            <div className="text-2xl font-bold">{quizStats?.totalWrong || 0}</div>
-            <div className="text-sm opacity-90">câu sai cần ôn</div>
+          <CardContent className="p-3 md:p-4">
+            <XCircle className="h-5 w-5 md:h-6 md:w-6 mb-1 md:mb-2 opacity-90" />
+            <div className="text-xl md:text-2xl font-bold">{quizStats?.totalWrong || 0}</div>
+            <div className="text-xs md:text-sm opacity-90 truncate">câu sai</div>
           </CardContent>
         </Card>
-        
+
         <Card className={`bg-gradient-to-br ${(quizStats?.trend || 0) >= 0 ? 'from-green-500 to-emerald-600' : 'from-amber-500 to-orange-600'} text-white border-0`}>
-          <CardContent className="p-4">
-            <TrendingUp className="h-6 w-6 mb-2 opacity-90" />
-            <div className="text-2xl font-bold">
+          <CardContent className="p-3 md:p-4">
+            <TrendingUp className="h-5 w-5 md:h-6 md:w-6 mb-1 md:mb-2 opacity-90" />
+            <div className="text-xl md:text-2xl font-bold">
               {(quizStats?.trend || 0) >= 0 ? '+' : ''}{quizStats?.trend || 0}%
             </div>
-            <div className="text-sm opacity-90">xu hướng điểm</div>
+            <div className="text-xs md:text-sm opacity-90 truncate">xu hướng</div>
           </CardContent>
         </Card>
       </div>
@@ -183,7 +183,7 @@ export function THPTDashboard({ userId, userName }: THPTDashboardProps) {
             </>
           ) : availableQuizzes && availableQuizzes.length > 0 ? (
             availableQuizzes.map((quiz: any) => (
-              <Link 
+              <Link
                 key={quiz.id}
                 to={`/lesson/${quiz.lessons.id}`}
                 className="flex items-center gap-4 p-4 rounded-xl bg-muted/50 hover:bg-muted transition-colors group"
@@ -236,19 +236,17 @@ export function THPTDashboard({ userId, userName }: THPTDashboardProps) {
                     <div className="flex-1 min-w-0">
                       <div className="flex justify-between mb-1">
                         <span className="text-sm font-medium truncate">{attempt.quizzes?.title}</span>
-                        <span className={`text-sm font-bold ${
-                          percentage >= 80 ? 'text-emerald-600' : 
-                          percentage >= 60 ? 'text-amber-600' : 'text-red-600'
-                        }`}>
+                        <span className={`text-sm font-bold ${percentage >= 80 ? 'text-emerald-600' :
+                            percentage >= 60 ? 'text-amber-600' : 'text-red-600'
+                          }`}>
                           {percentage}%
                         </span>
                       </div>
-                      <Progress 
-                        value={percentage} 
-                        className={`h-2 ${
-                          percentage >= 80 ? '[&>div]:bg-emerald-500' : 
-                          percentage >= 60 ? '[&>div]:bg-amber-500' : '[&>div]:bg-red-500'
-                        }`}
+                      <Progress
+                        value={percentage}
+                        className={`h-2 ${percentage >= 80 ? '[&>div]:bg-emerald-500' :
+                            percentage >= 60 ? '[&>div]:bg-amber-500' : '[&>div]:bg-red-500'
+                          }`}
                       />
                       <div className="text-xs text-muted-foreground mt-1">
                         {attempt.score}/{attempt.total_questions} câu đúng • {new Date(attempt.completed_at).toLocaleDateString('vi-VN')}

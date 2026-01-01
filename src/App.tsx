@@ -14,6 +14,7 @@ import Auth from "./pages/Auth";
 import AdminDashboard from "./pages/AdminDashboard";
 import AdminAnalytics from "./pages/AdminAnalytics";
 import AdminGrading from "./pages/AdminGrading";
+import AdminXPManagement from "./pages/AdminXPManagement";
 import MyProgress from "./pages/MyProgress";
 import PeriodicTable from "./pages/PeriodicTable";
 import NotFound from "./pages/NotFound";
@@ -45,6 +46,7 @@ const App = () => (
               <Route path="/admin" element={<AdminDashboard />} />
               <Route path="/admin/analytics" element={<AdminAnalytics />} />
               <Route path="/admin/grading" element={<AdminGrading />} />
+              <Route path="/admin/xp-management" element={<AdminXPManagement />} />
               <Route path="/my-progress" element={<MyProgress />} />
               <Route path="/periodic-table" element={<PeriodicTable />} />
               <Route path="/achievements" element={<AchievementsPage />} />
