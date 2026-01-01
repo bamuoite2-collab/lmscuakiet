@@ -23,6 +23,8 @@ import AchievementsPage from "./pages/AchievementsPage";
 import LeaderboardPage from "./pages/LeaderboardPage";
 import AnalyticsPage from "./pages/AnalyticsPage";
 import EventDetailsPage from "./pages/EventDetailsPage";
+import ShopPage from "./pages/ShopPage";
+import EquationBalancerPage from "./pages/EquationBalancerPage";
 
 const queryClient = new QueryClient();
 
@@ -49,6 +51,8 @@ const App = () => (
               <Route path="/leaderboard" element={<LeaderboardPage />} />
               <Route path="/analytics" element={<AnalyticsPage />} />
               <Route path="/events/:eventId" element={<EventDetailsPage />} />
+              <Route path="/shop" element={<ShopPage />} />
+              <Route path="/games/equation-balancer" element={<EquationBalancerPage />} />
               <Route path="/test/gamification" element={<GamificationTestPage />} />
               <Route path="*" element={<NotFound />} />
             </Routes>
