@@ -12,7 +12,7 @@ import { motion } from 'framer-motion';
 
 export default function ShopPage() {
     const { shopItems, inventory, isLoading, purchaseItem, isPurchasing, equipItem, isOwned } = useShop();
-    const { gamificationProfile } = useGamification();
+    const { profile: gamificationProfile } = useGamification();
 
     if (isLoading) {
         return <LoadingSpinner fullScreen message="Đang tải cửa hàng..." />;
