@@ -98,7 +98,7 @@ export default function Chem1441Portfolio() {
 
           <div className="container mx-auto px-6 relative">
             <div className="max-w-4xl">
-              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 text-primary text-sm font-medium mb-6">
+              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-primary/20 bg-primary/10 text-primary text-sm font-semibold mb-6 dark:border-white/15 dark:bg-white/10 dark:text-white">
                 <FlaskConical className="h-4 w-4" />
                 CHEM1441 · Ứng dụng ICT trong dạy học Hóa học
               </div>
