@@ -89,7 +89,7 @@ export default function Chem1441Portfolio() {
     <div className="min-h-screen bg-background">
       <Navbar />
 
-      <main>
+      <main className="[&_p]:text-justify [&_li]:text-justify">
         <section className="pt-28 pb-16 md:pt-36 md:pb-24 relative overflow-hidden border-b">
           <div className="absolute inset-0 overflow-hidden pointer-events-none">
             <div className="absolute -top-20 left-10 w-72 h-72 bg-primary/10 rounded-full blur-3xl" />
