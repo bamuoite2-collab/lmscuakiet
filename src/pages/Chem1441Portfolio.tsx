@@ -1,3 +1,4 @@
+import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import {
   ArrowRight,
@@ -39,29 +40,50 @@ const tools = [
   },
 ];
 
-const products = [
-  {
-    title: 'Sản phẩm 1 · Biên tập hình ảnh',
-    subtitle: 'Chu trình carbon',
-    description:
-      'Sơ đồ chu trình carbon được chọn lọc, Việt hoá chú thích, xử lý nền và ghi rõ nguồn.',
-    icon: Image,
-  },
-  {
-    title: 'Sản phẩm 2 · Biên tập video',
-    subtitle: 'Video dạy học Hóa học',
-    description:
-      'Video ngắn có cấu trúc rõ ràng, tập trung vào nội dung trọng tâm và sử dụng hình ảnh trực quan.',
-    icon: Video,
-  },
-  {
-    title: 'Sản phẩm 3 · Infographic',
-    subtitle: 'Đồ hoạ thông tin Hóa học',
-    description:
-      'Infographic tóm tắt kiến thức theo bố cục trực quan, ưu tiên tính chính xác và dễ tiếp nhận.',
-    icon: Palette,
-  },
-];
+
+
+
+function Base64WebpImage({ src, alt }: { src: string; alt: string }) {
+  const [imageSrc, setImageSrc] = useState('');
+
+  useEffect(() => {
+    let cancelled = false;
+
+    fetch(src)
+      .then((response) => {
+        if (!response.ok) throw new Error('Không thể tải dữ liệu hình ảnh');
+        return response.text();
+      })
+      .then((content) => {
+        if (!cancelled) {
+          setImageSrc('data:image/webp;base64,' + content.trim());
+        }
+      })
+      .catch(() => {
+        if (!cancelled) setImageSrc('');
+      });
+
+    return () => {
+      cancelled = true;
+    };
+  }, [src]);
+
+  if (!imageSrc) {
+    return (
+      <div className="min-h-[420px] flex items-center justify-center bg-muted/30 text-sm text-muted-foreground">
+        Đang tải infographic…
+      </div>
+    );
+  }
+
+  return (
+    <img
+      src={imageSrc}
+      alt={alt}
+      className="w-full max-w-[647px] h-auto mx-auto object-contain"
+    />
+  );
+}
 
 const reflectionItems = [
   {
@@ -232,7 +254,7 @@ export default function Chem1441Portfolio() {
               </div>
               <div className="inline-flex items-center gap-2 text-sm text-muted-foreground">
                 <Upload className="h-4 w-4" />
-                2/3 sản phẩm đã hoàn thiện
+                3/3 sản phẩm đã hoàn thiện
               </div>
             </div>
 
@@ -559,38 +581,104 @@ export default function Chem1441Portfolio() {
               </div>
             </article>
 
-            <div className="grid lg:grid-cols-1 gap-7">
-              {products.slice(2).map((product) => {
-                const Icon = product.icon;
-                return (
-                  <article key={product.title} className="rounded-2xl border bg-background overflow-hidden card-hover">
-                    <div className="aspect-[16/7] bg-muted/70 flex flex-col items-center justify-center gap-3 border-b">
-                      <div className="w-14 h-14 rounded-2xl bg-primary/10 text-primary flex items-center justify-center">
-                        <Icon className="h-7 w-7" />
-                      </div>
-                      <span className="text-sm font-medium text-muted-foreground">
-                        Sản phẩm sẽ được cập nhật tại đây
-                      </span>
-                    </div>
-                    <div className="p-6">
-                      <p className="text-xs font-semibold uppercase tracking-wide text-primary mb-2">
-                        {product.title}
-                      </p>
-                      <h3 className="font-display text-xl font-bold text-foreground mb-3">
-                        {product.subtitle}
-                      </h3>
-                      <p className="text-muted-foreground leading-relaxed mb-5">
-                        {product.description}
-                      </p>
-                      <div className="flex items-center gap-2 text-sm font-medium text-muted-foreground">
-                        <CheckCircle2 className="h-4 w-4" />
-                        Chờ hoàn thiện
-                      </div>
-                    </div>
-                  </article>
-                );
-              })}
-            </div>
+            <article className="rounded-2xl border bg-background overflow-hidden shadow-sm">
+              <div className="p-6 md:p-8 border-b">
+                <div className="flex flex-wrap items-center justify-between gap-4 mb-5">
+                  <div>
+                    <p className="text-xs font-semibold uppercase tracking-wide text-primary mb-2">
+                      Sản phẩm 3 · Infographic
+                    </p>
+                    <h3 className="font-display text-2xl md:text-3xl font-bold text-foreground">
+                      Các yếu tố ảnh hưởng đến tốc độ phản ứng
+                    </h3>
+                  </div>
+                  <div className="inline-flex items-center gap-2 text-sm font-semibold text-foreground">
+                    <CheckCircle2 className="h-4 w-4" />
+                    Đã hoàn thiện
+                  </div>
+                </div>
+
+                <div className="rounded-xl border bg-muted/20 overflow-hidden py-5 md:py-8">
+                  <Base64WebpImage
+                    src="/portfolio/reaction-rate-factors.b64"
+                    alt="Infographic các yếu tố ảnh hưởng đến tốc độ phản ứng do Hồ Tuấn Kiệt thiết kế"
+                  />
+                </div>
+
+                <div className="grid sm:grid-cols-3 gap-3 mt-5 text-sm">
+                  <div className="rounded-xl border bg-card p-4">
+                    <div className="text-muted-foreground mb-1">Công cụ sử dụng</div>
+                    <div className="font-semibold text-foreground">Canva</div>
+                  </div>
+                  <div className="rounded-xl border bg-card p-4">
+                    <div className="text-muted-foreground mb-1">Người thực hiện</div>
+                    <div className="font-semibold text-foreground">Hồ Tuấn Kiệt</div>
+                  </div>
+                  <div className="rounded-xl border bg-card p-4">
+                    <div className="text-muted-foreground mb-1">Nội dung</div>
+                    <div className="font-semibold text-foreground">Tốc độ phản ứng</div>
+                  </div>
+                </div>
+              </div>
+
+              <div className="p-6 md:p-8 grid lg:grid-cols-2 gap-8">
+                <div>
+                  <h4 className="font-display text-lg font-bold text-foreground mb-3">
+                    Nội dung được trực quan hóa
+                  </h4>
+                  <ul className="space-y-2 text-muted-foreground leading-relaxed">
+                    <li>• Nồng độ: nồng độ chất phản ứng tăng làm số va chạm giữa các tiểu phân tăng.</li>
+                    <li>• Nhiệt độ: nhiệt độ tăng làm các tiểu phân chuyển động nhanh hơn và tăng số va chạm hiệu quả.</li>
+                    <li>• Diện tích bề mặt: nghiền nhỏ chất rắn làm tăng diện tích tiếp xúc giữa các chất phản ứng.</li>
+                    <li>• Chất xúc tác: làm tăng tốc độ phản ứng và không bị tiêu hao sau phản ứng.</li>
+                    <li>• Phần kết luận liên hệ các yếu tố với số va chạm hiệu quả theo thuyết va chạm.</li>
+                  </ul>
+                </div>
+
+                <div>
+                  <h4 className="font-display text-lg font-bold text-foreground mb-3">
+                    Ý tưởng ứng dụng trong dạy học
+                  </h4>
+                  <p className="text-muted-foreground leading-relaxed">
+                    Có thể sử dụng infographic khi củng cố nội dung về các yếu tố ảnh hưởng đến tốc độ phản ứng.
+                    Giáo viên yêu cầu học sinh quan sát bốn phần của infographic, xác định yếu tố được thay đổi
+                    trong từng tình huống và dự đoán tốc độ phản ứng tăng hay giảm. Sau đó, học sinh giải thích
+                    dự đoán bằng số va chạm hiệu quả, từ đó kết nối hiện tượng thực tiễn với thuyết va chạm.
+                  </p>
+                </div>
+
+                <div>
+                  <h4 className="font-display text-lg font-bold text-foreground mb-3">
+                    Đánh giá công cụ Canva
+                  </h4>
+                  <p className="text-muted-foreground leading-relaxed">
+                    Canva phù hợp với thiết kế infographic nhờ thư viện bố cục và thành phần trực quan phong phú,
+                    thao tác kéo thả đơn giản và dễ duy trì phong cách thống nhất. Hạn chế là sản phẩm dài có thể
+                    trở nên nhiều chữ hoặc khó đọc trên màn hình nhỏ nếu không kiểm soát cỡ chữ và khoảng trắng.
+                  </p>
+                </div>
+
+                <div>
+                  <h4 className="font-display text-lg font-bold text-foreground mb-3">
+                    Đề xuất để sử dụng hiệu quả hơn
+                  </h4>
+                  <p className="text-muted-foreground leading-relaxed">
+                    Khi thiết kế cần ưu tiên mỗi mục một ý chính, sử dụng hình minh họa có chức năng giải thích
+                    và kiểm tra lại thuật ngữ khoa học trước khi xuất. Khi dùng trên lớp, giáo viên nên kết hợp
+                    infographic với câu hỏi dự đoán, so sánh hoặc giải thích thay vì chỉ yêu cầu học sinh đọc lại nội dung.
+                  </p>
+                </div>
+
+                <div className="lg:col-span-2 rounded-xl border bg-card p-5">
+                  <div className="text-sm font-semibold text-foreground mb-2">Điều em rút ra</div>
+                  <p className="text-muted-foreground leading-relaxed">
+                    Qua sản phẩm này, em nhận thấy infographic hiệu quả khi thông tin được chọn lọc và tổ chức theo
+                    một mạch rõ ràng. Hình ảnh, từ khóa và câu kết luận cần hỗ trợ học sinh nhìn thấy mối liên hệ giữa
+                    hiện tượng, yếu tố tác động và cơ sở giải thích khoa học chứ không chỉ làm sản phẩm bắt mắt.
+                  </p>
+                </div>
+              </div>
+            </article>
           </div>
         </section>
 
@@ -605,12 +693,12 @@ export default function Chem1441Portfolio() {
                   Ý tưởng ứng dụng trong dạy học
                 </h2>
                 <p className="text-muted-foreground leading-relaxed mb-5">
-                  Với sản phẩm chu trình carbon và video khám phá pH, ý tưởng dạy học được trình bày
-                  ngay dưới từng sản phẩm. Video được gắn với một hoạt động hình thành kiến thức có
-                  nhiệm vụ quan sát, câu hỏi định hướng, thảo luận và bước kết luận của giáo viên.
+                  Cả ba sản phẩm đều được gắn với một cách sử dụng cụ thể trong dạy học. Sơ đồ chu trình carbon
+                  hỗ trợ quan sát mối liên hệ giữa các quá trình; video pH được đặt trong một hoạt động hình thành
+                  kiến thức; infographic tốc độ phản ứng được dùng để dự đoán, so sánh và giải thích bằng thuyết va chạm.
                 </p>
                 <p className="text-sm text-muted-foreground">
-                  Hồ sơ sẽ tiếp tục cập nhật ý tưởng dạy học cho sản phẩm infographic còn lại.
+                  Các phương tiện trực quan được sử dụng như một phần của nhiệm vụ học tập thay vì chỉ trình chiếu minh họa.
                 </p>
               </article>
 
@@ -622,13 +710,13 @@ export default function Chem1441Portfolio() {
                   Đánh giá công cụ và đề xuất
                 </h2>
                 <p className="text-muted-foreground leading-relaxed mb-5">
-                  Trải nghiệm thực hành cho thấy Canva phù hợp với thiết kế hình ảnh, bố cục và
-                  khung hình trực quan; CapCut thuận tiện cho biên tập timeline, lời thoại, phụ đề
-                  và âm thanh. Dù công cụ hỗ trợ nhiều thao tác, sản phẩm vẫn cần được kiểm tra về
-                  tính chính xác khoa học, khả năng đọc và mức độ phù hợp với mục tiêu dạy học.
+                  Qua ba sản phẩm, Canva cho thấy ưu thế ở thiết kế bố cục, Việt hóa học liệu và tạo infographic;
+                  CapCut thuận tiện cho biên tập timeline, lời thoại, phụ đề và âm thanh. Dù công cụ hỗ trợ nhiều
+                  thao tác, sản phẩm vẫn cần được kiểm tra về tính chính xác khoa học, khả năng đọc và mức độ phù hợp
+                  với mục tiêu dạy học.
                 </p>
                 <p className="text-sm text-muted-foreground">
-                  Phần đánh giá sẽ tiếp tục được bổ sung khi hoàn thành sản phẩm infographic.
+                  Hiệu quả của công cụ phụ thuộc vào cách lựa chọn nội dung, mức độ tiết chế hiệu ứng và cách tổ chức nhiệm vụ học tập đi kèm.
                 </p>
               </article>
             </div>
@@ -638,11 +726,11 @@ export default function Chem1441Portfolio() {
         <section className="py-16 md:py-20 bg-gradient-hero text-primary-foreground">
           <div className="container mx-auto px-6 text-center">
             <h2 className="font-display text-3xl md:text-4xl font-bold mb-5">
-              Hồ sơ đang được hoàn thiện
+              Hồ sơ học tập đã hoàn thiện
             </h2>
             <p className="max-w-2xl mx-auto text-primary-foreground/80 leading-relaxed mb-8">
-              Các sản phẩm thực hành sẽ được cập nhật lần lượt để phản ánh quá trình học tập,
-              thử nghiệm công cụ và vận dụng ICT vào dạy học Hóa học.
+              Ba sản phẩm thực hành đã được hoàn thiện, thể hiện quá trình thử nghiệm công cụ,
+              thiết kế phương tiện trực quan và vận dụng ICT vào các hoạt động dạy học Hóa học.
             </p>
             <Button asChild variant="glass">
               <Link to="/">
