@@ -140,8 +140,7 @@ export default function Chem1441Portfolio() {
                     Câu hỏi trọng tâm
                   </div>
                   <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-medium text-foreground leading-tight tracking-tight">
-                    Làm thế nào để sử dụng các phương tiện trực quan như{' '}
-                    <span className="underline decoration-2 underline-offset-4">video, hình ảnh</span>{' '}
+                    Làm thế nào để sử dụng các phương tiện trực quan như video, hình ảnh
                     trong dạy học Hóa học một cách hiệu quả?
                   </h2>
                 </div>
