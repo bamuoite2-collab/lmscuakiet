@@ -441,7 +441,7 @@ export default function Chem1441Portfolio() {
                     </h4>
                     <ul className="space-y-2 text-muted-foreground leading-relaxed">
                       <li>• Mở đầu từ tình huống thực tiễn: vì sao nước chanh có vị chua?</li>
-                      <li>• Giới thiệu axit citric và môi trường acid của nước chanh.</li>
+                      <li>• Giới thiệu acid citric và môi trường acid của nước chanh.</li>
                       <li>• Nêu khái niệm pH và mối liên hệ với nồng độ ion H⁺.</li>
                       <li>• Phân biệt môi trường acid, trung tính và base trên thang pH.</li>
                       <li>• Liên hệ ý nghĩa của pH đối với cơ thể sống, đất trồng và môi trường nước.</li>
@@ -517,7 +517,7 @@ export default function Chem1441Portfolio() {
                       <li>1. pH là đại lượng dùng để biểu thị điều gì?</li>
                       <li>2. Dung dịch có pH &lt; 7, pH = 7 và pH &gt; 7 tương ứng với những môi trường nào?</li>
                       <li>3. Vì sao nước chanh được xếp vào môi trường acid?</li>
-                      <li>4. Nêu ít nhất hai lĩnh vực trong thực tiễn mà việc xác định pH có ý nghĩa.</li>
+                      <li>4. Nêu ít nhất hai lĩnh vực trong thực tiễn liên quan đến pH.</li>
                     </ol>
                   </div>
 
