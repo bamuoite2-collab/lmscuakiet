@@ -232,7 +232,7 @@ export default function Chem1441Portfolio() {
               </div>
               <div className="inline-flex items-center gap-2 text-sm text-muted-foreground">
                 <Upload className="h-4 w-4" />
-                1/3 sản phẩm đã hoàn thiện · Sản phẩm 2 đang biên tập
+                2/3 sản phẩm đã hoàn thiện
               </div>
             </div>
 
@@ -364,22 +364,44 @@ export default function Chem1441Portfolio() {
                       Vì sao nước chanh có vị chua? – Khám phá pH
                     </h3>
                   </div>
-                  <div className="inline-flex items-center gap-2 text-sm font-semibold text-muted-foreground">
-                    <Video className="h-4 w-4" />
-                    Đang biên tập
+                  <div className="inline-flex items-center gap-2 text-sm font-semibold text-foreground">
+                    <CheckCircle2 className="h-4 w-4" />
+                    Đã hoàn thiện
                   </div>
                 </div>
 
-                <div className="aspect-video rounded-xl border bg-muted/40 flex flex-col items-center justify-center gap-4 text-center p-6">
-                  <div className="w-16 h-16 rounded-2xl bg-primary/10 text-primary flex items-center justify-center">
-                    <Video className="h-8 w-8" />
-                  </div>
-                  <div>
-                    <div className="font-semibold text-foreground mb-1">Video sẽ được cập nhật tại đây</div>
-                    <div className="text-sm text-muted-foreground">
-                      Bản dựng đang được hoàn thiện bằng Canva và CapCut.
-                    </div>
-                  </div>
+                <div className="aspect-video rounded-xl border bg-black overflow-hidden">
+                  <iframe
+                    className="w-full h-full"
+                    src="https://www.youtube.com/embed/ey5G9nov1W4"
+                    title="Vì sao nước chanh có vị chua? – Khám phá pH"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    referrerPolicy="strict-origin-when-cross-origin"
+                    allowFullScreen
+                  />
+                </div>
+
+                <div className="flex flex-wrap gap-3 mt-4">
+                  <Button asChild>
+                    <a
+                      href="https://youtu.be/ey5G9nov1W4"
+                      target="_blank"
+                      rel="noreferrer"
+                    >
+                      Xem trên YouTube
+                      <ArrowRight className="h-4 w-4" />
+                    </a>
+                  </Button>
+                  <Button asChild variant="outline">
+                    <a
+                      href="https://drive.google.com/file/d/1J4FU0auEw750yLbNWsC5KIZ10KBH90zY/view?usp=drive_link"
+                      target="_blank"
+                      rel="noreferrer"
+                    >
+                      Video gốc MP4
+                      <ArrowRight className="h-4 w-4" />
+                    </a>
+                  </Button>
                 </div>
 
                 <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-3 mt-5 text-sm">
@@ -396,7 +418,7 @@ export default function Chem1441Portfolio() {
                     <div className="font-semibold text-foreground">Canva & CapCut</div>
                   </div>
                   <div className="rounded-xl border bg-card p-4">
-                    <div className="text-muted-foreground mb-1">Thời lượng dự kiến</div>
+                    <div className="text-muted-foreground mb-1">Thời lượng</div>
                     <div className="font-semibold text-foreground">Khoảng 1 phút</div>
                   </div>
                 </div>
@@ -511,15 +533,28 @@ export default function Chem1441Portfolio() {
                   </div>
                 </div>
 
-                <div className="rounded-xl border border-dashed bg-muted/20 p-5">
-                  <div className="text-sm font-semibold text-foreground mb-2">
-                    Đánh giá công cụ sau thực hành
+                <div className="grid lg:grid-cols-2 gap-4">
+                  <div className="rounded-xl border bg-card p-5">
+                    <div className="text-sm font-semibold text-foreground mb-2">
+                      Đánh giá Canva & CapCut
+                    </div>
+                    <p className="text-sm text-muted-foreground leading-relaxed">
+                      Canva thuận tiện khi thiết kế các khung hình, minh họa và bố cục theo cùng một phong cách.
+                      CapCut hỗ trợ tốt việc sắp xếp timeline, điều chỉnh thời lượng, lồng tiếng, tạo phụ đề,
+                      chèn âm thanh và xuất video. Khi kết hợp hai công cụ, quy trình thiết kế học liệu video
+                      khá trực quan và phù hợp với sinh viên sư phạm.
+                    </p>
                   </div>
-                  <p className="text-sm text-muted-foreground leading-relaxed">
-                    Phần đánh giá Canva và CapCut sẽ được bổ sung sau khi hoàn thiện video, tập trung vào mức độ
-                    thuận tiện khi thiết kế hình ảnh, biên tập timeline, tạo phụ đề, xử lý âm thanh, xuất video
-                    và những điểm cần cải thiện để sử dụng công cụ hiệu quả hơn trong dạy học.
-                  </p>
+                  <div className="rounded-xl border bg-card p-5">
+                    <div className="text-sm font-semibold text-foreground mb-2">
+                      Điều em rút ra
+                    </div>
+                    <p className="text-sm text-muted-foreground leading-relaxed">
+                      Video dạy học cần được xây dựng từ yêu cầu cần đạt thay vì chỉ chú trọng hiệu ứng. Hình ảnh,
+                      lời thuyết minh, thời lượng và câu hỏi sau video phải hỗ trợ cùng một mục tiêu học tập.
+                      Việc kết hợp video với nhiệm vụ quan sát và thảo luận giúp học sinh tham gia chủ động hơn.
+                    </p>
+                  </div>
                 </div>
               </div>
             </article>
@@ -570,12 +605,12 @@ export default function Chem1441Portfolio() {
                   Ý tưởng ứng dụng trong dạy học
                 </h2>
                 <p className="text-muted-foreground leading-relaxed mb-5">
-                  Với sản phẩm chu trình carbon, ý tưởng dạy học đã được trình bày ngay dưới
-                  sản phẩm. Các sản phẩm video và infographic tiếp theo cũng sẽ được gắn với
-                  nhiệm vụ học tập cụ thể để thể hiện rõ cách vận dụng ICT trong dạy học Hóa học.
+                  Với sản phẩm chu trình carbon và video khám phá pH, ý tưởng dạy học được trình bày
+                  ngay dưới từng sản phẩm. Video được gắn với một hoạt động hình thành kiến thức có
+                  nhiệm vụ quan sát, câu hỏi định hướng, thảo luận và bước kết luận của giáo viên.
                 </p>
                 <p className="text-sm text-muted-foreground">
-                  Hồ sơ sẽ tiếp tục cập nhật ý tưởng dạy học tương ứng với từng sản phẩm.
+                  Hồ sơ sẽ tiếp tục cập nhật ý tưởng dạy học cho sản phẩm infographic còn lại.
                 </p>
               </article>
 
@@ -587,12 +622,13 @@ export default function Chem1441Portfolio() {
                   Đánh giá công cụ và đề xuất
                 </h2>
                 <p className="text-muted-foreground leading-relaxed mb-5">
-                  Đánh giá bước đầu với Canva cho thấy công cụ phù hợp để Việt hóa và thiết kế
-                  học liệu trực quan nhờ thao tác đơn giản, nhưng vẫn cần kiểm tra kỹ tính chính
-                  xác của thuật ngữ, bố cục và nguồn tư liệu trước khi sử dụng trong dạy học.
+                  Trải nghiệm thực hành cho thấy Canva phù hợp với thiết kế hình ảnh, bố cục và
+                  khung hình trực quan; CapCut thuận tiện cho biên tập timeline, lời thoại, phụ đề
+                  và âm thanh. Dù công cụ hỗ trợ nhiều thao tác, sản phẩm vẫn cần được kiểm tra về
+                  tính chính xác khoa học, khả năng đọc và mức độ phù hợp với mục tiêu dạy học.
                 </p>
                 <p className="text-sm text-muted-foreground">
-                  Phần đánh giá sẽ được mở rộng khi hoàn thành thêm sản phẩm video và infographic.
+                  Phần đánh giá sẽ tiếp tục được bổ sung khi hoàn thành sản phẩm infographic.
                 </p>
               </article>
             </div>
