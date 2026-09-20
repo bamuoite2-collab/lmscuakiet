@@ -1,4 +1,3 @@
-import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import {
   ArrowRight,
@@ -42,48 +41,6 @@ const tools = [
 
 
 
-
-function Base64WebpImage({ src, alt }: { src: string; alt: string }) {
-  const [imageSrc, setImageSrc] = useState('');
-
-  useEffect(() => {
-    let cancelled = false;
-
-    fetch(src)
-      .then((response) => {
-        if (!response.ok) throw new Error('Không thể tải dữ liệu hình ảnh');
-        return response.text();
-      })
-      .then((content) => {
-        if (!cancelled) {
-          setImageSrc('data:image/webp;base64,' + content.trim());
-        }
-      })
-      .catch(() => {
-        if (!cancelled) setImageSrc('');
-      });
-
-    return () => {
-      cancelled = true;
-    };
-  }, [src]);
-
-  if (!imageSrc) {
-    return (
-      <div className="min-h-[420px] flex items-center justify-center bg-muted/30 text-sm text-muted-foreground">
-        Đang tải infographic…
-      </div>
-    );
-  }
-
-  return (
-    <img
-      src={imageSrc}
-      alt={alt}
-      className="w-full max-w-[647px] h-auto mx-auto object-contain"
-    />
-  );
-}
 
 const reflectionItems = [
   {
@@ -599,9 +556,10 @@ export default function Chem1441Portfolio() {
                 </div>
 
                 <div className="rounded-xl border bg-muted/20 overflow-hidden py-5 md:py-8">
-                  <Base64WebpImage
-                    src="/portfolio/reaction-rate-factors.b64"
+                  <img
+                    src="/portfolio/reaction-rate-factors.png"
                     alt="Infographic các yếu tố ảnh hưởng đến tốc độ phản ứng do Hồ Tuấn Kiệt thiết kế"
+                    className="w-full max-w-[900px] h-auto mx-auto object-contain"
                   />
                 </div>
 
