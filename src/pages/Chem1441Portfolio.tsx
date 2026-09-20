@@ -222,21 +222,130 @@ export default function Chem1441Portfolio() {
                   Sản phẩm thực hành
                 </p>
                 <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground mb-4">
-                  Khu vực để cập nhật sản phẩm
+                  Sản phẩm thực hành và ý tưởng dạy học
                 </h2>
                 <p className="text-muted-foreground leading-relaxed">
-                  Các ô bên dưới đã được chuẩn bị sẵn. Sau khi hoàn thành sản phẩm, chỉ cần
-                  thay phần giữ chỗ bằng hình ảnh, video hoặc đường dẫn tương ứng.
+                  Mỗi sản phẩm được trình bày kèm công cụ sử dụng, thao tác thực hiện,
+                  ý tưởng vận dụng trong dạy học và phần đánh giá sau khi trải nghiệm công cụ.
                 </p>
               </div>
               <div className="inline-flex items-center gap-2 text-sm text-muted-foreground">
                 <Upload className="h-4 w-4" />
-                Đang chờ cập nhật sản phẩm
+                1/3 sản phẩm đã hoàn thiện
               </div>
             </div>
 
-            <div className="grid lg:grid-cols-3 gap-7">
-              {products.map((product) => {
+            <article className="rounded-2xl border bg-background overflow-hidden shadow-sm mb-8">
+              <div className="p-6 md:p-8 border-b">
+                <div className="flex flex-wrap items-center justify-between gap-4 mb-5">
+                  <div>
+                    <p className="text-xs font-semibold uppercase tracking-wide text-primary mb-2">
+                      Sản phẩm 1 · Biên tập hình ảnh
+                    </p>
+                    <h3 className="font-display text-2xl md:text-3xl font-bold text-foreground">
+                      Sơ đồ chu trình carbon
+                    </h3>
+                  </div>
+                  <div className="inline-flex items-center gap-2 text-sm font-semibold text-foreground">
+                    <CheckCircle2 className="h-4 w-4" />
+                    Đã hoàn thiện
+                  </div>
+                </div>
+
+                <div className="rounded-xl border bg-muted/30 overflow-hidden">
+                  <img
+                    src="/portfolio/carbon-cycle-vi.webp"
+                    alt="Sơ đồ chu trình carbon đã được Việt hóa bởi Hồ Tuấn Kiệt"
+                    className="w-full h-auto"
+                  />
+                </div>
+
+                <div className="grid sm:grid-cols-3 gap-3 mt-5 text-sm">
+                  <div className="rounded-xl border bg-card p-4">
+                    <div className="text-muted-foreground mb-1">Công cụ sử dụng</div>
+                    <div className="font-semibold text-foreground">Canva</div>
+                  </div>
+                  <div className="rounded-xl border bg-card p-4">
+                    <div className="text-muted-foreground mb-1">Người thực hiện</div>
+                    <div className="font-semibold text-foreground">Hồ Tuấn Kiệt</div>
+                  </div>
+                  <a
+                    href="https://www.geeksforgeeks.org/biology/carbon-cycle-diagram/"
+                    target="_blank"
+                    rel="noreferrer"
+                    className="rounded-xl border bg-card p-4 transition-colors hover:bg-muted"
+                  >
+                    <div className="text-muted-foreground mb-1">Nguồn ảnh gốc</div>
+                    <div className="font-semibold text-foreground flex items-center gap-2">
+                      GeeksforGeeks
+                      <ArrowRight className="h-4 w-4" />
+                    </div>
+                  </a>
+                </div>
+              </div>
+
+              <div className="p-6 md:p-8 grid lg:grid-cols-2 gap-8">
+                <div>
+                  <h4 className="font-display text-lg font-bold text-foreground mb-3">
+                    Các thao tác đã thực hiện
+                  </h4>
+                  <ul className="space-y-2 text-muted-foreground leading-relaxed">
+                    <li>• Việt hóa các nhãn và thuật ngữ trên sơ đồ từ tiếng Anh sang tiếng Việt.</li>
+                    <li>• Điều chỉnh nội dung chữ và cách xuống dòng để thông tin dễ quan sát hơn.</li>
+                    <li>• Giữ nguyên cấu trúc và hướng các mũi tên của sơ đồ để bảo toàn ý nghĩa khoa học.</li>
+                    <li>• Bổ sung họ tên người thực hiện và nguồn ảnh gốc ngay trên sản phẩm.</li>
+                  </ul>
+                </div>
+
+                <div>
+                  <h4 className="font-display text-lg font-bold text-foreground mb-3">
+                    Ý tưởng ứng dụng trong dạy học
+                  </h4>
+                  <p className="text-muted-foreground leading-relaxed">
+                    Có thể sử dụng sơ đồ khi dạy nội dung liên quan đến carbon và các hợp chất của carbon.
+                    Giáo viên yêu cầu học sinh quan sát các mũi tên, xác định những quá trình làm tăng hoặc
+                    giảm lượng CO₂ trong khí quyển như quang hợp, hô hấp, phân hủy, đốt rừng và đốt nhiên
+                    liệu hóa thạch. Từ đó, học sinh giải thích mối liên hệ giữa các quá trình trong chu trình
+                    carbon và liên hệ với vấn đề phát thải CO₂ trong thực tiễn.
+                  </p>
+                </div>
+
+                <div>
+                  <h4 className="font-display text-lg font-bold text-foreground mb-3">
+                    Đánh giá công cụ Canva
+                  </h4>
+                  <p className="text-muted-foreground leading-relaxed">
+                    Canva có giao diện trực quan, dễ chỉnh sửa chữ, kích thước và bố cục nên phù hợp với việc
+                    Việt hóa học liệu hình ảnh. Hạn chế là khi chỉnh sửa hình có nhiều nhãn và mũi tên, người
+                    dùng cần thao tác cẩn thận để không che khuất chi tiết hoặc làm sai mối quan hệ giữa các
+                    thành phần trong sơ đồ.
+                  </p>
+                </div>
+
+                <div>
+                  <h4 className="font-display text-lg font-bold text-foreground mb-3">
+                    Đề xuất để sử dụng hiệu quả hơn
+                  </h4>
+                  <p className="text-muted-foreground leading-relaxed">
+                    Trước khi xuất sản phẩm cần đối chiếu lại thuật ngữ khoa học, kiểm tra hướng mũi tên,
+                    khả năng đọc của chữ và ghi rõ nguồn tư liệu. Khi sử dụng trên lớp, giáo viên nên kết hợp
+                    sơ đồ với câu hỏi quan sát hoặc nhiệm vụ giải thích thay vì chỉ trình chiếu hình ảnh.
+                  </p>
+                </div>
+
+                <div className="lg:col-span-2 rounded-xl border bg-card p-5">
+                  <div className="text-sm font-semibold text-foreground mb-2">Điều em rút ra</div>
+                  <p className="text-muted-foreground leading-relaxed">
+                    Qua hoạt động này, em nhận thấy chỉnh sửa hình ảnh trong dạy học không chỉ nhằm làm sản
+                    phẩm đẹp hơn mà quan trọng hơn là làm cho học liệu rõ ràng, chính xác, phù hợp với học sinh
+                    và có thể hỗ trợ trực tiếp cho một hoạt động học tập cụ thể.
+                  </p>
+                </div>
+              </div>
+            </article>
+
+            <div className="grid lg:grid-cols-2 gap-7">
+              {products.slice(1).map((product) => {
                 const Icon = product.icon;
                 return (
                   <article key={product.title} className="rounded-2xl border bg-background overflow-hidden card-hover">
@@ -281,12 +390,12 @@ export default function Chem1441Portfolio() {
                   Ý tưởng ứng dụng trong dạy học
                 </h2>
                 <p className="text-muted-foreground leading-relaxed mb-5">
-                  Mỗi sản phẩm sau khi hoàn thiện sẽ được gắn với một tình huống dạy học cụ thể,
-                  chẳng hạn dùng sơ đồ để hệ thống hoá kiến thức, video để minh hoạ hiện tượng
-                  khó quan sát hoặc infographic để củng cố bài học.
+                  Với sản phẩm chu trình carbon, ý tưởng dạy học đã được trình bày ngay dưới
+                  sản phẩm. Các sản phẩm video và infographic tiếp theo cũng sẽ được gắn với
+                  nhiệm vụ học tập cụ thể để thể hiện rõ cách vận dụng ICT trong dạy học Hóa học.
                 </p>
                 <p className="text-sm text-muted-foreground">
-                  Nội dung chi tiết sẽ được cập nhật cùng từng sản phẩm.
+                  Hồ sơ sẽ tiếp tục cập nhật ý tưởng dạy học tương ứng với từng sản phẩm.
                 </p>
               </article>
 
@@ -298,12 +407,12 @@ export default function Chem1441Portfolio() {
                   Đánh giá công cụ và đề xuất
                 </h2>
                 <p className="text-muted-foreground leading-relaxed mb-5">
-                  Sau quá trình thực hành, phần này sẽ ghi lại ưu điểm, hạn chế của từng công cụ,
-                  mức độ thuận tiện khi sử dụng và đề xuất cách lựa chọn công cụ phù hợp với
-                  mục tiêu, thời gian và điều kiện dạy học.
+                  Đánh giá bước đầu với Canva cho thấy công cụ phù hợp để Việt hóa và thiết kế
+                  học liệu trực quan nhờ thao tác đơn giản, nhưng vẫn cần kiểm tra kỹ tính chính
+                  xác của thuật ngữ, bố cục và nguồn tư liệu trước khi sử dụng trong dạy học.
                 </p>
                 <p className="text-sm text-muted-foreground">
-                  Sẽ bổ sung nhận xét thực tế sau khi hoàn thành sản phẩm.
+                  Phần đánh giá sẽ được mở rộng khi hoàn thành thêm sản phẩm video và infographic.
                 </p>
               </article>
             </div>
