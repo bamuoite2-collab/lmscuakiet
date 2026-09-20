@@ -232,7 +232,7 @@ export default function Chem1441Portfolio() {
               </div>
               <div className="inline-flex items-center gap-2 text-sm text-muted-foreground">
                 <Upload className="h-4 w-4" />
-                1/3 sản phẩm đã hoàn thiện
+                1/3 sản phẩm đã hoàn thiện · Sản phẩm 2 đang biên tập
               </div>
             </div>
 
@@ -353,12 +353,183 @@ export default function Chem1441Portfolio() {
               </div>
             </article>
 
-            <div className="grid lg:grid-cols-2 gap-7">
-              {products.slice(1).map((product) => {
+            <article className="rounded-2xl border bg-background overflow-hidden shadow-sm mb-8">
+              <div className="p-6 md:p-8 border-b">
+                <div className="flex flex-wrap items-center justify-between gap-4 mb-5">
+                  <div>
+                    <p className="text-xs font-semibold uppercase tracking-wide text-primary mb-2">
+                      Sản phẩm 2 · Biên tập video
+                    </p>
+                    <h3 className="font-display text-2xl md:text-3xl font-bold text-foreground">
+                      Vì sao nước chanh có vị chua? – Khám phá pH
+                    </h3>
+                  </div>
+                  <div className="inline-flex items-center gap-2 text-sm font-semibold text-muted-foreground">
+                    <Video className="h-4 w-4" />
+                    Đang biên tập
+                  </div>
+                </div>
+
+                <div className="aspect-video rounded-xl border bg-muted/40 flex flex-col items-center justify-center gap-4 text-center p-6">
+                  <div className="w-16 h-16 rounded-2xl bg-primary/10 text-primary flex items-center justify-center">
+                    <Video className="h-8 w-8" />
+                  </div>
+                  <div>
+                    <div className="font-semibold text-foreground mb-1">Video sẽ được cập nhật tại đây</div>
+                    <div className="text-sm text-muted-foreground">
+                      Bản dựng đang được hoàn thiện bằng Canva và CapCut.
+                    </div>
+                  </div>
+                </div>
+
+                <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-3 mt-5 text-sm">
+                  <div className="rounded-xl border bg-card p-4">
+                    <div className="text-muted-foreground mb-1">Môn / lớp</div>
+                    <div className="font-semibold text-foreground">Hóa học 11</div>
+                  </div>
+                  <div className="rounded-xl border bg-card p-4">
+                    <div className="text-muted-foreground mb-1">Chủ đề</div>
+                    <div className="font-semibold text-foreground">Cân bằng trong dung dịch nước – pH</div>
+                  </div>
+                  <div className="rounded-xl border bg-card p-4">
+                    <div className="text-muted-foreground mb-1">Công cụ</div>
+                    <div className="font-semibold text-foreground">Canva & CapCut</div>
+                  </div>
+                  <div className="rounded-xl border bg-card p-4">
+                    <div className="text-muted-foreground mb-1">Thời lượng dự kiến</div>
+                    <div className="font-semibold text-foreground">Khoảng 1 phút</div>
+                  </div>
+                </div>
+              </div>
+
+              <div className="p-6 md:p-8 space-y-8">
+                <div className="rounded-xl border bg-card p-5 md:p-6">
+                  <div className="text-xs font-semibold uppercase tracking-wide text-primary mb-2">
+                    Yêu cầu cần đạt
+                  </div>
+                  <p className="text-foreground text-lg font-medium leading-relaxed">
+                    Nêu được khái niệm và ý nghĩa của pH trong thực tiễn.
+                  </p>
+                </div>
+
+                <div className="grid lg:grid-cols-2 gap-8">
+                  <div>
+                    <h4 className="font-display text-lg font-bold text-foreground mb-3">
+                      Nội dung chính của video
+                    </h4>
+                    <ul className="space-y-2 text-muted-foreground leading-relaxed">
+                      <li>• Mở đầu từ tình huống thực tiễn: vì sao nước chanh có vị chua?</li>
+                      <li>• Giới thiệu axit citric và môi trường acid của nước chanh.</li>
+                      <li>• Nêu khái niệm pH và mối liên hệ với nồng độ ion H⁺.</li>
+                      <li>• Phân biệt môi trường acid, trung tính và base trên thang pH.</li>
+                      <li>• Liên hệ ý nghĩa của pH đối với cơ thể sống, đất trồng và môi trường nước.</li>
+                    </ul>
+                  </div>
+
+                  <div>
+                    <h4 className="font-display text-lg font-bold text-foreground mb-3">
+                      Mục tiêu của hoạt động
+                    </h4>
+                    <p className="text-muted-foreground leading-relaxed">
+                      Thông qua việc quan sát video và trả lời câu hỏi, học sinh hình thành được khái niệm pH,
+                      đọc được ý nghĩa cơ bản của thang pH, phân loại được môi trường dựa vào giá trị pH và
+                      nhận thấy vai trò của pH trong một số tình huống thực tiễn.
+                    </p>
+                  </div>
+                </div>
+
+                <div>
+                  <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-3 mb-5">
+                    <div>
+                      <p className="text-xs font-semibold uppercase tracking-wide text-primary mb-2">
+                        Kế hoạch sử dụng video trong dạy học
+                      </p>
+                      <h4 className="font-display text-xl md:text-2xl font-bold text-foreground">
+                        Hoạt động: Khám phá pH qua tình huống “Vì sao nước chanh có vị chua?”
+                      </h4>
+                    </div>
+                    <div className="text-sm text-muted-foreground">Thời lượng: 10–12 phút</div>
+                  </div>
+
+                  <div className="grid md:grid-cols-2 gap-4">
+                    <div className="rounded-xl border bg-card p-5">
+                      <div className="text-sm font-bold text-foreground mb-2">1. Chuyển giao nhiệm vụ</div>
+                      <p className="text-sm text-muted-foreground leading-relaxed">
+                        GV đặt vấn đề: “Nước chanh có vị chua. Vậy tính acid của nước chanh có thể được biểu thị
+                        bằng đại lượng nào?” HS được yêu cầu xem video và chú ý các thông tin về pH, thang pH
+                        và ý nghĩa thực tiễn.
+                      </p>
+                    </div>
+                    <div className="rounded-xl border bg-card p-5">
+                      <div className="text-sm font-bold text-foreground mb-2">2. Thực hiện nhiệm vụ</div>
+                      <p className="text-sm text-muted-foreground leading-relaxed">
+                        HS xem video, ghi lại thông tin chính và trả lời: pH cho biết điều gì; pH &lt; 7,
+                        pH = 7 và pH &gt; 7 tương ứng với môi trường nào; nước chanh thuộc môi trường nào;
+                        pH có ý nghĩa gì trong thực tiễn.
+                      </p>
+                    </div>
+                    <div className="rounded-xl border bg-card p-5">
+                      <div className="text-sm font-bold text-foreground mb-2">3. Báo cáo – thảo luận</div>
+                      <p className="text-sm text-muted-foreground leading-relaxed">
+                        Một số HS trình bày câu trả lời, HS khác nhận xét và bổ sung. GV đặt thêm câu hỏi:
+                        “Ngoài nước chanh, em biết chất quen thuộc nào có pH nhỏ hơn 7?”
+                      </p>
+                    </div>
+                    <div className="rounded-xl border bg-card p-5">
+                      <div className="text-sm font-bold text-foreground mb-2">4. Kết luận – hình thành kiến thức</div>
+                      <p className="text-sm text-muted-foreground leading-relaxed">
+                        GV chốt: pH là đại lượng biểu thị tính acid hoặc base của dung dịch; dựa vào giá trị pH
+                        có thể nhận biết môi trường acid, trung tính hay base; pH có nhiều ý nghĩa trong đời sống
+                        và sản xuất.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="grid lg:grid-cols-2 gap-8">
+                  <div>
+                    <h4 className="font-display text-lg font-bold text-foreground mb-3">
+                      Câu hỏi sau khi xem video
+                    </h4>
+                    <ol className="space-y-2 text-muted-foreground leading-relaxed">
+                      <li>1. pH là đại lượng dùng để biểu thị điều gì?</li>
+                      <li>2. Dung dịch có pH &lt; 7, pH = 7 và pH &gt; 7 tương ứng với những môi trường nào?</li>
+                      <li>3. Vì sao nước chanh được xếp vào môi trường acid?</li>
+                      <li>4. Nêu ít nhất hai lĩnh vực trong thực tiễn mà việc xác định pH có ý nghĩa.</li>
+                    </ol>
+                  </div>
+
+                  <div>
+                    <h4 className="font-display text-lg font-bold text-foreground mb-3">
+                      Vai trò của video trong hoạt động
+                    </h4>
+                    <p className="text-muted-foreground leading-relaxed">
+                      Video tạo tình huống học tập từ một hiện tượng quen thuộc trong đời sống, đồng thời trực
+                      quan hóa khái niệm pH, thang pH và các ứng dụng thực tiễn. Hệ thống câu hỏi đi kèm giúp
+                      học sinh quan sát, phân tích và rút ra kiến thức thay vì chỉ tiếp nhận thông tin thụ động.
+                    </p>
+                  </div>
+                </div>
+
+                <div className="rounded-xl border border-dashed bg-muted/20 p-5">
+                  <div className="text-sm font-semibold text-foreground mb-2">
+                    Đánh giá công cụ sau thực hành
+                  </div>
+                  <p className="text-sm text-muted-foreground leading-relaxed">
+                    Phần đánh giá Canva và CapCut sẽ được bổ sung sau khi hoàn thiện video, tập trung vào mức độ
+                    thuận tiện khi thiết kế hình ảnh, biên tập timeline, tạo phụ đề, xử lý âm thanh, xuất video
+                    và những điểm cần cải thiện để sử dụng công cụ hiệu quả hơn trong dạy học.
+                  </p>
+                </div>
+              </div>
+            </article>
+
+            <div className="grid lg:grid-cols-1 gap-7">
+              {products.slice(2).map((product) => {
                 const Icon = product.icon;
                 return (
                   <article key={product.title} className="rounded-2xl border bg-background overflow-hidden card-hover">
-                    <div className="aspect-[16/10] bg-muted/70 flex flex-col items-center justify-center gap-3 border-b">
+                    <div className="aspect-[16/7] bg-muted/70 flex flex-col items-center justify-center gap-3 border-b">
                       <div className="w-14 h-14 rounded-2xl bg-primary/10 text-primary flex items-center justify-center">
                         <Icon className="h-7 w-7" />
                       </div>
