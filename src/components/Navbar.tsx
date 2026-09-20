@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Menu, X, BookOpen, FlaskConical, LogOut, LayoutDashboard, BarChart3, TrendingUp, Atom, ShoppingBag } from 'lucide-react';
+import { Menu, X, BookOpen, FlaskConical, LogOut, LayoutDashboard, BarChart3, TrendingUp, Atom, ShoppingBag, FolderOpen } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { useAuth } from '@/hooks/useAuth';
 import { ThemeToggle } from '@/components/ui/ThemeToggle';
@@ -13,6 +13,7 @@ export function Navbar() {
   const navLinks = [
     { href: '/', label: 'Home' },
     { href: '/courses', label: 'Courses' },
+    { href: '/chem1441', label: 'Hồ sơ ICT', icon: FolderOpen },
     { href: '/shop', label: 'Shop XP', icon: ShoppingBag },
     { href: '/periodic-table', label: 'Bảng tuần hoàn', icon: Atom },
   ];
@@ -23,7 +24,6 @@ export function Navbar() {
     <nav className="fixed top-0 left-0 right-0 z-50 glass border-b">
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16">
-          {/* Logo */}
           <Link to="/" className="flex items-center gap-2 group">
             <div className="p-2 rounded-lg bg-primary text-primary-foreground group-hover:scale-105 transition-transform">
               <FlaskConical className="h-5 w-5" />
@@ -33,13 +33,12 @@ export function Navbar() {
             </span>
           </Link>
 
-          {/* Desktop Navigation */}
           <div className="hidden md:flex items-center gap-1">
             {navLinks.map(link => (
               <Link
                 key={link.href}
                 to={link.href}
-                className={`px-4 py-2 rounded-lg text-sm font-medium transition-colors ${isActive(link.href)
+                className={`px-3 py-2 rounded-lg text-sm font-medium transition-colors ${isActive(link.href)
                   ? 'bg-primary text-primary-foreground'
                   : 'text-muted-foreground hover:text-foreground hover:bg-muted'
                   }`}
@@ -51,7 +50,7 @@ export function Navbar() {
               <>
                 <Link
                   to="/admin"
-                  className={`px-4 py-2 rounded-lg text-sm font-medium transition-colors flex items-center gap-2 ${isActive('/admin')
+                  className={`px-3 py-2 rounded-lg text-sm font-medium transition-colors flex items-center gap-2 ${isActive('/admin')
                     ? 'bg-primary text-primary-foreground'
                     : 'text-muted-foreground hover:text-foreground hover:bg-muted'
                     }`}
@@ -61,7 +60,7 @@ export function Navbar() {
                 </Link>
                 <Link
                   to="/admin/analytics"
-                  className={`px-4 py-2 rounded-lg text-sm font-medium transition-colors flex items-center gap-2 ${isActive('/admin/analytics')
+                  className={`px-3 py-2 rounded-lg text-sm font-medium transition-colors flex items-center gap-2 ${isActive('/admin/analytics')
                     ? 'bg-primary text-primary-foreground'
                     : 'text-muted-foreground hover:text-foreground hover:bg-muted'
                     }`}
@@ -74,7 +73,7 @@ export function Navbar() {
             {user && !isAdmin && (
               <Link
                 to="/my-progress"
-                className={`px-4 py-2 rounded-lg text-sm font-medium transition-colors flex items-center gap-2 ${isActive('/my-progress')
+                className={`px-3 py-2 rounded-lg text-sm font-medium transition-colors flex items-center gap-2 ${isActive('/my-progress')
                   ? 'bg-primary text-primary-foreground'
                   : 'text-muted-foreground hover:text-foreground hover:bg-muted'
                   }`}
@@ -85,7 +84,6 @@ export function Navbar() {
             )}
           </div>
 
-          {/* Auth Buttons */}
           <div className="hidden md:flex items-center gap-3">
             <ThemeToggle />
             {user ? (
@@ -108,7 +106,6 @@ export function Navbar() {
             )}
           </div>
 
-          {/* Mobile Menu Button */}
           <button
             className="md:hidden p-2 rounded-lg hover:bg-muted transition-colors"
             onClick={() => setIsOpen(!isOpen)}
@@ -117,7 +114,6 @@ export function Navbar() {
           </button>
         </div>
 
-        {/* Mobile Navigation */}
         {isOpen && (
           <div className="md:hidden py-4 border-t border-border animate-slide-up">
             <div className="flex flex-col gap-2">
