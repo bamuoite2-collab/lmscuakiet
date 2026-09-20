@@ -139,15 +139,11 @@ export default function Chem1441Portfolio() {
                   <div className="inline-flex items-center rounded-full bg-foreground text-background px-4 py-1.5 text-xs md:text-sm font-bold uppercase tracking-[0.14em] mb-5">
                     Câu hỏi trọng tâm
                   </div>
-                  <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-bold text-foreground leading-tight">
+                  <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-medium text-foreground leading-tight tracking-tight">
                     Làm thế nào để sử dụng các phương tiện trực quan như{' '}
                     <span className="underline decoration-2 underline-offset-4">video, hình ảnh</span>{' '}
                     trong dạy học Hóa học một cách hiệu quả?
                   </h2>
-                  <p className="mt-5 text-base md:text-lg text-muted-foreground leading-relaxed">
-                    Đây là câu hỏi định hướng cho toàn bộ Hồ sơ học tập 1 và là cơ sở để lựa chọn công cụ,
-                    xây dựng sản phẩm thực hành, đề xuất ý tưởng dạy học và đánh giá hiệu quả sử dụng ICT.
-                  </p>
                 </div>
               </div>
             </div>
@@ -260,14 +256,17 @@ export default function Chem1441Portfolio() {
 
                 <div className="rounded-xl border bg-muted/30 overflow-hidden">
                   <img
-                    src="/portfolio/carbon-cycle-vi.webp?v=2"
+                    src="/portfolio/carbon-cycle-vi.png"
                     onError={(event) => {
-                      event.currentTarget.onerror = null;
-                      event.currentTarget.src =
-                        'https://raw.githubusercontent.com/bamuoite2-collab/lmscuakiet/main/public/portfolio/carbon-cycle-vi.webp';
+                      event.currentTarget.onerror = () => {
+                        event.currentTarget.onerror = null;
+                        event.currentTarget.src =
+                          'https://raw.githubusercontent.com/bamuoite2-collab/lmscuakiet/main/public/portfolio/carbon-cycle-vi.webp';
+                      };
+                      event.currentTarget.src = '/portfolio/carbon-cycle-vi.webp?v=3';
                     }}
                     alt="Sơ đồ chu trình carbon đã được Việt hóa bởi Hồ Tuấn Kiệt"
-                    className="w-full h-auto"
+                    className="w-full max-w-[1042px] h-auto mx-auto object-contain"
                   />
                 </div>
 
