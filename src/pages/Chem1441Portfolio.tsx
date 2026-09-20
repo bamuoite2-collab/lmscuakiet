@@ -40,29 +40,7 @@ const tools = [
   },
 ];
 
-const products = [
-  {
-    title: 'Sản phẩm 1 · Biên tập hình ảnh',
-    subtitle: 'Chu trình carbon',
-    description:
-      'Sơ đồ chu trình carbon được chọn lọc, Việt hoá chú thích, xử lý nền và ghi rõ nguồn.',
-    icon: Image,
-  },
-  {
-    title: 'Sản phẩm 2 · Biên tập video',
-    subtitle: 'Video dạy học Hóa học',
-    description:
-      'Video ngắn có cấu trúc rõ ràng, tập trung vào nội dung trọng tâm và sử dụng hình ảnh trực quan.',
-    icon: Video,
-  },
-  {
-    title: 'Sản phẩm 3 · Infographic',
-    subtitle: 'Đồ hoạ thông tin Hóa học',
-    description:
-      'Infographic tóm tắt kiến thức theo bố cục trực quan, ưu tiên tính chính xác và dễ tiếp nhận.',
-    icon: Palette,
-  },
-];
+
 
 
 function Base64WebpImage({ src, alt }: { src: string; alt: string }) {
