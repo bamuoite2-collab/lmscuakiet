@@ -21,17 +21,23 @@ export default function AdminXPManagement() {
         queryFn: async () => {
             const { data, error } = await supabase
                 .from('student_gamification')
-                .select(`
-          user_id,
-          total_xp,
-          current_level,
-          current_streak,
-          profiles!inner(full_name, email)
-        `)
+                .select('user_id, total_xp, current_level, current_streak')
                 .order('total_xp', { ascending: false });
 
             if (error) throw error;
-            return data;
+
+            const userIds = (data ?? []).map((s) => s.user_id);
+            const { data: profiles } = userIds.length
+                ? await supabase
+                    .from('profiles')
+                    .select('id, full_name')
+                    .in('id', userIds)
+                : { data: [] as { id: string; full_name: string | null }[] };
+
+            return (data ?? []).map((s) => ({
+                ...s,
+                profiles: profiles?.find((p) => p.id === s.user_id) ?? null,
+            }));
         }
     });
 
@@ -41,10 +47,10 @@ export default function AdminXPManagement() {
             const finalAmount = isAdd ? amount : -amount;
 
             const { error } = await supabase.rpc('award_xp', {
-                p_user_id: userId,
-                p_xp_amount: finalAmount,
-                p_source: 'admin_adjustment',
-                p_description: `Admin ${isAdd ? 'added' : 'subtracted'} ${Math.abs(finalAmount)} XP`
+                _user_id: userId,
+                _xp_amount: finalAmount,
+                _source_type: 'admin_adjustment',
+                _description: `Admin ${isAdd ? 'added' : 'subtracted'} ${Math.abs(finalAmount)} XP`
             });
 
             if (error) throw error;
@@ -60,8 +66,8 @@ export default function AdminXPManagement() {
     });
 
     const filteredStudents = students?.filter(s =>
-        s.profiles?.full_name?.toLowerCase().includes(searchQuery.toLowerCase()) ||
-        s.profiles?.email?.toLowerCase().includes(searchQuery.toLowerCase())
+        (s.profiles?.full_name ?? '').toLowerCase().includes(searchQuery.toLowerCase()) ||
+        s.user_id.toLowerCase().includes(searchQuery.toLowerCase())
     );
 
     return (
@@ -116,7 +122,7 @@ export default function AdminXPManagement() {
                                     <div>
                                         <div className="font-bold">{student.profiles?.full_name || 'Unknown'}</div>
                                         <div className="text-sm font-normal text-muted-foreground">
-                                            {student.profiles?.email}
+                                            Cấp {student.current_level}
                                         </div>
                                     </div>
                                     <div className="flex items-center gap-4">

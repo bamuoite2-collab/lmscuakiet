@@ -33,7 +33,7 @@ export default function EquationBalancerPage() {
     }, [equation, totalCompounds]);
 
     useEffect(() => {
-        let interval: NodeJS.Timeout;
+        let interval: ReturnType<typeof setInterval> | undefined;
         if (isPlaying && result === null) {
             interval = setInterval(() => {
                 setTimeSeconds(prev => prev + 1);
