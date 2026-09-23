@@ -22,7 +22,7 @@ const chemistryJourney = [
     title: 'Tìm và đánh giá tư liệu dạy học',
     icon: Search,
     text: 'Ở những hoạt động đầu, mình bắt đầu từ một việc rất cơ bản: tìm tài liệu sao cho đúng nhu cầu. Mình tập xác định từ khóa, dùng tìm kiếm nâng cao, ưu tiên nguồn đáng tin cậy, kiểm tra thời điểm công bố, đối chiếu nhiều nguồn và chú ý vấn đề bản quyền.',
-    note: 'Từ chỗ chỉ “tìm cho ra”, mình bắt đầu quan tâm nhiều hơn đến việc tài liệu đó có phù hợp để dạy học hay không.',
+    note: 'Từ chỗ chỉ tìm, mình bắt đầu quan tâm nhiều hơn đến việc tài liệu đó có phù hợp để dạy học hay không.',
   },
   {
     step: '02',
@@ -36,7 +36,7 @@ const chemistryJourney = [
     title: 'Hiểu công cụ theo chức năng',
     icon: Wrench,
     text: 'Thay vì nhớ tên phần mềm một cách rời rạc, mình tập phân loại chúng theo việc cần làm: sao chụp như Snipping Tool, Lightshot, Office Lens; chỉnh sửa như Pixlr, PicsArt, Remove.bg; thiết kế như Canva.',
-    note: 'Điều quan trọng dần chuyển từ “công cụ nào mạnh hơn” sang “công cụ nào phù hợp với nhiệm vụ này”.',
+    note: 'Điều quan trọng dần chuyển từ công cụ nào mạnh hơn sang công cụ nào phù hợp với nhiệm vụ này.',
   },
   {
     step: '04',
@@ -50,7 +50,7 @@ const chemistryJourney = [
     title: 'Thiết kế video cho một nội dung cụ thể',
     icon: Video,
     text: 'Ở phần video, nhiệm vụ đặt ra khá rõ: khoảng một phút, có mở đầu – nội dung – kết thúc, chữ hoặc phụ đề rõ ràng, chuyển cảnh phù hợp, âm thanh hợp lý và được chia sẻ qua YouTube; đồng thời phải gắn video với một hoạt động dạy học.',
-    note: 'Video pH giúp mình chuyển từ “dựng một clip” sang nghĩ nhiều hơn về yêu cầu cần đạt, câu hỏi sau video và cách học sinh sử dụng học liệu.',
+    note: 'Video pH giúp mình chuyển từ dựng một clip sang nghĩ nhiều hơn về yêu cầu cần đạt, câu hỏi sau video và cách học sinh sử dụng học liệu.',
   },
   {
     step: '06',
