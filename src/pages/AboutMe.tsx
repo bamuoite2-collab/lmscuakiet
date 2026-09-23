@@ -163,7 +163,7 @@ export default function AboutMe() {
                 Những điều mình quan tâm
               </p>
               <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground">
-                Hóa học, sư phạm và một chút “hệ tech”
+                Hóa học, sư phạm và một chút công nghệ
               </h2>
             </div>
 
