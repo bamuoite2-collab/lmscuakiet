@@ -785,15 +785,8 @@ export default function Chem1441Portfolio() {
           </div>
         </section>
 
-        <section className="py-16 md:py-20 bg-gradient-hero text-primary-foreground">
+        <section className="py-12 md:py-14 bg-gradient-hero text-primary-foreground">
           <div className="container mx-auto px-6 text-center">
-            <h2 className="font-display text-3xl md:text-4xl font-bold mb-5">
-              Hồ sơ học tập đã hoàn thiện
-            </h2>
-            <p className="max-w-2xl mx-auto text-primary-foreground/80 leading-relaxed mb-8">
-              Ba sản phẩm thực hành đã được hoàn thiện, thể hiện quá trình thử nghiệm công cụ,
-              thiết kế phương tiện trực quan và vận dụng ICT vào các hoạt động dạy học Hóa học.
-            </p>
             <Button asChild variant="glass">
               <Link to="/">
                 Quay về trang chủ
