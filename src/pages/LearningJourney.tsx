@@ -106,7 +106,7 @@ export default function LearningJourney() {
                 Quá trình phát triển
               </div>
               <h1 className="font-display text-4xl md:text-6xl font-bold text-foreground leading-tight mb-6">
-                Từ việc dùng công cụ đến việc nghĩ như một người thiết kế học liệu
+                Từ dùng công cụ đến một người thiết kế học liệu
               </h1>
               <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
                 Mình gom lại những dấu mốc trong quá trình học CHEM1441 để nhìn rõ hơn mình đã thay đổi
