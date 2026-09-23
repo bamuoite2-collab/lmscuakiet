@@ -158,61 +158,65 @@ export default function AboutMe() {
 
         <section className="py-16 md:py-24 bg-card border-y">
           <div className="container mx-auto px-6">
-            <div className="max-w-3xl mb-10">
-              <p className="text-sm font-semibold uppercase tracking-wide text-primary mb-3">
-                Những điều mình quan tâm
-              </p>
-              <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground">
-                Hóa học, sư phạm và một chút công nghệ
-              </h2>
-            </div>
+            <div className="max-w-5xl mx-auto">
+              <div className="max-w-3xl mb-10">
+                <p className="text-sm font-semibold uppercase tracking-wide text-primary mb-3">
+                  Những điều mình quan tâm
+                </p>
+                <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground">
+                  Hóa học, sư phạm và một chút công nghệ
+                </h2>
+              </div>
 
-            <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
-              {interests.map((item) => {
-                const Icon = item.icon;
-                return (
-                  <article key={item.title} className="rounded-2xl border bg-background p-6 card-hover">
-                    <div className="h-11 w-11 rounded-xl bg-primary/10 text-primary flex items-center justify-center mb-5">
-                      <Icon className="h-5 w-5" />
-                    </div>
-                    <h3 className="font-display text-lg font-bold text-foreground mb-3">{item.title}</h3>
-                    <p className="text-sm text-muted-foreground leading-relaxed">{item.text}</p>
-                  </article>
-                );
-              })}
+              <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
+                {interests.map((item) => {
+                  const Icon = item.icon;
+                  return (
+                    <article key={item.title} className="rounded-2xl border bg-background p-6 card-hover">
+                      <div className="h-11 w-11 rounded-xl bg-primary/10 text-primary flex items-center justify-center mb-5">
+                        <Icon className="h-5 w-5" />
+                      </div>
+                      <h3 className="font-display text-lg font-bold text-foreground mb-3">{item.title}</h3>
+                      <p className="text-sm text-muted-foreground leading-relaxed">{item.text}</p>
+                    </article>
+                  );
+                })}
+              </div>
             </div>
           </div>
         </section>
 
         <section className="py-16 md:py-24">
           <div className="container mx-auto px-6">
-            <div className="max-w-3xl mb-10">
-              <p className="text-sm font-semibold uppercase tracking-wide text-primary mb-3">
-                Một vài dấu mốc
-              </p>
-              <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground">
-                Những trải nghiệm đã định hình cách mình học và dạy
-              </h2>
-            </div>
+            <div className="max-w-5xl mx-auto">
+              <div className="max-w-3xl mb-10">
+                <p className="text-sm font-semibold uppercase tracking-wide text-primary mb-3">
+                  Một vài dấu mốc
+                </p>
+                <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground">
+                  Những trải nghiệm đã định hình cách mình học và dạy
+                </h2>
+              </div>
 
-            <div className="max-w-5xl grid md:grid-cols-2 gap-5">
-              {milestones.map((item) => {
-                const Icon = item.icon;
-                return (
-                  <article key={item.title} className="rounded-2xl border bg-card p-6 md:p-7">
-                    <div className="flex items-start gap-4">
-                      <div className="h-11 w-11 rounded-xl bg-accent/10 text-accent flex items-center justify-center shrink-0">
-                        <Icon className="h-5 w-5" />
+              <div className="grid md:grid-cols-2 gap-5">
+                {milestones.map((item) => {
+                  const Icon = item.icon;
+                  return (
+                    <article key={item.title} className="rounded-2xl border bg-card p-6 md:p-7">
+                      <div className="flex items-start gap-4">
+                        <div className="h-11 w-11 rounded-xl bg-accent/10 text-accent flex items-center justify-center shrink-0">
+                          <Icon className="h-5 w-5" />
+                        </div>
+                        <div>
+                          <p className="text-xs font-semibold uppercase tracking-wide text-primary mb-1">{item.meta}</p>
+                          <h3 className="font-display text-xl font-bold text-foreground mb-3">{item.title}</h3>
+                          <p className="text-muted-foreground leading-relaxed">{item.text}</p>
+                        </div>
                       </div>
-                      <div>
-                        <p className="text-xs font-semibold uppercase tracking-wide text-primary mb-1">{item.meta}</p>
-                        <h3 className="font-display text-xl font-bold text-foreground mb-3">{item.title}</h3>
-                        <p className="text-muted-foreground leading-relaxed">{item.text}</p>
-                      </div>
-                    </div>
-                  </article>
-                );
-              })}
+                    </article>
+                  );
+                })}
+              </div>
             </div>
           </div>
         </section>
