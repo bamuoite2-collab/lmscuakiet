@@ -80,12 +80,13 @@ export default function AboutMe() {
           <div className="container mx-auto px-6 relative">
             <div className="max-w-5xl mx-auto grid lg:grid-cols-[220px_1fr] gap-9 lg:gap-14 items-center">
               <div className="mx-auto lg:mx-0">
-                <div className="h-44 w-44 md:h-52 md:w-52 rounded-[2rem] border bg-card shadow-lg flex items-center justify-center relative overflow-hidden">
-                  <div className="absolute inset-0 bg-gradient-to-br from-primary/15 via-transparent to-accent/15" />
-                  <div className="relative text-center">
-                    <FlaskConical className="h-8 w-8 text-primary mx-auto mb-3" />
-                    <span className="font-display text-4xl md:text-5xl font-bold text-foreground">HTK</span>
-                  </div>
+                <div className="h-44 w-44 md:h-52 md:w-52 rounded-[2rem] border bg-card shadow-lg relative overflow-hidden">
+                  <img
+                    src="/about/avatar.jpg"
+                    alt="Hồ Tuấn Kiệt"
+                    className="h-full w-full object-cover object-top"
+                  />
+                  <div className="absolute inset-0 ring-1 ring-inset ring-white/10 pointer-events-none" />
                 </div>
               </div>
 
