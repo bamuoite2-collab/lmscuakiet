@@ -30,9 +30,9 @@ export default function AdminXPManagement() {
             const { data: profiles } = userIds.length
                 ? await supabase
                     .from('profiles')
-                    .select('id, full_name, email')
+                    .select('id, full_name')
                     .in('id', userIds)
-                : { data: [] as { id: string; full_name: string | null; email: string | null }[] };
+                : { data: [] as { id: string; full_name: string | null }[] };
 
             return (data ?? []).map((s) => ({
                 ...s,
@@ -47,10 +47,10 @@ export default function AdminXPManagement() {
             const finalAmount = isAdd ? amount : -amount;
 
             const { error } = await supabase.rpc('award_xp', {
-                p_user_id: userId,
-                p_xp_amount: finalAmount,
-                p_source: 'admin_adjustment',
-                p_description: `Admin ${isAdd ? 'added' : 'subtracted'} ${Math.abs(finalAmount)} XP`
+                _user_id: userId,
+                _xp_amount: finalAmount,
+                _source_type: 'admin_adjustment',
+                _description: `Admin ${isAdd ? 'added' : 'subtracted'} ${Math.abs(finalAmount)} XP`
             });
 
             if (error) throw error;
@@ -66,8 +66,8 @@ export default function AdminXPManagement() {
     });
 
     const filteredStudents = students?.filter(s =>
-        s.profiles?.full_name?.toLowerCase().includes(searchQuery.toLowerCase()) ||
-        s.profiles?.email?.toLowerCase().includes(searchQuery.toLowerCase())
+        (s.profiles?.full_name ?? '').toLowerCase().includes(searchQuery.toLowerCase()) ||
+        s.user_id.toLowerCase().includes(searchQuery.toLowerCase())
     );
 
     return (

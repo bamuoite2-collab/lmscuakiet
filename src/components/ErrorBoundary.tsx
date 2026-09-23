@@ -52,7 +52,7 @@ export class ErrorBoundary extends Component<Props, State> {
                                 Đã xảy ra lỗi không mong muốn. Vui lòng thử lại hoặc liên hệ support nếu vấn đề tiếp diễn.
                             </p>
 
-                            {process.env.NODE_ENV === 'development' && this.state.error && (
+                            {import.meta.env.DEV && this.state.error && (
                                 <div className="bg-muted p-3 rounded-lg text-xs overflow-auto max-h-32">
                                     <code>{this.state.error.message}</code>
                                 </div>
