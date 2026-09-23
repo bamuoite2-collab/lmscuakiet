@@ -100,7 +100,7 @@ export default function LearningJourney() {
           </div>
 
           <div className="container mx-auto px-6 relative">
-            <div className="max-w-4xl">
+            <div className="max-w-4xl mx-auto text-center">
               <div className="inline-flex items-center gap-2 rounded-full border bg-primary/10 px-4 py-2 text-sm font-semibold text-primary mb-6">
                 <GraduationCap className="h-4 w-4" />
                 Quá trình phát triển
@@ -108,7 +108,7 @@ export default function LearningJourney() {
               <h1 className="font-display text-4xl md:text-6xl font-bold text-foreground leading-tight mb-6">
                 Từ việc dùng công cụ đến việc nghĩ như một người thiết kế học liệu
               </h1>
-              <p className="text-lg md:text-xl text-muted-foreground max-w-3xl leading-relaxed">
+              <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
                 Mình gom lại những dấu mốc trong quá trình học CHEM1441 để nhìn rõ hơn mình đã thay đổi
                 cách tìm tư liệu, sử dụng công cụ và thiết kế sản phẩm dạy học như thế nào.
               </p>
@@ -118,7 +118,8 @@ export default function LearningJourney() {
 
         <section className="py-16 md:py-24">
           <div className="container mx-auto px-6">
-            <div className="max-w-3xl mb-12">
+            <div className="max-w-5xl mx-auto">
+              <div className="max-w-3xl mx-auto mb-12 text-center">
               <p className="text-sm font-semibold uppercase tracking-wide text-primary mb-3">
                 CHEM1441 · Learning timeline
               </p>
@@ -129,9 +130,9 @@ export default function LearningJourney() {
                 Các mốc dưới đây được viết lại từ chính những hoạt động, bảng tổng kết và nhiệm vụ thực hành
                 mình đã hoàn thành trong học phần.
               </p>
-            </div>
+              </div>
 
-            <div className="max-w-5xl relative">
+              <div className="relative">
               <div className="absolute left-[23px] md:left-[27px] top-4 bottom-4 w-px bg-border" />
               <div className="space-y-6">
                 {chemistryJourney.map((item) => {
@@ -160,20 +161,22 @@ export default function LearningJourney() {
               </div>
             </div>
           </div>
+          </div>
         </section>
 
         <section className="py-16 md:py-24 bg-card border-y">
           <div className="container mx-auto px-6">
-            <div className="max-w-3xl mb-10">
+            <div className="max-w-5xl mx-auto">
+              <div className="max-w-3xl mx-auto mb-10 text-center">
               <p className="text-sm font-semibold uppercase tracking-wide text-primary mb-3">
                 Nhìn lại sự thay đổi
               </p>
               <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground">
                 Không chỉ thêm công cụ, mà thay đổi cách mình chọn và sử dụng chúng
               </h2>
-            </div>
+              </div>
 
-            <div className="grid md:grid-cols-2 xl:grid-cols-4 gap-5">
+              <div className="grid md:grid-cols-2 xl:grid-cols-4 gap-5">
               {growth.map((item, index) => (
                 <article key={item.title} className="rounded-2xl border bg-background p-6">
                   <div className="text-4xl font-display font-bold text-primary/25 mb-4">
@@ -182,7 +185,8 @@ export default function LearningJourney() {
                   <h3 className="font-display text-xl font-bold text-foreground mb-3">{item.title}</h3>
                   <p className="text-sm text-muted-foreground leading-relaxed">{item.text}</p>
                 </article>
-              ))}
+                ))}
+              </div>
             </div>
           </div>
         </section>
