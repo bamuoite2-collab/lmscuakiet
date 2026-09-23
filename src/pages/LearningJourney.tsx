@@ -100,7 +100,7 @@ export default function LearningJourney() {
           </div>
 
           <div className="container mx-auto px-6 relative">
-            <div className="max-w-5xl mx-auto">
+            <div className="max-w-4xl mx-auto text-center">
               <div className="inline-flex items-center gap-2 rounded-full border bg-primary/10 px-4 py-2 text-sm font-semibold text-primary mb-6">
                 <GraduationCap className="h-4 w-4" />
                 Quá trình phát triển
@@ -108,7 +108,7 @@ export default function LearningJourney() {
               <h1 className="font-display text-4xl md:text-6xl font-bold text-foreground leading-tight mb-6">
                 Từ việc dùng công cụ đến việc nghĩ như một người thiết kế học liệu
               </h1>
-              <p className="text-lg md:text-xl text-muted-foreground max-w-3xl leading-relaxed">
+              <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
                 Mình gom lại những dấu mốc trong quá trình học CHEM1441 để nhìn rõ hơn mình đã thay đổi
                 cách tìm tư liệu, sử dụng công cụ và thiết kế sản phẩm dạy học như thế nào.
               </p>
@@ -119,7 +119,7 @@ export default function LearningJourney() {
         <section className="py-16 md:py-24">
           <div className="container mx-auto px-6">
             <div className="max-w-5xl mx-auto">
-              <div className="max-w-3xl mb-12">
+              <div className="max-w-3xl mx-auto mb-12 text-center">
               <p className="text-sm font-semibold uppercase tracking-wide text-primary mb-3">
                 CHEM1441 · Learning timeline
               </p>
@@ -161,12 +161,13 @@ export default function LearningJourney() {
               </div>
             </div>
           </div>
+          </div>
         </section>
 
         <section className="py-16 md:py-24 bg-card border-y">
           <div className="container mx-auto px-6">
             <div className="max-w-5xl mx-auto">
-              <div className="max-w-3xl mb-10">
+              <div className="max-w-3xl mx-auto mb-10 text-center">
               <p className="text-sm font-semibold uppercase tracking-wide text-primary mb-3">
                 Nhìn lại sự thay đổi
               </p>
