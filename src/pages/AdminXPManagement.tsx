@@ -122,7 +122,7 @@ export default function AdminXPManagement() {
                                     <div>
                                         <div className="font-bold">{student.profiles?.full_name || 'Unknown'}</div>
                                         <div className="text-sm font-normal text-muted-foreground">
-                                            {student.profiles?.email}
+                                            Cấp {student.current_level}
                                         </div>
                                     </div>
                                     <div className="flex items-center gap-4">
