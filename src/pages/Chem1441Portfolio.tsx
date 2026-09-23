@@ -18,24 +18,34 @@ import { Button } from '@/components/ui/button';
 
 const tools = [
   {
-    name: 'Snipping Tool / Office Lens',
-    description: 'Sao chụp, quét và số hoá hình ảnh hoặc tài liệu phục vụ học tập.',
-    icon: FileImage,
+    name: 'Canva',
+    description:
+      'Thiết kế infographic, khung hình video và học liệu trực quan; hỗ trợ bố cục, văn bản, hình ảnh và các thành phần đồ họa theo một phong cách thống nhất.',
+    icon: Palette,
   },
   {
-    name: 'PicsArt / PowerPoint',
-    description: 'Cắt, ghép, chú thích, xoá nền và biên tập hình ảnh minh hoạ.',
-    icon: Image,
-  },
-  {
-    name: 'CapCut / PowerPoint',
-    description: 'Cắt ghép video, chèn chữ, âm thanh, hiệu ứng và xuất video bài dạy.',
+    name: 'CapCut',
+    description:
+      'Biên tập video theo timeline; cắt ghép cảnh, điều chỉnh thời lượng, chèn chữ, phụ đề, âm thanh, hiệu ứng chuyển cảnh và xuất video.',
     icon: Video,
   },
   {
-    name: 'Canva',
-    description: 'Thiết kế infographic và học liệu trực quan, dễ trình bày trên lớp.',
-    icon: Palette,
+    name: 'PicsArt',
+    description:
+      'Biên tập hình ảnh nâng cao như cắt ghép, chèn chữ, điều chỉnh hình, xóa hoặc thay đổi một số chi tiết để tạo học liệu minh họa.',
+    icon: Image,
+  },
+  {
+    name: 'Office Lens',
+    description:
+      'Sao chụp và số hóa tài liệu, hỗ trợ căn chỉnh vùng chụp để tạo hình ảnh rõ ràng trước khi đưa vào học liệu dạy học.',
+    icon: FileImage,
+  },
+  {
+    name: 'PowerPoint',
+    description:
+      'Chỉnh sửa và chú thích hình ảnh, sắp xếp đối tượng trên slide, tạo chuyển động cơ bản và có thể xuất bài trình chiếu thành video.',
+    icon: BookOpen,
   },
 ];
 
@@ -44,22 +54,22 @@ const tools = [
 
 const reflectionItems = [
   {
-    title: 'Vai trò của phương tiện trực quan',
+    title: '1. Trực quan hóa kiến thức khó hình dung',
     content:
-      'Hình ảnh và video giúp trực quan hoá các hiện tượng, quy trình và nội dung trừu tượng trong Hóa học; từ đó hỗ trợ học sinh quan sát, liên hệ và ghi nhớ kiến thức.',
+      'Hình ảnh và video giúp biểu diễn rõ hơn phản ứng, quy trình, sơ đồ, hiện tượng vi mô và các nội dung lí thuyết trừu tượng. Nhờ đó, học sinh có thêm cơ sở quan sát để hình thành biểu tượng và hiểu mối liên hệ giữa các thành phần thay vì chỉ tiếp nhận mô tả bằng lời.',
     icon: BookOpen,
   },
   {
-    title: 'Lựa chọn công cụ phù hợp',
+    title: '2. Hỗ trợ tiếp thu và tạo hứng thú học tập',
     content:
-      'Không cần dùng công cụ mạnh nhất. Hiệu quả phụ thuộc vào việc chọn đúng công cụ cho đúng nhiệm vụ và làm chủ thao tác cần thiết.',
-    icon: Wrench,
+      'Phương tiện trực quan sinh động giúp học sinh dễ theo dõi, dễ tiếp nhận nội dung và tăng hứng thú trong quá trình học. Khi được gắn với câu hỏi hoặc nhiệm vụ học tập, hình ảnh và video còn hỗ trợ học sinh suy nghĩ, trao đổi và hiểu bài sâu hơn.',
+    icon: Lightbulb,
   },
   {
-    title: 'Thiết kế gắn với mục tiêu dạy học',
+    title: '3. Kết nối thực tiễn và hỗ trợ tình huống khó thực hiện',
     content:
-      'Sản phẩm trực quan cần phục vụ một mục tiêu sư phạm cụ thể, có nội dung chính xác, bố cục rõ ràng và tránh lạm dụng hiệu ứng.',
-    icon: Lightbulb,
+      'Video có thể thay thế hoặc minh họa những thí nghiệm độc hại, nguy hiểm, khó thực hiện hay cần nhiều thời gian. Hình ảnh và phim về ứng dụng, quy trình sản xuất cũng giúp học sinh liên hệ kiến thức Hóa học với đời sống và vận dụng kiến thức vào tình huống thực tiễn.',
+    icon: Video,
   },
 ];
 
@@ -135,11 +145,12 @@ export default function Chem1441Portfolio() {
                 Phản hồi học tập
               </p>
               <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground mb-4">
-                Những nội dung em rút ra
+                Vai trò của phương tiện trực quan trong dạy học Hóa học
               </h2>
               <p className="text-muted-foreground leading-relaxed">
-                Phần này được trình bày theo hướng ngắn gọn, tập trung vào vai trò của
-                phương tiện trực quan, cách lựa chọn công cụ và nguyên tắc sử dụng hiệu quả.
+                Qua nội dung học tập và quá trình thực hành, em nhận thấy hình ảnh và video không chỉ
+                làm bài học sinh động hơn mà còn có những vai trò sư phạm cụ thể. Ba vai trò dưới đây
+                là cơ sở để em lựa chọn và thiết kế các sản phẩm trong hồ sơ.
               </p>
             </div>
 
@@ -159,6 +170,30 @@ export default function Chem1441Portfolio() {
                 );
               })}
             </div>
+
+            <div className="mt-8 rounded-2xl border bg-background p-6 md:p-8">
+              <h3 className="font-display text-xl md:text-2xl font-bold text-foreground mb-4">
+                Nguyên tắc để sử dụng hình ảnh và video hiệu quả
+              </h3>
+              <div className="grid md:grid-cols-2 gap-4 text-muted-foreground leading-relaxed">
+                <p>
+                  <span className="font-semibold text-foreground">Gắn với mục tiêu và hoạt động học:</span>{' '}
+                  chỉ lựa chọn phương tiện khi nó hỗ trợ rõ cho yêu cầu cần đạt, sản phẩm học tập và cách tổ chức hoạt động.
+                </p>
+                <p>
+                  <span className="font-semibold text-foreground">Bảo đảm tính chính xác và dễ tiếp nhận:</span>{' '}
+                  kiểm tra nội dung khoa học, thuật ngữ, nguồn tư liệu, cỡ chữ, bố cục và mức độ phù hợp với học sinh.
+                </p>
+                <p>
+                  <span className="font-semibold text-foreground">Tích cực hóa hoạt động của học sinh:</span>{' '}
+                  kết hợp phương tiện trực quan với câu hỏi, nhiệm vụ quan sát, dự đoán, giải thích hoặc thảo luận thay vì chỉ trình chiếu.
+                </p>
+                <p>
+                  <span className="font-semibold text-foreground">Chuẩn bị kĩ thuật và tránh lạm dụng ICT:</span>{' '}
+                  kiểm tra thiết bị, tệp và đường dẫn trước giờ học; tiết chế hiệu ứng để không làm giảm tương tác giữa giáo viên và học sinh.
+                </p>
+              </div>
+            </div>
           </div>
         </section>
 
@@ -166,18 +201,18 @@ export default function Chem1441Portfolio() {
           <div className="container mx-auto px-6">
             <div className="max-w-3xl mb-12">
               <p className="text-sm font-semibold uppercase tracking-wide text-primary mb-3">
-                Công cụ đã sử dụng
+                Công cụ hỗ trợ thiết kế
               </p>
               <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground mb-4">
-                Bộ công cụ hỗ trợ học tập và dạy học
+                Các công cụ thiết kế hình ảnh và video
               </h2>
               <p className="text-muted-foreground leading-relaxed">
-                Các công cụ được lựa chọn theo từng nhiệm vụ: sao chụp, chỉnh sửa hình ảnh,
-                biên tập video và thiết kế đồ họa thông tin.
+                Các công cụ dưới đây hỗ trợ những khâu khác nhau của quá trình tạo học liệu:
+                số hóa tư liệu, biên tập hình ảnh, thiết kế đồ họa, dựng video và xuất sản phẩm.
               </p>
             </div>
 
-            <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
+            <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-5">
               {tools.map((tool) => {
                 const Icon = tool.icon;
                 return (
@@ -512,16 +547,26 @@ export default function Chem1441Portfolio() {
                   </div>
                 </div>
 
-                <div className="grid lg:grid-cols-2 gap-4">
+                <div className="grid lg:grid-cols-3 gap-4">
                   <div className="rounded-xl border bg-card p-5">
                     <div className="text-sm font-semibold text-foreground mb-2">
                       Đánh giá Canva & CapCut
                     </div>
                     <p className="text-sm text-muted-foreground leading-relaxed">
-                      Canva thuận tiện khi thiết kế các khung hình, minh họa và bố cục theo cùng một phong cách.
-                      CapCut hỗ trợ tốt việc sắp xếp timeline, điều chỉnh thời lượng, lồng tiếng, tạo phụ đề,
-                      chèn âm thanh và xuất video. Khi kết hợp hai công cụ, quy trình thiết kế học liệu video
-                      khá trực quan và phù hợp với sinh viên sư phạm.
+                      Trong quá trình thực hành, Canva giúp em tạo các khung hình có bố cục và phong cách thống nhất;
+                      CapCut thuận tiện khi sắp xếp timeline, điều chỉnh thời lượng, lồng tiếng, tạo phụ đề, chèn âm thanh
+                      và xuất video. Hạn chế là khi kết hợp hai công cụ, em vẫn phải kiểm tra lại tỉ lệ khung hình,
+                      thời lượng từng cảnh, phụ đề và mức âm lượng để sản phẩm không bị rối hoặc khó theo dõi.
+                    </p>
+                  </div>
+                  <div className="rounded-xl border bg-card p-5">
+                    <div className="text-sm font-semibold text-foreground mb-2">
+                      Đề xuất để sử dụng hiệu quả hơn
+                    </div>
+                    <p className="text-sm text-muted-foreground leading-relaxed">
+                      Trước khi dựng video nên xác định yêu cầu cần đạt, viết kịch bản và phân chia thời lượng cho từng cảnh.
+                      Khi biên tập cần tiết chế hiệu ứng chuyển cảnh, ưu tiên lời thuyết minh rõ ràng, kiểm tra lại phụ đề,
+                      cân bằng âm lượng giữa giọng nói và nhạc nền, đồng thời xem lại toàn bộ nội dung khoa học trước khi xuất.
                     </p>
                   </div>
                   <div className="rounded-xl border bg-card p-5">
