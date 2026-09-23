@@ -27,6 +27,7 @@ import EventDetailsPage from "./pages/EventDetailsPage";
 import ShopPage from "./pages/ShopPage";
 import EquationBalancerPage from "./pages/EquationBalancerPage";
 import Chem1441Portfolio from "./pages/Chem1441Portfolio";
+import AboutMe from "./pages/AboutMe";
 
 const queryClient = new QueryClient();
 
@@ -58,6 +59,7 @@ const App = () => (
               <Route path="/games/equation-balancer" element={<EquationBalancerPage />} />
               <Route path="/test/gamification" element={<GamificationTestPage />} />
               <Route path="/chem1441" element={<Chem1441Portfolio />} />
+              <Route path="/gioi-thieu" element={<AboutMe />} />
               <Route path="*" element={<NotFound />} />
             </Routes>
             <ChemistryCalculator />
