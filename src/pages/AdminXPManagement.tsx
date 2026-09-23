@@ -21,17 +21,23 @@ export default function AdminXPManagement() {
         queryFn: async () => {
             const { data, error } = await supabase
                 .from('student_gamification')
-                .select(`
-          user_id,
-          total_xp,
-          current_level,
-          current_streak,
-          profiles!inner(full_name, email)
-        `)
+                .select('user_id, total_xp, current_level, current_streak')
                 .order('total_xp', { ascending: false });
 
             if (error) throw error;
-            return data;
+
+            const userIds = (data ?? []).map((s) => s.user_id);
+            const { data: profiles } = userIds.length
+                ? await supabase
+                    .from('profiles')
+                    .select('id, full_name, email')
+                    .in('id', userIds)
+                : { data: [] as { id: string; full_name: string | null; email: string | null }[] };
+
+            return (data ?? []).map((s) => ({
+                ...s,
+                profiles: profiles?.find((p) => p.id === s.user_id) ?? null,
+            }));
         }
     });
 
