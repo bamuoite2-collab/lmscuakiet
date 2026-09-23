@@ -78,7 +78,7 @@ export default function Chem1441Portfolio() {
     <div className="min-h-screen bg-background">
       <Navbar />
 
-      <main className="[&_p]:text-justify [&_li]:text-justify">
+      <main className="[&_p]:text-left [&_li]:text-left md:[&_p]:text-justify md:[&_li]:text-justify">
         <section className="pt-28 pb-16 md:pt-36 md:pb-24 relative overflow-hidden border-b">
           <div className="absolute inset-0 overflow-hidden pointer-events-none">
             <div className="absolute -top-20 left-10 w-72 h-72 bg-primary/10 rounded-full blur-3xl" />
@@ -138,7 +138,36 @@ export default function Chem1441Portfolio() {
           </div>
         </section>
 
-        <section id="phan-hoi" className="py-16 md:py-24 bg-card border-y">
+        <nav
+          aria-label="Điều hướng nhanh hồ sơ học tập"
+          className="sticky top-16 z-40 border-y bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/85"
+        >
+          <div className="container mx-auto px-4 md:px-6">
+            <div className="flex items-center gap-2 overflow-x-auto py-3 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
+              <span className="hidden lg:inline text-xs font-semibold uppercase tracking-wide text-muted-foreground mr-1 shrink-0">
+                Đi nhanh đến
+              </span>
+              {[
+                ['#phan-hoi', 'Vai trò'],
+                ['#cong-cu', 'Công cụ'],
+                ['#san-pham-1', 'SP1 · Hình ảnh'],
+                ['#san-pham-2', 'SP2 · Video'],
+                ['#san-pham-3', 'SP3 · Infographic'],
+                ['#tong-ket', 'Tổng kết'],
+              ].map(([href, label]) => (
+                <a
+                  key={href}
+                  href={href}
+                  className="shrink-0 rounded-full border bg-card px-3.5 py-2 text-sm font-medium text-muted-foreground transition-colors hover:bg-muted hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+                >
+                  {label}
+                </a>
+              ))}
+            </div>
+          </div>
+        </nav>
+
+        <section id="phan-hoi" className="scroll-mt-28 py-16 md:py-24 bg-card border-y">
           <div className="container mx-auto px-6">
             <div className="max-w-3xl mb-12">
               <p className="text-sm font-semibold uppercase tracking-wide text-primary mb-3">
@@ -197,7 +226,7 @@ export default function Chem1441Portfolio() {
           </div>
         </section>
 
-        <section className="py-16 md:py-24">
+        <section id="cong-cu" className="scroll-mt-28 py-16 md:py-24">
           <div className="container mx-auto px-6">
             <div className="max-w-3xl mb-12">
               <p className="text-sm font-semibold uppercase tracking-wide text-primary mb-3">
@@ -229,7 +258,7 @@ export default function Chem1441Portfolio() {
           </div>
         </section>
 
-        <section id="san-pham" className="py-16 md:py-24 bg-card border-y">
+        <section id="san-pham" className="scroll-mt-28 py-16 md:py-24 bg-card border-y">
           <div className="container mx-auto px-6">
             <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-5 mb-12">
               <div className="max-w-3xl">
@@ -250,7 +279,7 @@ export default function Chem1441Portfolio() {
               </div>
             </div>
 
-            <article className="rounded-2xl border bg-background overflow-hidden shadow-sm mb-8">
+            <article id="san-pham-1" className="scroll-mt-28 rounded-2xl border bg-background overflow-hidden shadow-sm mb-8">
               <div className="p-6 md:p-8 border-b">
                 <div className="flex flex-wrap items-center justify-between gap-4 mb-5">
                   <div>
@@ -367,7 +396,7 @@ export default function Chem1441Portfolio() {
               </div>
             </article>
 
-            <article className="rounded-2xl border bg-background overflow-hidden shadow-sm mb-8">
+            <article id="san-pham-2" className="scroll-mt-28 rounded-2xl border bg-background overflow-hidden shadow-sm mb-8">
               <div className="p-6 md:p-8 border-b">
                 <div className="flex flex-wrap items-center justify-between gap-4 mb-5">
                   <div>
@@ -474,53 +503,63 @@ export default function Chem1441Portfolio() {
                   </div>
                 </div>
 
-                <div>
-                  <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-3 mb-5">
-                    <div>
-                      <p className="text-xs font-semibold uppercase tracking-wide text-primary mb-2">
-                        Kế hoạch sử dụng video trong dạy học
-                      </p>
-                      <h4 className="font-display text-xl md:text-2xl font-bold text-foreground">
-                        Hoạt động: Khám phá pH qua tình huống “Vì sao nước chanh có vị chua?”
-                      </h4>
+                <details className="group rounded-2xl border bg-muted/20 overflow-hidden">
+                  <summary className="cursor-pointer list-none p-5 md:p-6 transition-colors hover:bg-muted/40 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-ring">
+                    <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-3">
+                      <div>
+                        <p className="text-xs font-semibold uppercase tracking-wide text-primary mb-2">
+                          Kế hoạch sử dụng video trong dạy học
+                        </p>
+                        <h4 className="font-display text-xl md:text-2xl font-bold text-foreground">
+                          Khám phá pH qua tình huống “Vì sao nước chanh có vị chua?”
+                        </h4>
+                      </div>
+                      <div className="flex items-center gap-3 shrink-0">
+                        <span className="text-sm text-muted-foreground">10–12 phút</span>
+                        <span className="rounded-full border bg-background px-3 py-1.5 text-sm font-medium text-foreground">
+                          <span className="group-open:hidden">Xem kế hoạch</span>
+                          <span className="hidden group-open:inline">Thu gọn</span>
+                        </span>
+                      </div>
                     </div>
-                    <div className="text-sm text-muted-foreground">Thời lượng: 10–12 phút</div>
-                  </div>
+                  </summary>
 
-                  <div className="grid md:grid-cols-2 gap-4">
-                    <div className="rounded-xl border bg-card p-5">
-                      <div className="text-sm font-bold text-foreground mb-2">1. Chuyển giao nhiệm vụ</div>
-                      <p className="text-sm text-muted-foreground leading-relaxed">
-                        GV đặt vấn đề: “Nước chanh có vị chua. Vậy tính acid của nước chanh có thể được biểu thị
-                        bằng đại lượng nào?” HS được yêu cầu xem video và chú ý các thông tin về pH, thang pH
-                        và ý nghĩa thực tiễn.
-                      </p>
-                    </div>
-                    <div className="rounded-xl border bg-card p-5">
-                      <div className="text-sm font-bold text-foreground mb-2">2. Thực hiện nhiệm vụ</div>
-                      <p className="text-sm text-muted-foreground leading-relaxed">
-                        HS xem video, ghi lại thông tin chính và trả lời: pH cho biết điều gì; pH &lt; 7,
-                        pH = 7 và pH &gt; 7 tương ứng với môi trường nào; nước chanh thuộc môi trường nào;
-                        pH có ý nghĩa gì trong thực tiễn.
-                      </p>
-                    </div>
-                    <div className="rounded-xl border bg-card p-5">
-                      <div className="text-sm font-bold text-foreground mb-2">3. Báo cáo – thảo luận</div>
-                      <p className="text-sm text-muted-foreground leading-relaxed">
-                        Một số HS trình bày câu trả lời, HS khác nhận xét và bổ sung. GV đặt thêm câu hỏi:
-                        “Ngoài nước chanh, em biết chất quen thuộc nào có pH nhỏ hơn 7?”
-                      </p>
-                    </div>
-                    <div className="rounded-xl border bg-card p-5">
-                      <div className="text-sm font-bold text-foreground mb-2">4. Kết luận – hình thành kiến thức</div>
-                      <p className="text-sm text-muted-foreground leading-relaxed">
-                        GV chốt: pH là đại lượng biểu thị tính acid hoặc base của dung dịch; dựa vào giá trị pH
-                        có thể nhận biết môi trường acid, trung tính hay base; pH có nhiều ý nghĩa trong đời sống
-                        và sản xuất.
-                      </p>
+                  <div className="border-t p-5 md:p-6">
+                    <div className="grid md:grid-cols-2 gap-4">
+                      <div className="rounded-xl border bg-card p-5">
+                        <div className="text-sm font-bold text-foreground mb-2">1. Chuyển giao nhiệm vụ</div>
+                        <p className="text-sm text-muted-foreground leading-relaxed">
+                          GV đặt vấn đề: “Nước chanh có vị chua. Vậy tính acid của nước chanh có thể được biểu thị
+                          bằng đại lượng nào?” HS được yêu cầu xem video và chú ý các thông tin về pH, thang pH
+                          và ý nghĩa thực tiễn.
+                        </p>
+                      </div>
+                      <div className="rounded-xl border bg-card p-5">
+                        <div className="text-sm font-bold text-foreground mb-2">2. Thực hiện nhiệm vụ</div>
+                        <p className="text-sm text-muted-foreground leading-relaxed">
+                          HS xem video, ghi lại thông tin chính và trả lời: pH cho biết điều gì; pH &lt; 7,
+                          pH = 7 và pH &gt; 7 tương ứng với môi trường nào; nước chanh thuộc môi trường nào;
+                          pH có ý nghĩa gì trong thực tiễn.
+                        </p>
+                      </div>
+                      <div className="rounded-xl border bg-card p-5">
+                        <div className="text-sm font-bold text-foreground mb-2">3. Báo cáo – thảo luận</div>
+                        <p className="text-sm text-muted-foreground leading-relaxed">
+                          Một số HS trình bày câu trả lời, HS khác nhận xét và bổ sung. GV đặt thêm câu hỏi:
+                          “Ngoài nước chanh, em biết chất quen thuộc nào có pH nhỏ hơn 7?”
+                        </p>
+                      </div>
+                      <div className="rounded-xl border bg-card p-5">
+                        <div className="text-sm font-bold text-foreground mb-2">4. Kết luận – hình thành kiến thức</div>
+                        <p className="text-sm text-muted-foreground leading-relaxed">
+                          GV chốt: pH là đại lượng biểu thị tính acid hoặc base của dung dịch; dựa vào giá trị pH
+                          có thể nhận biết môi trường acid, trung tính hay base; pH có nhiều ý nghĩa trong đời sống
+                          và sản xuất.
+                        </p>
+                      </div>
                     </div>
                   </div>
-                </div>
+                </details>
 
                 <div className="grid lg:grid-cols-2 gap-8">
                   <div>
@@ -583,7 +622,7 @@ export default function Chem1441Portfolio() {
               </div>
             </article>
 
-            <article className="rounded-2xl border bg-background overflow-hidden shadow-sm">
+            <article id="san-pham-3" className="scroll-mt-28 rounded-2xl border bg-background overflow-hidden shadow-sm">
               <div className="p-6 md:p-8 border-b">
                 <div className="flex flex-wrap items-center justify-between gap-4 mb-5">
                   <div>
@@ -600,13 +639,33 @@ export default function Chem1441Portfolio() {
                   </div>
                 </div>
 
-                <div className="rounded-xl border bg-muted/20 overflow-hidden py-5 md:py-8">
-                  <img
-                    src="/portfolio/reaction-rate-factors.png"
-                    alt="Infographic các yếu tố ảnh hưởng đến tốc độ phản ứng do Hồ Tuấn Kiệt thiết kế"
-                    className="w-full max-w-[900px] h-auto mx-auto object-contain"
-                  />
-                </div>
+                <details className="group rounded-xl border bg-muted/20 overflow-hidden">
+                  <summary className="list-none cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-ring">
+                    <div className="group-open:hidden relative h-[460px] md:h-[620px] overflow-hidden bg-muted/20">
+                      <img
+                        src="/portfolio/reaction-rate-factors.png"
+                        alt="Xem trước infographic các yếu tố ảnh hưởng đến tốc độ phản ứng"
+                        className="w-full max-w-[900px] h-auto mx-auto object-contain object-top"
+                      />
+                      <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-background via-background/95 to-transparent pt-20 pb-5 px-5 text-center">
+                        <span className="inline-flex rounded-full border bg-card px-4 py-2 text-sm font-semibold text-foreground shadow-sm">
+                          Xem toàn bộ infographic
+                        </span>
+                      </div>
+                    </div>
+                    <div className="hidden group-open:flex items-center justify-between gap-4 p-4 md:p-5 bg-card">
+                      <span className="text-sm font-semibold text-foreground">Infographic toàn bộ</span>
+                      <span className="text-sm text-muted-foreground">Nhấn để thu gọn</span>
+                    </div>
+                  </summary>
+                  <div className="border-t bg-background p-4 md:p-8">
+                    <img
+                      src="/portfolio/reaction-rate-factors.png"
+                      alt="Infographic các yếu tố ảnh hưởng đến tốc độ phản ứng do Hồ Tuấn Kiệt thiết kế"
+                      className="w-full max-w-[900px] h-auto mx-auto object-contain"
+                    />
+                  </div>
+                </details>
 
                 <div className="grid sm:grid-cols-3 gap-3 mt-5 text-sm">
                   <div className="rounded-xl border bg-card p-4">
@@ -685,7 +744,7 @@ export default function Chem1441Portfolio() {
           </div>
         </section>
 
-        <section className="py-16 md:py-24">
+        <section id="tong-ket" className="scroll-mt-28 py-16 md:py-24">
           <div className="container mx-auto px-6">
             <div className="grid lg:grid-cols-2 gap-8">
               <article className="rounded-2xl border bg-card p-7 md:p-9">
