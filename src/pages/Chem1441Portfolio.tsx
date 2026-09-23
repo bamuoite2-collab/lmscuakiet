@@ -445,6 +445,15 @@ export default function Chem1441Portfolio() {
                       <ArrowRight className="h-4 w-4" />
                     </a>
                   </Button>
+                  <Button asChild variant="outline">
+                    <a
+                      href="/portfolio/2526CHEM1441_HoTuanKiet_KHDHVideo.docx"
+                      download
+                    >
+                      KHBD sử dụng video (Word)
+                      <BookOpen className="h-4 w-4" />
+                    </a>
+                  </Button>
                 </div>
 
                 <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-3 mt-5 text-sm">
