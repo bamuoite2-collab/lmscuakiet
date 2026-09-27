@@ -3,22 +3,23 @@ import { ArrowRight, BookOpen, FolderOpen, Route, UserRound } from 'lucide-react
 import { Navbar } from '@/components/Navbar';
 import { Footer } from '@/components/Footer';
 import { Button } from '@/components/ui/button';
+import { Chem1441Subnav } from '@/components/Chem1441Subnav';
 
 const sections = [
   {
-    href: '/gioi-thieu',
+    href: '/chem1441/gioi-thieu',
     title: 'Giới thiệu',
     description: 'Thông tin cá nhân, định hướng học tập và mối quan tâm trong dạy học Hóa học.',
     icon: UserRound,
   },
   {
-    href: '/hanh-trinh',
+    href: '/chem1441/hanh-trinh',
     title: 'Hành trình học tập',
     description: 'Các mốc học tập, trải nghiệm và những nội dung em đã thực hiện trong quá trình học.',
     icon: Route,
   },
   {
-    href: '/chem1441',
+    href: '/chem1441/portfolio',
     title: 'CHEM1441',
     description: 'Hệ thống hồ sơ học tập của học phần Ứng dụng ICT trong dạy học Hóa học.',
     icon: FolderOpen,
@@ -35,8 +36,9 @@ export default function Portfolio() {
   return (
     <div className="min-h-screen bg-background">
       <Navbar />
+      <Chem1441Subnav />
 
-      <main className="pt-16">
+      <main>
         <section className="py-16 md:py-24 border-b bg-card">
           <div className="container mx-auto px-6">
             <div className="max-w-4xl">
