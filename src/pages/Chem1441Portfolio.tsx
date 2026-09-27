@@ -15,6 +15,7 @@ import {
 import { Navbar } from '@/components/Navbar';
 import { Footer } from '@/components/Footer';
 import { Button } from '@/components/ui/button';
+import { Chem1441Subnav } from '@/components/Chem1441Subnav';
 
 const tools = [
   {
@@ -77,9 +78,10 @@ export default function Chem1441Portfolio() {
   return (
     <div className="min-h-screen bg-background">
       <Navbar />
+      <Chem1441Subnav />
 
       <main className="[&_p]:text-left [&_li]:text-left md:[&_p]:text-justify md:[&_li]:text-justify">
-        <section className="pt-28 pb-16 md:pt-36 md:pb-24 relative overflow-hidden border-b">
+        <section className="py-16 md:py-24 relative overflow-hidden border-b">
           <div className="absolute inset-0 overflow-hidden pointer-events-none">
             <div className="absolute -top-20 left-10 w-72 h-72 bg-primary/10 rounded-full blur-3xl" />
             <div className="absolute top-24 right-0 w-80 h-80 bg-accent/10 rounded-full blur-3xl" />
@@ -89,16 +91,15 @@ export default function Chem1441Portfolio() {
             <div className="max-w-4xl">
               <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-primary/20 bg-primary/10 text-primary text-sm font-semibold mb-6 dark:border-white/15 dark:bg-white/10 dark:text-white">
                 <FlaskConical className="h-4 w-4" />
-                CHEM1441 · Ứng dụng ICT trong dạy học Hóa học
+                Hồ sơ học tập 1 · CHEM1441
               </div>
 
               <h1 className="font-display text-4xl md:text-6xl font-bold text-foreground leading-tight mb-6">
-                Hồ sơ học tập <span className="text-gradient">ICT Hóa học</span>
+                Tìm kiếm, lưu trữ và <span className="text-gradient">hiệu chỉnh tư liệu</span>
               </h1>
 
               <p className="text-lg md:text-xl text-muted-foreground max-w-3xl leading-relaxed mb-8">
-                Ghi lại quá trình tìm hiểu, thực hành và phản hồi về việc sử dụng hình ảnh,
-                video và các công cụ số trong thiết kế hoạt động dạy học Hóa học.
+                Hồ sơ tập hợp các sản phẩm thực hành về hình ảnh, video và infographic, kèm phần phản hồi về cách sử dụng các phương tiện trực quan trong dạy học Hóa học.
               </p>
 
               <div className="flex flex-wrap gap-3">
