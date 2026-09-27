@@ -2,10 +2,11 @@ import {
   ArrowRight,
   CheckCircle2,
   FileImage,
-  FlaskConical,
+  FileText,
   GraduationCap,
   Image,
   Lightbulb,
+  Presentation,
   Search,
   Users,
   Video,
@@ -22,69 +23,83 @@ const chemistryJourney = [
     step: '01',
     title: 'Tìm và đánh giá tư liệu dạy học',
     icon: Search,
-    text: 'Ở những hoạt động đầu, mình bắt đầu từ một việc rất cơ bản: tìm tài liệu sao cho đúng nhu cầu. Mình tập xác định từ khóa, dùng tìm kiếm nâng cao, ưu tiên nguồn đáng tin cậy, kiểm tra thời điểm công bố, đối chiếu nhiều nguồn và chú ý vấn đề bản quyền.',
-    note: 'Từ chỗ chỉ tìm, mình bắt đầu quan tâm nhiều hơn đến việc tài liệu đó có phù hợp để dạy học hay không.',
+    text: 'Ở những hoạt động đầu, mình tập xác định từ khóa, dùng tìm kiếm nâng cao, ưu tiên nguồn đáng tin cậy, kiểm tra thời điểm công bố và chú ý vấn đề bản quyền.',
+    note: 'Mình bắt đầu nhìn một tư liệu bằng câu hỏi: nó có đúng và có phù hợp để đưa vào hoạt động học hay không?',
   },
   {
     step: '02',
     title: 'Mở rộng cộng đồng học tập',
     icon: Users,
-    text: 'Qua hoạt động khám phá cộng đồng, mình tìm hiểu và tham gia các nhóm giáo viên Hóa học, Khoa học Tự nhiên và các cộng đồng chuyên môn. Mình cũng biết thêm về VERS – Vietnam Educational Research Society.',
-    note: 'Mình nhận ra phát triển chuyên môn không chỉ đến từ khóa học hay tài liệu chính thống, mà còn từ việc theo dõi, trao đổi và học hỏi trong cộng đồng nghề nghiệp.',
+    text: 'Mình tìm hiểu các nhóm giáo viên Hóa học, Khoa học Tự nhiên và một số cộng đồng chuyên môn để có thêm nguồn tham khảo và trao đổi nghề nghiệp.',
+    note: 'Nguồn học không chỉ nằm trong giáo trình; cộng đồng nghề nghiệp cũng cho mình nhiều ví dụ và kinh nghiệm thực tế.',
   },
   {
     step: '03',
-    title: 'Hiểu công cụ theo chức năng',
+    title: 'Chọn công cụ theo việc cần làm',
     icon: Wrench,
-    text: 'Thay vì nhớ tên phần mềm một cách rời rạc, mình tập phân loại chúng theo việc cần làm: sao chụp như Snipping Tool, Lightshot, Office Lens; chỉnh sửa như Pixlr, PicsArt, Remove.bg; thiết kế như Canva.',
-    note: 'Điều quan trọng dần chuyển từ công cụ nào mạnh hơn sang công cụ nào phù hợp với nhiệm vụ này.',
+    text: 'Mình tập phân loại công cụ theo chức năng: sao chụp, chỉnh ảnh, thiết kế, dựng video và lưu trữ thay vì nhớ tên phần mềm một cách rời rạc.',
+    note: 'Cách nghĩ này giúp mình đỡ bị cuốn theo việc thử quá nhiều công cụ cùng lúc.',
   },
   {
     step: '04',
     title: 'Biên tập hình ảnh Hóa học',
     icon: Image,
-    text: 'Bài thực hành yêu cầu mình tìm sơ đồ chu trình carbon, sau đó chỉnh sửa, Việt hóa chú thích, ghi tên và nguồn rồi lưu vào hồ sơ học tập. Sản phẩm này về sau trở thành một phần của HSHT1.',
-    note: 'Qua bài này, mình thấy biên tập ảnh dạy học không chỉ là làm đẹp: thuật ngữ, mũi tên, bố cục và nguồn đều ảnh hưởng đến ý nghĩa khoa học.',
+    text: 'Mình thực hành chỉnh sửa và Việt hóa sơ đồ chu trình carbon, kiểm tra lại thuật ngữ, hướng mũi tên và nguồn ảnh trước khi dùng làm học liệu.',
+    note: 'Một hình ảnh dạy học cần rõ về nội dung trước khi đẹp về hình thức.',
   },
   {
     step: '05',
     title: 'Thiết kế video cho một nội dung cụ thể',
     icon: Video,
-    text: 'Ở phần video, nhiệm vụ đặt ra khá rõ: khoảng một phút, có mở đầu – nội dung – kết thúc, chữ hoặc phụ đề rõ ràng, chuyển cảnh phù hợp, âm thanh hợp lý và được chia sẻ qua YouTube; đồng thời phải gắn video với một hoạt động dạy học.',
-    note: 'Video pH giúp mình chuyển từ dựng một clip sang nghĩ nhiều hơn về yêu cầu cần đạt, câu hỏi sau video và cách học sinh sử dụng học liệu.',
+    text: 'Ở phần video, mình làm clip ngắn về pH và đặt nó vào một hoạt động học có câu hỏi, mục tiêu và phần xử lý sau khi xem.',
+    note: 'Từ đây mình chú ý nhiều hơn đến việc học sinh sẽ làm gì với video, thay vì chỉ chăm chút phần dựng.',
   },
   {
     step: '06',
     title: 'Thiết kế infographic',
     icon: FileImage,
-    text: 'Bài thực hành infographic yêu cầu chọn một nội dung trong chương trình Hóa học 2018 và thiết kế sản phẩm dựa trên bốn tiêu chí: chính xác, thẩm mỹ, bố cục và minh bạch về nguồn dữ liệu.',
-    note: 'Mình chọn Canva và hoàn thiện infographic về các yếu tố ảnh hưởng đến tốc độ phản ứng. Đây cũng là lúc mình chú ý nhiều hơn đến việc chọn lọc thông tin thay vì đưa mọi thứ mình biết lên một trang.',
+    text: 'Mình dùng Canva để trình bày các yếu tố ảnh hưởng đến tốc độ phản ứng, đồng thời tập giảm chữ và giữ lại những ý thật sự cần cho người học.',
+    note: 'Infographic dễ bị quá tải nếu cố đưa toàn bộ kiến thức lên một trang.',
   },
   {
     step: '07',
-    title: 'Từ sản phẩm sang phản tư',
+    title: 'Nhìn lại sản phẩm sau khi hoàn thành',
     icon: CheckCircle2,
-    text: 'Ở các bảng tổng kết hoạt động, mình phải nhìn lại công cụ đã dùng, cách mình tìm nguồn, cách phân loại tư liệu và mức độ hoàn thành từng nhiệm vụ. Phần này khiến hồ sơ học tập không chỉ là nơi “nộp sản phẩm”.',
-    note: 'Điều mình muốn giữ lại sau CHEM1441 là thói quen tự hỏi: mình đã làm được gì, điều gì chưa ổn và nếu làm lại thì mình sẽ thay đổi gì.',
+    text: 'Qua HSHT1, mình phải tự xem lại công cụ đã dùng, cách tìm nguồn, cách trình bày và khả năng gắn sản phẩm với một nhiệm vụ học tập.',
+    note: 'Phần phản hồi giúp mình biết lần sau cần sửa gì, thay vì chỉ lưu sản phẩm rồi chuyển sang nhiệm vụ mới.',
+  },
+  {
+    step: '08',
+    title: 'Biên soạn văn bản Hóa học',
+    icon: FileText,
+    text: 'Sang HSHT2, mình thực hành Word với Subscript, Superscript, Equation và AutoCorrect; đồng thời kiểm tra cách trình bày công thức, phương trình và hướng dẫn chấm.',
+    note: 'Với văn bản Hóa học, lỗi nhỏ ở chỉ số, kí hiệu hoặc điều kiện phản ứng cũng làm tài liệu mất tính chính xác.',
+  },
+  {
+    step: '09',
+    title: 'Rà soát bài trình chiếu',
+    icon: Presentation,
+    text: 'Mình tiếp tục xem lại slide theo các yếu tố như lượng chữ, bố cục, màu nhấn, khoảng trắng và sự thống nhất giữa các trang.',
+    note: 'Một slide dễ đọc thường cần bớt nội dung hơn là thêm hiệu ứng.',
   },
 ];
 
 const growth = [
   {
-    title: 'Trước CHEM1441',
-    text: 'Mình đã quen với công nghệ ở góc độ người dùng và người thích tự mày mò, nhưng chưa thật sự hệ thống hóa cách chọn công cụ cho một hoạt động dạy học.',
+    title: 'Ban đầu',
+    text: 'Mình đã quen với công nghệ ở góc độ người dùng và người thích tự mày mò, nhưng chưa hệ thống hóa cách chọn công cụ cho một hoạt động dạy học.',
   },
   {
-    title: 'Trong CHEM1441',
-    text: 'Mình lần lượt đi qua việc tìm nguồn, đánh giá tư liệu, biên tập ảnh, dựng video, thiết kế infographic và liên kết các sản phẩm đó với mục tiêu sư phạm.',
+    title: 'Sau HSHT1',
+    text: 'Mình chú ý hơn đến nguồn tư liệu, cách biên tập học liệu và việc đặt sản phẩm vào một nhiệm vụ học tập cụ thể.',
   },
   {
-    title: 'Hiện tại',
-    text: 'Mình bắt đầu nhìn một học liệu bằng cả hai câu hỏi: “Nó có đúng và rõ về mặt khoa học không?” và “Học sinh sẽ làm gì với nó?”.',
+    title: 'Đến HSHT2',
+    text: 'Mình bắt đầu để ý kỹ hơn đến chuẩn trình bày: công thức, phương trình, font, bố cục văn bản và slide.',
   },
   {
     title: 'Tiếp theo',
-    text: 'Mình muốn tiếp tục phát triển ở mô phỏng, thiết kế bài dạy, kiểm tra đánh giá và xây dựng một hệ thống học liệu Hóa học có thể dùng lâu dài trên website của mình.',
+    text: 'Mình muốn tiếp tục hoàn thiện các phần mô phỏng, kiểm tra đánh giá và thiết kế bài dạy trong những hồ sơ sau.',
   },
 ];
 
@@ -105,14 +120,14 @@ export default function LearningJourney() {
             <div className="max-w-4xl mx-auto text-center">
               <div className="inline-flex items-center gap-2 rounded-full border bg-primary/10 px-4 py-2 text-sm font-semibold text-primary mb-6">
                 <GraduationCap className="h-4 w-4" />
-                Quá trình phát triển
+                Hành trình trong CHEM1441
               </div>
               <h1 className="font-display text-4xl md:text-6xl font-bold text-foreground leading-tight mb-6">
-                Từ dùng công cụ đến một người thiết kế học liệu
+                Mình đã học và thay đổi cách làm học liệu như thế nào?
               </h1>
               <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-                Mình gom lại những dấu mốc trong quá trình học CHEM1441 để nhìn rõ hơn mình đã thay đổi
-                cách tìm tư liệu, sử dụng công cụ và thiết kế sản phẩm dạy học như thế nào.
+                Trang này chỉ ghi lại quá trình học trong CHEM1441. Sản phẩm hoàn chỉnh được tách sang Portfolio,
+                còn từng hồ sơ học tập giữ phần minh chứng và phản hồi chi tiết.
               </p>
             </div>
           </div>
@@ -122,47 +137,43 @@ export default function LearningJourney() {
           <div className="container mx-auto px-6">
             <div className="max-w-5xl mx-auto">
               <div className="max-w-3xl mx-auto mb-12 text-center">
-              <p className="text-sm font-semibold uppercase tracking-wide text-primary mb-3">
-                CHEM1441 · Learning timeline
-              </p>
-              <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground mb-4">
-                Những bước mình đã đi qua
-              </h2>
-              <p className="text-muted-foreground leading-relaxed">
-                Các mốc dưới đây được viết lại từ chính những hoạt động, bảng tổng kết và nhiệm vụ thực hành
-                mình đã hoàn thành trong học phần.
-              </p>
+                <p className="text-sm font-semibold uppercase tracking-wide text-primary mb-3">
+                  Learning timeline
+                </p>
+                <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground mb-4">
+                  Những bước mình đã đi qua
+                </h2>
               </div>
 
               <div className="relative">
-              <div className="absolute left-[23px] md:left-[27px] top-4 bottom-4 w-px bg-border" />
-              <div className="space-y-6">
-                {chemistryJourney.map((item) => {
-                  const Icon = item.icon;
-                  return (
-                    <article key={item.step} className="relative pl-16 md:pl-20">
-                      <div className="absolute left-0 top-1 h-12 w-12 md:h-14 md:w-14 rounded-2xl border bg-background shadow-sm flex items-center justify-center text-primary">
-                        <Icon className="h-5 w-5" />
-                      </div>
-                      <div className="rounded-2xl border bg-card p-6 md:p-8">
-                        <div className="flex flex-wrap items-center gap-3 mb-3">
-                          <span className="text-xs font-bold uppercase tracking-[0.18em] text-primary">Bước {item.step}</span>
-                          <span className="h-1 w-1 rounded-full bg-muted-foreground/40" />
-                          <span className="text-xs text-muted-foreground">CHEM1441</span>
+                <div className="absolute left-[23px] md:left-[27px] top-4 bottom-4 w-px bg-border" />
+                <div className="space-y-6">
+                  {chemistryJourney.map((item) => {
+                    const Icon = item.icon;
+                    return (
+                      <article key={item.step} className="relative pl-16 md:pl-20">
+                        <div className="absolute left-0 top-1 h-12 w-12 md:h-14 md:w-14 rounded-2xl border bg-background shadow-sm flex items-center justify-center text-primary">
+                          <Icon className="h-5 w-5" />
                         </div>
-                        <h3 className="font-display text-2xl font-bold text-foreground mb-3">{item.title}</h3>
-                        <p className="text-muted-foreground leading-relaxed">{item.text}</p>
-                        <div className="mt-5 rounded-xl border bg-background p-4 flex gap-3">
-                          <Lightbulb className="h-5 w-5 text-primary shrink-0 mt-0.5" />
-                          <p className="text-sm text-muted-foreground leading-relaxed">{item.note}</p>
+                        <div className="rounded-2xl border bg-card p-6 md:p-8">
+                          <div className="flex flex-wrap items-center gap-3 mb-3">
+                            <span className="text-xs font-bold uppercase tracking-[0.18em] text-primary">Bước {item.step}</span>
+                            <span className="h-1 w-1 rounded-full bg-muted-foreground/40" />
+                            <span className="text-xs text-muted-foreground">CHEM1441</span>
+                          </div>
+                          <h3 className="font-display text-2xl font-bold text-foreground mb-3">{item.title}</h3>
+                          <p className="text-muted-foreground leading-relaxed">{item.text}</p>
+                          <div className="mt-5 rounded-xl border bg-background p-4 flex gap-3">
+                            <Lightbulb className="h-5 w-5 text-primary shrink-0 mt-0.5" />
+                            <p className="text-sm text-muted-foreground leading-relaxed">{item.note}</p>
+                          </div>
                         </div>
-                      </div>
-                    </article>
-                  );
-                })}
+                      </article>
+                    );
+                  })}
+                </div>
               </div>
             </div>
-          </div>
           </div>
         </section>
 
@@ -170,23 +181,23 @@ export default function LearningJourney() {
           <div className="container mx-auto px-6">
             <div className="max-w-5xl mx-auto">
               <div className="max-w-3xl mx-auto mb-10 text-center">
-              <p className="text-sm font-semibold uppercase tracking-wide text-primary mb-3">
-                Nhìn lại sự thay đổi
-              </p>
-              <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground">
-                Không chỉ thêm công cụ, mà thay đổi cách mình chọn và sử dụng chúng
-              </h2>
+                <p className="text-sm font-semibold uppercase tracking-wide text-primary mb-3">
+                  Nhìn lại
+                </p>
+                <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground">
+                  Cách mình làm học liệu đang thay đổi dần
+                </h2>
               </div>
 
               <div className="grid md:grid-cols-2 xl:grid-cols-4 gap-5">
-              {growth.map((item, index) => (
-                <article key={item.title} className="rounded-2xl border bg-background p-6">
-                  <div className="text-4xl font-display font-bold text-primary/25 mb-4">
-                    {String(index + 1).padStart(2, '0')}
-                  </div>
-                  <h3 className="font-display text-xl font-bold text-foreground mb-3">{item.title}</h3>
-                  <p className="text-sm text-muted-foreground leading-relaxed">{item.text}</p>
-                </article>
+                {growth.map((item, index) => (
+                  <article key={item.title} className="rounded-2xl border bg-background p-6">
+                    <div className="text-4xl font-display font-bold text-primary/25 mb-4">
+                      {String(index + 1).padStart(2, '0')}
+                    </div>
+                    <h3 className="font-display text-xl font-bold text-foreground mb-3">{item.title}</h3>
+                    <p className="text-sm text-muted-foreground leading-relaxed">{item.text}</p>
+                  </article>
                 ))}
               </div>
             </div>
@@ -198,20 +209,19 @@ export default function LearningJourney() {
             <div className="max-w-5xl mx-auto rounded-3xl border bg-card p-7 md:p-10 flex flex-col lg:flex-row lg:items-center lg:justify-between gap-6">
               <div className="max-w-2xl">
                 <p className="text-sm font-semibold uppercase tracking-wide text-primary mb-2">
-                  Evidence
+                  Sản phẩm
                 </p>
                 <h2 className="font-display text-2xl md:text-3xl font-bold text-foreground mb-3">
-                  Các sản phẩm trong HSHT1 là kết quả của những bước này
+                  Xem những gì mình đã làm trong học phần
                 </h2>
                 <p className="text-muted-foreground leading-relaxed">
-                  Sơ đồ chu trình carbon, video pH và infographic tốc độ phản ứng không đứng riêng lẻ;
-                  chúng là ba sản phẩm mình dùng để thử nghiệm cách lựa chọn tư liệu, biên tập học liệu
-                  và gắn công cụ với một mục tiêu dạy học cụ thể.
+                  Portfolio tập hợp sản phẩm theo dạng gallery. Nếu cần xem phần giải thích, công cụ sử dụng
+                  và phản hồi chi tiết, mỗi sản phẩm sẽ dẫn về hồ sơ học tập tương ứng.
                 </p>
               </div>
               <Button asChild>
                 <Link to="/chem1441/portfolio">
-                  Xem HSHT1
+                  Mở Portfolio
                   <ArrowRight className="h-4 w-4" />
                 </Link>
               </Button>
