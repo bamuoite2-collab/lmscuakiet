@@ -63,8 +63,10 @@ const App = () => (
               <Route path="/shop" element={<ShopPage />} />
               <Route path="/games/equation-balancer" element={<EquationBalancerPage />} />
               <Route path="/test/gamification" element={<GamificationTestPage />} />
-              <Route path="/portfolio" element={<Portfolio />} />
-              <Route path="/chem1441" element={<Chem1441Overview />} />
+                            <Route path="/chem1441" element={<Chem1441Overview />} />
+              <Route path="/chem1441/gioi-thieu" element={<AboutMe />} />
+              <Route path="/chem1441/hanh-trinh" element={<LearningJourney />} />
+              <Route path="/chem1441/portfolio" element={<Portfolio />} />
               <Route path="/chem1441/hsht1" element={<Chem1441Portfolio />} />
               <Route path="/chem1441/hsht2" element={<Chem1441Hsht2 />} />
               <Route path="/chem1441/hsht3" element={<Chem1441Placeholder number={3} />} />
