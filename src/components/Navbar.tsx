@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Menu, X, BookOpen, FlaskConical, LogOut, LayoutDashboard, BarChart3, TrendingUp, Atom, FolderOpen, UserRound, Route } from 'lucide-react';
+import { Menu, X, BookOpen, FlaskConical, LogOut, LayoutDashboard, BarChart3, TrendingUp, Atom, FolderOpen } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { useAuth } from '@/hooks/useAuth';
 import { ThemeToggle } from '@/components/ui/ThemeToggle';
@@ -13,16 +13,12 @@ export function Navbar() {
   const navLinks = [
     { href: '/', label: 'Home' },
     { href: '/courses', label: 'Courses' },
-    { href: '/gioi-thieu', label: 'Giới thiệu', icon: UserRound },
-    { href: '/hanh-trinh', label: 'Hành trình', icon: Route },
-    { href: '/portfolio', label: 'Portfolio', icon: BookOpen },
     { href: '/chem1441', label: 'CHEM1441', icon: FolderOpen },
     { href: '/periodic-table', label: 'Bảng tuần hoàn', icon: Atom },
   ];
 
   const isActive = (path: string) => {
     if (path === '/chem1441') return location.pathname.startsWith('/chem1441');
-    if (path === '/portfolio') return location.pathname.startsWith('/portfolio');
     return location.pathname === path;
   };
 
