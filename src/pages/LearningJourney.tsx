@@ -15,6 +15,7 @@ import { Link } from 'react-router-dom';
 import { Navbar } from '@/components/Navbar';
 import { Footer } from '@/components/Footer';
 import { Button } from '@/components/ui/button';
+import { Chem1441Subnav } from '@/components/Chem1441Subnav';
 
 const chemistryJourney = [
   {
@@ -91,9 +92,10 @@ export default function LearningJourney() {
   return (
     <div className="min-h-screen bg-background">
       <Navbar />
+      <Chem1441Subnav />
 
       <main>
-        <section className="pt-28 pb-16 md:pt-36 md:pb-24 border-b relative overflow-hidden">
+        <section className="py-16 md:py-24 border-b relative overflow-hidden">
           <div className="absolute inset-0 pointer-events-none overflow-hidden">
             <div className="absolute -top-16 left-12 h-72 w-72 rounded-full bg-primary/10 blur-3xl" />
             <div className="absolute top-24 right-0 h-80 w-80 rounded-full bg-accent/10 blur-3xl" />
@@ -208,7 +210,7 @@ export default function LearningJourney() {
                 </p>
               </div>
               <Button asChild>
-                <Link to="/chem1441">
+                <Link to="/chem1441/portfolio">
                   Xem HSHT1
                   <ArrowRight className="h-4 w-4" />
                 </Link>
