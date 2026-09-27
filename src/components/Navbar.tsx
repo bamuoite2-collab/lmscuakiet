@@ -15,11 +15,11 @@ export function Navbar() {
     { href: '/courses', label: 'Courses' },
     { href: '/gioi-thieu', label: 'Giới thiệu', icon: UserRound },
     { href: '/hanh-trinh', label: 'Hành trình', icon: Route },
-    { href: '/chem1441', label: 'Hồ sơ ICT', icon: FolderOpen },
+    { href: '/chem1441', label: 'CHEM1441', icon: FolderOpen },
     { href: '/periodic-table', label: 'Bảng tuần hoàn', icon: Atom },
   ];
 
-  const isActive = (path: string) => location.pathname === path;
+  const isActive = (path: string) => path === '/chem1441' ? location.pathname.startsWith('/chem1441') : location.pathname === path;
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 glass border-b">
