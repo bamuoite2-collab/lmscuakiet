@@ -2,6 +2,9 @@ import { Link, useLocation } from 'react-router-dom';
 
 const items = [
   { href: '/chem1441', label: 'Tổng quan' },
+  { href: '/chem1441/gioi-thieu', label: 'Giới thiệu' },
+  { href: '/chem1441/hanh-trinh', label: 'Hành trình' },
+  { href: '/chem1441/portfolio', label: 'Portfolio' },
   { href: '/chem1441/hsht1', label: 'HSHT 1' },
   { href: '/chem1441/hsht2', label: 'HSHT 2' },
   { href: '/chem1441/hsht3', label: 'HSHT 3' },
