@@ -1,4 +1,5 @@
 import { Link, useLocation } from 'react-router-dom';
+import { ArrowUp } from 'lucide-react';
 
 const items = [
   { href: '/chem1441', label: 'Tổng quan' },
@@ -19,8 +20,13 @@ export function Chem1441Subnav() {
       ? location.pathname === '/chem1441'
       : location.pathname.startsWith(href);
 
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
   return (
-    <div className="mt-16 border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/85">
+    <>
+      <div className="mt-16 border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/85">
       <div className="container mx-auto px-4 md:px-6">
         <div className="flex items-center gap-2 overflow-x-auto py-3 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
           <span className="hidden lg:inline shrink-0 mr-2 text-xs font-bold uppercase tracking-[0.14em] text-muted-foreground">
@@ -41,6 +47,17 @@ export function Chem1441Subnav() {
           ))}
         </div>
       </div>
-    </div>
+      </div>
+
+      <button
+        type="button"
+        onClick={scrollToTop}
+        aria-label="Lên đầu trang"
+        title="Lên đầu trang"
+        className="fixed bottom-5 right-5 z-50 inline-flex h-11 w-11 items-center justify-center rounded-full border bg-background/95 text-foreground shadow-lg backdrop-blur transition-all hover:-translate-y-0.5 hover:bg-muted focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring md:bottom-7 md:right-7"
+      >
+        <ArrowUp className="h-5 w-5" />
+      </button>
+    </>
   );
 }
