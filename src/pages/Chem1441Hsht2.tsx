@@ -249,7 +249,7 @@ export default function Chem1441Hsht2() {
                   <div className="inline-flex items-center rounded-full bg-foreground text-background px-4 py-1.5 text-xs md:text-sm font-bold uppercase tracking-[0.14em] mb-5">
                     Câu hỏi trọng tâm
                   </div>
-                  <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-medium text-foreground leading-tight tracking-tight">
+                  <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-medium text-foreground leading-[1.24] tracking-tight">
                     Làm thế nào để biên soạn văn bản và bài trình chiếu phục vụ dạy học Hóa học một cách hiệu quả?
                   </h2>
                 </div>
@@ -291,7 +291,7 @@ export default function Chem1441Hsht2() {
 
         <section id="phan-hoi" className="scroll-mt-28 py-16 md:py-24 bg-card border-y">
           <div className="container mx-auto px-6">
-            <div className="max-w-4xl mb-10">
+            <div className="max-w-6xl mb-10">
               <p className="text-sm font-semibold uppercase tracking-wide text-primary mb-3">
                 Câu trả lời của em
               </p>
