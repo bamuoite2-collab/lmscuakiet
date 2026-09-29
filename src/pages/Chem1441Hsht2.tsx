@@ -463,7 +463,10 @@ export default function Chem1441Hsht2() {
                                       {item.title}
                                     </DialogTitle>
                                   </DialogHeader>
-                                  <div className="min-h-0 bg-muted/20">
+                                  <div className="relative min-h-0 bg-muted/20">
+                                    <div className="pointer-events-none absolute inset-0 z-10 flex items-center justify-center bg-background animate-out fade-out duration-500 delay-[2500ms] fill-mode-forwards">
+                                      <span className="text-sm font-medium text-foreground">Đang tải tệp...</span>
+                                    </div>
                                     <iframe
                                       src={getPreviewUrl(item.file)}
                                       title={`Xem trước ${item.title}`}
