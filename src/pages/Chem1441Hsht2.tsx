@@ -3,6 +3,8 @@ import {
   ArrowRight,
   BookOpen,
   CheckCircle2,
+  Download,
+  Eye,
   FileCheck2,
   FileText,
   FlaskConical,
@@ -111,6 +113,19 @@ const experienceItems = [
       'Khi phân tích slide mẫu về tính chất hóa học của muối, em thấy việc có quá nhiều chữ, nhiều màu đỏ và phần trang trí chiếm diện tích làm nội dung khó theo dõi. Vì vậy khi chỉnh slide cần ưu tiên ý chính, căn lại các khối nội dung và chỉ dùng màu nhấn khi có mục đích.',
   },
 ];
+
+const getPreviewUrl = (filePath: string) => {
+  if (typeof window === 'undefined') return filePath;
+
+  const absoluteUrl = new URL(filePath, window.location.origin).toString();
+  const lowerPath = filePath.toLowerCase();
+
+  if (lowerPath.endsWith('.docx') || lowerPath.endsWith('.pptx') || lowerPath.endsWith('.xlsx')) {
+    return `https://view.officeapps.live.com/op/view.aspx?src=${encodeURIComponent(absoluteUrl)}`;
+  }
+
+  return absoluteUrl;
+};
 
 const evidenceItems = [
   {
@@ -436,12 +451,20 @@ export default function Chem1441Hsht2() {
                           </div>
                           <p className="font-semibold text-foreground">{item.title}</p>
                           {item.file ? (
-                            <Button asChild variant="outline" className="mt-5">
-                              <a href={item.file} target="_blank" rel="noreferrer">
-                                {item.fileLabel}
-                                <ArrowRight className="h-4 w-4" />
-                              </a>
-                            </Button>
+                            <div className="mt-5 flex flex-wrap items-center justify-center gap-2">
+                              <Button asChild variant="outline">
+                                <a href={getPreviewUrl(item.file)} target="_blank" rel="noreferrer">
+                                  <Eye className="h-4 w-4" />
+                                  Xem trước
+                                </a>
+                              </Button>
+                              <Button asChild variant="ghost" size="sm">
+                                <a href={item.file} download>
+                                  <Download className="h-4 w-4" />
+                                  Tải file
+                                </a>
+                              </Button>
+                            </div>
                           ) : (
                             <p className="text-sm text-muted-foreground mt-2">
                               Ảnh hoặc file sản phẩm sẽ được bổ sung sau khi hoàn thiện.
