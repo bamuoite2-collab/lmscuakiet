@@ -57,7 +57,7 @@ const reflectionItems = [
   {
     title: 'Khi học sinh cần nhìn vào một đối tượng cụ thể',
     content:
-      'Ở các nội dung như chu trình carbon hay mô hình vi mô, hình ảnh cho học sinh một thứ để quan sát trực tiếp. Em thấy lúc này câu hỏi đi kèm quan trọng hơn phần trang trí.',
+      'Ở các nội dung như chu trình carbon hay mô hình vi mô, hình ảnh cho học sinh một thứ để quan sát trực tiếp. Em thường thêm câu hỏi để học sinh phải đọc thông tin trên hình; phần trang trí giữ ở mức vừa đủ.',
     icon: BookOpen,
   },
   {
@@ -599,8 +599,8 @@ export default function Chem1441Portfolio() {
                       Sau khi dựng xong
                     </div>
                     <p className="text-sm text-muted-foreground leading-relaxed">
-                      Khi dựng clip này, em thấy hiệu ứng không phải phần quyết định. Quan trọng hơn là video có
-                      vừa đủ thông tin và sau khi xem học sinh có câu hỏi để trả lời hay không.
+                      Khi dựng clip này, em dành nhiều thời gian cho lượng thông tin và câu hỏi sau video.
+                      Hiệu ứng chỉ dùng vừa đủ để các cảnh không bị rối.
                     </p>
                   </div>
                 </div>
