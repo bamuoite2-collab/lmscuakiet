@@ -143,7 +143,7 @@ export default function Chem1441Portfolio() {
                 Đi nhanh đến
               </span>
               {[
-                ['#phan-hoi', 'Vai trò'],
+                ['#phan-hoi', 'Ghi chú'],
                 ['#cong-cu', 'Công cụ'],
                 ['#san-pham-1', 'SP1 · Hình ảnh'],
                 ['#san-pham-2', 'SP2 · Video'],
@@ -169,7 +169,7 @@ export default function Chem1441Portfolio() {
                 Phản hồi học tập
               </p>
               <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground mb-4">
-                Vai trò của phương tiện trực quan trong dạy học Hóa học
+                Khi nào hình ảnh hoặc video thật sự có ích?
               </h2>
               <p className="text-muted-foreground leading-relaxed">
                 Phần này ghi lại hai trường hợp em thấy hình ảnh hoặc video thật sự có ích trong bài học.
@@ -350,10 +350,8 @@ export default function Chem1441Portfolio() {
                     Canva khi Việt hóa sơ đồ
                   </h4>
                   <p className="text-muted-foreground leading-relaxed">
-                    Canva có giao diện trực quan, dễ chỉnh sửa chữ, kích thước và bố cục nên phù hợp với việc
-                    Việt hóa học liệu hình ảnh. Hạn chế là khi chỉnh sửa hình có nhiều nhãn và mũi tên, người
-                    dùng cần thao tác cẩn thận để không che khuất chi tiết hoặc làm sai mối quan hệ giữa các
-                    thành phần trong sơ đồ.
+                    Với sơ đồ này, Canva khá tiện ở phần sửa chữ và kéo lại vị trí các nhãn. Chỗ em phải cẩn thận
+                    là các mũi tên: chỉ cần che mất một đoạn hoặc đặt nhãn sai chỗ là ý của sơ đồ thay đổi.
                   </p>
                 </div>
 
@@ -568,7 +566,7 @@ export default function Chem1441Portfolio() {
 
                   <div>
                     <h4 className="font-display text-lg font-bold text-foreground mb-3">
-                      Vai trò của video trong hoạt động
+                      Video được dùng ở bước nào?
                     </h4>
                     <p className="text-muted-foreground leading-relaxed">
                       Video bắt đầu từ câu hỏi vì sao nước chanh có vị chua rồi dẫn sang pH và thang pH.
@@ -583,10 +581,8 @@ export default function Chem1441Portfolio() {
                       Lúc dựng bằng Canva & CapCut
                     </div>
                     <p className="text-sm text-muted-foreground leading-relaxed">
-                      Trong quá trình thực hành, Canva giúp em tạo các khung hình có bố cục và phong cách thống nhất;
-                      CapCut thuận tiện khi sắp xếp timeline, điều chỉnh thời lượng, lồng tiếng, tạo phụ đề, chèn âm thanh
-                      và xuất video. Hạn chế là khi kết hợp hai công cụ, em vẫn phải kiểm tra lại tỉ lệ khung hình,
-                      thời lượng từng cảnh, phụ đề và mức âm lượng để sản phẩm không bị rối hoặc khó theo dõi.
+                      Em làm khung hình bằng Canva rồi chuyển sang CapCut để ghép cảnh. Phần mất thời gian hơn em nghĩ
+                      là chỉnh lại thời lượng, phụ đề và âm lượng sau mỗi lần sửa kịch bản.
                     </p>
                   </div>
                   <div className="rounded-xl border bg-card p-5">
@@ -675,7 +671,7 @@ export default function Chem1441Portfolio() {
               <div className="p-6 md:p-8 grid lg:grid-cols-2 gap-8">
                 <div>
                   <h4 className="font-display text-lg font-bold text-foreground mb-3">
-                    Nội dung được trực quan hóa
+                    Nội dung em đưa vào infographic
                   </h4>
                   <ul className="space-y-2 text-muted-foreground leading-relaxed">
                     <li>• Nồng độ: nồng độ chất phản ứng tăng làm số va chạm giữa các tiểu phân tăng.</li>
@@ -703,9 +699,8 @@ export default function Chem1441Portfolio() {
                     Canva khi làm infographic
                   </h4>
                   <p className="text-muted-foreground leading-relaxed">
-                    Canva phù hợp với thiết kế infographic nhờ thư viện bố cục và thành phần trực quan phong phú,
-                    thao tác kéo thả đơn giản và dễ duy trì phong cách thống nhất. Hạn chế là sản phẩm dài có thể
-                    trở nên nhiều chữ hoặc khó đọc trên màn hình nhỏ nếu không kiểm soát cỡ chữ và khoảng trắng.
+                    Canva giúp em kéo thả và căn các khối khá nhanh. Vấn đề em gặp là infographic càng dài thì càng
+                    dễ nhồi chữ; khi xem trên màn hình nhỏ, vài phần bắt đầu khó đọc.
                   </p>
                 </div>
 
@@ -720,7 +715,7 @@ export default function Chem1441Portfolio() {
                 </div>
 
                 <div className="lg:col-span-2 rounded-xl border bg-card p-5">
-                  <div className="text-sm font-semibold text-foreground mb-2">Điều em rút ra</div>
+                  <div className="text-sm font-semibold text-foreground mb-2">Chỗ khó nhất</div>
                   <p className="text-muted-foreground leading-relaxed">
                     Phần khó nhất của infographic là bỏ bớt. Nếu đưa quá nhiều chữ lên một trang thì sản phẩm vẫn đủ
                     kiến thức nhưng khó đọc. Em giữ lại từ khóa, hình minh họa và phần giải thích cần cho từng yếu tố.
