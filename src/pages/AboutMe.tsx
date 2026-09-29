@@ -117,9 +117,9 @@ export default function AboutMe() {
                   sao cho người học có thể hiểu được bằng quan sát, câu hỏi và hoạt động phù hợp.
                 </p>
                 <p className="mt-5 text-lg text-muted-foreground leading-relaxed">
-                  Trước khi học văn bằng 2, mình đã có nền tảng Sư phạm Khoa học Tự nhiên và từng tham gia
-                  nghiên cứu liên quan đến Hóa học Xanh, Khoa học Vật liệu cũng như một dự án học tập trải nghiệm
-                  về pin điện xanh. Những trải nghiệm đó là lý do mình muốn đi sâu hơn vào chuyên môn Hóa học.
+                  Trước khi học văn bằng 2, mình học Sư phạm Khoa học Tự nhiên và từng làm một số nội dung
+                  liên quan đến Hóa học Xanh, Khoa học Vật liệu và pin điện xanh. Mình học thêm Sư phạm Hóa học
+                  vì muốn đi sâu hơn vào phần chuyên môn này.
                 </p>
               </div>
             </div>
@@ -166,9 +166,8 @@ export default function AboutMe() {
                 Dạy Hóa học chính xác, dễ theo dõi và có hoạt động để học sinh tham gia.
               </h2>
               <p className="text-muted-foreground leading-relaxed">
-                Mình muốn tiếp tục phát triển khả năng thiết kế học liệu và sử dụng ICT có mục đích.
-                CHEM1441 là một phần trong quá trình đó; phần Hành trình ghi lại cách mình học,
-                còn Portfolio tập trung vào những sản phẩm đã làm.
+                Mình muốn làm học liệu dễ dùng hơn trên lớp và biết lúc nào nên dùng ICT.
+                Phần Hành trình ghi lại những gì mình đã thử trong CHEM1441; Portfolio là chỗ mình để các sản phẩm đã làm.
               </p>
             </div>
           </div>
