@@ -76,7 +76,7 @@ const tools = [
   {
     name: 'PowerPoint',
     description:
-      'Dùng để tổ chức nội dung trình chiếu theo thứ bậc thị giác, phối hợp chữ và hình ảnh, đồng thời kiểm soát lượng chữ và màu nhấn.',
+      'Dùng để sắp xếp nội dung trên slide, cân đối chữ với hình và kiểm soát lượng chữ, màu nhấn.',
     icon: Presentation,
   },
 ];
@@ -90,7 +90,7 @@ const experienceItems = [
   {
     title: 'AutoCorrect',
     text:
-      'AutoCorrect có ích rõ nhất với các công thức và phương trình phải gõ lặp lại. Sau khi thiết lập từ viết tắt, việc nhập nhanh hơn nhiều. Điểm bất tiện là danh sách AutoCorrect mặc định khá dài và thiết lập nằm trên máy, nên em phải chụp minh chứng thay vì chỉ nộp file Word.',
+      'AutoCorrect có ích rõ nhất với các công thức và phương trình phải gõ lặp lại. Sau khi thiết lập từ viết tắt, việc nhập nhanh hơn nhiều. Điểm bất tiện là danh sách mặc định khá dài và thiết lập nằm trên máy, nên em chụp thêm ảnh để làm minh chứng.',
   },
   {
     title: 'ChemFormatter',
@@ -500,7 +500,7 @@ export default function Chem1441Hsht2() {
                   <Lightbulb className="h-5 w-5" />
                 </div>
                 <h2 className="font-display text-2xl font-bold text-foreground mb-4">
-                  Đề xuất cách sử dụng hiệu quả hơn
+                  Cách em sẽ làm ở những bài sau
                 </h2>
                 <p className="text-muted-foreground leading-relaxed">
                   Sau các bài vừa làm, em sẽ không cố dùng một công cụ cho mọi trường hợp. Công thức lặp lại thì
