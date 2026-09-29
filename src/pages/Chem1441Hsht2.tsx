@@ -21,21 +21,21 @@ import { Chem1441Subnav } from '@/components/Chem1441Subnav';
 
 const reflectionItems = [
   {
-    title: '1. Trình bày nội dung Hóa học chính xác hơn',
+    title: '1. Bắt đầu từ mục đích sử dụng',
     content:
-      'Các công cụ soạn thảo giúp biểu diễn chỉ số, điện tích, phương trình phản ứng, biểu thức tính toán và sơ đồ rõ ràng hơn. Điều này đặc biệt cần thiết với tài liệu Hóa học vì một lỗi nhỏ ở kí hiệu hoặc chỉ số có thể làm thay đổi ý nghĩa.',
-    icon: FileText,
+      'Em không chọn công cụ trước rồi mới nghĩ cách dùng. Trước hết cần xác định tài liệu dùng để làm gì, học sinh cần đọc, quan sát hay thực hiện nhiệm vụ nào; sau đó mới chọn Word, PowerPoint hoặc công cụ Hóa học phù hợp.',
+    icon: BookOpen,
   },
   {
-    title: '2. Tiết kiệm thời gian khi biên soạn',
+    title: '2. Bảo đảm đúng Hóa học và dễ đọc',
     content:
-      'Những thao tác như Equation, AutoCorrect, phím tắt và các công cụ hỗ trợ viết công thức giúp giảm các bước lặp lại. Khi đã thiết lập cách làm phù hợp, việc chỉnh sửa và tái sử dụng tài liệu cũng thuận tiện hơn.',
-    icon: Keyboard,
+      'Công thức, chỉ số, điện tích, danh pháp, phương trình và điều kiện phản ứng phải được kiểm tra trước. Sau đó mới xử lí font, cỡ chữ, màu sắc, khoảng trắng và bố cục để người học theo dõi được nội dung.',
+    icon: FileCheck2,
   },
   {
-    title: '3. Tổ chức bài trình chiếu dễ theo dõi hơn',
+    title: '3. Kiểm tra sản phẩm trong tình huống sử dụng thật',
     content:
-      'ICT hỗ trợ kết hợp chữ, hình ảnh, sơ đồ và các thành phần trực quan trong cùng một bài trình chiếu. Tuy vậy, bố cục, lượng chữ, màu sắc và hiệu ứng vẫn cần được kiểm soát để nội dung chính không bị chìm.',
+      'Một file nhìn đúng khi đang soạn chưa chắc sẽ đúng khi xuất PDF, trình chiếu hoặc mở trên máy khác. Vì vậy em cần kiểm tra lại sản phẩm cuối, đồng thời chuẩn bị một phương án dự phòng khi font, đường dẫn hoặc công cụ gặp lỗi.',
     icon: Presentation,
   },
 ];
@@ -44,32 +44,50 @@ const tools = [
   {
     name: 'Microsoft Word',
     description:
-      'Sử dụng Subscript, Superscript, Equation và AutoCorrect để trình bày công thức, phương trình và biểu thức Hóa học.',
+      'Dùng để biên soạn văn bản, định dạng công thức, phương trình, bảng biểu và gộp đề kiểm tra với hướng dẫn chấm.',
     icon: FileText,
   },
   {
     name: 'Equation',
     description:
-      'Nhập phương trình, phân số, mũi tên phản ứng, chỉ số và các biểu thức toán học ngay trong Word.',
+      'Phù hợp với phân số, chỉ số, phương trình phản ứng, mũi tên và biểu thức phức tạp cần trình bày theo cấu trúc toán học.',
     icon: Sigma,
   },
   {
     name: 'AutoCorrect',
     description:
-      'Tạo từ viết tắt để nhập nhanh các cụm từ, công thức và phương trình thường dùng trong quá trình soạn thảo.',
+      'Tạo từ viết tắt để nhập nhanh cụm từ, công thức và phương trình lặp lại nhiều lần trong quá trình soạn thảo.',
     icon: Keyboard,
   },
   {
     name: 'ChemSketch / MolView',
     description:
-      'Hỗ trợ viết, vẽ và quan sát cấu trúc hóa học khi tài liệu cần biểu diễn công thức cấu tạo hoặc mô hình phân tử.',
+      'Hỗ trợ khi cần vẽ công thức cấu tạo hoặc quan sát mô hình phân tử thay vì cố biểu diễn mọi thứ trực tiếp trong Word.',
     icon: FlaskConical,
   },
   {
     name: 'PowerPoint',
     description:
-      'Thiết kế bài trình chiếu, sắp xếp nội dung, hình ảnh và màu nhấn; kiểm tra khả năng đọc trước khi sử dụng trên lớp.',
+      'Dùng để tổ chức nội dung trình chiếu theo thứ bậc thị giác, phối hợp chữ và hình ảnh, đồng thời kiểm soát lượng chữ và màu nhấn.',
     icon: Presentation,
+  },
+];
+
+const experienceItems = [
+  {
+    title: 'Equation',
+    text:
+      'Khi làm bài thực hành, Equation giúp em trình bày phân số, chỉ số và phương trình gọn hơn. Phần mất thời gian nhất là mũi tên phản ứng có điều kiện, đặc biệt mũi tên cân bằng; một số lệnh không hoạt động như em dự đoán nên phải thử cách nhập khác và kiểm tra lại kết quả.',
+  },
+  {
+    title: 'AutoCorrect',
+    text:
+      'AutoCorrect có ích rõ nhất với các công thức và phương trình phải gõ lặp lại. Sau khi thiết lập h2so4, k2cr2o7 hoặc cả một phương trình, việc nhập nhanh hơn nhiều. Điểm bất tiện là danh sách AutoCorrect có sẵn rất dài và thiết lập nằm trên máy, nên em phải chụp minh chứng thay vì chỉ nộp file Word.',
+  },
+  {
+    title: 'PowerPoint',
+    text:
+      'Khi phân tích slide mẫu về tính chất hóa học của muối, em thấy việc có quá nhiều chữ, nhiều màu đỏ và phần trang trí chiếm diện tích làm nội dung khó theo dõi. Vì vậy khi chỉnh slide cần ưu tiên ý chính, căn lại các khối nội dung và chỉ dùng màu nhấn khi có mục đích.',
   },
 ];
 
@@ -79,56 +97,64 @@ const evidenceItems = [
     label: 'Minh chứng 1 · Microsoft Word',
     title: 'Thực hành Equation và AutoCorrect',
     icon: Sigma,
-    status: 'Đã thực hành',
+    status: 'Đã hoàn thiện',
     description:
-      'Biên soạn phương trình điện li, biểu thức tính toán, chuỗi chuyển hóa và thiết lập AutoCorrect cho các cụm từ, công thức và phương trình Hóa học.',
+      'Biên soạn phương trình điện li, biểu thức tính toán, chuỗi chuyển hóa điều chế sulfuric acid và thiết lập AutoCorrect cho các cụm từ, công thức và phương trình Hóa học.',
     details: [
-      'Sử dụng Equation để trình bày chỉ số, phân số và mũi tên phản ứng.',
-      'Thiết lập AutoCorrect cho các nội dung thường dùng.',
-      'Kiểm tra lại font, chỉ số và sự thống nhất của công thức trong văn bản.',
+      'Dùng Equation để trình bày chỉ số, phân số, mũi tên phản ứng và điều kiện phản ứng.',
+      'Thiết lập AutoCorrect cho từ viết tắt, công thức và phương trình thường dùng.',
+      'Chèn ảnh minh chứng AutoCorrect để thể hiện thao tác đã thực hiện trên Word.',
     ],
+    file: '/portfolio/hsht2/CHEM1441E_A14_HoTuanKiet.docx',
+    fileLabel: 'Mở file Word sản phẩm',
   },
   {
     id: 'san-pham-2',
     label: 'Minh chứng 2 · Công thức Hóa học',
     title: 'Viết, vẽ và kiểm tra công thức hóa học',
     icon: FlaskConical,
-    status: 'Đã thực hành',
+    status: 'Đang thực hiện',
     description:
-      'Thử các công cụ hỗ trợ viết và vẽ công thức, từ định dạng công thức trong Word đến biểu diễn cấu trúc bằng phần mềm chuyên dụng.',
+      'Thực hành các công cụ hỗ trợ viết và vẽ công thức, từ định dạng công thức trong Word đến biểu diễn cấu trúc bằng phần mềm chuyên dụng.',
     details: [
-      'Dùng ChemFormatter hoặc công cụ định dạng để xử lí chỉ số nhanh hơn.',
+      'Thử ChemFormatter hoặc công cụ định dạng để xử lí chỉ số nhanh hơn.',
       'Vẽ cấu trúc bằng ChemSketch và chỉnh lại bố cục cấu trúc khi cần.',
-      'Sử dụng MolView để quan sát mô hình 2D/3D của phân tử.',
+      'Dùng MolView để quan sát mô hình 2D/3D khi nội dung cần hình dung không gian.',
     ],
+    file: null,
+    fileLabel: null,
   },
   {
     id: 'san-pham-3',
     label: 'Minh chứng 3 · PowerPoint',
     title: 'Rà soát và chỉnh sửa bài trình chiếu',
     icon: Presentation,
-    status: 'Đã phân tích',
+    status: 'Đã phân tích · đang thiết kế lại',
     description:
-      'Đánh giá một slide Hóa học dựa trên lượng chữ, bố cục, màu sắc, khoảng trắng và mức độ nhất quán rồi đề xuất cách chỉnh sửa.',
+      'Phân tích slide mẫu dựa trên lượng chữ, bố cục, màu sắc, khoảng trắng và mức độ nhất quán; sau đó thiết kế lại để nội dung chính dễ quan sát hơn.',
     details: [
       'Giảm lượng chữ và làm rõ thứ bậc thông tin.',
       'Hạn chế màu nhấn và hiệu ứng không cần thiết.',
-      'Căn chỉnh khoảng cách để nội dung chính dễ quan sát hơn.',
+      'Giữ bản trước và sau chỉnh sửa để so sánh sự thay đổi.',
     ],
+    file: null,
+    fileLabel: null,
   },
   {
     id: 'san-pham-4',
     label: 'Minh chứng 4 · Văn bản kiểm tra',
     title: 'Đề kiểm tra và hướng dẫn chấm',
     icon: FileCheck2,
-    status: 'Đã thực hành',
+    status: 'Đang hoàn thiện',
     description:
-      'Rà soát thể thức và nội dung của đề kiểm tra Hóa học, phát hiện lỗi trình bày rồi xây dựng hướng dẫn chấm tương ứng.',
+      'Rà soát thể thức và nội dung của đề kiểm tra Hóa học, sửa lỗi trình bày rồi xây dựng hướng dẫn chấm trong cùng một văn bản.',
     details: [
       'Kiểm tra số trang, chính tả, danh pháp và định dạng công thức.',
       'Giữ cách trình bày điểm số và nội dung nhất quán.',
-      'Xây dựng đáp án và phân bố điểm theo từng yêu cầu của câu hỏi.',
+      'Gộp đề và hướng dẫn chấm, sau đó xuất PDF để kiểm tra lần cuối.',
     ],
+    file: null,
+    fileLabel: null,
   },
 ];
 
@@ -157,8 +183,8 @@ export default function Chem1441Hsht2() {
               </h1>
 
               <p className="text-lg md:text-xl text-muted-foreground max-w-3xl leading-relaxed mb-8">
-                Hồ sơ ghi lại phần thực hành với Word, công cụ viết và vẽ công thức Hóa học,
-                bài trình chiếu và văn bản kiểm tra; kèm phần phản hồi về cách sử dụng ICT hiệu quả.
+                Hồ sơ ghi lại cách em lựa chọn công cụ, biên soạn sản phẩm, kiểm tra lại kết quả
+                và điều chỉnh cách làm sau mỗi bài thực hành.
               </p>
 
               <div className="flex flex-wrap gap-3">
@@ -169,7 +195,7 @@ export default function Chem1441Hsht2() {
                   </a>
                 </Button>
                 <Button asChild variant="outline">
-                  <a href="#phan-hoi">Xem phần phản hồi</a>
+                  <a href="#phan-hoi">Xem câu trả lời</a>
                 </Button>
               </div>
             </div>
@@ -207,13 +233,14 @@ export default function Chem1441Hsht2() {
                 Đi nhanh đến
               </span>
               {[
-                ['#phan-hoi', 'Vai trò'],
+                ['#phan-hoi', 'Câu trả lời'],
+                ['#trai-nghiem', 'Trải nghiệm'],
                 ['#cong-cu', 'Công cụ'],
                 ['#san-pham-1', 'Equation'],
                 ['#san-pham-2', 'Công thức'],
                 ['#san-pham-3', 'PowerPoint'],
                 ['#san-pham-4', 'Đề & đáp án'],
-                ['#tong-ket', 'Tổng kết'],
+                ['#tong-ket', 'Đề xuất'],
               ].map(([href, label]) => (
                 <a
                   key={href}
@@ -229,17 +256,31 @@ export default function Chem1441Hsht2() {
 
         <section id="phan-hoi" className="scroll-mt-28 py-16 md:py-24 bg-card border-y">
           <div className="container mx-auto px-6">
-            <div className="max-w-3xl mb-12">
+            <div className="max-w-4xl mb-10">
               <p className="text-sm font-semibold uppercase tracking-wide text-primary mb-3">
-                Phản hồi học tập
+                Câu trả lời của em
               </p>
-              <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground mb-4">
-                Vai trò của ICT khi biên soạn văn bản và bài trình chiếu
+              <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground mb-5">
+                Công cụ chỉ hiệu quả khi phục vụ đúng nội dung và đúng cách học của học sinh
               </h2>
-              <p className="text-muted-foreground leading-relaxed">
-                Qua các bài thực hành, em nhận thấy công cụ số có ích nhất khi giúp tài liệu
-                chính xác hơn, dễ chỉnh sửa hơn và hỗ trợ người học theo dõi nội dung rõ ràng hơn.
-              </p>
+              <div className="space-y-4 text-muted-foreground leading-relaxed">
+                <p>
+                  Theo em, biên soạn văn bản và bài trình chiếu hiệu quả không bắt đầu từ việc chọn phần mềm.
+                  Trước hết cần xác định tài liệu này dùng ở đâu trong hoạt động dạy học, học sinh cần tiếp nhận
+                  thông tin gì và sản phẩm cuối cần có hình thức nào. Từ đó mới chọn công cụ phù hợp.
+                </p>
+                <p>
+                  Với văn bản Hóa học, em ưu tiên tính chính xác của công thức, phương trình, danh pháp và kí hiệu.
+                  Nội dung đơn giản có thể dùng Subscript/Superscript hoặc phím tắt; biểu thức phức tạp dùng Equation;
+                  nội dung lặp lại nhiều lần có thể thiết lập AutoCorrect; còn công thức cấu tạo nên dùng công cụ
+                  chuyên dụng thay vì cố vẽ thủ công trong Word.
+                </p>
+                <p>
+                  Với bài trình chiếu, em xem mỗi slide như một phần của hoạt động học chứ không phải trang văn bản thu nhỏ.
+                  Vì vậy cần giảm chữ, làm rõ thứ bậc thông tin, dùng hình ảnh và màu nhấn có mục đích, đồng thời xác định
+                  học sinh sẽ quan sát, trả lời hay thực hiện nhiệm vụ gì từ nội dung đang trình chiếu.
+                </p>
+              </div>
             </div>
 
             <div className="grid md:grid-cols-3 gap-6">
@@ -258,45 +299,46 @@ export default function Chem1441Hsht2() {
                 );
               })}
             </div>
+          </div>
+        </section>
 
-            <div className="mt-8 rounded-2xl border bg-background p-6 md:p-8">
-              <h3 className="font-display text-xl md:text-2xl font-bold text-foreground mb-4">
-                Nguyên tắc em rút ra khi biên soạn
-              </h3>
-              <div className="grid md:grid-cols-2 gap-4 text-muted-foreground leading-relaxed">
-                <p>
-                  <span className="font-semibold text-foreground">Ưu tiên tính chính xác:</span>{' '}
-                  kiểm tra công thức, kí hiệu, danh pháp, điều kiện phản ứng và nội dung trước khi chú ý đến hình thức.
-                </p>
-                <p>
-                  <span className="font-semibold text-foreground">Giữ định dạng nhất quán:</span>{' '}
-                  thống nhất font, cỡ chữ, chỉ số, khoảng cách và cách dùng màu trong toàn bộ tài liệu.
-                </p>
-                <p>
-                  <span className="font-semibold text-foreground">Dùng công cụ đúng chỗ:</span>{' '}
-                  Equation phù hợp với biểu thức phức tạp, còn phím tắt và AutoCorrect tiện hơn cho nội dung lặp lại.
-                </p>
-                <p>
-                  <span className="font-semibold text-foreground">Giảm tải cho slide:</span>{' '}
-                  mỗi trang nên có một ý chính, tránh quá nhiều chữ và chỉ dùng màu hoặc hiệu ứng khi chúng giúp làm rõ nội dung.
-                </p>
-              </div>
+        <section id="trai-nghiem" className="scroll-mt-28 py-16 md:py-24">
+          <div className="container mx-auto px-6">
+            <div className="max-w-3xl mb-10">
+              <p className="text-sm font-semibold uppercase tracking-wide text-primary mb-3">
+                Trải nghiệm cá nhân
+              </p>
+              <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground mb-4">
+                Những điểm em nhận ra khi tự làm sản phẩm
+              </h2>
+              <p className="text-muted-foreground leading-relaxed">
+                Phần đánh giá dưới đây dựa trên chính những thao tác em đã làm trong HSHT2,
+                thay vì chỉ liệt kê ưu và nhược điểm chung của phần mềm.
+              </p>
+            </div>
+
+            <div className="grid lg:grid-cols-3 gap-6">
+              {experienceItems.map((item) => (
+                <article key={item.title} className="rounded-2xl border bg-card p-6 md:p-7">
+                  <h3 className="font-display text-xl font-bold text-foreground mb-3">{item.title}</h3>
+                  <p className="text-muted-foreground leading-relaxed">{item.text}</p>
+                </article>
+              ))}
             </div>
           </div>
         </section>
 
-        <section id="cong-cu" className="scroll-mt-28 py-16 md:py-24">
+        <section id="cong-cu" className="scroll-mt-28 py-16 md:py-24 bg-card border-y">
           <div className="container mx-auto px-6">
             <div className="max-w-3xl mb-12">
               <p className="text-sm font-semibold uppercase tracking-wide text-primary mb-3">
                 Công cụ và kĩ thuật
               </p>
               <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground mb-4">
-                Những công cụ em đã sử dụng
+                Dùng công cụ nào cho việc gì?
               </h2>
               <p className="text-muted-foreground leading-relaxed">
-                Các công cụ dưới đây giải quyết những nhóm thao tác khác nhau: nhập công thức,
-                vẽ cấu trúc, nhập nhanh nội dung lặp lại và tổ chức bài trình chiếu.
+                Em nhóm công cụ theo nhiệm vụ cần giải quyết để tránh dùng quá nhiều phần mềm cho cùng một việc.
               </p>
             </div>
 
@@ -304,7 +346,7 @@ export default function Chem1441Hsht2() {
               {tools.map((tool) => {
                 const Icon = tool.icon;
                 return (
-                  <article key={tool.name} className="rounded-2xl border bg-card p-6 card-hover">
+                  <article key={tool.name} className="rounded-2xl border bg-background p-6 card-hover">
                     <div className="w-10 h-10 rounded-lg bg-accent/10 text-accent flex items-center justify-center mb-4">
                       <Icon className="h-5 w-5" />
                     </div>
@@ -314,34 +356,10 @@ export default function Chem1441Hsht2() {
                 );
               })}
             </div>
-
-            <div className="mt-8 grid md:grid-cols-2 gap-6">
-              <article className="rounded-2xl border bg-card p-6 md:p-7">
-                <div className="w-11 h-11 rounded-xl bg-primary/10 text-primary flex items-center justify-center mb-5">
-                  <Scale className="h-5 w-5" />
-                </div>
-                <h3 className="font-display text-xl font-bold text-foreground mb-3">Ưu điểm</h3>
-                <p className="text-muted-foreground leading-relaxed">
-                  Các công cụ giúp thao tác nhanh hơn, dễ sửa lỗi, tái sử dụng nội dung và trình bày
-                  công thức hoặc cấu trúc rõ hơn so với cách gõ thủ công.
-                </p>
-              </article>
-
-              <article className="rounded-2xl border bg-card p-6 md:p-7">
-                <div className="w-11 h-11 rounded-xl bg-accent/10 text-accent flex items-center justify-center mb-5">
-                  <Wrench className="h-5 w-5" />
-                </div>
-                <h3 className="font-display text-xl font-bold text-foreground mb-3">Hạn chế cần chú ý</h3>
-                <p className="text-muted-foreground leading-relaxed">
-                  Equation có thể tạo font khác với phần văn bản, AutoCorrect cần thiết lập trước,
-                  còn phần mềm vẽ cấu trúc và PowerPoint vẫn đòi hỏi người dùng kiểm tra lại nội dung và bố cục.
-                </p>
-              </article>
-            </div>
           </div>
         </section>
 
-        <section id="san-pham" className="scroll-mt-28 py-16 md:py-24 bg-card border-y">
+        <section id="san-pham" className="scroll-mt-28 py-16 md:py-24">
           <div className="container mx-auto px-6">
             <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-5 mb-12">
               <div className="max-w-3xl">
@@ -349,16 +367,16 @@ export default function Chem1441Hsht2() {
                   Minh chứng thực hành
                 </p>
                 <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground mb-4">
-                  Các nội dung đã thực hành trong HSHT2
+                  Sản phẩm cho thấy em đã dùng công cụ như thế nào
                 </h2>
                 <p className="text-muted-foreground leading-relaxed">
-                  Mỗi minh chứng được trình bày theo cùng một cấu trúc: nội dung thực hiện,
-                  thao tác chính và điều em cần chú ý khi dùng công cụ.
+                  Minh chứng không thay cho phần trả lời câu hỏi trọng tâm; chúng được dùng để cho thấy
+                  cách em áp dụng những nguyên tắc trên vào từng nhiệm vụ cụ thể.
                 </p>
               </div>
               <div className="inline-flex items-center gap-2 text-sm text-muted-foreground">
                 <Upload className="h-4 w-4" />
-                4 nhóm minh chứng
+                1 sản phẩm hoàn thiện · các phần còn lại đang tiếp tục
               </div>
             </div>
 
@@ -369,7 +387,7 @@ export default function Chem1441Hsht2() {
                   <article
                     id={item.id}
                     key={item.id}
-                    className="scroll-mt-28 rounded-2xl border bg-background overflow-hidden shadow-sm"
+                    className="scroll-mt-28 rounded-2xl border bg-card overflow-hidden shadow-sm"
                   >
                     <div className="p-6 md:p-8 border-b">
                       <div className="flex flex-wrap items-center justify-between gap-4">
@@ -389,15 +407,24 @@ export default function Chem1441Hsht2() {
                     </div>
 
                     <div className="p-6 md:p-8 grid lg:grid-cols-[0.9fr_1.1fr] gap-8">
-                      <div className="rounded-2xl border bg-card min-h-52 flex items-center justify-center">
+                      <div className="rounded-2xl border bg-background min-h-52 flex items-center justify-center">
                         <div className="text-center p-8">
                           <div className="w-16 h-16 rounded-2xl bg-primary/10 text-primary flex items-center justify-center mx-auto mb-4">
                             <Icon className="h-8 w-8" />
                           </div>
                           <p className="font-semibold text-foreground">{item.title}</p>
-                          <p className="text-sm text-muted-foreground mt-2">
-                            Khu vực này có thể thay bằng ảnh chụp hoặc file sản phẩm khi đưa minh chứng lên website.
-                          </p>
+                          {item.file ? (
+                            <Button asChild variant="outline" className="mt-5">
+                              <a href={item.file} target="_blank" rel="noreferrer">
+                                {item.fileLabel}
+                                <ArrowRight className="h-4 w-4" />
+                              </a>
+                            </Button>
+                          ) : (
+                            <p className="text-sm text-muted-foreground mt-2">
+                              Ảnh hoặc file sản phẩm sẽ được bổ sung sau khi hoàn thiện.
+                            </p>
+                          )}
                         </div>
                       </div>
 
@@ -422,37 +449,52 @@ export default function Chem1441Hsht2() {
           </div>
         </section>
 
-        <section id="tong-ket" className="scroll-mt-28 py-16 md:py-24">
+        <section id="tong-ket" className="scroll-mt-28 py-16 md:py-24 bg-card border-y">
           <div className="container mx-auto px-6">
             <div className="grid lg:grid-cols-2 gap-8">
-              <article className="rounded-2xl border bg-card p-7 md:p-9">
+              <article className="rounded-2xl border bg-background p-7 md:p-9">
                 <div className="w-11 h-11 rounded-xl bg-primary/10 text-primary flex items-center justify-center mb-5">
                   <Lightbulb className="h-5 w-5" />
                 </div>
                 <h2 className="font-display text-2xl font-bold text-foreground mb-4">
-                  Điều em rút ra
+                  Đề xuất cách sử dụng hiệu quả hơn
                 </h2>
                 <p className="text-muted-foreground leading-relaxed">
-                  Biên soạn tài liệu Hóa học không chỉ là nhập đúng nội dung mà còn phải kiểm tra
-                  cách biểu diễn kí hiệu, công thức và bố cục. Công cụ số giúp làm nhanh hơn,
-                  nhưng người soạn vẫn phải là người kiểm tra tính chính xác cuối cùng.
+                  Em sẽ chọn công cụ theo mức độ phức tạp của nội dung: thao tác đơn giản dùng phím tắt,
+                  biểu thức phức tạp dùng Equation, nội dung lặp lại dùng AutoCorrect và cấu trúc hóa học
+                  dùng phần mềm chuyên dụng. Với PowerPoint, em ưu tiên câu hỏi và nhiệm vụ học tập hơn
+                  việc thêm nhiều chữ hoặc hiệu ứng.
                 </p>
               </article>
 
-              <article className="rounded-2xl border bg-card p-7 md:p-9">
+              <article className="rounded-2xl border bg-background p-7 md:p-9">
                 <div className="w-11 h-11 rounded-xl bg-accent/10 text-accent flex items-center justify-center mb-5">
                   <Wrench className="h-5 w-5" />
                 </div>
                 <h2 className="font-display text-2xl font-bold text-foreground mb-4">
-                  Cách em sẽ sử dụng hiệu quả hơn
+                  Kế hoạch dự phòng khi sử dụng ICT
                 </h2>
                 <p className="text-muted-foreground leading-relaxed">
-                  Em sẽ ưu tiên các thao tác đơn giản cho nội dung thường gặp, chỉ dùng công cụ chuyên dụng
-                  khi thật sự cần và kiểm tra lại tài liệu ở cả chế độ soạn thảo lẫn khi xuất file.
-                  Với slide, em sẽ giảm chữ và giữ cách trình bày nhất quán giữa các trang.
+                  Trước khi sử dụng trên lớp, em sẽ lưu cả file gốc và bản PDF, kiểm tra font, hình ảnh và đường dẫn
+                  trên thiết bị trình chiếu. Với công cụ trực tuyến như MolView, em sẽ chuẩn bị ảnh hoặc mô hình đã xuất sẵn
+                  để vẫn tổ chức được hoạt động nếu mạng không ổn định.
                 </p>
               </article>
             </div>
+
+            <article className="mt-8 rounded-2xl border bg-background p-7 md:p-9">
+              <p className="text-sm font-semibold uppercase tracking-wide text-primary mb-3">
+                Tài liệu tham khảo
+              </p>
+              <h2 className="font-display text-2xl font-bold text-foreground mb-4">
+                Nguồn em sử dụng để đối chiếu khi thực hiện HSHT2
+              </h2>
+              <ul className="space-y-2 text-muted-foreground leading-relaxed">
+                <li>• Tài liệu đọc CHEM1441 – Nội dung 3: Ứng dụng ICT để biên soạn văn bản.</li>
+                <li>• Tài liệu đọc CHEM1441 – Nội dung 4: Ứng dụng ICT để thiết kế bài trình chiếu.</li>
+                <li>• Các file bài tập và slide mẫu được cung cấp trong hoạt động học của HSHT2.</li>
+              </ul>
+            </article>
           </div>
         </section>
 
