@@ -94,22 +94,21 @@ export default function Index() {
             {/* Badge */}
             <div className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-primary/10 text-primary text-sm font-medium mb-8 animate-fade-in">
               <FlaskConical className="h-4 w-4" />
-              Nền tảng Giáo dục Khoa học Tự nhiên
+              Học liệu Hóa học & Vật lý
             </div>
 
             {/* Headline */}
             <h1 className="font-display text-4xl md:text-6xl lg:text-7xl font-bold text-foreground mb-8 animate-slide-up leading-tight">
-              Chinh phục{' '}
-              <span className="text-gradient">Tri thức</span>{' '}
-              Khoa học
+              Học Hóa học và Vật lý
+              <span className="text-gradient"> theo từng bài</span>
             </h1>
 
             <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto mb-10 animate-slide-up leading-relaxed" style={{
             animationDelay: '0.1s'
           }}>
-              Hệ thống bài giảng Hóa học và Vật lý chất lượng cao, kết hợp video minh họa trực quan, 
-              bài kiểm tra tương tác cùng các công thức khoa học chuẩn xác:{' '}
-              <span className="inline-block mx-1"><KaTeXRenderer content="E = mc^2" /></span>,{' '}
+              Website này gom bài giảng, video và bài kiểm tra để tiện học và ôn lại.
+              Công thức được hiển thị trực tiếp trên trang, ví dụ{' '}
+              <span className="inline-block mx-1"><KaTeXRenderer content="E = mc^2" /></span> và{' '}
               <span className="inline-block mx-1"><KaTeXRenderer content="H_2O" /></span>.
             </p>
 
@@ -119,7 +118,7 @@ export default function Index() {
           }}>
               <Button asChild variant="hero" size="xl">
                 <Link to="/courses">
-                  Khám phá Khóa học
+                  Xem khóa học
                   <ArrowRight className="h-5 w-5" />
                 </Link>
               </Button>
@@ -131,23 +130,7 @@ export default function Index() {
               </Button>
             </div>
 
-            {/* Stats */}
-            <div className="grid grid-cols-3 gap-10 mt-20 max-w-lg mx-auto animate-slide-up" style={{
-            animationDelay: '0.3s'
-          }}>
-              <div className="text-center">
-                <div className="font-display text-3xl md:text-4xl font-bold text-foreground">15+</div>
-                <div className="text-sm text-muted-foreground mt-1">Khóa học</div>
-              </div>
-              <div className="text-center">
-                <div className="font-display text-3xl md:text-4xl font-bold text-foreground">100+</div>
-                <div className="text-sm text-muted-foreground mt-1">Bài giảng</div>
-              </div>
-              <div className="text-center">
-                <div className="font-display text-3xl md:text-4xl font-bold text-foreground">500+</div>
-                <div className="text-sm text-muted-foreground mt-1">Học viên</div>
-              </div>
-            </div>
+
           </div>
         </div>
       </section>
@@ -158,48 +141,28 @@ export default function Index() {
           <div className="grid md:grid-cols-2 gap-16 items-center">
             <div>
               <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground mb-8">
-                Đồng hành cùng bạn trên hành trình chinh phục Khoa học
+                Mình đang xây gì trên website này?
               </h2>
               <p className="text-muted-foreground mb-6 leading-relaxed text-base">
-                Với hơn 15 năm kinh nghiệm giảng dạy Hóa học và Vật lý, 
-                tôi cam kết mang đến phương pháp tiếp cận khoa học dễ hiểu, 
-                logic và phù hợp với mọi trình độ học viên.
+                Đây là nơi mình thử nghiệm các bài học và công cụ học tập cho Hóa học, Vật lý.
+                Một số phần dùng cho việc học của mình, một số phần được làm để thử cách trình bày nội dung trên web.
               </p>
               <p className="text-muted-foreground mb-10 leading-relaxed text-base">
-                Chương trình học được thiết kế kết hợp giữa lý thuyết nền tảng vững chắc 
-                và thực hành ứng dụng thực tiễn, giúp học viên không chỉ thuộc công thức 
-                mà còn thấu hiểu bản chất của các hiện tượng khoa học.
+                Mình ưu tiên nội dung ngắn, có ví dụ và có chỗ để người học tự kiểm tra lại.
+                Các mục vẫn đang được bổ sung nên có phần đã hoàn thiện, có phần mới ở dạng thử nghiệm.
               </p>
-              <div className="flex flex-wrap gap-4">
-                <div className="flex items-center gap-2.5 px-5 py-3 rounded-xl bg-muted">
-                  <Atom className="h-4 w-4 text-primary" />
-                  <span className="text-sm font-medium">Chuyên gia Khoa học</span>
-                </div>
-                <div className="flex items-center gap-2.5 px-5 py-3 rounded-xl bg-muted">
-                  <Beaker className="h-4 w-4 text-primary" />
-                  <span className="text-sm font-medium">Thực hành Phòng thí nghiệm</span>
-                </div>
-                <div className="flex items-center gap-2.5 px-5 py-3 rounded-xl bg-muted">
-                  <GraduationCap className="h-4 w-4 text-primary" />
-                  <span className="text-sm font-medium">Thạc sĩ KHTN</span>
-                </div>
-              </div>
+              <Button asChild variant="outline">
+                <Link to="/chem1441">
+                  Xem hồ sơ CHEM1441
+                  <ArrowRight className="h-4 w-4" />
+                </Link>
+              </Button>
             </div>
             <div className="relative">
               <div className="aspect-square bg-gradient-hero rounded-2xl shadow-xl flex items-center justify-center">
                 <FlaskConical className="h-32 w-32 text-primary-foreground/80 animate-float" />
               </div>
-              <div className="absolute -bottom-6 -left-6 bg-card rounded-xl shadow-lg p-5 border">
-                <div className="flex items-center gap-4">
-                  <div className="p-2.5 rounded-lg bg-chemical/10">
-                    <Users className="h-5 w-5 text-chemical" />
-                  </div>
-                  <div>
-                    <div className="font-semibold text-foreground">500+ Học viên</div>
-                    <div className="text-xs text-muted-foreground">Tin tưởng và đồng hành</div>
-                  </div>
-                </div>
-              </div>
+
             </div>
           </div>
         </div>
@@ -210,11 +173,10 @@ export default function Index() {
         <div className="container mx-auto px-6">
           <div className="text-center mb-16">
             <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground mb-5">
-              Khóa học Tiêu biểu
+              Khóa học
             </h2>
             <p className="text-muted-foreground max-w-2xl mx-auto leading-relaxed">
-              Khởi đầu hành trình học tập với các khóa học được thiết kế bài bản, 
-              xây dựng nền tảng kiến thức Hóa học và Vật lý vững chắc.
+              Các khóa học đang có trên hệ thống. Nội dung sẽ được bổ sung dần.
             </p>
           </div>
 
@@ -240,11 +202,10 @@ export default function Index() {
       <section className="py-20 md:py-32 bg-gradient-hero text-primary-foreground">
         <div className="container mx-auto px-6 text-center">
           <h2 className="font-display text-3xl md:text-4xl font-bold mb-8">
-            Sẵn sàng chinh phục Khoa học?
+            Muốn xem các bài đang có?
           </h2>
           <p className="text-primary-foreground/80 max-w-2xl mx-auto mb-10 leading-relaxed">
-            Gia nhập cộng đồng hàng trăm học viên đã và đang nâng cao kiến thức khoa học 
-            thông qua hệ thống bài giảng chất lượng của chúng tôi.
+            Bạn có thể tạo tài khoản để lưu tiến độ và làm các bài kiểm tra trên website.
           </p>
           <Button asChild variant="glass" size="xl">
             <Link to="/auth?mode=signup">
