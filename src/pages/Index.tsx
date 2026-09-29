@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { ArrowRight, BookOpen, FlaskConical, Atom, Beaker, GraduationCap, Users } from 'lucide-react';
+import { ArrowRight, BookOpen, FlaskConical, GraduationCap } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Navbar } from '@/components/Navbar';
 import { Footer } from '@/components/Footer';
