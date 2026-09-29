@@ -53,6 +53,15 @@ const products = [
     status: 'Đã hoàn thiện',
   },
   {
+    title: 'ChemFormatter và mô hình phân tử 2D–3D',
+    type: 'Viết và vẽ công thức Hóa học',
+    hsht: 'HSHT 2',
+    tool: 'Word · ChemFormatter · ChemDraw · Chem3D',
+    href: '/chem1441/hsht2#san-pham-2',
+    icon: FileText,
+    status: 'Đã hoàn thiện',
+  },
+  {
     title: 'Rà soát và chỉnh sửa bài trình chiếu',
     type: 'Bài trình chiếu',
     hsht: 'HSHT 2',
