@@ -57,19 +57,19 @@ const reflectionItems = [
   {
     title: '1. Trực quan hóa kiến thức khó hình dung',
     content:
-      'Hình ảnh và video giúp biểu diễn rõ hơn phản ứng, quy trình, sơ đồ, hiện tượng vi mô và các nội dung lí thuyết trừu tượng. Nhờ đó, học sinh có thêm cơ sở quan sát để hình thành biểu tượng và hiểu mối liên hệ giữa các thành phần thay vì chỉ tiếp nhận mô tả bằng lời.',
+      'Với phản ứng, quy trình hay mô hình vi mô, hình ảnh và video cho học sinh một đối tượng cụ thể để quan sát. Điều này hữu ích ở những nội dung khó hình dung nếu chỉ mô tả bằng lời.',
     icon: BookOpen,
   },
   {
     title: '2. Hỗ trợ tiếp thu và tạo hứng thú học tập',
     content:
-      'Phương tiện trực quan sinh động giúp học sinh dễ theo dõi, dễ tiếp nhận nội dung và tăng hứng thú trong quá trình học. Khi được gắn với câu hỏi hoặc nhiệm vụ học tập, hình ảnh và video còn hỗ trợ học sinh suy nghĩ, trao đổi và hiểu bài sâu hơn.',
+      'Hình ảnh dễ thu hút sự chú ý, nhưng chỉ chiếu lên thì chưa đủ. Em thấy chúng hữu ích hơn khi đi kèm một câu hỏi hoặc yêu cầu học sinh chỉ ra chi tiết trên hình.',
     icon: Lightbulb,
   },
   {
     title: '3. Kết nối thực tiễn và hỗ trợ tình huống khó thực hiện',
     content:
-      'Video có thể thay thế hoặc minh họa những thí nghiệm độc hại, nguy hiểm, khó thực hiện hay cần nhiều thời gian. Hình ảnh và phim về ứng dụng, quy trình sản xuất cũng giúp học sinh liên hệ kiến thức Hóa học với đời sống và vận dụng kiến thức vào tình huống thực tiễn.',
+      'Video phù hợp với những thí nghiệm khó thực hiện trực tiếp hoặc cần nhiều thời gian. Hình ảnh về sản xuất và ứng dụng cũng giúp đưa nội dung Hóa học về gần các tình huống thực tế hơn.',
     icon: Video,
   },
 ];
@@ -178,9 +178,8 @@ export default function Chem1441Portfolio() {
                 Vai trò của phương tiện trực quan trong dạy học Hóa học
               </h2>
               <p className="text-muted-foreground leading-relaxed">
-                Qua nội dung học tập và quá trình thực hành, em nhận thấy hình ảnh và video không chỉ
-                làm bài học sinh động hơn mà còn có những vai trò sư phạm cụ thể. Ba vai trò dưới đây
-                là cơ sở để em lựa chọn và thiết kế các sản phẩm trong hồ sơ.
+                Sau khi làm ba sản phẩm, em thấy hình ảnh và video có ích nhất khi học sinh có việc để làm
+                với chúng. Phần dưới đây ghi lại ba cách em đã sử dụng phương tiện trực quan trong HSHT1.
               </p>
             </div>
 
@@ -389,9 +388,9 @@ export default function Chem1441Portfolio() {
                 <div className="lg:col-span-2 rounded-xl border bg-card p-5">
                   <div className="text-sm font-semibold text-foreground mb-2">Điều em rút ra</div>
                   <p className="text-muted-foreground leading-relaxed">
-                    Qua hoạt động này, em nhận thấy chỉnh sửa hình ảnh trong dạy học không chỉ nhằm làm sản
-                    phẩm đẹp hơn mà quan trọng hơn là làm cho học liệu rõ ràng, chính xác, phù hợp với học sinh
-                    và có thể hỗ trợ trực tiếp cho một hoạt động học tập cụ thể.
+                    Lúc Việt hóa sơ đồ, em nhận ra phần khó nhất là giữ đúng thuật ngữ, hướng mũi tên và
+                    mối quan hệ giữa các thành phần. Nếu sửa sai một nhãn hoặc che mất chi tiết, hình có thể
+                    đẹp hơn nhưng lại gây hiểu nhầm về nội dung.
                   </p>
                 </div>
               </div>
@@ -589,9 +588,8 @@ export default function Chem1441Portfolio() {
                       Vai trò của video trong hoạt động
                     </h4>
                     <p className="text-muted-foreground leading-relaxed">
-                      Video tạo tình huống học tập từ một hiện tượng quen thuộc trong đời sống, đồng thời trực
-                      quan hóa khái niệm pH, thang pH và các ứng dụng thực tiễn. Hệ thống câu hỏi đi kèm giúp
-                      học sinh quan sát, phân tích và rút ra kiến thức thay vì chỉ tiếp nhận thông tin thụ động.
+                      Video bắt đầu từ câu hỏi vì sao nước chanh có vị chua rồi dẫn sang pH và thang pH.
+                      Em đặt câu hỏi sau video để học sinh phải xem, trả lời và giải thích lại nội dung vừa quan sát.
                     </p>
                   </div>
                 </div>
@@ -613,9 +611,8 @@ export default function Chem1441Portfolio() {
                       Đề xuất để sử dụng hiệu quả hơn
                     </div>
                     <p className="text-sm text-muted-foreground leading-relaxed">
-                      Trước khi dựng video nên xác định yêu cầu cần đạt, viết kịch bản và phân chia thời lượng cho từng cảnh.
-                      Khi biên tập cần tiết chế hiệu ứng chuyển cảnh, ưu tiên lời thuyết minh rõ ràng, kiểm tra lại phụ đề,
-                      cân bằng âm lượng giữa giọng nói và nhạc nền, đồng thời xem lại toàn bộ nội dung khoa học trước khi xuất.
+                      Nếu làm lại, em sẽ chốt kịch bản và thời lượng từng cảnh trước khi mở CapCut.
+                      Lúc xuất video cần xem lại phụ đề, âm lượng và nội dung Hóa học vì đây là những chỗ dễ sót khi chỉnh nhiều lần.
                     </p>
                   </div>
                   <div className="rounded-xl border bg-card p-5">
@@ -623,9 +620,8 @@ export default function Chem1441Portfolio() {
                       Điều em rút ra
                     </div>
                     <p className="text-sm text-muted-foreground leading-relaxed">
-                      Video dạy học cần được xây dựng từ yêu cầu cần đạt thay vì chỉ chú trọng hiệu ứng. Hình ảnh,
-                      lời thuyết minh, thời lượng và câu hỏi sau video phải hỗ trợ cùng một mục tiêu học tập.
-                      Việc kết hợp video với nhiệm vụ quan sát và thảo luận giúp học sinh tham gia chủ động hơn.
+                      Khi dựng clip này, em thấy hiệu ứng không phải phần quyết định. Quan trọng hơn là video có
+                      vừa đủ thông tin và sau khi xem học sinh có câu hỏi để trả lời hay không.
                     </p>
                   </div>
                 </div>
@@ -735,18 +731,16 @@ export default function Chem1441Portfolio() {
                     Đề xuất để sử dụng hiệu quả hơn
                   </h4>
                   <p className="text-muted-foreground leading-relaxed">
-                    Khi thiết kế cần ưu tiên mỗi mục một ý chính, sử dụng hình minh họa có chức năng giải thích
-                    và kiểm tra lại thuật ngữ khoa học trước khi xuất. Khi dùng trên lớp, giáo viên nên kết hợp
-                    infographic với câu hỏi dự đoán, so sánh hoặc giải thích thay vì chỉ yêu cầu học sinh đọc lại nội dung.
+                    Nếu làm lại, em sẽ tiếp tục giảm chữ ở từng ô và kiểm tra cỡ chữ trên màn hình nhỏ trước khi xuất.
+                    Khi dùng trên lớp, infographic nên đi kèm câu hỏi dự đoán hoặc giải thích để học sinh phải đọc thông tin trên hình.
                   </p>
                 </div>
 
                 <div className="lg:col-span-2 rounded-xl border bg-card p-5">
                   <div className="text-sm font-semibold text-foreground mb-2">Điều em rút ra</div>
                   <p className="text-muted-foreground leading-relaxed">
-                    Qua sản phẩm này, em nhận thấy infographic hiệu quả khi thông tin được chọn lọc và tổ chức theo
-                    một mạch rõ ràng. Hình ảnh, từ khóa và câu kết luận cần hỗ trợ học sinh nhìn thấy mối liên hệ giữa
-                    hiện tượng, yếu tố tác động và cơ sở giải thích khoa học chứ không chỉ làm sản phẩm bắt mắt.
+                    Phần khó nhất của infographic là bỏ bớt. Nếu đưa quá nhiều chữ lên một trang thì sản phẩm vẫn đủ
+                    kiến thức nhưng khó đọc. Em giữ lại từ khóa, hình minh họa và phần giải thích cần cho từng yếu tố.
                   </p>
                 </div>
               </div>
@@ -770,7 +764,7 @@ export default function Chem1441Portfolio() {
                   kiến thức; infographic tốc độ phản ứng được dùng để dự đoán, so sánh và giải thích bằng thuyết va chạm.
                 </p>
                 <p className="text-sm text-muted-foreground">
-                  Các phương tiện trực quan được sử dụng như một phần của nhiệm vụ học tập thay vì chỉ trình chiếu minh họa.
+                  Điểm chung em muốn giữ là mỗi sản phẩm đều có một việc cụ thể để học sinh làm sau khi xem.
                 </p>
               </article>
 
@@ -782,13 +776,12 @@ export default function Chem1441Portfolio() {
                   Đánh giá công cụ và đề xuất
                 </h2>
                 <p className="text-muted-foreground leading-relaxed mb-5">
-                  Qua ba sản phẩm, Canva cho thấy ưu thế ở thiết kế bố cục, Việt hóa học liệu và tạo infographic;
-                  CapCut thuận tiện cho biên tập timeline, lời thoại, phụ đề và âm thanh. Dù công cụ hỗ trợ nhiều
-                  thao tác, sản phẩm vẫn cần được kiểm tra về tính chính xác khoa học, khả năng đọc và mức độ phù hợp
-                  với mục tiêu dạy học.
+                  Canva thuận tiện khi em cần sửa bố cục, Việt hóa hình hoặc làm infographic. CapCut dễ dùng hơn
+                  ở phần cắt ghép video, phụ đề và âm thanh. Cả hai đều giúp làm nhanh hơn, nhưng em vẫn phải tự kiểm tra
+                  nội dung Hóa học và xem sản phẩm có dễ đọc trên màn hình hay không.
                 </p>
                 <p className="text-sm text-muted-foreground">
-                  Hiệu quả của công cụ phụ thuộc vào cách lựa chọn nội dung, mức độ tiết chế hiệu ứng và cách tổ chức nhiệm vụ học tập đi kèm.
+                  Sau HSHT1, em quan tâm nhiều hơn đến nội dung học sinh sẽ làm với sản phẩm, chứ không chỉ phần mềm dùng để tạo ra nó.
                 </p>
               </article>
             </div>
