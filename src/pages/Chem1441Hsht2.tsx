@@ -493,6 +493,17 @@ export default function Chem1441Hsht2() {
                                   Tải file
                                 </a>
                               </Button>
+                              {item.id === 'san-pham-4' && (
+                                <Button asChild variant="ghost" size="sm">
+                                  <a
+                                    href="/portfolio/hsht2/CHEM1441_HD16_DeKiemTra_HuongDanCham_HoTuanKiet.docx"
+                                    download
+                                  >
+                                    <FileText className="h-4 w-4" />
+                                    Tải Word
+                                  </a>
+                                </Button>
+                              )}
                             </div>
                           ) : (
                             <p className="text-sm text-muted-foreground mt-2">
