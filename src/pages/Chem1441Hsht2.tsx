@@ -11,7 +11,6 @@ import {
   Keyboard,
   Lightbulb,
   Presentation,
-  Scale,
   Sigma,
   Upload,
   Wrench,
@@ -31,7 +30,7 @@ const reflectionItems = [
   {
     title: 'Chọn công cụ theo đúng việc đang làm',
     content:
-      'Equation, AutoCorrect hay ChemFormatter giải quyết những việc khác nhau. Em thấy dễ làm hơn khi xác định mình đang cần gõ biểu thức, nhập nội dung lặp lại hay sửa chỉ số rồi mới chọn công cụ.',
+      'Em không cố dùng một công cụ cho tất cả. Gõ biểu thức thì em dùng Equation; đoạn nào lặp lại nhiều thì dùng AutoCorrect. ChemFormatter dành cho phần chỉ số và điện tích.',
     icon: BookOpen,
   },
 ];
@@ -77,34 +76,34 @@ const tools = [
 
 const experienceItems = [
   {
-    title: 'Equation',
+    title: 'Equation: vướng nhất ở mũi tên',
     text:
-      'Equation giúp em trình bày phân số, chỉ số và phương trình gọn hơn. Phần mất thời gian nhất là mũi tên phản ứng có điều kiện, đặc biệt mũi tên cân bằng; một số lệnh không hoạt động như em dự đoán nên phải thử cách nhập khác và kiểm tra lại kết quả.',
+      'Equation làm phân số và chỉ số nhanh. Em mất nhiều thời gian nhất ở mũi tên có điều kiện, nhất là mũi tên cân bằng. Có lệnh gõ vào không ra như mong đợi nên em phải thử lại vài cách.',
   },
   {
-    title: 'AutoCorrect',
+    title: 'AutoCorrect: nhanh khi phải gõ lại',
     text:
-      'AutoCorrect có ích rõ nhất với các công thức và phương trình phải gõ lặp lại. Sau khi thiết lập từ viết tắt, việc nhập nhanh hơn nhiều. Điểm bất tiện là danh sách mặc định khá dài và thiết lập nằm trên máy, nên em chụp thêm ảnh để làm minh chứng.',
+      'Sau khi tạo từ viết tắt, những công thức hoặc phương trình lặp lại được gõ nhanh hơn hẳn. Danh sách AutoCorrect mặc định khá dài và thiết lập nằm trên máy, nên em chụp thêm ảnh để chứng minh phần đã cài.',
   },
   {
-    title: 'ChemFormatter',
+    title: 'ChemFormatter: tiện nhất ở phần chỉ số',
     text:
-      'Đây là công cụ làm em thấy hiệu quả rõ nhất trong phần viết công thức. Chỉ cần nhập công thức ở dạng thường rồi dùng ChemFormatter là chỉ số dưới và điện tích được xử lí rất nhanh, đỡ phải định dạng từng số bằng tay. Sau khi cài add-in vào Word, thao tác khá trực quan và tiết kiệm thời gian.',
+      'Đây là phần em thấy tiện nhất. Em gõ công thức ở dạng thường rồi dùng ChemFormatter để sửa chỉ số và điện tích. Sau khi cài add-in vào Word, thao tác khá nhanh và không phải chỉnh từng số bằng tay.',
   },
   {
-    title: 'ChemDraw / Chem3D',
+    title: 'ChemDraw / Chem3D: dễ sai nếu nối bond không đúng',
     text:
-      'Phần 2D–3D cho em thấy công cụ chuyên dụng tiện hơn nhiều so với việc tự vẽ trong Word. Tuy nhiên em cũng gặp vài lỗi thực tế: đầu liên kết để trống trong ChemDraw có thể bị hiểu là carbon, khiến NH₃ bị nhận thành cấu trúc khác; Clean Up đôi lúc làm hình không như mong muốn; khi chuyển sang Chem3D có thể xuất hiện nguyên tử H rời nếu liên kết chưa đúng. Vì vậy em phải kiểm tra cấu trúc trước khi chuyển sang 3D.',
+      'Lúc đầu em kéo bond từ N ra đầu trống nên ChemDraw hiểu đầu trống là carbon và cấu trúc NH₃ bị sai. Khi chuyển sang Chem3D, H cũng có thể nằm rời nếu liên kết chưa đúng. Sau lần đó em kiểm tra atom và bond trước khi chuyển sang 3D.',
   },
   {
-    title: 'Đưa sản phẩm 2D–3D vào Word',
+    title: 'Chèn ảnh vào Word: bảng dễ bị xê dịch',
     text:
-      'Khi chèn hình 2D và 3D vào Word, ảnh lớn có thể làm bảng tự thay đổi kích thước. Em khắc phục bằng cách cố định độ rộng cột, tắt tự co giãn theo nội dung và chỉnh ảnh về cùng kích thước. Cách này giúp phần trình bày 2D bên trái – 3D bên phải gọn và dễ so sánh hơn.',
+      'Ảnh 2D và 3D lúc dán vào Word làm bảng tự nới cột. Em phải khóa độ rộng cột, tắt tự co giãn theo nội dung rồi mới chỉnh hai ảnh về cùng kích thước.',
   },
   {
-    title: 'PowerPoint',
+    title: 'Slide mẫu: chữ nhiều, phần trang trí chiếm chỗ',
     text:
-      'Khi phân tích slide mẫu về tính chất hóa học của muối, em thấy việc có quá nhiều chữ, nhiều màu đỏ và phần trang trí chiếm diện tích làm nội dung khó theo dõi. Vì vậy khi chỉnh slide cần ưu tiên ý chính, căn lại các khối nội dung và chỉ dùng màu nhấn khi có mục đích.',
+      'Slide mẫu về tính chất hóa học của muối có nhiều chữ, nhiều chỗ tô đỏ và một mảng trang trí lớn ở bên phải. Em đang làm lại ngay trong PowerPoint, giữ nội dung trong một slide nhưng chia lại các nhóm phản ứng để dễ đọc hơn.',
   },
 ];
 
@@ -492,12 +491,11 @@ export default function Chem1441Hsht2() {
                   <Lightbulb className="h-5 w-5" />
                 </div>
                 <h2 className="font-display text-2xl font-bold text-foreground mb-4">
-                  Cách em sẽ làm ở những bài sau
+                  Lần sau em sẽ làm khác chỗ nào?
                 </h2>
                 <p className="text-muted-foreground leading-relaxed">
-                  Sau các bài vừa làm, em sẽ không cố dùng một công cụ cho mọi trường hợp. Công thức lặp lại thì
-                  dùng AutoCorrect, biểu thức khó thì dùng Equation, chỉ số và điện tích cần sửa nhanh thì dùng ChemFormatter.
-                  Với cấu trúc phân tử, em sẽ kiểm tra kỹ trong ChemDraw trước khi chuyển sang Chem3D.
+                  Với bài Word, em sẽ chọn công cụ ngay từ đầu theo đúng phần đang làm để đỡ sửa lại. Riêng cấu trúc phân tử,
+                  em sẽ kiểm tra atom và bond trong ChemDraw trước khi mở Chem3D.
                 </p>
               </article>
 
