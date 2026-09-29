@@ -62,13 +62,13 @@ const products = [
     status: 'Đã hoàn thiện',
   },
   {
-    title: 'Rà soát và chỉnh sửa bài trình chiếu',
+    title: 'Thiết kế lại slide Tính chất hóa học của muối',
     type: 'Bài trình chiếu',
     hsht: 'HSHT 2',
     tool: 'Microsoft PowerPoint',
-    href: '/chem1441/hsht2',
+    href: '/chem1441/hsht2#san-pham-3',
     icon: Presentation,
-    status: 'Đang hoàn thiện hồ sơ',
+    status: 'Đã hoàn thiện',
   },
   {
     title: 'Đề kiểm tra và hướng dẫn chấm',
