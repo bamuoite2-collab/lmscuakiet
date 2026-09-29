@@ -253,8 +253,7 @@ export default function Chem1441Portfolio() {
                   Sản phẩm thực hành và ý tưởng dạy học
                 </h2>
                 <p className="text-muted-foreground leading-relaxed">
-                  Mỗi sản phẩm được trình bày kèm công cụ sử dụng, thao tác thực hiện,
-                  ý tưởng vận dụng trong dạy học và phần đánh giá sau khi trải nghiệm công cụ.
+                  Em giữ lại file, ghi cách đã làm và viết ngắn cách em dự định dùng từng sản phẩm trên lớp.
                 </p>
               </div>
               <div className="inline-flex items-center gap-2 text-sm text-muted-foreground">
@@ -335,7 +334,7 @@ export default function Chem1441Portfolio() {
 
                 <div>
                   <h4 className="font-display text-lg font-bold text-foreground mb-3">
-                    Ý tưởng ứng dụng trong dạy học
+                    Em sẽ dùng sơ đồ này thế nào?
                   </h4>
                   <p className="text-muted-foreground leading-relaxed">
                     Có thể sử dụng sơ đồ khi dạy nội dung liên quan đến carbon và các hợp chất của carbon.
@@ -348,7 +347,7 @@ export default function Chem1441Portfolio() {
 
                 <div>
                   <h4 className="font-display text-lg font-bold text-foreground mb-3">
-                    Đánh giá công cụ Canva
+                    Canva khi Việt hóa sơ đồ
                   </h4>
                   <p className="text-muted-foreground leading-relaxed">
                     Canva có giao diện trực quan, dễ chỉnh sửa chữ, kích thước và bố cục nên phù hợp với việc
@@ -360,7 +359,7 @@ export default function Chem1441Portfolio() {
 
                 <div>
                   <h4 className="font-display text-lg font-bold text-foreground mb-3">
-                    Nếu làm lại
+                    Nếu sửa lại sơ đồ
                   </h4>
                   <p className="text-muted-foreground leading-relaxed">
                     Trước khi xuất sản phẩm cần đối chiếu lại thuật ngữ khoa học, kiểm tra hướng mũi tên,
@@ -370,7 +369,7 @@ export default function Chem1441Portfolio() {
                 </div>
 
                 <div className="lg:col-span-2 rounded-xl border bg-card p-5">
-                  <div className="text-sm font-semibold text-foreground mb-2">Điều em rút ra</div>
+                  <div className="text-sm font-semibold text-foreground mb-2">Chỗ em phải kiểm tra kỹ nhất</div>
                   <p className="text-muted-foreground leading-relaxed">
                     Lúc Việt hóa sơ đồ, em nhận ra phần khó nhất là giữ đúng thuật ngữ, hướng mũi tên và
                     mối quan hệ giữa các thành phần. Nếu sửa sai một nhãn hoặc che mất chi tiết, hình có thể
@@ -581,7 +580,7 @@ export default function Chem1441Portfolio() {
                 <div className="grid lg:grid-cols-3 gap-4">
                   <div className="rounded-xl border bg-card p-5">
                     <div className="text-sm font-semibold text-foreground mb-2">
-                      Đánh giá Canva & CapCut
+                      Lúc dựng bằng Canva & CapCut
                     </div>
                     <p className="text-sm text-muted-foreground leading-relaxed">
                       Trong quá trình thực hành, Canva giúp em tạo các khung hình có bố cục và phong cách thống nhất;
@@ -592,16 +591,16 @@ export default function Chem1441Portfolio() {
                   </div>
                   <div className="rounded-xl border bg-card p-5">
                     <div className="text-sm font-semibold text-foreground mb-2">
-                      Nếu làm lại
+                      Nếu dựng lại video
                     </div>
                     <p className="text-sm text-muted-foreground leading-relaxed">
-                      Nếu làm lại, em sẽ chốt kịch bản và thời lượng từng cảnh trước khi mở CapCut.
+                      Nếu dựng lại, em sẽ chốt kịch bản và thời lượng từng cảnh trước khi mở CapCut.
                       Lúc xuất video cần xem lại phụ đề, âm lượng và nội dung Hóa học vì đây là những chỗ dễ sót khi chỉnh nhiều lần.
                     </p>
                   </div>
                   <div className="rounded-xl border bg-card p-5">
                     <div className="text-sm font-semibold text-foreground mb-2">
-                      Điều em rút ra
+                      Sau khi dựng xong
                     </div>
                     <p className="text-sm text-muted-foreground leading-relaxed">
                       Khi dựng clip này, em thấy hiệu ứng không phải phần quyết định. Quan trọng hơn là video có
@@ -689,7 +688,7 @@ export default function Chem1441Portfolio() {
 
                 <div>
                   <h4 className="font-display text-lg font-bold text-foreground mb-3">
-                    Ý tưởng ứng dụng trong dạy học
+                    Em sẽ dùng infographic này thế nào?
                   </h4>
                   <p className="text-muted-foreground leading-relaxed">
                     Có thể sử dụng infographic khi củng cố nội dung về các yếu tố ảnh hưởng đến tốc độ phản ứng.
@@ -701,7 +700,7 @@ export default function Chem1441Portfolio() {
 
                 <div>
                   <h4 className="font-display text-lg font-bold text-foreground mb-3">
-                    Đánh giá công cụ Canva
+                    Canva khi làm infographic
                   </h4>
                   <p className="text-muted-foreground leading-relaxed">
                     Canva phù hợp với thiết kế infographic nhờ thư viện bố cục và thành phần trực quan phong phú,
@@ -712,10 +711,10 @@ export default function Chem1441Portfolio() {
 
                 <div>
                   <h4 className="font-display text-lg font-bold text-foreground mb-3">
-                    Nếu làm lại
+                    Nếu làm lại infographic
                   </h4>
                   <p className="text-muted-foreground leading-relaxed">
-                    Nếu làm lại, em sẽ tiếp tục giảm chữ ở từng ô và kiểm tra cỡ chữ trên màn hình nhỏ trước khi xuất.
+                    Em sẽ tiếp tục giảm chữ ở từng ô và kiểm tra cỡ chữ trên màn hình nhỏ trước khi xuất.
                     Khi dùng trên lớp, infographic nên đi kèm câu hỏi dự đoán hoặc giải thích để học sinh phải đọc thông tin trên hình.
                   </p>
                 </div>
@@ -743,9 +742,9 @@ export default function Chem1441Portfolio() {
                   Ý tưởng ứng dụng trong dạy học
                 </h2>
                 <p className="text-muted-foreground leading-relaxed mb-5">
-                  Cả ba sản phẩm đều được gắn với một cách sử dụng cụ thể trong dạy học. Sơ đồ chu trình carbon
-                  hỗ trợ quan sát mối liên hệ giữa các quá trình; video pH được đặt trong một hoạt động hình thành
-                  kiến thức; infographic tốc độ phản ứng được dùng để dự đoán, so sánh và giải thích bằng thuyết va chạm.
+                  Sơ đồ chu trình carbon được dùng để đọc các mũi tên và giải thích mối liên hệ giữa các quá trình.
+                  Video pH đi kèm câu hỏi sau khi xem. Infographic tốc độ phản ứng được dùng ở phần củng cố để học sinh
+                  dự đoán rồi giải thích bằng thuyết va chạm.
                 </p>
                 <p className="text-sm text-muted-foreground">
                   Điểm chung em muốn giữ là mỗi sản phẩm đều có một việc cụ thể để học sinh làm sau khi xem.
@@ -757,7 +756,7 @@ export default function Chem1441Portfolio() {
                   <Wrench className="h-5 w-5" />
                 </div>
                 <h2 className="font-display text-2xl font-bold text-foreground mb-4">
-                  Đánh giá công cụ và đề xuất
+                  Canva và CapCut sau khi dùng thật
                 </h2>
                 <p className="text-muted-foreground leading-relaxed mb-5">
                   Canva thuận tiện khi em cần sửa bố cục, Việt hóa hình hoặc làm infographic. CapCut dễ dùng hơn
