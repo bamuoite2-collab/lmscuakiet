@@ -24,7 +24,7 @@ const chemistryJourney = [
     title: 'Tìm và đánh giá tư liệu dạy học',
     icon: Search,
     text: 'Ở những hoạt động đầu, mình tập xác định từ khóa, dùng tìm kiếm nâng cao, ưu tiên nguồn đáng tin cậy, kiểm tra thời điểm công bố và chú ý vấn đề bản quyền.',
-    note: 'Mình bắt đầu nhìn một tư liệu bằng câu hỏi: nó có đúng và có phù hợp để đưa vào hoạt động học hay không?',
+    note: 'Khi gặp một tư liệu mới, mình kiểm tra trước xem nội dung có đúng và học sinh sẽ dùng nó vào việc gì.',
   },
   {
     step: '02',
