@@ -65,7 +65,7 @@ const chemistryJourney = [
     step: '07',
     title: 'Nhìn lại sản phẩm sau khi hoàn thành',
     icon: CheckCircle2,
-    text: 'Qua HSHT1, mình phải tự xem lại công cụ đã dùng, cách tìm nguồn, cách trình bày và khả năng gắn sản phẩm với một nhiệm vụ học tập.',
+    text: 'Kết thúc HSHT1, mình mở lại từng sản phẩm để xem chỗ nào còn nhiều chữ, chỗ nào thiếu nguồn và sản phẩm đó sẽ được dùng ở bước nào trong bài học.',
     note: 'Nhờ phần phản hồi, mình biết sản phẩm nào còn vướng và lần sau cần sửa chỗ nào.',
   },
   {
@@ -79,7 +79,7 @@ const chemistryJourney = [
     step: '09',
     title: 'Rà soát bài trình chiếu',
     icon: Presentation,
-    text: 'Mình tiếp tục xem lại slide theo các yếu tố như lượng chữ, bố cục, màu nhấn, khoảng trắng và sự thống nhất giữa các trang.',
+    text: 'Ở bài PowerPoint, mình bắt đầu bằng một slide mẫu khá nhiều chữ. Mình đang bỏ bớt phần trang trí, chia lại nội dung và giảm số màu dùng trên slide.',
     note: 'Một slide dễ đọc thường cần bớt nội dung hơn là thêm hiệu ứng.',
   },
 ];
@@ -185,7 +185,7 @@ export default function LearningJourney() {
                   Nhìn lại
                 </p>
                 <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground">
-                  Cách mình làm học liệu đang thay đổi dần
+                  So với lúc bắt đầu, mình đã sửa cách làm ở đâu?
                 </h2>
               </div>
 
