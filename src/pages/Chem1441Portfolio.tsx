@@ -15,6 +15,12 @@ import {
 import { Navbar } from '@/components/Navbar';
 import { Footer } from '@/components/Footer';
 import { Button } from '@/components/ui/button';
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from '@/components/ui/accordion';
 import { Chem1441Subnav } from '@/components/Chem1441Subnav';
 
 const tools = [
@@ -624,33 +630,39 @@ export default function Chem1441Portfolio() {
                   </div>
                 </div>
 
-                <details className="group rounded-xl border bg-muted/20 overflow-hidden">
-                  <summary className="list-none cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-ring">
-                    <div className="group-open:hidden relative h-[460px] md:h-[620px] overflow-hidden bg-muted/20">
-                      <img
-                        src="/portfolio/reaction-rate-factors.png"
-                        alt="Xem trước infographic các yếu tố ảnh hưởng đến tốc độ phản ứng"
-                        className="w-full max-w-[900px] h-auto mx-auto object-contain object-top"
-                      />
-                      <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-background via-background/95 to-transparent pt-20 pb-5 px-5 text-center">
-                        <span className="inline-flex rounded-full border bg-card px-4 py-2 text-sm font-semibold text-foreground shadow-sm">
-                          Xem toàn bộ infographic
-                        </span>
+                <Accordion type="single" collapsible className="rounded-xl border bg-muted/20 overflow-hidden">
+                  <AccordionItem value="infographic-full" className="border-0">
+                    <AccordionTrigger className="group p-0 hover:no-underline [&>svg]:hidden">
+                      <div className="w-full">
+                        <div className="group-data-[state=open]:hidden relative h-[460px] md:h-[620px] overflow-hidden bg-muted/20">
+                          <img
+                            src="/portfolio/reaction-rate-factors.png"
+                            alt="Xem trước infographic các yếu tố ảnh hưởng đến tốc độ phản ứng"
+                            className="w-full max-w-[900px] h-auto mx-auto object-contain object-top"
+                          />
+                          <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-background via-background/95 to-transparent pt-20 pb-5 px-5 text-center">
+                            <span className="inline-flex rounded-full border bg-card px-4 py-2 text-sm font-semibold text-foreground shadow-sm">
+                              Xem toàn bộ infographic
+                            </span>
+                          </div>
+                        </div>
+                        <div className="hidden group-data-[state=open]:flex items-center justify-between gap-4 p-4 md:p-5 bg-card">
+                          <span className="text-sm font-semibold text-foreground">Infographic toàn bộ</span>
+                          <span className="text-sm text-muted-foreground">Nhấn để thu gọn</span>
+                        </div>
                       </div>
-                    </div>
-                    <div className="hidden group-open:flex items-center justify-between gap-4 p-4 md:p-5 bg-card">
-                      <span className="text-sm font-semibold text-foreground">Infographic toàn bộ</span>
-                      <span className="text-sm text-muted-foreground">Nhấn để thu gọn</span>
-                    </div>
-                  </summary>
-                  <div className="border-t bg-background p-4 md:p-8">
-                    <img
-                      src="/portfolio/reaction-rate-factors.png"
-                      alt="Infographic các yếu tố ảnh hưởng đến tốc độ phản ứng do Hồ Tuấn Kiệt thiết kế"
-                      className="w-full max-w-[900px] h-auto mx-auto object-contain"
-                    />
-                  </div>
-                </details>
+                    </AccordionTrigger>
+                    <AccordionContent className="pb-0">
+                      <div className="border-t bg-background p-4 md:p-8">
+                        <img
+                          src="/portfolio/reaction-rate-factors.png"
+                          alt="Infographic các yếu tố ảnh hưởng đến tốc độ phản ứng do Hồ Tuấn Kiệt thiết kế"
+                          className="w-full max-w-[900px] h-auto mx-auto object-contain"
+                        />
+                      </div>
+                    </AccordionContent>
+                  </AccordionItem>
+                </Accordion>
 
                 <div className="grid sm:grid-cols-3 gap-3 mt-5 text-sm">
                   <div className="rounded-xl border bg-card p-4">
