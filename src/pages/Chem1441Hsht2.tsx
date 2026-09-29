@@ -69,7 +69,7 @@ const tools = [
   {
     name: 'PowerPoint',
     description:
-      'Em đang dùng PowerPoint để làm lại slide mẫu về tính chất hóa học của muối.',
+      'Em dùng PowerPoint để thiết kế lại slide mẫu về tính chất hóa học của muối.',
     icon: Presentation,
   },
 ];
@@ -101,9 +101,14 @@ const experienceItems = [
       'Ảnh 2D và 3D lúc dán vào Word làm bảng tự nới cột. Em phải khóa độ rộng cột, tắt tự co giãn theo nội dung rồi mới chỉnh hai ảnh về cùng kích thước.',
   },
   {
-    title: 'Slide mẫu: chữ nhiều, phần trang trí chiếm chỗ',
+    title: 'PowerPoint: khó nhất là giữ đủ nội dung trong một slide',
     text:
-      'Slide mẫu về tính chất hóa học của muối có nhiều chữ, nhiều chỗ tô đỏ và một mảng trang trí lớn ở bên phải. Em đang làm lại ngay trong PowerPoint, giữ nội dung trong một slide nhưng chia lại các nhóm phản ứng để dễ đọc hơn.',
+      'Slide phải giữ đủ 5 phần nên em phải căn đi căn lại kích thước các khối. Hộp lớn quá thì thiếu chỗ, còn thu nhỏ quá thì phương trình khó đọc. Cuối cùng em chia thành 5 thẻ và bỏ bớt các câu giải thích dài.',
+  },
+  {
+    title: 'Phần nhiệt phân mất thời gian căn nhất',
+    text:
+      'Hai phương trình nhiệt phân có thêm nhiệt độ và xúc tác trên mũi tên nên khó căn hơn các phần còn lại. Em phải chỉnh lại khoảng cách giữa chất tham gia, mũi tên và sản phẩm; sau đó kiểm tra lại chỉ số dưới trong từng công thức.',
   },
 ];
 
@@ -157,18 +162,19 @@ const evidenceItems = [
   {
     id: 'san-pham-3',
     label: 'Minh chứng 3 · PowerPoint',
-    title: 'Rà soát và chỉnh sửa bài trình chiếu',
+    title: 'Thiết kế lại slide Tính chất hóa học của muối',
     icon: Presentation,
-    status: 'Đã phân tích · đang thiết kế lại',
+    status: 'Đã hoàn thiện',
     description:
-      'Phân tích slide mẫu dựa trên lượng chữ, bố cục, màu sắc, khoảng trắng và mức độ nhất quán; sau đó thiết kế lại để nội dung chính dễ quan sát hơn.',
+      'Em thiết kế lại slide mẫu trong PowerPoint và giữ toàn bộ nội dung trong một slide. Phần chính được chia thành 5 nhóm phản ứng để dễ nhìn hơn.',
     details: [
-      'Giảm lượng chữ và làm rõ thứ bậc thông tin.',
-      'Hạn chế màu nhấn và hiệu ứng không cần thiết.',
-      'Giữ bản trước và sau chỉnh sửa để so sánh sự thay đổi.',
+      'Bỏ phần trang trí chiếm nhiều diện tích và chia lại bố cục thành 5 thẻ nội dung.',
+      'Rút gọn các câu giải thích dưới phương trình nhưng vẫn giữ ý chính của từng loại phản ứng.',
+      'Kiểm tra lại chỉ số dưới, hệ số và cách trình bày các phương trình Hóa học.',
+      'Căn riêng nhiệt độ và xúc tác phía trên mũi tên ở phần phản ứng phân hủy.',
     ],
-    file: null,
-    fileLabel: null,
+    file: '/portfolio/hsht2/CHEM1441_HD15_ThietKeLaiSlide_HoTuanKiet.pptx',
+    fileLabel: 'Mở file PowerPoint sản phẩm',
   },
   {
     id: 'san-pham-4',
@@ -244,7 +250,7 @@ export default function Chem1441Hsht2() {
                     Câu hỏi trọng tâm
                   </div>
                   <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-medium text-foreground leading-tight tracking-tight">
-                    {'Làm thế nào để biên soạn văn bản và bài trình chiếu hoá học nhanh gọn, hiệu quả?\u00a0\n\u00a0\n\n'}
+                    Làm thế nào để biên soạn văn bản và bài trình chiếu phục vụ dạy học Hóa học một cách hiệu quả?
                   </h2>
                 </div>
               </div>
@@ -302,8 +308,7 @@ export default function Chem1441Hsht2() {
                   Phần em phải kiểm tra kỹ nhất vẫn là nội dung Hóa học. Chỉ số, điện tích hoặc liên kết hoá học sai, dù nhìn rất nhỏ nhưng là sai về bản chất. Vì vậy em thường làm xong rồi đọc lại từng công thức trước khi chỉnh phần trình bày.
                 </p>
                 <p>
-                  Với PowerPoint, slide mẫu em đang sửa cho thấy một vấn đề: chữ nhiều nhưng phần trang trí bên phải lại chiếm diện tích lớn. Em đang thử bỏ bớt câu mô tả, chia lại các nhóm phản ứng và dùng màu
-                  ít hơn để nội dung dễ nhìn khi trình chiếu.
+                  Với PowerPoint, slide mẫu có nhiều chữ và phần trang trí bên phải chiếm khá nhiều chỗ. Em đã bỏ phần trang trí đó, chia 5 nhóm phản ứng thành các khối riêng và giảm bớt câu mô tả để giữ slide gọn hơn.
                 </p>
               </div>
             </div>
@@ -399,7 +404,7 @@ export default function Chem1441Hsht2() {
               </div>
               <div className="inline-flex items-center gap-2 text-sm text-muted-foreground">
                 <Upload className="h-4 w-4" />
-                2 sản phẩm hoàn thiện · các phần còn lại đang tiếp tục
+                3 sản phẩm hoàn thiện · còn 1 phần đang tiếp tục
               </div>
             </div>
 
