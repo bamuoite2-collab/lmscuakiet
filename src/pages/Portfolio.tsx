@@ -48,9 +48,9 @@ const products = [
     type: 'Biên soạn văn bản Hóa học',
     hsht: 'HSHT 2',
     tool: 'Microsoft Word',
-    href: '/chem1441/hsht2',
+    href: '/chem1441/hsht2#san-pham-1',
     icon: FileText,
-    status: 'Đang hoàn thiện hồ sơ',
+    status: 'Đã hoàn thiện',
   },
   {
     title: 'Rà soát và chỉnh sửa bài trình chiếu',
