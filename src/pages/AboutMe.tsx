@@ -21,7 +21,7 @@ const interests = [
   },
   {
     title: 'Công nghệ trong dạy học',
-    text: 'Mình quan tâm đến việc chọn công cụ phù hợp với mục tiêu học tập, thay vì dùng công nghệ chỉ để bài học trông hiện đại hơn.',
+    text: 'Mình quan tâm đến việc chọn công cụ đúng với mục tiêu học tập. Công nghệ chỉ đáng dùng khi nó giúp hoạt động học dễ tổ chức hoặc dễ hiểu hơn.',
     icon: Wrench,
   },
   {
