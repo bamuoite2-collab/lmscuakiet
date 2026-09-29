@@ -52,7 +52,7 @@ const tools = [
   {
     name: 'Equation',
     description:
-      'Em dùng Equation cho phân số, biểu thức và các phương trình khó gõ bằng văn bản thường.',
+      'Em dùng Equation cho phân số, biểu thức và các phương trình khó gõ bằng văn bản thường. Khi phần điều kiện trên mũi tên khó căn, em chuyển qua LaTeX trong Equation để nhập dễ hơn.',
     icon: Sigma,
   },
   {
@@ -85,7 +85,7 @@ const experienceItems = [
   {
     title: 'Equation: vướng nhất ở mũi tên',
     text:
-      'Equation làm phân số và chỉ số nhanh. Em mất nhiều thời gian nhất ở mũi tên có điều kiện, nhất là mũi tên cân bằng. Có lệnh gõ vào không ra như mong đợi nên em phải thử lại vài cách khác nhau.',
+      'Equation làm phân số và chỉ số nhanh. Em mất nhiều thời gian nhất ở mũi tên có điều kiện. Khi căn trực tiếp không thuận tiện, em chuyển qua LaTeX trong Equation rồi nhập lại, sau đó kiểm tra vị trí điều kiện trên mũi tên.',
   },
   {
     title: 'AutoCorrect: nhanh khi phải gõ lại',
@@ -116,6 +116,16 @@ const experienceItems = [
     title: 'Phần nhiệt phân mất thời gian căn nhất',
     text:
       'Hai phương trình nhiệt phân có thêm nhiệt độ và xúc tác trên mũi tên nên khó căn hơn các phần còn lại. Em phải chỉnh lại khoảng cách giữa chất tham gia, mũi tên và sản phẩm; sau đó kiểm tra lại chỉ số dưới trong từng công thức.',
+  },
+  {
+    title: 'HĐ16: lỗi nhỏ trong đề khá dễ sót',
+    text:
+      'Lúc rà đề em gặp cả lỗi danh pháp lẫn chỗ công thức cấu tạo chưa khớp với tên chất. Có lỗi chỉ khác một chữ nên nếu đọc lướt rất dễ bỏ qua. Em phải đối chiếu lại từng hàng trong bảng rồi mới làm phần hướng dẫn chấm.',
+  },
+  {
+    title: 'Hướng dẫn chấm phải khớp lại với đề',
+    text:
+      'Sau khi sửa đề, em đọc lại đáp án và biểu điểm thêm một lượt. Phần phương trình phải khớp hệ số, sản phẩm và điều kiện phản ứng; còn bài tính thì chia điểm theo từng bước để tổng điểm không bị lệch.',
   },
 ];
 
@@ -188,16 +198,17 @@ const evidenceItems = [
     label: 'Minh chứng 4 · Văn bản kiểm tra',
     title: 'Đề kiểm tra và hướng dẫn chấm',
     icon: FileCheck2,
-    status: 'Đang hoàn thiện',
+    status: 'Đã hoàn thiện',
     description:
-      'Rà soát thể thức và nội dung của đề kiểm tra Hóa học, sửa lỗi trình bày rồi xây dựng hướng dẫn chấm trong cùng một văn bản.',
+      'Em rà lại đề kiểm tra, sửa các lỗi về danh pháp, công thức và bố cục trang rồi hoàn thiện hướng dẫn chấm trong cùng một bộ tài liệu.',
     details: [
-      'Kiểm tra số trang, chính tả, danh pháp và định dạng công thức.',
-      'Giữ cách trình bày điểm số và nội dung nhất quán.',
-      'Gộp đề và hướng dẫn chấm, sau đó xuất PDF để kiểm tra lần cuối.',
+      'Kiểm tra lại bảng đồng phân, danh pháp và công thức cấu tạo.',
+      'Gõ lại các phương trình bằng Equation, kiểm tra hệ số và điều kiện phản ứng.',
+      'Khi phần điều kiện trên mũi tên khó căn, chuyển qua LaTeX trong Equation để nhập dễ hơn.',
+      'Kiểm tra biểu điểm của từng câu rồi xuất PDF để xem lại lần cuối.',
     ],
-    file: null,
-    fileLabel: null,
+    file: '/portfolio/hsht2/CHEM1441_HD16_DeKiemTra_HuongDanCham_HoTuanKiet.pdf',
+    fileLabel: 'Mở file PDF sản phẩm',
   },
 ];
 
@@ -411,7 +422,7 @@ export default function Chem1441Hsht2() {
               </div>
               <div className="inline-flex items-center gap-2 text-sm text-muted-foreground">
                 <Upload className="h-4 w-4" />
-                3 sản phẩm hoàn thiện · còn 1 phần đang tiếp tục
+                4 sản phẩm đã hoàn thiện
               </div>
             </div>
 
@@ -523,8 +534,7 @@ export default function Chem1441Hsht2() {
                   Lần sau em sẽ làm khác chỗ nào?
                 </h2>
                 <p className="text-muted-foreground leading-relaxed">
-                  Với bài Word, em sẽ chọn công cụ ngay từ đầu theo đúng phần đang làm để đỡ sửa lại. Riêng cấu trúc phân tử,
-                  em sẽ kiểm tra atom và bond trong ChemDraw trước khi mở Chem3D.
+                  Với bài Word, em sẽ chọn công cụ ngay từ đầu theo đúng phần đang làm để đỡ sửa lại. Phần phương trình có điều kiện khó căn thì em chuyển qua LaTeX trong Equation. Riêng cấu trúc phân tử, em sẽ kiểm tra atom và bond trong ChemDraw trước khi mở Chem3D.
                 </p>
               </article>
 
