@@ -22,9 +22,9 @@ import { Chem1441Subnav } from '@/components/Chem1441Subnav';
 
 const reflectionItems = [
   {
-    title: 'Nội dung Hóa học phải đúng trước',
+    title: 'Nội dung Hóa học phải chính xác',
     content:
-      'Em kiểm tra công thức, chỉ số, điện tích và phương trình trước. Font, cỡ chữ hay bố cục để sau, vì trình bày đẹp mà công thức sai thì vẫn phải làm lại.',
+      'Em kiểm tra công thức, chỉ số, điện tích và phương trình trước. Font, cỡ chữ hay bố cục để sau, vì nội dung quan trọng hơn hình thức.',
     icon: FileCheck2,
   },
   {
@@ -78,7 +78,7 @@ const experienceItems = [
   {
     title: 'Equation: vướng nhất ở mũi tên',
     text:
-      'Equation làm phân số và chỉ số nhanh. Em mất nhiều thời gian nhất ở mũi tên có điều kiện, nhất là mũi tên cân bằng. Có lệnh gõ vào không ra như mong đợi nên em phải thử lại vài cách.',
+      'Equation làm phân số và chỉ số nhanh. Em mất nhiều thời gian nhất ở mũi tên có điều kiện, nhất là mũi tên cân bằng. Có lệnh gõ vào không ra như mong đợi nên em phải thử lại vài cách khác nhau.',
   },
   {
     title: 'AutoCorrect: nhanh khi phải gõ lại',
@@ -244,7 +244,7 @@ export default function Chem1441Hsht2() {
                     Câu hỏi trọng tâm
                   </div>
                   <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-medium text-foreground leading-tight tracking-tight">
-                    Làm thế nào để biên soạn văn bản và bài trình chiếu phục vụ dạy học Hóa học một cách hiệu quả?
+                    {'Làm thế nào để biên soạn văn bản và bài trình chiếu hoá học nhanh gọn, hiệu quả?\u00a0\n\u00a0\n\n'}
                   </h2>
                 </div>
               </div>
@@ -299,13 +299,10 @@ export default function Chem1441Hsht2() {
                   khi cần sửa nhanh chỉ số và điện tích. Với cấu trúc 2D–3D, dùng phần mềm Hóa học riêng dễ kiểm tra hơn.
                 </p>
                 <p>
-                  Phần em phải kiểm tra kỹ nhất vẫn là nội dung Hóa học. Một chỉ số, điện tích hoặc liên kết sai
-                  nhìn rất nhỏ nhưng làm công thức sai hẳn. Vì vậy em thường làm xong rồi đọc lại từng công thức trước
-                  khi chỉnh phần trình bày.
+                  Phần em phải kiểm tra kỹ nhất vẫn là nội dung Hóa học. Chỉ số, điện tích hoặc liên kết hoá học sai, dù nhìn rất nhỏ nhưng là sai về bản chất. Vì vậy em thường làm xong rồi đọc lại từng công thức trước khi chỉnh phần trình bày.
                 </p>
                 <p>
-                  Với PowerPoint, slide mẫu em đang sửa cho thấy khá rõ một vấn đề: chữ nhiều nhưng phần trang trí
-                  bên phải lại chiếm diện tích lớn. Em đang thử bỏ bớt câu mô tả, chia lại các nhóm phản ứng và dùng màu
+                  Với PowerPoint, slide mẫu em đang sửa cho thấy một vấn đề: chữ nhiều nhưng phần trang trí bên phải lại chiếm diện tích lớn. Em đang thử bỏ bớt câu mô tả, chia lại các nhóm phản ứng và dùng màu
                   ít hơn để nội dung dễ nhìn khi trình chiếu.
                 </p>
               </div>
