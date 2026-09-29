@@ -78,8 +78,8 @@ export default function AboutMe() {
                 </p>
 
                 <p className="mt-4 text-base md:text-lg text-muted-foreground leading-relaxed max-w-3xl">
-                  Mình thích những bài học mà học sinh có thể quan sát, thử, làm và tự giải thích.
-                  Vì vậy mình thường quan tâm đến học liệu trực quan, STEM và cách dùng công nghệ trong một hoạt động học cụ thể.
+                  Mình thích những bài học mà học sinh có thể quan sát, thử rồi tự giải thích.
+                  Vì vậy mình thường chú ý đến cách đưa hình ảnh, STEM và công nghệ vào đúng chỗ trong một hoạt động học.
                 </p>
 
                 <div className="mt-7 flex flex-wrap justify-center lg:justify-start gap-3">
@@ -112,9 +112,8 @@ export default function AboutMe() {
               </h2>
               <div className="rounded-3xl border bg-card p-7 md:p-10">
                 <p className="text-lg text-muted-foreground leading-relaxed">
-                  Niềm yêu thích Hóa học của mình bắt đầu từ những năm THPT và tiếp tục qua quá trình học tập,
-                  nghiên cứu. Khi học sư phạm, mình thấy hứng thú nhất ở việc tìm cách giải thích một nội dung
-                  sao cho người học có thể hiểu được bằng quan sát, câu hỏi và hoạt động phù hợp.
+                  Mình thích Hóa học từ thời THPT. Khi học sư phạm, phần mình hứng thú nhất là tìm cách giải thích
+                  một nội dung để học sinh có thể nhìn, hỏi và tự làm rõ vấn đề.
                 </p>
                 <p className="mt-5 text-lg text-muted-foreground leading-relaxed">
                   Trước khi học văn bằng 2, mình học Sư phạm Khoa học Tự nhiên và từng làm một số nội dung
