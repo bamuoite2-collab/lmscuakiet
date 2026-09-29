@@ -29,7 +29,7 @@ const portfolios = [
     title: 'Hồ sơ học tập 3',
     subtitle: 'Mô phỏng và công cụ hỗ trợ học tập',
     description:
-      'Không gian lưu sản phẩm, minh chứng thực hành và phần phản hồi của hồ sơ học tập 3.',
+      'Phần này chưa làm tới. Khi có bài thực hành, em sẽ bổ sung sản phẩm và ghi chú ngay tại đây.',
     icon: Presentation,
     status: 'Sẽ bổ sung',
   },
@@ -38,7 +38,7 @@ const portfolios = [
     title: 'Hồ sơ học tập 4',
     subtitle: 'Tổng hợp và vận dụng ICT trong dạy học',
     description:
-      'Không gian tổng hợp sản phẩm cuối học phần và các minh chứng liên quan đến thiết kế dạy học.',
+      'Phần này sẽ được bổ sung khi học tới HSHT4.',
     icon: ClipboardCheck,
     status: 'Sẽ bổ sung',
   },
@@ -62,8 +62,8 @@ export default function Chem1441Overview() {
                 Hồ sơ học tập CHEM1441
               </h1>
               <p className="text-lg md:text-xl text-muted-foreground max-w-3xl leading-relaxed">
-                Trang này là mục lục chung của học phần. Mỗi hồ sơ học tập được tách thành một tab riêng
-                để dễ theo dõi sản phẩm, phần phản hồi và quá trình hoàn thiện qua từng nội dung.
+                Đây là trang mục lục của CHEM1441. Em tách từng hồ sơ ra riêng để khi cần có thể mở thẳng
+                vào bài thực hành, file minh chứng và phần ghi chú của hồ sơ đó.
               </p>
             </div>
           </div>
