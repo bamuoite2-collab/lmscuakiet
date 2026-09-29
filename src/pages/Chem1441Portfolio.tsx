@@ -215,7 +215,7 @@ export default function Chem1441Portfolio() {
                 </p>
                 <p>
                   <span className="font-semibold text-foreground">Tích cực hóa hoạt động của học sinh:</span>{' '}
-                  kết hợp phương tiện trực quan với câu hỏi, nhiệm vụ quan sát, dự đoán, giải thích hoặc thảo luận thay vì chỉ trình chiếu.
+                  kết hợp phương tiện trực quan với một câu hỏi hoặc nhiệm vụ để học sinh phải quan sát và trả lời.
                 </p>
                 <p>
                   <span className="font-semibold text-foreground">Chuẩn bị kĩ thuật và tránh lạm dụng ICT:</span>{' '}
@@ -357,7 +357,7 @@ export default function Chem1441Portfolio() {
                     Có thể sử dụng sơ đồ khi dạy nội dung liên quan đến carbon và các hợp chất của carbon.
                     Giáo viên yêu cầu học sinh quan sát các mũi tên, xác định những quá trình làm tăng hoặc
                     giảm lượng CO₂ trong khí quyển như quang hợp, hô hấp, phân hủy, đốt rừng và đốt nhiên
-                    liệu hóa thạch. Từ đó, học sinh giải thích mối liên hệ giữa các quá trình trong chu trình
+                    liệu hóa thạch. Sau đó, học sinh giải thích mối liên hệ giữa các quá trình trong chu trình
                     carbon và liên hệ với vấn đề phát thải CO₂ trong thực tiễn.
                   </p>
                 </div>
@@ -376,12 +376,12 @@ export default function Chem1441Portfolio() {
 
                 <div>
                   <h4 className="font-display text-lg font-bold text-foreground mb-3">
-                    Đề xuất để sử dụng hiệu quả hơn
+                    Nếu làm lại
                   </h4>
                   <p className="text-muted-foreground leading-relaxed">
                     Trước khi xuất sản phẩm cần đối chiếu lại thuật ngữ khoa học, kiểm tra hướng mũi tên,
                     khả năng đọc của chữ và ghi rõ nguồn tư liệu. Khi sử dụng trên lớp, giáo viên nên kết hợp
-                    sơ đồ với câu hỏi quan sát hoặc nhiệm vụ giải thích thay vì chỉ trình chiếu hình ảnh.
+                    sơ đồ với một câu hỏi quan sát hoặc nhiệm vụ giải thích để học sinh phải đọc thông tin trên hình.
                   </p>
                 </div>
 
@@ -608,7 +608,7 @@ export default function Chem1441Portfolio() {
                   </div>
                   <div className="rounded-xl border bg-card p-5">
                     <div className="text-sm font-semibold text-foreground mb-2">
-                      Đề xuất để sử dụng hiệu quả hơn
+                      Nếu làm lại
                     </div>
                     <p className="text-sm text-muted-foreground leading-relaxed">
                       Nếu làm lại, em sẽ chốt kịch bản và thời lượng từng cảnh trước khi mở CapCut.
@@ -711,7 +711,7 @@ export default function Chem1441Portfolio() {
                     Có thể sử dụng infographic khi củng cố nội dung về các yếu tố ảnh hưởng đến tốc độ phản ứng.
                     Giáo viên yêu cầu học sinh quan sát bốn phần của infographic, xác định yếu tố được thay đổi
                     trong từng tình huống và dự đoán tốc độ phản ứng tăng hay giảm. Sau đó, học sinh giải thích
-                    dự đoán bằng số va chạm hiệu quả, từ đó kết nối hiện tượng thực tiễn với thuyết va chạm.
+                    dự đoán bằng số va chạm hiệu quả rồi liên hệ hiện tượng quan sát được với thuyết va chạm.
                   </p>
                 </div>
 
@@ -728,7 +728,7 @@ export default function Chem1441Portfolio() {
 
                 <div>
                   <h4 className="font-display text-lg font-bold text-foreground mb-3">
-                    Đề xuất để sử dụng hiệu quả hơn
+                    Nếu làm lại
                   </h4>
                   <p className="text-muted-foreground leading-relaxed">
                     Nếu làm lại, em sẽ tiếp tục giảm chữ ở từng ô và kiểm tra cỡ chữ trên màn hình nhỏ trước khi xuất.
@@ -781,7 +781,7 @@ export default function Chem1441Portfolio() {
                   nội dung Hóa học và xem sản phẩm có dễ đọc trên màn hình hay không.
                 </p>
                 <p className="text-sm text-muted-foreground">
-                  Sau HSHT1, em quan tâm nhiều hơn đến nội dung học sinh sẽ làm với sản phẩm, chứ không chỉ phần mềm dùng để tạo ra nó.
+                  Sau HSHT1, em quan tâm nhiều hơn đến việc học sinh sẽ làm gì với sản phẩm. Phần mềm chỉ là công cụ để tạo học liệu.
                 </p>
               </article>
             </div>
