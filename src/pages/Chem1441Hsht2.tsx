@@ -25,19 +25,19 @@ const reflectionItems = [
   {
     title: '1. Bắt đầu từ mục đích sử dụng',
     content:
-      'Em không chọn công cụ trước rồi mới nghĩ cách dùng. Trước hết cần xác định tài liệu dùng để làm gì, học sinh cần đọc, quan sát hay thực hiện nhiệm vụ nào; sau đó mới chọn Word, PowerPoint hoặc công cụ Hóa học phù hợp.',
+      'Sau mấy bài thực hành, em thấy chọn phần mềm trước dễ làm mình mất thời gian. Em thường xác định phần cần soạn là công thức, văn bản, mô hình hay slide rồi mới chọn công cụ.',
     icon: BookOpen,
   },
   {
     title: '2. Bảo đảm đúng Hóa học và dễ đọc',
     content:
-      'Công thức, chỉ số, điện tích, danh pháp, phương trình và điều kiện phản ứng phải được kiểm tra trước. Sau đó mới xử lí font, cỡ chữ, màu sắc, khoảng trắng và bố cục để người học theo dõi được nội dung.',
+      'Với văn bản Hóa học, em kiểm tra công thức, chỉ số, điện tích và phương trình trước. Phần font, cỡ chữ và bố cục chỉ chỉnh sau khi nội dung đã đúng.',
     icon: FileCheck2,
   },
   {
     title: '3. Kiểm tra sản phẩm trong tình huống sử dụng thật',
     content:
-      'Một file nhìn đúng khi đang soạn chưa chắc sẽ đúng khi xuất PDF, trình chiếu hoặc mở trên máy khác. Vì vậy em cần kiểm tra lại sản phẩm cuối, đồng thời chuẩn bị một phương án dự phòng khi font, đường dẫn hoặc công cụ gặp lỗi.',
+      'Em đã gặp trường hợp file nhìn ổn lúc đang soạn nhưng khi chèn ảnh hoặc mở theo cách khác thì bố cục thay đổi. Vì vậy trước khi nộp em xem lại file cuối và giữ thêm một bản PDF khi cần.',
     icon: Presentation,
   },
 ];
@@ -298,24 +298,23 @@ export default function Chem1441Hsht2() {
                 Câu trả lời của em
               </p>
               <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground mb-5">
-                Công cụ chỉ hiệu quả khi phục vụ đúng nội dung và đúng cách học của học sinh
+                Cách em chọn công cụ sau các bài thực hành
               </h2>
               <div className="space-y-4 text-muted-foreground leading-relaxed">
                 <p>
-                  Theo em, biên soạn văn bản và bài trình chiếu hiệu quả không bắt đầu từ việc chọn phần mềm.
-                  Trước hết cần xác định tài liệu này dùng ở đâu trong hoạt động dạy học, học sinh cần tiếp nhận
-                  thông tin gì và sản phẩm cuối cần có hình thức nào. Từ đó mới chọn công cụ phù hợp.
+                  Sau khi làm các bài Word và công thức Hóa học, em thấy mỗi công cụ giải quyết một việc khá khác nhau.
+                  Equation hợp với biểu thức và phương trình; AutoCorrect hợp với phần phải gõ lặp lại; ChemFormatter tiện
+                  khi cần sửa nhanh chỉ số và điện tích. Với cấu trúc 2D–3D, dùng phần mềm Hóa học riêng dễ kiểm tra hơn.
                 </p>
                 <p>
-                  Với văn bản Hóa học, em ưu tiên tính chính xác của công thức, phương trình, danh pháp và kí hiệu.
-                  Nội dung đơn giản có thể dùng Subscript/Superscript hoặc phím tắt; biểu thức phức tạp dùng Equation;
-                  nội dung lặp lại nhiều lần có thể thiết lập AutoCorrect; còn công thức cấu tạo nên dùng công cụ
-                  chuyên dụng thay vì cố vẽ thủ công trong Word.
+                  Phần em phải kiểm tra kỹ nhất vẫn là nội dung Hóa học. Một chỉ số, điện tích hoặc liên kết sai
+                  nhìn rất nhỏ nhưng làm công thức sai hẳn. Vì vậy em thường làm xong rồi đọc lại từng công thức trước
+                  khi chỉnh phần trình bày.
                 </p>
                 <p>
-                  Với bài trình chiếu, em xem mỗi slide như một phần của hoạt động học chứ không phải trang văn bản thu nhỏ.
-                  Vì vậy cần giảm chữ, làm rõ thứ bậc thông tin, dùng hình ảnh và màu nhấn có mục đích, đồng thời xác định
-                  học sinh sẽ quan sát, trả lời hay thực hiện nhiệm vụ gì từ nội dung đang trình chiếu.
+                  Với PowerPoint, slide mẫu em đang sửa cho thấy khá rõ một vấn đề: chữ nhiều nhưng phần trang trí
+                  bên phải lại chiếm diện tích lớn. Em đang thử bỏ bớt câu mô tả, chia lại các nhóm phản ứng và dùng màu
+                  ít hơn để nội dung dễ nhìn khi trình chiếu.
                 </p>
               </div>
             </div>
@@ -349,8 +348,7 @@ export default function Chem1441Hsht2() {
                 Những điểm em nhận ra khi tự làm sản phẩm
               </h2>
               <p className="text-muted-foreground leading-relaxed">
-                Phần đánh giá dưới đây dựa trên chính những thao tác em đã làm trong HSHT2,
-                thay vì chỉ liệt kê ưu và nhược điểm chung của phần mềm.
+                Các ghi chú dưới đây lấy trực tiếp từ những lỗi và thao tác em gặp trong lúc làm bài.
               </p>
             </div>
 
@@ -407,8 +405,8 @@ export default function Chem1441Hsht2() {
                   Sản phẩm cho thấy em đã dùng công cụ như thế nào
                 </h2>
                 <p className="text-muted-foreground leading-relaxed">
-                  Minh chứng không thay cho phần trả lời câu hỏi trọng tâm; chúng được dùng để cho thấy
-                  cách em áp dụng những nguyên tắc trên vào từng nhiệm vụ cụ thể.
+                  Mỗi file bên dưới là phần em đã làm thật trong bài thực hành. Em giữ lại file để đối chiếu với
+                  những nhận xét ở phần trải nghiệm phía trên.
                 </p>
               </div>
               <div className="inline-flex items-center gap-2 text-sm text-muted-foreground">
@@ -505,10 +503,9 @@ export default function Chem1441Hsht2() {
                   Đề xuất cách sử dụng hiệu quả hơn
                 </h2>
                 <p className="text-muted-foreground leading-relaxed">
-                  Em sẽ chọn công cụ theo mức độ phức tạp của nội dung: thao tác đơn giản dùng phím tắt,
-                  biểu thức phức tạp dùng Equation, nội dung lặp lại dùng AutoCorrect và cấu trúc hóa học
-                  dùng phần mềm chuyên dụng. Với PowerPoint, em ưu tiên câu hỏi và nhiệm vụ học tập hơn
-                  việc thêm nhiều chữ hoặc hiệu ứng.
+                  Sau các bài vừa làm, em sẽ không cố dùng một công cụ cho mọi trường hợp. Công thức lặp lại thì
+                  dùng AutoCorrect, biểu thức khó thì dùng Equation, chỉ số và điện tích cần sửa nhanh thì dùng ChemFormatter.
+                  Với cấu trúc phân tử, em sẽ kiểm tra kỹ trong ChemDraw trước khi chuyển sang Chem3D.
                 </p>
               </article>
 
@@ -520,9 +517,8 @@ export default function Chem1441Hsht2() {
                   Kế hoạch dự phòng khi sử dụng ICT
                 </h2>
                 <p className="text-muted-foreground leading-relaxed">
-                  Trước khi sử dụng trên lớp, em sẽ lưu cả file gốc và bản PDF, kiểm tra font, hình ảnh và đường dẫn
-                  trên thiết bị trình chiếu. Với công cụ trực tuyến như MolView, em sẽ chuẩn bị ảnh hoặc mô hình đã xuất sẵn
-                  để vẫn tổ chức được hoạt động nếu mạng không ổn định.
+                  Khi hoàn thiện hồ sơ, em giữ file gốc và thêm bản PDF để tránh lỗi font hoặc bố cục khi mở trên máy khác.
+                  Với hình 2D–3D, em cũng giữ ảnh đã xuất sẵn để không phải phụ thuộc vào việc mở lại phần mềm lúc trình bày.
                 </p>
               </article>
             </div>
