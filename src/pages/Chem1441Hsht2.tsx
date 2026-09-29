@@ -246,17 +246,17 @@ export default function Chem1441Hsht2() {
 
         <section className="py-16 md:py-20">
           <div className="container mx-auto px-6">
-            <div className="max-w-5xl mx-auto rounded-3xl border-2 border-foreground/10 bg-card p-8 md:p-12 shadow-md relative overflow-hidden">
+            <div className="max-w-6xl mx-auto rounded-3xl border-2 border-foreground/10 bg-card p-7 md:p-10 shadow-md relative overflow-hidden">
               <div className="absolute inset-x-0 top-0 h-1 bg-foreground/80" />
-              <div className="flex flex-col md:flex-row md:items-start gap-6">
+              <div className="flex flex-col md:flex-row md:items-start gap-5 md:gap-6">
                 <div className="w-14 h-14 rounded-2xl bg-foreground text-background flex items-center justify-center shrink-0 shadow-sm">
                   <BookOpen className="h-7 w-7" />
                 </div>
-                <div className="max-w-4xl">
+                <div className="min-w-0 flex-1">
                   <div className="inline-flex items-center rounded-full bg-foreground text-background px-4 py-1.5 text-xs md:text-sm font-bold uppercase tracking-[0.14em] mb-5">
                     Câu hỏi trọng tâm
                   </div>
-                  <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-medium text-foreground leading-[1.24] tracking-tight">
+                  <h2 className="font-display text-2xl sm:text-3xl md:text-4xl lg:text-[2.65rem] font-medium text-foreground leading-[1.28] tracking-tight">
                     Làm thế nào để biên soạn văn bản và bài trình chiếu phục vụ dạy học Hóa học một cách hiệu quả?
                   </h2>
                 </div>
