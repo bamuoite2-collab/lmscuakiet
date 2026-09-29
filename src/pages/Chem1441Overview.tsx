@@ -20,7 +20,7 @@ const portfolios = [
     title: 'Hồ sơ học tập 2',
     subtitle: 'Biên soạn văn bản và bài trình chiếu',
     description:
-      'Phản hồi về vai trò của ICT, các công cụ và kĩ thuật soạn thảo, ưu nhược điểm và cách sử dụng hiệu quả.',
+      'Các bài thực hành Word, Equation, AutoCorrect, ChemFormatter, mô hình 2D–3D và PowerPoint; kèm ghi chú về những lỗi đã gặp khi làm.',
     icon: FileText,
     status: 'Đang hoàn thiện',
   },
