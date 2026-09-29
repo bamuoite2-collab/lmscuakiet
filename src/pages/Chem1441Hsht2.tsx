@@ -23,22 +23,16 @@ import { Chem1441Subnav } from '@/components/Chem1441Subnav';
 
 const reflectionItems = [
   {
-    title: '1. Bắt đầu từ mục đích sử dụng',
+    title: 'Nội dung Hóa học phải đúng trước',
     content:
-      'Sau mấy bài thực hành, em thấy chọn phần mềm trước dễ làm mình mất thời gian. Em thường xác định phần cần soạn là công thức, văn bản, mô hình hay slide rồi mới chọn công cụ.',
-    icon: BookOpen,
-  },
-  {
-    title: '2. Bảo đảm đúng Hóa học và dễ đọc',
-    content:
-      'Với văn bản Hóa học, em kiểm tra công thức, chỉ số, điện tích và phương trình trước. Phần font, cỡ chữ và bố cục chỉ chỉnh sau khi nội dung đã đúng.',
+      'Em kiểm tra công thức, chỉ số, điện tích và phương trình trước. Font, cỡ chữ hay bố cục để sau, vì trình bày đẹp mà công thức sai thì vẫn phải làm lại.',
     icon: FileCheck2,
   },
   {
-    title: '3. Kiểm tra sản phẩm trong tình huống sử dụng thật',
+    title: 'Chọn công cụ theo đúng việc đang làm',
     content:
-      'Em đã gặp trường hợp file nhìn ổn lúc đang soạn nhưng khi chèn ảnh hoặc mở theo cách khác thì bố cục thay đổi. Vì vậy trước khi nộp em xem lại file cuối và giữ thêm một bản PDF khi cần.',
-    icon: Presentation,
+      'Equation, AutoCorrect hay ChemFormatter giải quyết những việc khác nhau. Em thấy dễ làm hơn khi xác định mình đang cần gõ biểu thức, nhập nội dung lặp lại hay sửa chỉ số rồi mới chọn công cụ.',
+    icon: BookOpen,
   },
 ];
 
@@ -46,37 +40,37 @@ const tools = [
   {
     name: 'Microsoft Word',
     description:
-      'Dùng để biên soạn văn bản, định dạng công thức, phương trình, bảng biểu và gộp các sản phẩm thực hành trong cùng một tệp.',
+      'Em dùng Word để làm file nộp, chèn công thức, ảnh minh chứng và sắp xếp các phần của bài thực hành.',
     icon: FileText,
   },
   {
     name: 'Equation',
     description:
-      'Phù hợp với phân số, chỉ số, phương trình phản ứng, mũi tên và biểu thức phức tạp cần trình bày theo cấu trúc toán học.',
+      'Em dùng Equation cho phân số, biểu thức và các phương trình khó gõ bằng văn bản thường.',
     icon: Sigma,
   },
   {
     name: 'AutoCorrect',
     description:
-      'Tạo từ viết tắt để nhập nhanh cụm từ, công thức và phương trình lặp lại nhiều lần trong quá trình soạn thảo.',
+      'Em dùng AutoCorrect cho những công thức hoặc phương trình phải gõ lại nhiều lần.',
     icon: Keyboard,
   },
   {
     name: 'ChemFormatter',
     description:
-      'Add-in của Word giúp chuyển nhanh công thức thô thành công thức Hóa học có chỉ số dưới và điện tích đúng định dạng.',
+      'ChemFormatter sửa chỉ số dưới và điện tích ngay trong Word. Phần này nhanh hơn nhiều so với việc chỉnh từng số bằng tay.',
     icon: FlaskConical,
   },
   {
     name: 'ChemDraw / Chem3D',
     description:
-      'ChemDraw dùng để dựng cấu trúc 2D; Chem3D dùng để quan sát mô hình không gian và tối ưu hình học của phân tử.',
+      'Em vẽ cấu trúc 2D trong ChemDraw rồi chuyển sang Chem3D để xem mô hình không gian.',
     icon: FlaskConical,
   },
   {
     name: 'PowerPoint',
     description:
-      'Dùng để sắp xếp nội dung trên slide, cân đối chữ với hình và kiểm soát lượng chữ, màu nhấn.',
+      'Em đang dùng PowerPoint để làm lại slide mẫu về tính chất hóa học của muối.',
     icon: Presentation,
   },
 ];
@@ -220,8 +214,7 @@ export default function Chem1441Hsht2() {
               </h1>
 
               <p className="text-lg md:text-xl text-muted-foreground max-w-3xl leading-relaxed mb-8">
-                Hồ sơ ghi lại cách em lựa chọn công cụ, biên soạn sản phẩm, kiểm tra lại kết quả
-                và điều chỉnh cách làm sau mỗi bài thực hành.
+                Em dùng trang này để lưu các bài thực hành của HSHT2 và ghi lại những lỗi gặp trong lúc làm.
               </p>
 
               <div className="flex flex-wrap gap-3">
@@ -271,13 +264,13 @@ export default function Chem1441Hsht2() {
               </span>
               {[
                 ['#phan-hoi', 'Câu trả lời'],
-                ['#trai-nghiem', 'Trải nghiệm'],
+                ['#trai-nghiem', 'Ghi chú'],
                 ['#cong-cu', 'Công cụ'],
                 ['#san-pham-1', 'Equation'],
                 ['#san-pham-2', 'Công thức'],
                 ['#san-pham-3', 'PowerPoint'],
                 ['#san-pham-4', 'Đề & đáp án'],
-                ['#tong-ket', 'Đề xuất'],
+                ['#tong-ket', 'Lần sau'],
               ].map(([href, label]) => (
                 <a
                   key={href}
@@ -319,7 +312,7 @@ export default function Chem1441Hsht2() {
               </div>
             </div>
 
-            <div className="grid md:grid-cols-3 gap-6">
+            <div className="grid md:grid-cols-2 gap-6">
               {reflectionItems.map((item) => {
                 const Icon = item.icon;
                 return (
@@ -342,13 +335,13 @@ export default function Chem1441Hsht2() {
           <div className="container mx-auto px-6">
             <div className="max-w-3xl mb-10">
               <p className="text-sm font-semibold uppercase tracking-wide text-primary mb-3">
-                Trải nghiệm cá nhân
+                Ghi chú khi làm bài
               </p>
               <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground mb-4">
-                Những điểm em nhận ra khi tự làm sản phẩm
+                Những chỗ em bị vướng
               </h2>
               <p className="text-muted-foreground leading-relaxed">
-                Các ghi chú dưới đây lấy trực tiếp từ những lỗi và thao tác em gặp trong lúc làm bài.
+                Em ghi lại đúng những lỗi đã gặp để sau này không phải dò lại từ đầu.
               </p>
             </div>
 
@@ -367,13 +360,13 @@ export default function Chem1441Hsht2() {
           <div className="container mx-auto px-6">
             <div className="max-w-3xl mb-12">
               <p className="text-sm font-semibold uppercase tracking-wide text-primary mb-3">
-                Công cụ và kĩ thuật
+                Công cụ đã dùng
               </p>
               <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground mb-4">
-                Dùng công cụ nào cho việc gì?
+                Em dùng từng công cụ vào đâu?
               </h2>
               <p className="text-muted-foreground leading-relaxed">
-                Em nhóm công cụ theo nhiệm vụ cần giải quyết để tránh dùng quá nhiều phần mềm cho cùng một việc.
+                Phần này chỉ ghi ngắn công cụ nào em đã dùng và dùng ở bước nào.
               </p>
             </div>
 
@@ -402,11 +395,10 @@ export default function Chem1441Hsht2() {
                   Minh chứng thực hành
                 </p>
                 <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground mb-4">
-                  Sản phẩm cho thấy em đã dùng công cụ như thế nào
+                  File bài thực hành
                 </h2>
                 <p className="text-muted-foreground leading-relaxed">
-                  Mỗi file bên dưới là phần em đã làm thật trong bài thực hành. Em giữ lại file để đối chiếu với
-                  những nhận xét ở phần trải nghiệm phía trên.
+                  Các file bên dưới là bài em đã làm và nộp trong phần này.
                 </p>
               </div>
               <div className="inline-flex items-center gap-2 text-sm text-muted-foreground">
@@ -514,7 +506,7 @@ export default function Chem1441Hsht2() {
                   <Wrench className="h-5 w-5" />
                 </div>
                 <h2 className="font-display text-2xl font-bold text-foreground mb-4">
-                  Kế hoạch dự phòng khi sử dụng ICT
+                  File dự phòng
                 </h2>
                 <p className="text-muted-foreground leading-relaxed">
                   Khi hoàn thiện hồ sơ, em giữ file gốc và thêm bản PDF để tránh lỗi font hoặc bố cục khi mở trên máy khác.
