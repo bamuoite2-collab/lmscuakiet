@@ -21,31 +21,31 @@ const tools = [
   {
     name: 'Canva',
     description:
-      'Thiết kế infographic, khung hình video và học liệu trực quan; hỗ trợ bố cục, văn bản, hình ảnh và các thành phần đồ họa theo một phong cách thống nhất.',
+      'Em dùng Canva để Việt hóa sơ đồ, làm infographic và tạo một số khung hình cho video.',
     icon: Palette,
   },
   {
     name: 'CapCut',
     description:
-      'Biên tập video theo timeline; cắt ghép cảnh, điều chỉnh thời lượng, chèn chữ, phụ đề, âm thanh, hiệu ứng chuyển cảnh và xuất video.',
+      'Em dùng CapCut để ghép các cảnh, chỉnh thời lượng, thêm phụ đề, âm thanh rồi xuất video.',
     icon: Video,
   },
   {
     name: 'PicsArt',
     description:
-      'Biên tập hình ảnh nâng cao như cắt ghép, chèn chữ, điều chỉnh hình, xóa hoặc thay đổi một số chi tiết để tạo học liệu minh họa.',
+      'Dùng khi cần cắt ghép hoặc sửa chi tiết trên ảnh mà Canva xử lí không tiện.',
     icon: Image,
   },
   {
     name: 'Office Lens',
     description:
-      'Sao chụp và số hóa tài liệu, hỗ trợ căn chỉnh vùng chụp để tạo hình ảnh rõ ràng trước khi đưa vào học liệu dạy học.',
+      'Dùng để chụp tài liệu giấy và chỉnh lại mép trang trước khi đưa vào học liệu.',
     icon: FileImage,
   },
   {
     name: 'PowerPoint',
     description:
-      'Chỉnh sửa và chú thích hình ảnh, sắp xếp đối tượng trên slide, tạo chuyển động cơ bản và có thể xuất bài trình chiếu thành video.',
+      'Dùng để sắp xếp hình, thêm chú thích và thử một số cách trình bày ngay trên slide.',
     icon: BookOpen,
   },
 ];
@@ -195,24 +195,16 @@ export default function Chem1441Portfolio() {
 
             <div className="mt-8 rounded-2xl border bg-background p-6 md:p-8">
               <h3 className="font-display text-xl md:text-2xl font-bold text-foreground mb-4">
-                Nguyên tắc để sử dụng hình ảnh và video hiệu quả
+                Khi chọn hình ảnh hoặc video, em kiểm tra gì?
               </h3>
-              <div className="grid md:grid-cols-2 gap-4 text-muted-foreground leading-relaxed">
+              <div className="space-y-4 text-muted-foreground leading-relaxed">
                 <p>
-                  <span className="font-semibold text-foreground">Gắn với mục tiêu và hoạt động học:</span>{' '}
-                  chỉ lựa chọn phương tiện khi nó hỗ trợ rõ cho yêu cầu cần đạt, sản phẩm học tập và cách tổ chức hoạt động.
+                  Trước hết em kiểm tra nội dung khoa học, thuật ngữ và nguồn của tư liệu. Nếu chữ quá nhỏ,
+                  hình khó đọc hoặc chi tiết bị che thì em sửa trước.
                 </p>
                 <p>
-                  <span className="font-semibold text-foreground">Bảo đảm tính chính xác và dễ tiếp nhận:</span>{' '}
-                  kiểm tra nội dung khoa học, thuật ngữ, nguồn tư liệu, cỡ chữ, bố cục và mức độ phù hợp với học sinh.
-                </p>
-                <p>
-                  <span className="font-semibold text-foreground">Tích cực hóa hoạt động của học sinh:</span>{' '}
-                  kết hợp phương tiện trực quan với một câu hỏi hoặc nhiệm vụ để học sinh phải quan sát và trả lời.
-                </p>
-                <p>
-                  <span className="font-semibold text-foreground">Chuẩn bị kĩ thuật và tránh lạm dụng ICT:</span>{' '}
-                  kiểm tra thiết bị, tệp và đường dẫn trước giờ học; tiết chế hiệu ứng để không làm giảm tương tác giữa giáo viên và học sinh.
+                  Khi đưa vào bài học, em thêm một câu hỏi hoặc nhiệm vụ rõ ràng. Với file dùng trên lớp,
+                  em cũng mở thử trước để tránh lỗi đường dẫn, font hoặc tỉ lệ hiển thị.
                 </p>
               </div>
             </div>
@@ -229,8 +221,7 @@ export default function Chem1441Portfolio() {
                 Các công cụ thiết kế hình ảnh và video
               </h2>
               <p className="text-muted-foreground leading-relaxed">
-                Các công cụ dưới đây hỗ trợ những khâu khác nhau của quá trình tạo học liệu:
-                số hóa tư liệu, biên tập hình ảnh, thiết kế đồ họa, dựng video và xuất sản phẩm.
+                Đây là những công cụ em đã học hoặc đã dùng trong phần này. Em ghi lại ngắn gọn để nhớ công cụ nào tiện cho việc nào.
               </p>
             </div>
 
