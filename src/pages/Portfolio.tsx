@@ -74,10 +74,10 @@ const products = [
     title: 'Đề kiểm tra và hướng dẫn chấm',
     type: 'Văn bản kiểm tra đánh giá',
     hsht: 'HSHT 2',
-    tool: 'Microsoft Word',
-    href: '/chem1441/hsht2',
+    tool: 'Microsoft Word · Equation',
+    href: '/chem1441/hsht2#san-pham-4',
     icon: FileCheck2,
-    status: 'Đang hoàn thiện hồ sơ',
+    status: 'Đã hoàn thiện',
   },
 ];
 
