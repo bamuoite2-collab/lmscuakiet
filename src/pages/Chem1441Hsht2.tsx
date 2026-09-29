@@ -30,7 +30,7 @@ const reflectionItems = [
   {
     title: 'Chọn công cụ theo đúng việc đang làm',
     content:
-      'Em không cố dùng một công cụ cho tất cả. Gõ biểu thức thì em dùng Equation; đoạn nào lặp lại nhiều thì dùng AutoCorrect. ChemFormatter dành cho phần chỉ số và điện tích.',
+      'Mỗi công cụ em dùng cho một việc. Gõ biểu thức thì em mở Equation; đoạn nào lặp lại nhiều thì dùng AutoCorrect. ChemFormatter dành cho phần chỉ số và điện tích.',
     icon: BookOpen,
   },
 ];
