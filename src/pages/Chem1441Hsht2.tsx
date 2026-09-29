@@ -44,7 +44,7 @@ const tools = [
   {
     name: 'Microsoft Word',
     description:
-      'Dùng để biên soạn văn bản, định dạng công thức, phương trình, bảng biểu và gộp đề kiểm tra với hướng dẫn chấm.',
+      'Dùng để biên soạn văn bản, định dạng công thức, phương trình, bảng biểu và gộp các sản phẩm thực hành trong cùng một tệp.',
     icon: FileText,
   },
   {
@@ -60,9 +60,15 @@ const tools = [
     icon: Keyboard,
   },
   {
-    name: 'ChemSketch / MolView',
+    name: 'ChemFormatter',
     description:
-      'Hỗ trợ khi cần vẽ công thức cấu tạo hoặc quan sát mô hình phân tử thay vì cố biểu diễn mọi thứ trực tiếp trong Word.',
+      'Add-in của Word giúp chuyển nhanh công thức thô thành công thức Hóa học có chỉ số dưới và điện tích đúng định dạng.',
+    icon: FlaskConical,
+  },
+  {
+    name: 'ChemDraw / Chem3D',
+    description:
+      'ChemDraw dùng để dựng cấu trúc 2D; Chem3D dùng để quan sát mô hình không gian và tối ưu hình học của phân tử.',
     icon: FlaskConical,
   },
   {
@@ -77,12 +83,27 @@ const experienceItems = [
   {
     title: 'Equation',
     text:
-      'Khi làm bài thực hành, Equation giúp em trình bày phân số, chỉ số và phương trình gọn hơn. Phần mất thời gian nhất là mũi tên phản ứng có điều kiện, đặc biệt mũi tên cân bằng; một số lệnh không hoạt động như em dự đoán nên phải thử cách nhập khác và kiểm tra lại kết quả.',
+      'Equation giúp em trình bày phân số, chỉ số và phương trình gọn hơn. Phần mất thời gian nhất là mũi tên phản ứng có điều kiện, đặc biệt mũi tên cân bằng; một số lệnh không hoạt động như em dự đoán nên phải thử cách nhập khác và kiểm tra lại kết quả.',
   },
   {
     title: 'AutoCorrect',
     text:
-      'AutoCorrect có ích rõ nhất với các công thức và phương trình phải gõ lặp lại. Sau khi thiết lập h2so4, k2cr2o7 hoặc cả một phương trình, việc nhập nhanh hơn nhiều. Điểm bất tiện là danh sách AutoCorrect có sẵn rất dài và thiết lập nằm trên máy, nên em phải chụp minh chứng thay vì chỉ nộp file Word.',
+      'AutoCorrect có ích rõ nhất với các công thức và phương trình phải gõ lặp lại. Sau khi thiết lập từ viết tắt, việc nhập nhanh hơn nhiều. Điểm bất tiện là danh sách AutoCorrect mặc định khá dài và thiết lập nằm trên máy, nên em phải chụp minh chứng thay vì chỉ nộp file Word.',
+  },
+  {
+    title: 'ChemFormatter',
+    text:
+      'Đây là công cụ làm em thấy hiệu quả rõ nhất trong phần viết công thức. Chỉ cần nhập công thức ở dạng thường rồi dùng ChemFormatter là chỉ số dưới và điện tích được xử lí rất nhanh, đỡ phải định dạng từng số bằng tay. Sau khi cài add-in vào Word, thao tác khá trực quan và tiết kiệm thời gian.',
+  },
+  {
+    title: 'ChemDraw / Chem3D',
+    text:
+      'Phần 2D–3D cho em thấy công cụ chuyên dụng tiện hơn nhiều so với việc tự vẽ trong Word. Tuy nhiên em cũng gặp vài lỗi thực tế: đầu liên kết để trống trong ChemDraw có thể bị hiểu là carbon, khiến NH₃ bị nhận thành cấu trúc khác; Clean Up đôi lúc làm hình không như mong muốn; khi chuyển sang Chem3D có thể xuất hiện nguyên tử H rời nếu liên kết chưa đúng. Vì vậy em phải kiểm tra cấu trúc trước khi chuyển sang 3D.',
+  },
+  {
+    title: 'Đưa sản phẩm 2D–3D vào Word',
+    text:
+      'Khi chèn hình 2D và 3D vào Word, ảnh lớn có thể làm bảng tự thay đổi kích thước. Em khắc phục bằng cách cố định độ rộng cột, tắt tự co giãn theo nội dung và chỉnh ảnh về cùng kích thước. Cách này giúp phần trình bày 2D bên trái – 3D bên phải gọn và dễ so sánh hơn.',
   },
   {
     title: 'PowerPoint',
@@ -110,19 +131,20 @@ const evidenceItems = [
   },
   {
     id: 'san-pham-2',
-    label: 'Minh chứng 2 · Công thức Hóa học',
-    title: 'Viết, vẽ và kiểm tra công thức hóa học',
+    label: 'Minh chứng 2 · Viết và vẽ công thức Hóa học',
+    title: 'ChemFormatter và mô hình phân tử 2D–3D',
     icon: FlaskConical,
-    status: 'Đang thực hiện',
+    status: 'Đã hoàn thiện',
     description:
-      'Thực hành các công cụ hỗ trợ viết và vẽ công thức, từ định dạng công thức trong Word đến biểu diễn cấu trúc bằng phần mềm chuyên dụng.',
+      'Thực hành ChemFormatter trong Word và biểu diễn cấu trúc phân tử ở dạng 2D, 3D. Ở phần mô hình, em sử dụng ChemDraw và Chem3D để thực hiện chức năng tương đương với yêu cầu vẽ và quan sát cấu trúc.',
     details: [
-      'Thử ChemFormatter hoặc công cụ định dạng để xử lí chỉ số nhanh hơn.',
-      'Vẽ cấu trúc bằng ChemSketch và chỉnh lại bố cục cấu trúc khi cần.',
-      'Dùng MolView để quan sát mô hình 2D/3D khi nội dung cần hình dung không gian.',
+      'Dùng ChemFormatter để định dạng H₂SO₄, Cu²⁺, NH₄⁺, PO₄³⁻ và các phương trình Hóa học.',
+      'Dựng các cấu trúc 2D của NH₃, CO₂, CH₄ và CH₃COOH rồi chuyển sang Chem3D để quan sát mô hình không gian.',
+      'Kiểm tra lại nguyên tử, liên kết và mô hình 3D trước khi chụp hoặc đưa vào Word.',
+      'Trình bày ảnh 2D và 3D theo cặp để dễ so sánh.',
     ],
-    file: null,
-    fileLabel: null,
+    file: '/portfolio/hsht2/CHEM1441E_A14_HoTuanKiet_Phan2.docx',
+    fileLabel: 'Mở file Word sản phẩm',
   },
   {
     id: 'san-pham-3',
@@ -317,7 +339,7 @@ export default function Chem1441Hsht2() {
               </p>
             </div>
 
-            <div className="grid lg:grid-cols-3 gap-6">
+            <div className="grid md:grid-cols-2 xl:grid-cols-3 gap-6">
               {experienceItems.map((item) => (
                 <article key={item.title} className="rounded-2xl border bg-card p-6 md:p-7">
                   <h3 className="font-display text-xl font-bold text-foreground mb-3">{item.title}</h3>
@@ -342,7 +364,7 @@ export default function Chem1441Hsht2() {
               </p>
             </div>
 
-            <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-5">
+            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
               {tools.map((tool) => {
                 const Icon = tool.icon;
                 return (
@@ -376,7 +398,7 @@ export default function Chem1441Hsht2() {
               </div>
               <div className="inline-flex items-center gap-2 text-sm text-muted-foreground">
                 <Upload className="h-4 w-4" />
-                1 sản phẩm hoàn thiện · các phần còn lại đang tiếp tục
+                2 sản phẩm hoàn thiện · các phần còn lại đang tiếp tục
               </div>
             </div>
 
