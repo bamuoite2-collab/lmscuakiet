@@ -82,6 +82,13 @@ const chemistryJourney = [
     text: 'Ở bài PowerPoint, mình làm lại một slide về tính chất hóa học của muối. Mình bỏ phần trang trí bên phải, chia 5 nhóm phản ứng thành các khối riêng và rút bớt câu giải thích.',
     note: 'Khó nhất là giữ đủ nội dung trong một slide mà phương trình vẫn đọc được.',
   },
+  {
+    step: '10',
+    title: 'Rà lại đề kiểm tra và hướng dẫn chấm',
+    icon: FileText,
+    text: 'Ở HĐ16, mình sửa lại bảng đồng phân, gõ lại các phương trình và rà từng phần của hướng dẫn chấm. Bản cuối được giữ cả Word và PDF.',
+    note: 'Khi điều kiện trên mũi tên khó căn trong Equation, mình chuyển qua LaTeX để nhập nhanh hơn rồi kiểm tra lại cách hiển thị.',
+  },
 ];
 
 const growth = [
