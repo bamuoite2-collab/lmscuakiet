@@ -31,13 +31,13 @@ const chemistryJourney = [
     title: 'Mở rộng cộng đồng học tập',
     icon: Users,
     text: 'Mình tìm hiểu các nhóm giáo viên Hóa học, Khoa học Tự nhiên và một số cộng đồng chuyên môn để có thêm nguồn tham khảo và trao đổi nghề nghiệp.',
-    note: 'Nguồn học không chỉ nằm trong giáo trình; cộng đồng nghề nghiệp cũng cho mình nhiều ví dụ và kinh nghiệm thực tế.',
+    note: 'Ngoài giáo trình, mình tìm được khá nhiều ví dụ thực tế từ các nhóm giáo viên và cộng đồng chuyên môn.',
   },
   {
     step: '03',
     title: 'Chọn công cụ theo việc cần làm',
     icon: Wrench,
-    text: 'Mình tập phân loại công cụ theo chức năng: sao chụp, chỉnh ảnh, thiết kế, dựng video và lưu trữ thay vì nhớ tên phần mềm một cách rời rạc.',
+    text: 'Mình bắt đầu gom công cụ theo việc cần làm: chụp tài liệu, chỉnh ảnh, thiết kế, dựng video và lưu trữ. Cách này dễ nhớ hơn việc học tên từng phần mềm.',
     note: 'Cách nghĩ này giúp mình đỡ bị cuốn theo việc thử quá nhiều công cụ cùng lúc.',
   },
   {
@@ -52,13 +52,13 @@ const chemistryJourney = [
     title: 'Thiết kế video cho một nội dung cụ thể',
     icon: Video,
     text: 'Ở phần video, mình làm clip ngắn về pH và đặt nó vào một hoạt động học có câu hỏi, mục tiêu và phần xử lý sau khi xem.',
-    note: 'Từ đây mình chú ý nhiều hơn đến việc học sinh sẽ làm gì với video, thay vì chỉ chăm chút phần dựng.',
+    note: 'Lúc làm video mình mới để ý rằng phần quan trọng là học sinh sẽ làm gì sau khi xem.',
   },
   {
     step: '06',
     title: 'Thiết kế infographic',
     icon: FileImage,
-    text: 'Mình dùng Canva để trình bày các yếu tố ảnh hưởng đến tốc độ phản ứng, đồng thời tập giảm chữ và giữ lại những ý thật sự cần cho người học.',
+    text: 'Mình dùng Canva để làm infographic về các yếu tố ảnh hưởng đến tốc độ phản ứng. Khó nhất là bỏ bớt chữ mà vẫn giữ đủ ý cần thiết.',
     note: 'Infographic dễ bị quá tải nếu cố đưa toàn bộ kiến thức lên một trang.',
   },
   {
@@ -66,13 +66,13 @@ const chemistryJourney = [
     title: 'Nhìn lại sản phẩm sau khi hoàn thành',
     icon: CheckCircle2,
     text: 'Qua HSHT1, mình phải tự xem lại công cụ đã dùng, cách tìm nguồn, cách trình bày và khả năng gắn sản phẩm với một nhiệm vụ học tập.',
-    note: 'Phần phản hồi giúp mình biết lần sau cần sửa gì, thay vì chỉ lưu sản phẩm rồi chuyển sang nhiệm vụ mới.',
+    note: 'Nhờ phần phản hồi, mình biết sản phẩm nào còn vướng và lần sau cần sửa chỗ nào.',
   },
   {
     step: '08',
     title: 'Biên soạn văn bản Hóa học',
     icon: FileText,
-    text: 'Sang HSHT2, mình thực hành Word với Subscript, Superscript, Equation và AutoCorrect; đồng thời kiểm tra cách trình bày công thức, phương trình và hướng dẫn chấm.',
+    text: 'Sang HSHT2, mình thực hành Word với Subscript, Superscript, Equation và AutoCorrect. Mình cũng bắt đầu kiểm tra kỹ hơn cách viết công thức và phương trình.',
     note: 'Với văn bản Hóa học, lỗi nhỏ ở chỉ số, kí hiệu hoặc điều kiện phản ứng cũng làm tài liệu mất tính chính xác.',
   },
   {
