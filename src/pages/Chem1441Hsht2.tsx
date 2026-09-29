@@ -18,6 +18,13 @@ import {
 import { Navbar } from '@/components/Navbar';
 import { Footer } from '@/components/Footer';
 import { Button } from '@/components/ui/button';
+import {
+  Dialog,
+  DialogContent,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from '@/components/ui/dialog';
 import { Chem1441Subnav } from '@/components/Chem1441Subnav';
 
 const reflectionItems = [
@@ -119,7 +126,7 @@ const getPreviewUrl = (filePath: string) => {
   const lowerPath = filePath.toLowerCase();
 
   if (lowerPath.endsWith('.docx') || lowerPath.endsWith('.pptx') || lowerPath.endsWith('.xlsx')) {
-    return `https://view.officeapps.live.com/op/view.aspx?src=${encodeURIComponent(absoluteUrl)}`;
+    return `https://view.officeapps.live.com/op/embed.aspx?src=${encodeURIComponent(absoluteUrl)}`;
   }
 
   return absoluteUrl;
@@ -443,12 +450,29 @@ export default function Chem1441Hsht2() {
                           <p className="font-semibold text-foreground">{item.title}</p>
                           {item.file ? (
                             <div className="mt-5 flex flex-wrap items-center justify-center gap-2">
-                              <Button asChild variant="outline">
-                                <a href={getPreviewUrl(item.file)} target="_blank" rel="noreferrer">
-                                  <Eye className="h-4 w-4" />
-                                  Xem trước
-                                </a>
-                              </Button>
+                              <Dialog>
+                                <DialogTrigger asChild>
+                                  <Button variant="outline">
+                                    <Eye className="h-4 w-4" />
+                                    Xem trước
+                                  </Button>
+                                </DialogTrigger>
+                                <DialogContent className="grid h-[88vh] w-[96vw] max-w-6xl grid-rows-[auto_1fr] gap-0 overflow-hidden p-0">
+                                  <DialogHeader className="border-b px-5 py-4 pr-12">
+                                    <DialogTitle className="truncate text-left">
+                                      {item.title}
+                                    </DialogTitle>
+                                  </DialogHeader>
+                                  <div className="min-h-0 bg-muted/20">
+                                    <iframe
+                                      src={getPreviewUrl(item.file)}
+                                      title={`Xem trước ${item.title}`}
+                                      className="h-full w-full border-0 bg-background"
+                                      allowFullScreen
+                                    />
+                                  </div>
+                                </DialogContent>
+                              </Dialog>
                               <Button asChild variant="ghost" size="sm">
                                 <a href={item.file} download>
                                   <Download className="h-4 w-4" />
