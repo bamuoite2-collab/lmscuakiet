@@ -55,21 +55,15 @@ const tools = [
 
 const reflectionItems = [
   {
-    title: '1. Trực quan hóa kiến thức khó hình dung',
+    title: 'Khi học sinh cần nhìn vào một đối tượng cụ thể',
     content:
-      'Với phản ứng, quy trình hay mô hình vi mô, hình ảnh và video cho học sinh một đối tượng cụ thể để quan sát. Điều này hữu ích ở những nội dung khó hình dung nếu chỉ mô tả bằng lời.',
+      'Ở các nội dung như chu trình carbon hay mô hình vi mô, hình ảnh cho học sinh một thứ để quan sát trực tiếp. Em thấy lúc này câu hỏi đi kèm quan trọng hơn phần trang trí.',
     icon: BookOpen,
   },
   {
-    title: '2. Hỗ trợ tiếp thu và tạo hứng thú học tập',
+    title: 'Khi hiện tượng khó làm trực tiếp trên lớp',
     content:
-      'Hình ảnh dễ thu hút sự chú ý, nhưng chỉ chiếu lên thì chưa đủ. Em thấy chúng hữu ích hơn khi đi kèm một câu hỏi hoặc yêu cầu học sinh chỉ ra chi tiết trên hình.',
-    icon: Lightbulb,
-  },
-  {
-    title: '3. Kết nối thực tiễn và hỗ trợ tình huống khó thực hiện',
-    content:
-      'Video phù hợp với những thí nghiệm khó thực hiện trực tiếp hoặc cần nhiều thời gian. Hình ảnh về sản xuất và ứng dụng cũng giúp đưa nội dung Hóa học về gần các tình huống thực tế hơn.',
+      'Video hữu ích với thí nghiệm mất nhiều thời gian hoặc khó tổ chức ngay trong tiết học. Em vẫn cần đặt câu hỏi sau video để học sinh xử lí thông tin vừa xem.',
     icon: Video,
   },
 ];
@@ -99,7 +93,7 @@ export default function Chem1441Portfolio() {
               </h1>
 
               <p className="text-lg md:text-xl text-muted-foreground max-w-3xl leading-relaxed mb-8">
-                Hồ sơ tập hợp các sản phẩm thực hành về hình ảnh, video và infographic, kèm phần phản hồi về cách sử dụng các phương tiện trực quan trong dạy học Hóa học.
+                Em dùng trang này để lưu ba sản phẩm của HSHT1: một sơ đồ đã Việt hóa, một video ngắn và một infographic. Phần dưới ghi lại cách em đã làm và chỗ nào còn vướng.
               </p>
 
               <div className="flex flex-wrap gap-3">
@@ -178,12 +172,11 @@ export default function Chem1441Portfolio() {
                 Vai trò của phương tiện trực quan trong dạy học Hóa học
               </h2>
               <p className="text-muted-foreground leading-relaxed">
-                Sau khi làm ba sản phẩm, em thấy hình ảnh và video có ích nhất khi học sinh có việc để làm
-                với chúng. Phần dưới đây ghi lại ba cách em đã sử dụng phương tiện trực quan trong HSHT1.
+                Phần này ghi lại hai trường hợp em thấy hình ảnh hoặc video thật sự có ích trong bài học.
               </p>
             </div>
 
-            <div className="grid md:grid-cols-3 gap-6">
+            <div className="grid md:grid-cols-2 gap-6">
               {reflectionItems.map((item) => {
                 const Icon = item.icon;
                 return (
