@@ -1,5 +1,7 @@
 import {
   ArrowRight,
+  Atom,
+  Beaker,
   CheckCircle2,
   FileImage,
   FileText,
@@ -8,6 +10,7 @@ import {
   Lightbulb,
   Presentation,
   Search,
+  Sigma,
   Users,
   Video,
   Wrench,
@@ -89,6 +92,27 @@ const chemistryJourney = [
     text: 'Ở HĐ16, mình sửa lại bảng đồng phân, gõ lại các phương trình và rà từng phần của hướng dẫn chấm. Bản cuối được giữ cả Word và PDF.',
     note: 'Khi điều kiện trên mũi tên khó căn trong Equation, mình chuyển qua LaTeX để nhập nhanh hơn rồi kiểm tra lại cách hiển thị.',
   },
+  {
+    step: '11',
+    title: 'Làm quen với thí nghiệm ảo trên Yenka',
+    icon: Beaker,
+    text: 'Sang phần mô phỏng, mình bắt đầu với Yenka: chọn dụng cụ, hóa chất, thay đổi thông số và theo dõi hiện tượng hoặc đồ thị trong thí nghiệm ảo.',
+    note: 'Mình đang chuẩn bị minh chứng về ảnh hưởng của chất xúc tác đến tốc độ phản ứng bằng phản ứng phân hủy H₂O₂.',
+  },
+  {
+    step: '12',
+    title: 'Quan sát cấu trúc 3D bằng MolView',
+    icon: Atom,
+    text: 'Mình dùng MolView để dựng và xoay mô hình phân tử 3D, sau đó thử lấy các thông số hình học như độ dài liên kết và góc liên kết.',
+    note: 'Nhiệm vụ đang làm là dựng NH₃ rồi lấy một giá trị N–H và một góc H–N–H làm minh chứng.',
+  },
+  {
+    step: '13',
+    title: 'Thử tính toán PM7 với MOPAC',
+    icon: Sigma,
+    text: 'Mình chuyển sang MOPAC để làm quen với tối ưu cấu trúc và các giá trị tính toán bằng phương pháp PM7.',
+    note: 'Phần đang làm gồm H₂, O₂, H₂O, F₂ và HF; từ heat of formation sẽ tính ΔH cho hai phản ứng rồi so sánh kết quả.',
+  },
 ];
 
 const growth = [
@@ -105,8 +129,8 @@ const growth = [
     text: 'Mình bắt đầu để ý kỹ hơn đến chuẩn trình bày: công thức, phương trình, font, bố cục văn bản và slide.',
   },
   {
-    title: 'Tiếp theo',
-    text: 'Mình muốn tiếp tục hoàn thiện các phần mô phỏng, kiểm tra đánh giá và thiết kế bài dạy trong những hồ sơ sau.',
+    title: 'Đang ở HSHT3',
+    text: 'Mình đang chuyển từ việc tạo học liệu sang khai thác mô phỏng. Yenka, MolView và MOPAC cho ba kiểu trải nghiệm khá khác nhau nên mình giữ minh chứng riêng cho từng công cụ.',
   },
 ];
 
