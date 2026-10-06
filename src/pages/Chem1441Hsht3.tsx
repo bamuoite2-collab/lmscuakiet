@@ -45,9 +45,9 @@ const tools = [
     text: 'Công cụ trực quan hóa cấu trúc phân tử, hỗ trợ quan sát mô hình 3D và khảo sát các thông số hình học của phân tử.',
   },
   {
-    name: 'MOPAC / PM7',
+    name: 'MOPAC',
     icon: Sigma,
-    text: 'Công cụ tính toán Hóa học lượng tử bán thực nghiệm, dùng để tối ưu cấu trúc và khai thác một số đại lượng tính toán.',
+    text: 'Công cụ tính toán cấu trúc phân tử được giới thiệu trong học phần. Phần minh chứng sẽ được bổ sung theo đúng nhiệm vụ thực hành trên VLE.',
   },
 ];
 
@@ -247,8 +247,9 @@ export default function Chem1441Hsht3() {
                       Điều chế CO₂ và dẫn khí CO₂ vào nước vôi trong
                     </h2>
                     <p className="text-muted-foreground leading-relaxed">
-                      Hệ thí nghiệm được tự bố trí trên Yenka gồm bình tạo khí, nút cao su, ống dẫn khí và cốc
-                      chứa nước vôi trong. Khí CO₂ được tạo ra từ phản ứng giữa calcium carbonate và hydrochloric acid.
+                      Em chọn thí nghiệm này vì có thể tự dựng toàn bộ hệ dụng cụ trên Yenka và có hai hiện tượng nối tiếp nhau:
+                      tạo khí CO₂ từ muối carbonate và dùng nước vôi trong để kiểm tra khí sinh ra. Sản phẩm dưới đây được trình bày
+                      theo đúng ba nội dung mà nhiệm vụ trên VLE yêu cầu.
                     </p>
                   </div>
 
@@ -266,6 +267,65 @@ export default function Chem1441Hsht3() {
               </header>
 
               <div className="p-7 md:p-10">
+                <section className="mb-10">
+                  <p className="text-sm font-bold uppercase tracking-[0.14em] text-primary mb-5">
+                    Trả lời nhiệm vụ trên VLE
+                  </p>
+
+                  <div className="space-y-5">
+                    <div className="rounded-2xl border bg-background p-6 md:p-7">
+                      <div className="flex items-start gap-4">
+                        <div className="w-9 h-9 rounded-xl bg-primary text-primary-foreground flex items-center justify-center font-bold shrink-0">1</div>
+                        <div>
+                          <h3 className="font-display text-xl font-bold text-foreground mb-2">Tên thí nghiệm ảo</h3>
+                          <p className="text-muted-foreground leading-relaxed">
+                            Điều chế khí carbon dioxide từ calcium carbonate và hydrochloric acid, sau đó dẫn khí CO₂ vào nước vôi trong.
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div className="rounded-2xl border bg-background p-6 md:p-7">
+                      <div className="flex items-start gap-4">
+                        <div className="w-9 h-9 rounded-xl bg-primary text-primary-foreground flex items-center justify-center font-bold shrink-0">2</div>
+                        <div className="min-w-0">
+                          <h3 className="font-display text-xl font-bold text-foreground mb-3">Bố trí và cách tiến hành</h3>
+                          <p className="text-muted-foreground leading-relaxed mb-4">
+                            Hệ dụng cụ gồm một bình tam giác có nút cao su một lỗ, ống mềm nối với ống dẫn khí và một cốc chứa nước vôi trong.
+                            Ở lần chạy dùng làm minh chứng, em đặt 2 g CaCO₃ trong bình tam giác, dùng 40 cm³ HCl 1 M và chuẩn bị
+                            200 cm³ dung dịch Ca(OH)₂ 0,01 M ở cốc nhận khí.
+                          </p>
+                          <p className="text-muted-foreground leading-relaxed">
+                            Sau khi hoàn chỉnh đường dẫn khí, em cho HCl tiếp xúc với CaCO₃ để tạo CO₂. Khí đi qua ống dẫn và sục vào
+                            dung dịch Ca(OH)₂. Em quan sát sự thay đổi trong bình phản ứng và ở cốc nước vôi, đồng thời mở phần thông tin
+                            phản ứng của Yenka để kiểm tra các chất được phần mềm ghi nhận.
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div className="rounded-2xl border bg-background p-6 md:p-7">
+                      <div className="flex items-start gap-4">
+                        <div className="w-9 h-9 rounded-xl bg-primary text-primary-foreground flex items-center justify-center font-bold shrink-0">3</div>
+                        <div>
+                          <h3 className="font-display text-xl font-bold text-foreground mb-3">Nội dung dạy học có thể áp dụng</h3>
+                          <p className="text-muted-foreground leading-relaxed mb-4">
+                            Hoạt động phù hợp với Hóa học 12, phần nguyên tố nhóm IA và nhóm IIA, khi học sinh tìm hiểu tính chất của
+                            một số hợp chất nhóm IIA. Yêu cầu cần đạt được khai thác trực tiếp là:
+                          </p>
+                          <div className="rounded-xl border bg-primary/5 px-5 py-4 font-semibold text-foreground">
+                            “Nêu được tương tác giữa muối carbonate với nước và với acid loãng.”
+                          </div>
+                          <p className="text-muted-foreground leading-relaxed mt-4">
+                            Phản ứng CaCO₃ với HCl là nội dung chính để đáp ứng yêu cầu này. Bước dẫn CO₂ vào nước vôi trong được dùng
+                            như một cách kiểm tra sản phẩm khí, nhờ đó học sinh không chỉ nhìn thấy khí thoát ra mà còn có căn cứ để xác định đó là CO₂.
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </section>
+
                 <div className="grid lg:grid-cols-2 gap-6 mb-10">
                   <figure className="rounded-2xl border bg-background overflow-hidden">
                     <div className="aspect-[16/10] bg-muted/30 flex items-center justify-center overflow-hidden">
@@ -276,7 +336,7 @@ export default function Chem1441Hsht3() {
                       />
                     </div>
                     <figcaption className="border-t px-5 py-4 text-sm text-muted-foreground">
-                      <span className="font-semibold text-foreground">Hình 1.</span> Bố trí hệ thí nghiệm trước khi phản ứng xảy ra.
+                      <span className="font-semibold text-foreground">Hình 1.</span> Bố trí hệ thí nghiệm trước khi cho các chất phản ứng.
                     </figcaption>
                   </figure>
 
@@ -289,73 +349,119 @@ export default function Chem1441Hsht3() {
                       />
                     </div>
                     <figcaption className="border-t px-5 py-4 text-sm text-muted-foreground">
-                      <span className="font-semibold text-foreground">Hình 2.</span> Kết quả sau khi dẫn khí CO₂ vào nước vôi trong.
+                      <span className="font-semibold text-foreground">Hình 2.</span> Trạng thái hệ thí nghiệm sau khi CO₂ được dẫn sang cốc nước vôi.
                     </figcaption>
                   </figure>
                 </div>
 
-                <div className="grid lg:grid-cols-3 gap-5 mb-10">
-                  <div className="rounded-2xl border bg-background p-6">
-                    <p className="text-xs font-bold uppercase tracking-[0.14em] text-primary mb-3">Bố trí</p>
-                    <p className="text-muted-foreground leading-relaxed">
-                      Cho CaCO₃ vào bình tam giác, thêm dung dịch HCl và dẫn khí sinh ra qua dung dịch Ca(OH)₂ bằng hệ ống dẫn khí.
-                    </p>
-                  </div>
+                <section className="mb-10">
+                  <p className="text-sm font-bold uppercase tracking-[0.14em] text-primary mb-5">
+                    Phân tích kết quả
+                  </p>
 
-                  <div className="rounded-2xl border bg-background p-6">
-                    <p className="text-xs font-bold uppercase tracking-[0.14em] text-primary mb-3">Hiện tượng</p>
-                    <p className="text-muted-foreground leading-relaxed">
-                      Phản ứng trong bình tạo khí CO₂. Khi CO₂ đi qua nước vôi trong, xuất hiện calcium carbonate làm dung dịch vẩn đục.
-                    </p>
-                  </div>
+                  <div className="grid lg:grid-cols-[0.9fr_1.1fr] gap-6">
+                    <div className="rounded-2xl border bg-background p-6 md:p-7">
+                      <h3 className="font-display text-2xl font-bold text-foreground mb-4">Cơ sở hóa học</h3>
+                      <div className="space-y-4">
+                        <div className="rounded-xl bg-muted/40 p-4">
+                          <div className="text-xs font-semibold uppercase tracking-wide text-muted-foreground mb-2">Tạo CO₂</div>
+                          <p className="font-medium text-foreground">CaCO₃ + 2HCl → CaCl₂ + CO₂↑ + H₂O</p>
+                        </div>
+                        <div className="rounded-xl bg-muted/40 p-4">
+                          <div className="text-xs font-semibold uppercase tracking-wide text-muted-foreground mb-2">Nhận biết CO₂</div>
+                          <p className="font-medium text-foreground">CO₂ + Ca(OH)₂ → CaCO₃↓ + H₂O</p>
+                        </div>
+                      </div>
+                      <p className="text-muted-foreground leading-relaxed mt-5">
+                        Khi HCl tiếp xúc với CaCO₃, khí được tạo ra và đi theo ống dẫn sang cốc nhận. Trong nước vôi trong,
+                        CO₂ phản ứng với Ca(OH)₂ tạo CaCO₃ ít tan. Đây là cơ sở của hiện tượng vẩn đục dùng để nhận biết khí.
+                      </p>
+                    </div>
 
-                  <div className="rounded-2xl border bg-background p-6">
-                    <p className="text-xs font-bold uppercase tracking-[0.14em] text-primary mb-3">Phương trình</p>
-                    <div className="space-y-3 text-sm font-medium text-foreground">
-                      <p>CaCO₃ + 2HCl → CaCl₂ + CO₂↑ + H₂O</p>
-                      <p>CO₂ + Ca(OH)₂ → CaCO₃↓ + H₂O</p>
+                    <div className="rounded-2xl border bg-background p-6 md:p-7">
+                      <h3 className="font-display text-2xl font-bold text-foreground mb-4">Nhìn lại lượng hóa chất đã dùng</h3>
+                      <p className="text-muted-foreground leading-relaxed mb-4">
+                        2 g CaCO₃ tương ứng gần 0,020 mol, còn 40 cm³ HCl 1 M là 0,040 mol. Hai lượng này gần đúng tỉ lệ
+                        1 : 2 của phương trình nên phần tạo CO₂ được bố trí khá hợp lí.
+                      </p>
+                      <p className="text-muted-foreground leading-relaxed">
+                        Tuy nhiên 200 cm³ Ca(OH)₂ 0,01 M chỉ có 0,002 mol Ca(OH)₂, nhỏ hơn nhiều so với lượng CO₂ có thể tạo ra.
+                        Về mặt hóa học, nếu tiếp tục sục CO₂ dư thì kết tủa CaCO₃ có thể tiếp tục phản ứng tạo hydrogencarbonate tan.
+                        Nếu dùng mô phỏng này trong tiết học, em sẽ giảm lượng chất tạo CO₂ hoặc tăng nồng độ nước vôi trong để học sinh
+                        quan sát giai đoạn xuất hiện kết tủa rõ hơn và tránh kéo dài quá trình sục khí.
+                      </p>
                     </div>
                   </div>
-                </div>
+                </section>
 
-                <div className="grid lg:grid-cols-[1.15fr_0.85fr] gap-6">
-                  <section className="rounded-2xl border-2 border-primary/15 bg-primary/5 p-6 md:p-7">
-                    <p className="text-xs font-bold uppercase tracking-[0.14em] text-primary mb-3">
-                      Ý tưởng sử dụng trong dạy học
-                    </p>
-                    <h3 className="font-display text-2xl font-bold text-foreground mb-4">
-                      Hóa học 12 · Nguyên tố nhóm IA và nhóm IIA
-                    </h3>
-                    <p className="text-muted-foreground leading-relaxed mb-4">
-                      Mô phỏng có thể được sử dụng khi học sinh tìm hiểu tương tác của muối carbonate với acid loãng.
-                      Giáo viên yêu cầu học sinh dự đoán hiện tượng khi cho CaCO₃ tác dụng với HCl, sau đó quan sát
-                      mô phỏng, xác định khí sinh ra bằng nước vôi trong và viết các phương trình hóa học tương ứng.
-                    </p>
-                    <div className="rounded-xl border bg-background/80 p-4">
-                      <div className="text-xs font-semibold uppercase tracking-wide text-muted-foreground mb-1">
-                        Yêu cầu cần đạt được khai thác
-                      </div>
-                      <div className="font-semibold text-foreground">
-                        Nêu được tương tác giữa muối carbonate với nước và với acid loãng.
-                      </div>
+                <section className="mb-10">
+                  <p className="text-sm font-bold uppercase tracking-[0.14em] text-primary mb-5">
+                    Cách em dự kiến tổ chức hoạt động học
+                  </p>
+
+                  <div className="grid md:grid-cols-2 gap-5">
+                    <div className="rounded-2xl border bg-background p-6">
+                      <div className="text-sm font-bold text-primary mb-2">Trước khi chạy mô phỏng</div>
+                      <p className="text-muted-foreground leading-relaxed">
+                        Giáo viên chưa nói trước khí tạo thành. Học sinh dự đoán hiện tượng khi cho CaCO₃ vào HCl và nêu cách kiểm tra
+                        khí nếu có. Các dự đoán được ghi nhanh trước khi mở mô phỏng.
+                      </p>
                     </div>
-                  </section>
+                    <div className="rounded-2xl border bg-background p-6">
+                      <div className="text-sm font-bold text-primary mb-2">Trong khi quan sát</div>
+                      <p className="text-muted-foreground leading-relaxed">
+                        Học sinh theo dõi hai vị trí: bình tạo khí và cốc nước vôi. Giáo viên có thể dừng mô phỏng ngay sau khi khí bắt đầu
+                        đi qua cốc để yêu cầu học sinh mô tả hiện tượng thay vì chỉ xem liên tục.
+                      </p>
+                    </div>
+                    <div className="rounded-2xl border bg-background p-6">
+                      <div className="text-sm font-bold text-primary mb-2">Sau mô phỏng</div>
+                      <p className="text-muted-foreground leading-relaxed">
+                        Học sinh đối chiếu dự đoán ban đầu, xác định khí CO₂, viết hai phương trình hóa học và giải thích vì sao nước vôi
+                        trong thay đổi. Nếu kết quả khác dự đoán, nhóm phải chỉ ra chỗ cần sửa.
+                      </p>
+                    </div>
+                    <div className="rounded-2xl border bg-background p-6">
+                      <div className="text-sm font-bold text-primary mb-2">Vai trò của giáo viên</div>
+                      <p className="text-muted-foreground leading-relaxed">
+                        Yenka chỉ cung cấp hiện tượng và dữ liệu của mô hình. Giáo viên vẫn cần đặt câu hỏi, kiểm soát thời điểm quan sát
+                        và yêu cầu học sinh giải thích. Nếu chỉ chiếu mô phỏng rồi đọc kết luận thì lợi thế tương tác của công cụ gần như bị bỏ phí.
+                      </p>
+                    </div>
+                  </div>
+                </section>
 
-                  <section className="rounded-2xl border bg-background p-6 md:p-7">
-                    <p className="text-xs font-bold uppercase tracking-[0.14em] text-primary mb-3">
-                      Đánh giá công cụ
-                    </p>
-                    <h3 className="font-display text-2xl font-bold text-foreground mb-4">Yenka</h3>
-                    <p className="text-muted-foreground leading-relaxed mb-4">
-                      Yenka phù hợp khi cần tự bố trí một hệ thí nghiệm có nhiều dụng cụ và hóa chất. Với bài này,
-                      việc kéo thả dụng cụ giúp quan sát rõ đường đi của khí từ bình phản ứng sang cốc nhận khí.
-                    </p>
-                    <p className="text-muted-foreground leading-relaxed">
-                      Điểm cần lưu ý là thư viện hóa chất và dụng cụ khá nhiều, một số bảng thông tin hiển thị dày
-                      nên cần sắp xếp lại màn hình trước khi dùng làm học liệu hoặc chụp minh chứng.
-                    </p>
-                  </section>
-                </div>
+                <section>
+                  <p className="text-sm font-bold uppercase tracking-[0.14em] text-primary mb-5">
+                    Đánh giá Yenka sau khi sử dụng
+                  </p>
+
+                  <div className="grid lg:grid-cols-3 gap-5">
+                    <div className="rounded-2xl border bg-background p-6">
+                      <h3 className="font-display text-xl font-bold text-foreground mb-3">Điểm hữu ích</h3>
+                      <p className="text-muted-foreground leading-relaxed">
+                        Em có thể tự chọn lượng hóa chất, tự bố trí bình phản ứng và đường dẫn khí. Với bài này, học sinh nhìn được mối liên hệ
+                        giữa nơi tạo khí và nơi kiểm tra khí rõ hơn so với một hình vẽ tĩnh trong sách.
+                      </p>
+                    </div>
+
+                    <div className="rounded-2xl border bg-background p-6">
+                      <h3 className="font-display text-xl font-bold text-foreground mb-3">Khó khăn khi thao tác</h3>
+                      <p className="text-muted-foreground leading-relaxed">
+                        Lúc dựng hệ thí nghiệm, em thử đưa ống mềm trực tiếp xuống cốc nhưng Yenka không cho nối theo cách đó. Sau đó em phải
+                        tìm đúng Delivery tube, đặt nó vào cốc rồi mới nối ống mềm ở phía trên. Các bảng thông tin của phần mềm cũng dễ làm màn hình bị rối.
+                      </p>
+                    </div>
+
+                    <div className="rounded-2xl border bg-background p-6">
+                      <h3 className="font-display text-xl font-bold text-foreground mb-3">Cách dùng hiệu quả hơn</h3>
+                      <p className="text-muted-foreground leading-relaxed">
+                        Trước giờ học nên dựng sẵn hệ cơ bản và kiểm tra lượng hóa chất. Khi dạy, chỉ để những cửa sổ thông tin cần thiết,
+                        cho học sinh dự đoán trước rồi mới chạy mô phỏng. Cách này giảm thời gian thao tác nhưng vẫn giữ được phần học sinh phải quan sát và suy luận.
+                      </p>
+                    </div>
+                  </div>
+                </section>
               </div>
             </article>
           </div>
