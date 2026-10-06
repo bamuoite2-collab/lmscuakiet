@@ -144,6 +144,7 @@ export default function Chem1441Hsht3() {
                 ['#vai-tro', 'Vai trò'],
                 ['#cong-cu', 'Công cụ'],
                 ['#yenka', 'Minh chứng Yenka'],
+                ['#molview', 'Minh chứng MolView'],
                 ['#kiem-tra-danh-gia', 'Kiểm tra đánh giá'],
               ].map(([href, label]) => (
                 <a
@@ -460,6 +461,175 @@ export default function Chem1441Hsht3() {
                       <p className="text-muted-foreground leading-relaxed">
                         Trước giờ học nên dựng sẵn hệ cơ bản và kiểm tra lượng hóa chất. Khi dạy, chỉ để những cửa sổ thông tin cần thiết,
                         cho học sinh dự đoán trước rồi mới chạy mô phỏng. Cách này giảm thời gian thao tác nhưng vẫn giữ được phần học sinh phải quan sát và suy luận.
+                      </p>
+                    </div>
+                  </div>
+                </section>
+              </div>
+            </article>
+          </div>
+        </section>
+
+        <section id="molview" className="scroll-mt-28 py-16 md:py-24 bg-card border-y">
+          <div className="container mx-auto px-6">
+            <article className="max-w-6xl mx-auto rounded-[2rem] border bg-background overflow-hidden shadow-sm">
+              <header className="p-7 md:p-10 border-b">
+                <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between gap-6">
+                  <div className="max-w-3xl">
+                    <p className="text-sm font-bold uppercase tracking-[0.16em] text-primary mb-3">
+                      Minh chứng thực hành · MolView
+                    </p>
+                    <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground leading-tight mb-4">
+                      Quan sát hình học phân tử NH₃ bằng mô hình 3D
+                    </h2>
+                    <p className="text-muted-foreground leading-relaxed">
+                      MolView được dùng ở đây để chuyển từ biểu diễn công thức trên mặt phẳng sang mô hình phân tử có thể xoay trong không gian.
+                      Với NH₃, phần quan sát 3D giúp học sinh nhìn rõ cách ba nguyên tử hydrogen sắp xếp quanh nitrogen thay vì chỉ dựa vào hình vẽ tĩnh.
+                    </p>
+                  </div>
+
+                  <div className="grid grid-cols-2 gap-2 text-sm shrink-0">
+                    <div className="rounded-xl border bg-card px-4 py-3">
+                      <div className="text-xs text-muted-foreground mb-1">Môn / lớp</div>
+                      <div className="font-semibold text-foreground">Hóa học 11</div>
+                    </div>
+                    <div className="rounded-xl border bg-card px-4 py-3">
+                      <div className="text-xs text-muted-foreground mb-1">Công cụ</div>
+                      <div className="font-semibold text-foreground">MolView</div>
+                    </div>
+                  </div>
+                </div>
+              </header>
+
+              <div className="p-7 md:p-10">
+                <section className="mb-10">
+                  <p className="text-sm font-bold uppercase tracking-[0.14em] text-primary mb-5">
+                    Nội dung dạy học được lựa chọn
+                  </p>
+
+                  <div className="grid lg:grid-cols-[1.05fr_0.95fr] gap-6">
+                    <div className="rounded-2xl border bg-card p-6 md:p-7">
+                      <h3 className="font-display text-2xl font-bold text-foreground mb-3">
+                        Ammonia và một số hợp chất ammonium
+                      </h3>
+                      <p className="text-muted-foreground leading-relaxed mb-4">
+                        Nội dung này thuộc mạch Nitrogen và Sulfur của Hóa học 11. Phần MolView tập trung vào cấu trúc phân tử ammonia,
+                        không mở rộng sang toàn bộ tính chất của NH₃.
+                      </p>
+                      <div className="rounded-xl border bg-primary/5 px-5 py-4">
+                        <div className="text-xs font-semibold uppercase tracking-wide text-muted-foreground mb-2">
+                          Yêu cầu cần đạt
+                        </div>
+                        <div className="font-semibold text-foreground">
+                          “Mô tả được công thức Lewis và hình học của phân tử ammonia.”
+                        </div>
+                      </div>
+                    </div>
+
+                    <div className="rounded-2xl border bg-card p-6 md:p-7">
+                      <h3 className="font-display text-2xl font-bold text-foreground mb-3">
+                        Vì sao dùng mô hình 3D?
+                      </h3>
+                      <p className="text-muted-foreground leading-relaxed mb-4">
+                        Công thức Lewis cho biết cách các nguyên tử liên kết và cặp electron chưa liên kết trên nitrogen, nhưng bản thân hình vẽ 2D
+                        chưa thể hiện rõ dạng không gian của phân tử. Mô hình 3D giúp học sinh xoay phân tử và nhận ra NH₃ có dạng chóp tam giác.
+                      </p>
+                      <p className="text-muted-foreground leading-relaxed">
+                        Vì vậy MolView phù hợp nhất ở bước kiểm tra hoặc củng cố dự đoán của học sinh sau khi đã viết công thức Lewis, thay vì dùng
+                        mô hình để thay thế hoàn toàn phần suy luận cấu trúc.
+                      </p>
+                    </div>
+                  </div>
+                </section>
+
+                <section className="mb-10">
+                  <p className="text-sm font-bold uppercase tracking-[0.14em] text-primary mb-5">
+                    Cách em dự kiến tổ chức hoạt động học
+                  </p>
+
+                  <div className="grid md:grid-cols-3 gap-5">
+                    <div className="rounded-2xl border bg-card p-6">
+                      <div className="text-sm font-bold text-primary mb-2">1. Dự đoán</div>
+                      <p className="text-muted-foreground leading-relaxed">
+                        Học sinh viết công thức Lewis của NH₃ và dự đoán cách ba liên kết N–H sắp xếp trong không gian. Giáo viên chưa cho xem mô hình ngay.
+                      </p>
+                    </div>
+
+                    <div className="rounded-2xl border bg-card p-6">
+                      <div className="text-sm font-bold text-primary mb-2">2. Quan sát trên MolView</div>
+                      <p className="text-muted-foreground leading-relaxed">
+                        Học sinh mở NH₃ trên MolView, chuyển sang mô hình 3D và xoay phân tử theo nhiều hướng. Khi xoay, học sinh chú ý vị trí tương đối
+                        của nitrogen và ba hydrogen thay vì chỉ nhìn một góc cố định.
+                      </p>
+                    </div>
+
+                    <div className="rounded-2xl border bg-card p-6">
+                      <div className="text-sm font-bold text-primary mb-2">3. Đối chiếu</div>
+                      <p className="text-muted-foreground leading-relaxed">
+                        Học sinh so sánh mô hình với dự đoán ban đầu, mô tả hình học của NH₃ là chóp tam giác và ghi lại bằng lời hoặc phác lại mô hình.
+                      </p>
+                    </div>
+                  </div>
+                </section>
+
+                <section className="mb-10">
+                  <p className="text-sm font-bold uppercase tracking-[0.14em] text-primary mb-5">
+                    Phân tích sản phẩm
+                  </p>
+
+                  <div className="grid lg:grid-cols-2 gap-6">
+                    <div className="rounded-2xl border bg-card p-6 md:p-7">
+                      <h3 className="font-display text-2xl font-bold text-foreground mb-4">Điểm cần học sinh nhìn ra</h3>
+                      <p className="text-muted-foreground leading-relaxed mb-4">
+                        Ở mô hình 3D, nitrogen nằm ở vị trí trung tâm và ba hydrogen hướng ra ba phía khác nhau. Khi xoay mô hình, có thể thấy ba liên kết
+                        không cùng nằm trên một mặt phẳng theo kiểu tam giác phẳng.
+                      </p>
+                      <p className="text-muted-foreground leading-relaxed">
+                        Từ quan sát đó, học sinh mô tả được hình học chóp tam giác của NH₃. Kết quả quan sát được dùng để đối chiếu với công thức Lewis,
+                        trong đó nitrogen còn một cặp electron chưa liên kết.
+                      </p>
+                    </div>
+
+                    <div className="rounded-2xl border bg-card p-6 md:p-7">
+                      <h3 className="font-display text-2xl font-bold text-foreground mb-4">Vai trò của MolView trong hoạt động</h3>
+                      <p className="text-muted-foreground leading-relaxed mb-4">
+                        Phần mềm không làm thay bước suy luận cấu trúc. Giá trị chính của nó nằm ở việc cho học sinh kiểm tra dự đoán bằng một mô hình có thể xoay,
+                        nhờ vậy sự khác nhau giữa hình vẽ 2D và hình dạng không gian trở nên rõ hơn.
+                      </p>
+                      <p className="text-muted-foreground leading-relaxed">
+                        Nếu chỉ mở sẵn mô hình rồi cho học sinh chép “chóp tam giác”, hoạt động sẽ rất nhanh nhưng không khai thác được ưu thế tương tác của công cụ.
+                      </p>
+                    </div>
+                  </div>
+                </section>
+
+                <section>
+                  <p className="text-sm font-bold uppercase tracking-[0.14em] text-primary mb-5">
+                    Đánh giá MolView sau khi sử dụng
+                  </p>
+
+                  <div className="grid lg:grid-cols-3 gap-5">
+                    <div className="rounded-2xl border bg-card p-6">
+                      <h3 className="font-display text-xl font-bold text-foreground mb-3">Điểm thuận lợi</h3>
+                      <p className="text-muted-foreground leading-relaxed">
+                        MolView mở trực tiếp trên trình duyệt, tìm phân tử nhanh và hiển thị song song phần công thức với mô hình 3D. Việc xoay mô hình bằng chuột
+                        khá trực quan nên phù hợp với một hoạt động quan sát ngắn trên lớp.
+                      </p>
+                    </div>
+
+                    <div className="rounded-2xl border bg-card p-6">
+                      <h3 className="font-display text-xl font-bold text-foreground mb-3">Điểm còn hạn chế</h3>
+                      <p className="text-muted-foreground leading-relaxed">
+                        Giao diện bản mới đơn giản hơn nhưng một số công cụ nâng cao không nằm ở vị trí giống tài liệu hướng dẫn cũ. Nếu mục tiêu là đo góc,
+                        độ dài liên kết hoặc khai thác Jmol thì người dùng có thể mất thời gian tìm đúng chức năng.
+                      </p>
+                    </div>
+
+                    <div className="rounded-2xl border bg-card p-6">
+                      <h3 className="font-display text-xl font-bold text-foreground mb-3">Cách dùng hiệu quả hơn</h3>
+                      <p className="text-muted-foreground leading-relaxed">
+                        Với bài NH₃, chỉ cần dùng chức năng 3D và thao tác xoay là đủ cho mục tiêu hình học phân tử. Giáo viên nên chuẩn bị sẵn đường dẫn hoặc từ khóa,
+                        yêu cầu học sinh dự đoán trước rồi mới mở mô hình để tránh biến hoạt động thành xem minh họa đơn thuần.
                       </p>
                     </div>
                   </div>
