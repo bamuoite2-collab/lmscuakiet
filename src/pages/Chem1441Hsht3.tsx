@@ -449,7 +449,9 @@ export default function Chem1441Hsht3() {
                       <h3 className="font-display text-xl font-bold text-foreground mb-3">Khó khăn khi thao tác</h3>
                       <p className="text-muted-foreground leading-relaxed">
                         Lúc dựng hệ thí nghiệm, em thử đưa ống mềm trực tiếp xuống cốc nhưng Yenka không cho nối theo cách đó. Sau đó em phải
-                        tìm đúng Delivery tube, đặt nó vào cốc rồi mới nối ống mềm ở phía trên. Các bảng thông tin của phần mềm cũng dễ làm màn hình bị rối.
+                        tìm đúng Delivery tube, đặt nó vào cốc rồi mới nối ống mềm ở phía trên. Thư viện hóa chất cũng chưa thật sự phong phú;
+                        có những chất em muốn dùng nhưng không có sẵn hoặc khó tìm đúng tên trong danh mục. Giao diện khá cũ, nhiều mục và cửa sổ
+                        thông tin nằm rời rạc nên thao tác ban đầu không trực quan, nhất là khi phải tìm dụng cụ, nối các bộ phận và sắp xếp lại màn hình.
                       </p>
                     </div>
 
