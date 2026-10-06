@@ -27,11 +27,11 @@ const portfolios = [
   {
     href: '/chem1441/hsht3',
     title: 'Hồ sơ học tập 3',
-    subtitle: 'Mô phỏng và công cụ hỗ trợ học tập',
+    subtitle: 'Mô phỏng và kiểm tra đánh giá',
     description:
-      'Phần này chưa làm tới. Khi có bài thực hành, em sẽ bổ sung sản phẩm và ghi chú ngay tại đây.',
+      'Đã dựng khung HSHT3 theo hướng dẫn học phần, có ba nhiệm vụ thực hành với Yenka, MolView và MOPAC; phần kiểm tra đánh giá sẽ bổ sung sau HĐ24–26.',
     icon: Presentation,
-    status: 'Sẽ bổ sung',
+    status: 'Đang thực hiện',
   },
   {
     href: '/chem1441/hsht4',
