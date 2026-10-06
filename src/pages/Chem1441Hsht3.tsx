@@ -113,29 +113,45 @@ export default function Chem1441Hsht3() {
         <section className="py-14 md:py-18">
           <div className="container mx-auto px-6">
             <div className="max-w-6xl mx-auto grid lg:grid-cols-2 gap-5">
-              <article className="rounded-3xl border bg-card p-7 md:p-8">
+              <a
+                href="#vai-tro"
+                className="group rounded-3xl border bg-card p-7 md:p-8 transition-all hover:-translate-y-0.5 hover:border-primary/40 hover:shadow-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+                aria-label="Đi đến phần mô phỏng của HSHT3"
+              >
                 <div className="flex items-center gap-3 mb-5">
-                  <div className="w-11 h-11 rounded-2xl bg-primary/10 text-primary flex items-center justify-center">
+                  <div className="w-11 h-11 rounded-2xl bg-primary/10 text-primary flex items-center justify-center transition-colors group-hover:bg-primary group-hover:text-primary-foreground">
                     <Microscope className="h-5 w-5" />
                   </div>
-                  <p className="text-xs font-bold uppercase tracking-[0.14em] text-primary">Câu hỏi 1</p>
+                  <p className="text-xs font-bold uppercase tracking-[0.14em] text-primary">Câu hỏi 1 · Mô phỏng</p>
                 </div>
                 <h2 className="font-display text-2xl md:text-3xl font-bold text-foreground leading-snug">
                   Làm thế nào để thiết kế và sử dụng mô phỏng hiệu quả trong dạy học môn Hóa học?
                 </h2>
-              </article>
+                <div className="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-primary">
+                  Xem phần mô phỏng
+                  <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+                </div>
+              </a>
 
-              <article className="rounded-3xl border bg-card p-7 md:p-8">
+              <a
+                href="#ktdg"
+                className="group rounded-3xl border bg-card p-7 md:p-8 transition-all hover:-translate-y-0.5 hover:border-primary/40 hover:shadow-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+                aria-label="Đi đến phần kiểm tra đánh giá của HSHT3"
+              >
                 <div className="flex items-center gap-3 mb-5">
-                  <div className="w-11 h-11 rounded-2xl bg-primary/10 text-primary flex items-center justify-center">
+                  <div className="w-11 h-11 rounded-2xl bg-primary/10 text-primary flex items-center justify-center transition-colors group-hover:bg-primary group-hover:text-primary-foreground">
                     <ClipboardCheck className="h-5 w-5" />
                   </div>
-                  <p className="text-xs font-bold uppercase tracking-[0.14em] text-primary">Câu hỏi 2</p>
+                  <p className="text-xs font-bold uppercase tracking-[0.14em] text-primary">Câu hỏi 2 · Kiểm tra đánh giá</p>
                 </div>
                 <h2 className="font-display text-2xl md:text-3xl font-bold text-foreground leading-snug">
                   Làm thế nào để ứng dụng ICT hiệu quả trong kiểm tra đánh giá môn Hóa học?
                 </h2>
-              </article>
+                <div className="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-primary">
+                  Xem phần kiểm tra đánh giá
+                  <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+                </div>
+              </a>
             </div>
           </div>
         </section>
