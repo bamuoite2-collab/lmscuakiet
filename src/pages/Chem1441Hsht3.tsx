@@ -41,11 +41,11 @@ const tools = [
   {
     name: 'Yenka',
     icon: Beaker,
-    use: 'Thiết kế và chạy thí nghiệm Hóa học ảo; thay đổi lượng hóa chất, dùng dụng cụ, theo dõi hiện tượng và đồ thị.',
-    task: 'Ảnh hưởng của chất xúc tác đến tốc độ phản ứng',
+    use: 'Thiết kế và chạy thí nghiệm Hóa học ảo; lựa chọn hóa chất, dụng cụ, thay đổi thông số và quan sát hiện tượng trong một hệ thí nghiệm hoàn chỉnh.',
+    task: 'Điều chế CO₂ và dẫn khí CO₂ vào nước vôi trong',
     evidence:
-      'Dùng thí nghiệm phân hủy H₂O₂, so sánh trường hợp có và không có MnO₂; giữ lượng hóa chất phù hợp, chạy mô phỏng và chụp lại bố trí cùng đồ thị lượng O₂ theo thời gian.',
-    status: 'Đang chuẩn bị minh chứng',
+      'Cho CaCO₃ tác dụng với dung dịch HCl trong bình tam giác, dẫn khí sinh ra qua dung dịch Ca(OH)₂ và quan sát hiện tượng. Hoạt động có thể dùng trong Hóa học 12, chủ đề Nguyên tố nhóm IA và nhóm IIA, khi học sinh tìm hiểu tương tác của muối carbonate với acid loãng. Giáo viên cho học sinh dự đoán hiện tượng, chạy mô phỏng, nhận biết khí sinh ra bằng nước vôi trong rồi viết phương trình hóa học.',
+    status: 'Đã thực hiện · chờ chèn ảnh',
   },
   {
     name: 'MolView',
@@ -294,7 +294,7 @@ export default function Chem1441Hsht3() {
                 <article className="rounded-2xl border bg-background p-6">
                   <h3 className="font-display text-xl font-bold text-foreground mb-3">Yenka</h3>
                   <p className="text-muted-foreground leading-relaxed">
-                    Phù hợp khi cần dựng một thí nghiệm ảo có dụng cụ và hóa chất. Điểm em muốn khai thác thêm là khả năng thay đổi thông số và dùng đồ thị để so sánh kết quả.
+                    Phù hợp khi cần dựng một hệ thí nghiệm có nhiều dụng cụ và hóa chất. Ở bài điều chế CO₂, em phải tự bố trí bình phản ứng, nút, ống dẫn khí và cốc nước vôi trong. Phần mềm giúp quan sát được toàn bộ quá trình, nhưng lúc đầu việc tìm đúng dụng cụ và sắp xếp hệ thống mất khá nhiều thời gian.
                   </p>
                 </article>
                 <article className="rounded-2xl border bg-background p-6">
