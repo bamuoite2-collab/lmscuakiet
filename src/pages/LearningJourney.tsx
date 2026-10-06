@@ -96,8 +96,8 @@ const chemistryJourney = [
     step: '11',
     title: 'Làm quen với thí nghiệm ảo trên Yenka',
     icon: Beaker,
-    text: 'Sang phần mô phỏng, mình bắt đầu với Yenka: chọn dụng cụ, hóa chất, thay đổi thông số và theo dõi hiện tượng hoặc đồ thị trong thí nghiệm ảo.',
-    note: 'Mình đang chuẩn bị minh chứng về ảnh hưởng của chất xúc tác đến tốc độ phản ứng bằng phản ứng phân hủy H₂O₂.',
+    text: 'Sang phần mô phỏng, mình bắt đầu với Yenka: chọn dụng cụ, hóa chất, thay đổi thông số và tự bố trí một hệ thí nghiệm ảo.',
+    note: 'Minh chứng Yenka của mình là điều chế CO₂ từ CaCO₃ và HCl, sau đó dẫn khí qua nước vôi trong để quan sát hiện tượng.',
   },
   {
     step: '12',
