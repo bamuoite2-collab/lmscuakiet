@@ -574,6 +574,40 @@ export default function Chem1441Hsht3() {
 
                 <section className="mb-10">
                   <p className="text-sm font-bold uppercase tracking-[0.14em] text-primary mb-5">
+                    Minh chứng thao tác trên MolView
+                  </p>
+
+                  <div className="grid lg:grid-cols-2 gap-6">
+                    <figure className="rounded-2xl border bg-card overflow-hidden">
+                      <div className="aspect-[16/10] bg-muted/30 flex items-center justify-center overflow-hidden">
+                        <img
+                          src="/portfolio/hsht3/molview-nh3-overview.png"
+                          alt="Giao diện MolView hiển thị công thức NH3 và mô hình phân tử 3D"
+                          className="w-full h-full object-contain"
+                        />
+                      </div>
+                      <figcaption className="border-t px-5 py-4 text-sm text-muted-foreground">
+                        <span className="font-semibold text-foreground">Hình 3.</span> Công thức NH₃ và mô hình 3D được hiển thị đồng thời trên MolView.
+                      </figcaption>
+                    </figure>
+
+                    <figure className="rounded-2xl border bg-card overflow-hidden">
+                      <div className="aspect-[16/10] bg-muted/30 flex items-center justify-center overflow-hidden">
+                        <img
+                          src="/portfolio/hsht3/molview-nh3-rotated.png"
+                          alt="Mô hình NH3 được xoay trên MolView để quan sát hình học phân tử"
+                          className="w-full h-full object-contain"
+                        />
+                      </div>
+                      <figcaption className="border-t px-5 py-4 text-sm text-muted-foreground">
+                        <span className="font-semibold text-foreground">Hình 4.</span> Xoay mô hình NH₃ để quan sát rõ hơn sự sắp xếp không gian của ba liên kết N–H.
+                      </figcaption>
+                    </figure>
+                  </div>
+                </section>
+
+                <section className="mb-10">
+                  <p className="text-sm font-bold uppercase tracking-[0.14em] text-primary mb-5">
                     Phân tích sản phẩm
                   </p>
 
