@@ -47,7 +47,7 @@ const tools = [
   {
     name: 'MOPAC',
     icon: Sigma,
-    text: 'Công cụ tính toán cấu trúc phân tử được giới thiệu trong học phần. Phần minh chứng sẽ được bổ sung theo đúng nhiệm vụ thực hành trên VLE.',
+    text: 'Chương trình tính toán hóa học bán thực nghiệm. Trong bài thực hành, em dùng PM7 để tối ưu hình học phân tử, lấy heat of formation và tính enthalpy cho hai phản ứng được giao trên VLE.',
   },
 ];
 
@@ -145,6 +145,7 @@ export default function Chem1441Hsht3() {
                 ['#cong-cu', 'Công cụ'],
                 ['#yenka', 'Minh chứng Yenka'],
                 ['#molview', 'Minh chứng MolView'],
+                ['#mopac', 'Minh chứng MOPAC'],
                 ['#kiem-tra-danh-gia', 'Kiểm tra đánh giá'],
               ].map(([href, label]) => (
                 <a
@@ -664,6 +665,311 @@ export default function Chem1441Hsht3() {
                       <p className="text-muted-foreground leading-relaxed">
                         Với bài NH₃, chỉ cần dùng chức năng 3D và thao tác xoay là đủ cho mục tiêu hình học phân tử. Giáo viên nên chuẩn bị sẵn đường dẫn hoặc từ khóa,
                         yêu cầu học sinh dự đoán trước rồi mới mở mô hình để tránh biến hoạt động thành xem minh họa đơn thuần.
+                      </p>
+                    </div>
+                  </div>
+                </section>
+              </div>
+            </article>
+          </div>
+        </section>
+
+        <section id="mopac" className="scroll-mt-28 py-16 md:py-24">
+          <div className="container mx-auto px-6">
+            <article className="max-w-6xl mx-auto rounded-[2rem] border bg-card overflow-hidden shadow-sm">
+              <header className="p-7 md:p-10 border-b">
+                <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between gap-6">
+                  <div className="max-w-3xl">
+                    <p className="text-sm font-bold uppercase tracking-[0.16em] text-primary mb-3">
+                      Minh chứng thực hành · MOPAC
+                    </p>
+                    <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground leading-tight mb-4">
+                      Tối ưu cấu trúc và tính enthalpy bằng phương pháp PM7
+                    </h2>
+                    <p className="text-muted-foreground leading-relaxed">
+                      Em cài OpenMOPAC 23.2.5 trên Windows và chạy các file đầu vào bằng dòng lệnh. Theo nhiệm vụ trên VLE,
+                      em tính riêng H₂, O₂, H₂O, F₂ và HF, lấy cấu trúc sau tối ưu cùng giá trị FINAL HEAT OF FORMATION,
+                      sau đó dùng các giá trị PM7 này để tính enthalpy của hai phản ứng.
+                    </p>
+                  </div>
+
+                  <div className="grid grid-cols-2 gap-2 text-sm shrink-0">
+                    <div className="rounded-xl border bg-background px-4 py-3">
+                      <div className="text-xs text-muted-foreground mb-1">Phương pháp</div>
+                      <div className="font-semibold text-foreground">PM7 · PRECISE</div>
+                    </div>
+                    <div className="rounded-xl border bg-background px-4 py-3">
+                      <div className="text-xs text-muted-foreground mb-1">Phần mềm</div>
+                      <div className="font-semibold text-foreground">MOPAC 23.2.5</div>
+                    </div>
+                  </div>
+                </div>
+              </header>
+
+              <div className="p-7 md:p-10">
+                <section className="mb-10">
+                  <p className="text-sm font-bold uppercase tracking-[0.14em] text-primary mb-5">
+                    Cách em thực hiện
+                  </p>
+
+                  <div className="grid md:grid-cols-3 gap-5">
+                    <div className="rounded-2xl border bg-background p-6">
+                      <div className="text-sm font-bold text-primary mb-2">1. Tạo dữ liệu đầu vào</div>
+                      <p className="text-muted-foreground leading-relaxed">
+                        Mỗi chất được tạo thành một file .mop riêng. Em dùng từ khóa PM7 PRECISE để tối ưu hình học.
+                        Riêng O₂ ở trạng thái triplet được chạy với UHF MS=1.
+                      </p>
+                    </div>
+                    <div className="rounded-2xl border bg-background p-6">
+                      <div className="text-sm font-bold text-primary mb-2">2. Đọc kết quả tối ưu</div>
+                      <p className="text-muted-foreground leading-relaxed">
+                        Sau khi MOPAC báo JOB ENDED NORMALLY, em lấy độ dài liên kết hoặc góc liên kết ở hình học cuối
+                        và ghi lại dòng FINAL HEAT OF FORMATION của từng chất.
+                      </p>
+                    </div>
+                    <div className="rounded-2xl border bg-background p-6">
+                      <div className="text-sm font-bold text-primary mb-2">3. Tính enthalpy phản ứng</div>
+                      <p className="text-muted-foreground leading-relaxed">
+                        Em dùng công thức ΔH = ΣνΔHf(sản phẩm) − ΣνΔHf(chất phản ứng). Khi tính bằng PM7,
+                        em dùng chính các heat of formation do MOPAC cho cho tất cả các phân tử.
+                      </p>
+                    </div>
+                  </div>
+                </section>
+
+                <section className="mb-10">
+                  <p className="text-sm font-bold uppercase tracking-[0.14em] text-primary mb-5">
+                    Kết quả cấu trúc và heat of formation
+                  </p>
+
+                  <div className="overflow-x-auto rounded-2xl border bg-background">
+                    <table className="w-full min-w-[760px] text-sm">
+                      <thead className="border-b bg-muted/40">
+                        <tr className="text-left">
+                          <th className="px-5 py-4 font-semibold text-foreground">Chất</th>
+                          <th className="px-5 py-4 font-semibold text-foreground">Thông số cấu trúc sau tối ưu</th>
+                          <th className="px-5 py-4 font-semibold text-foreground">ΔHf PM7 (kcal/mol)</th>
+                          <th className="px-5 py-4 font-semibold text-foreground">ΔHf PM7 (kJ/mol)</th>
+                        </tr>
+                      </thead>
+                      <tbody className="divide-y">
+                        <tr>
+                          <td className="px-5 py-4 font-semibold text-foreground">H₂</td>
+                          <td className="px-5 py-4 text-muted-foreground">H–H = 0.75952 Å</td>
+                          <td className="px-5 py-4 text-muted-foreground">−32.01070</td>
+                          <td className="px-5 py-4 text-muted-foreground">−133.93276</td>
+                        </tr>
+                        <tr>
+                          <td className="px-5 py-4 font-semibold text-foreground">O₂</td>
+                          <td className="px-5 py-4 text-muted-foreground">O=O = 1.13085 Å</td>
+                          <td className="px-5 py-4 text-muted-foreground">−9.17155</td>
+                          <td className="px-5 py-4 text-muted-foreground">−38.37378</td>
+                        </tr>
+                        <tr>
+                          <td className="px-5 py-4 font-semibold text-foreground">H₂O</td>
+                          <td className="px-5 py-4 text-muted-foreground">O–H = 0.95531 Å; ∠H–O–H = 105.38°</td>
+                          <td className="px-5 py-4 text-muted-foreground">−57.79986</td>
+                          <td className="px-5 py-4 text-muted-foreground">−241.83461</td>
+                        </tr>
+                        <tr>
+                          <td className="px-5 py-4 font-semibold text-foreground">F₂</td>
+                          <td className="px-5 py-4 text-muted-foreground">F–F = 1.41498 Å</td>
+                          <td className="px-5 py-4 text-muted-foreground">−15.86529</td>
+                          <td className="px-5 py-4 text-muted-foreground">−66.38038</td>
+                        </tr>
+                        <tr>
+                          <td className="px-5 py-4 font-semibold text-foreground">HF</td>
+                          <td className="px-5 py-4 text-muted-foreground">H–F = 0.89567 Å</td>
+                          <td className="px-5 py-4 text-muted-foreground">−61.93568</td>
+                          <td className="px-5 py-4 text-muted-foreground">−259.13887</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+
+                  <div className="mt-5 rounded-2xl border bg-background p-6">
+                    <div className="text-sm font-bold text-primary mb-3">Một chi tiết cần chú ý khi đọc output</div>
+                    <p className="text-muted-foreground leading-relaxed">
+                      Các số 0.740 Å của H₂, 1.210 Å của O₂ hay 0.960 Å và 104.5° của H₂O chỉ là hình học ban đầu em nhập.
+                      Giá trị dùng cho bài là hình học ở cuối quá trình tối ưu. Chẳng hạn H₂ được tối ưu từ 0.740 Å thành 0.75952 Å,
+                      còn H₂O cho O–H = 0.95531 Å và góc H–O–H = 105.38°.
+                    </p>
+                  </div>
+                </section>
+
+                <section className="mb-10">
+                  <p className="text-sm font-bold uppercase tracking-[0.14em] text-primary mb-5">
+                    A. Tính enthalpy và đối chiếu thực nghiệm
+                  </p>
+
+                  <div className="grid lg:grid-cols-2 gap-6">
+                    <div className="rounded-2xl border bg-background p-6 md:p-7">
+                      <div className="text-xs font-semibold uppercase tracking-wide text-muted-foreground mb-2">Phản ứng 1</div>
+                      <h3 className="font-display text-xl md:text-2xl font-bold text-foreground mb-4">
+                        O₂(g) + 2H₂(g) → 2H₂O(g)
+                      </h3>
+                      <div className="rounded-xl border bg-muted/30 px-4 py-4 font-mono text-sm leading-7 text-foreground mb-4">
+                        ΔH(PM7) = 2(−241.83461)<br />
+                        − [−38.37378 + 2(−133.93276)]<br />
+                        = <strong>−177.43 kJ</strong>
+                      </div>
+                      <p className="text-muted-foreground leading-relaxed mb-3">
+                        Giá trị thực nghiệm chuẩn cho H₂O(g) là ΔfH° = −241.826 kJ/mol. Vì H₂(g) và O₂(g)
+                        là các đơn chất ở trạng thái chuẩn, phản ứng như đã viết có ΔH° thực nghiệm khoảng <strong className="text-foreground">−483.65 kJ</strong>.
+                      </p>
+                      <p className="text-muted-foreground leading-relaxed">
+                        PM7 vẫn dự đoán đúng phản ứng tỏa nhiệt nhưng độ lớn nhỏ hơn thực nghiệm khoảng 306.22 kJ,
+                        tương ứng sai lệch khoảng 63.3%.
+                      </p>
+                    </div>
+
+                    <div className="rounded-2xl border bg-background p-6 md:p-7">
+                      <div className="text-xs font-semibold uppercase tracking-wide text-muted-foreground mb-2">Phản ứng 2</div>
+                      <h3 className="font-display text-xl md:text-2xl font-bold text-foreground mb-4">
+                        F₂(g) + H₂(g) → 2HF(g)
+                      </h3>
+                      <div className="rounded-xl border bg-muted/30 px-4 py-4 font-mono text-sm leading-7 text-foreground mb-4">
+                        ΔH(PM7) = 2(−259.13887)<br />
+                        − [−66.38038 + (−133.93276)]<br />
+                        = <strong>−317.96 kJ</strong>
+                      </div>
+                      <p className="text-muted-foreground leading-relaxed mb-3">
+                        Giá trị thực nghiệm chuẩn cho HF(g) là ΔfH° = −273.30 kJ/mol, nên phản ứng như đã viết
+                        có ΔH° thực nghiệm khoảng <strong className="text-foreground">−546.60 kJ</strong>.
+                      </p>
+                      <p className="text-muted-foreground leading-relaxed">
+                        PM7 tiếp tục cho đúng dấu tỏa nhiệt nhưng độ lớn nhỏ hơn thực nghiệm khoảng 228.64 kJ,
+                        tương ứng sai lệch khoảng 41.8%.
+                      </p>
+                    </div>
+                  </div>
+
+                  <div className="mt-6 rounded-2xl border bg-primary/5 p-6 md:p-7">
+                    <h3 className="font-display text-xl font-bold text-foreground mb-3">Nhận xét về kết quả PM7</h3>
+                    <p className="text-muted-foreground leading-relaxed mb-4">
+                      Ở cả hai phản ứng, PM7 cho đúng chiều biến thiên enthalpy: ΔH âm, tức phản ứng tỏa nhiệt.
+                      Tuy nhiên độ lớn chênh khá nhiều so với dữ liệu thực nghiệm. Với bộ số liệu này, PM7 phù hợp hơn để
+                      khảo sát nhanh cấu trúc, nhận biết xu hướng và so sánh tương đối hơn là dùng như giá trị nhiệt hóa học chính xác.
+                    </p>
+                    <p className="text-muted-foreground leading-relaxed">
+                      Một điểm em cần tránh khi tính là tự đặt heat of formation của H₂, O₂ và F₂ bằng 0 trong phép tính PM7.
+                      MOPAC đã cho các giá trị tính toán riêng cho những phân tử này, nên khi tính ΔH từ kết quả PM7 em dùng đầy đủ
+                      các giá trị MOPAC; còn khi đối chiếu số liệu thực nghiệm chuẩn mới áp dụng quy ước ΔfH° của đơn chất ở trạng thái chuẩn bằng 0.
+                    </p>
+                  </div>
+
+                  <div className="mt-5 text-sm text-muted-foreground leading-relaxed">
+                    Dữ liệu thực nghiệm đối chiếu:
+                    {' '}
+                    <a
+                      href="https://webbook.nist.gov/cgi/cbook.cgi?ID=C7732185&Mask=1"
+                      target="_blank"
+                      rel="noreferrer"
+                      className="font-medium text-primary underline-offset-4 hover:underline"
+                    >
+                      NIST Chemistry WebBook – H₂O
+                    </a>
+                    {' '}và{' '}
+                    <a
+                      href="https://webbook.nist.gov/cgi/cbook.cgi?ID=C7664393&Mask=27&Units=SI"
+                      target="_blank"
+                      rel="noreferrer"
+                      className="font-medium text-primary underline-offset-4 hover:underline"
+                    >
+                      NIST Chemistry WebBook – HF
+                    </a>.
+                  </div>
+                </section>
+
+                <section className="mb-10">
+                  <p className="text-sm font-bold uppercase tracking-[0.14em] text-primary mb-5">
+                    B. So sánh oxygen và fluorine khi phản ứng với hydrogen
+                  </p>
+
+                  <div className="grid lg:grid-cols-[0.9fr_1.1fr] gap-6">
+                    <div className="rounded-2xl border bg-background p-6 md:p-7">
+                      <h3 className="font-display text-2xl font-bold text-foreground mb-4">So sánh từ kết quả tính</h3>
+                      <div className="space-y-3">
+                        <div className="rounded-xl border px-4 py-4">
+                          <div className="text-xs text-muted-foreground mb-1">O₂ + 2H₂ → 2H₂O</div>
+                          <div className="font-display text-2xl font-bold text-foreground">−177.43 kJ</div>
+                          <div className="text-sm text-muted-foreground">PM7</div>
+                        </div>
+                        <div className="rounded-xl border px-4 py-4">
+                          <div className="text-xs text-muted-foreground mb-1">F₂ + H₂ → 2HF</div>
+                          <div className="font-display text-2xl font-bold text-foreground">−317.96 kJ</div>
+                          <div className="text-sm text-muted-foreground">PM7</div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div className="rounded-2xl border bg-background p-6 md:p-7">
+                      <h3 className="font-display text-2xl font-bold text-foreground mb-4">Giải thích</h3>
+                      <p className="text-muted-foreground leading-relaxed mb-4">
+                        Trong hai phép tính PM7, phản ứng tạo HF giải phóng năng lượng nhiều hơn phản ứng tạo H₂O theo đúng phương trình đã cho.
+                        Về mặt liên kết, liên kết F–F tương đối yếu trong khi liên kết H–F tạo thành rất bền; fluorine cũng có độ âm điện rất lớn,
+                        nên sự hình thành hai liên kết H–F làm hệ giảm năng lượng mạnh.
+                      </p>
+                      <p className="text-muted-foreground leading-relaxed mb-4">
+                        Với oxygen, phản ứng phải phá vỡ liên kết O=O tương đối bền trước khi hình thành các liên kết O–H.
+                        Kết quả thực nghiệm cũng giữ cùng xu hướng: phản ứng với F₂ có ΔH° khoảng −546.60 kJ,
+                        còn phản ứng tạo 2H₂O(g) khoảng −483.65 kJ.
+                      </p>
+                      <p className="text-muted-foreground leading-relaxed">
+                        Tuy vậy, enthalpy chỉ cho biết mức độ thuận lợi về mặt năng lượng, không trực tiếp cho biết phản ứng diễn ra nhanh hay chậm.
+                        Nếu bàn về tốc độ hoặc mức độ dễ xảy ra trong thực tế thì còn phải xét năng lượng hoạt hóa và điều kiện phản ứng.
+                      </p>
+                    </div>
+                  </div>
+                </section>
+
+                <section className="mb-10">
+                  <p className="text-sm font-bold uppercase tracking-[0.14em] text-primary mb-5">
+                    Ý tưởng sử dụng trong dạy học
+                  </p>
+                  <div className="rounded-2xl border bg-background p-6 md:p-7">
+                    <p className="text-muted-foreground leading-relaxed mb-4">
+                      Em có thể dùng bộ kết quả này trong phần biến thiên enthalpy của phản ứng. Trước khi xem số liệu, học sinh dự đoán
+                      phản ứng nào tỏa nhiệt nhiều hơn dựa trên liên kết và độ âm điện. Sau đó các nhóm dùng bảng kết quả PM7 để tự tính ΔH,
+                      so sánh với dữ liệu thực nghiệm và giải thích vì sao mô hình tính toán không trùng hoàn toàn với thực nghiệm.
+                    </p>
+                    <p className="text-muted-foreground leading-relaxed">
+                      Cách tổ chức này giúp MOPAC không chỉ là công cụ cho ra một con số. Học sinh phải đọc dữ liệu, kiểm tra tính hợp lí,
+                      thực hiện phép tính và phân biệt giữa kết quả của mô hình với số liệu đo thực nghiệm.
+                    </p>
+                  </div>
+                </section>
+
+                <section>
+                  <p className="text-sm font-bold uppercase tracking-[0.14em] text-primary mb-5">
+                    Đánh giá MOPAC sau khi sử dụng
+                  </p>
+
+                  <div className="grid lg:grid-cols-3 gap-5">
+                    <div className="rounded-2xl border bg-background p-6">
+                      <h3 className="font-display text-xl font-bold text-foreground mb-3">Điểm hữu ích</h3>
+                      <p className="text-muted-foreground leading-relaxed">
+                        MOPAC cho được cả hình học sau tối ưu và heat of formation trong cùng một lần chạy. Với các phân tử nhỏ,
+                        thời gian tính rất ngắn nên thuận lợi để tạo một bộ dữ liệu cho học sinh so sánh.
+                      </p>
+                    </div>
+
+                    <div className="rounded-2xl border bg-background p-6">
+                      <h3 className="font-display text-xl font-bold text-foreground mb-3">Khó khăn em gặp</h3>
+                      <p className="text-muted-foreground leading-relaxed">
+                        Phần mềm không có giao diện trực quan như MolView hay Yenka mà chủ yếu làm việc qua file đầu vào và dòng lệnh.
+                        Ở lần nhập H₂O đầu tiên, em đặt 104.5 sai vị trí nên MOPAC hiểu đó là tọa độ Y = 104.5 Å và cho kết quả
+                        heat of formation +201.081 kcal/mol rất bất hợp lí. Sau khi sửa đúng dạng tọa độ nội và atom tham chiếu,
+                        kết quả trở về O–H = 0.95531 Å, góc H–O–H = 105.38° và −57.79986 kcal/mol.
+                      </p>
+                    </div>
+
+                    <div className="rounded-2xl border bg-background p-6">
+                      <h3 className="font-display text-xl font-bold text-foreground mb-3">Cách dùng hiệu quả hơn</h3>
+                      <p className="text-muted-foreground leading-relaxed">
+                        Nếu dùng với học sinh, giáo viên nên chuẩn bị trước mẫu file đầu vào và chỉ yêu cầu chỉnh phân tử hoặc thông số cần khảo sát.
+                        Đồng thời phải hướng dẫn học sinh kiểm tra độ hợp lí của cấu trúc trước khi lấy số liệu, vì một file vẫn có thể chạy
+                        và kết thúc bình thường dù hình học nhập sai.
                       </p>
                     </div>
                   </div>
