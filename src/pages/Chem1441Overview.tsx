@@ -29,9 +29,9 @@ const portfolios = [
     title: 'Hồ sơ học tập 3',
     subtitle: 'Mô phỏng và kiểm tra đánh giá',
     description:
-      'Đã dựng khung HSHT3 theo hướng dẫn học phần, có ba nhiệm vụ thực hành với Yenka, MolView và MOPAC; phần kiểm tra đánh giá sẽ bổ sung sau HĐ24–26.',
+      'Hồ sơ về mô phỏng Hóa học và ứng dụng ICT trong kiểm tra đánh giá, kèm sản phẩm thực hành và ý tưởng vận dụng vào dạy học.',
     icon: Presentation,
-    status: 'Đang thực hiện',
+    status: '',
   },
   {
     href: '/chem1441/hsht4',
@@ -80,9 +80,11 @@ export default function Chem1441Overview() {
                       <div className="w-12 h-12 rounded-2xl bg-primary/10 text-primary flex items-center justify-center">
                         <Icon className="h-6 w-6" />
                       </div>
-                      <span className="rounded-full border bg-background px-3 py-1.5 text-xs font-semibold text-muted-foreground">
-                        {item.status}
-                      </span>
+                      {item.status ? (
+                        <span className="rounded-full border bg-background px-3 py-1.5 text-xs font-semibold text-muted-foreground">
+                          {item.status}
+                        </span>
+                      ) : null}
                     </div>
                     <p className="text-sm font-semibold uppercase tracking-wide text-primary mb-2">{item.title}</p>
                     <h2 className="font-display text-2xl font-bold text-foreground mb-3">{item.subtitle}</h2>
