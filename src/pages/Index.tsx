@@ -99,8 +99,8 @@ export default function Index() {
 
             {/* Headline */}
             <h1 className="font-display text-4xl md:text-6xl lg:text-7xl font-bold text-foreground mb-8 animate-slide-up leading-tight">
-              Học Hóa học và Vật lý
-              <span className="text-gradient"> theo từng bài</span>
+              {' '}Hóa học và Vật lý{' '}
+              <span className="text-gradient">{' '}</span>
             </h1>
 
             <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto mb-10 animate-slide-up leading-relaxed" style={{
