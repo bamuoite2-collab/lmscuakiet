@@ -29,6 +29,7 @@ import EquationBalancerPage from "./pages/EquationBalancerPage";
 import Chem1441Portfolio from "./pages/Chem1441Portfolio";
 import Chem1441Overview from "./pages/Chem1441Overview";
 import Chem1441Hsht2 from "./pages/Chem1441Hsht2";
+import Chem1441Hsht3 from "./pages/Chem1441Hsht3";
 import Chem1441Placeholder from "./pages/Chem1441Placeholder";
 import AboutMe from "./pages/AboutMe";
 import LearningJourney from "./pages/LearningJourney";
@@ -69,7 +70,7 @@ const App = () => (
               <Route path="/chem1441/portfolio" element={<Portfolio />} />
               <Route path="/chem1441/hsht1" element={<Chem1441Portfolio />} />
               <Route path="/chem1441/hsht2" element={<Chem1441Hsht2 />} />
-              <Route path="/chem1441/hsht3" element={<Chem1441Placeholder number={3} />} />
+              <Route path="/chem1441/hsht3" element={<Chem1441Hsht3 />} />
               <Route path="/chem1441/hsht4" element={<Chem1441Placeholder number={4} />} />
               <Route path="/gioi-thieu" element={<AboutMe />} />
               <Route path="/hanh-trinh" element={<LearningJourney />} />
